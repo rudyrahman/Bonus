@@ -14,15 +14,12 @@ Public Class frm_ImportDataAllowence
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
 
-    Sub connect()
-        cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
-        cn.Open()
-    End Sub
     Private Sub frm_ImportDataAllowence_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Size = New Size(800, 600)
         Me.MinimumSize = New Size(600, 400)
         Try
-            connect()
+            cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
+            cn.Open()
             rs = cn.Execute("SELECT [month] FROM [AN_SUMATRA].[dbo].[TM_tb_month] ORDER BY [id] ASC")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 While Not rs.EOF
