@@ -19,7 +19,7 @@ Public Class frm_Deduction
         cn.Open()
     End Sub
     Private Sub frm_Deduction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Size = New Size(800, 600)
+        Me.Size = New Size(921, 600)
         Me.MinimumSize = New Size(600, 400)
         Try
             connect()
@@ -134,31 +134,31 @@ Public Class frm_Deduction
 
     Private Sub frm_Deduction_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.WindowState < FormWindowState.Minimized Then
-            dgv_Deduction.Top = 180
-            dgv_Deduction.Height = Me.Height - 290
-            dgv_Deduction.Width = Me.Width - 130
+            dgv_Deduction.Top = 120
+            dgv_Deduction.Height = Me.Height - 240
+            dgv_Deduction.Width = Me.Width - 40
 
-            btn_Save.Top = Me.Height - btn_Save.Height - 70
-            btn_Save.Left = 53
+            btn_Save.Top = Me.Height - btn_Save.Height - 45
+            btn_Save.Left = 12
 
-            btn_Cancel.Top = Me.Height - btn_Save.Height - 70
-            btn_Cancel.Left = 143
+            btn_Cancel.Top = Me.Height - btn_Save.Height - 45
+            btn_Cancel.Left = 186
 
-            btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 75
+            btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 30
 
 
         Else
-            dgv_Deduction.Top = 180
-            dgv_Deduction.Height = Me.Height - 290
-            dgv_Deduction.Width = Me.Width - 134
+            dgv_Deduction.Top = 120
+            dgv_Deduction.Height = Me.Height - 240
+            dgv_Deduction.Width = Me.Width - 40
 
-            btn_Save.Top = Me.Height - btn_Save.Height - 70
-            btn_Save.Left = 53
+            btn_Save.Top = Me.Height - btn_Save.Height - 45
+            btn_Save.Left = 12
 
-            btn_Cancel.Top = Me.Height - btn_Save.Height - 70
-            btn_Cancel.Left = 143
+            btn_Cancel.Top = Me.Height - btn_Save.Height - 45
+            btn_Cancel.Left = 186
 
-            btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 80
+            btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 30
 
         End If
 

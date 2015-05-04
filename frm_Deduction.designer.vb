@@ -146,9 +146,9 @@ Partial Class frm_Deduction
         '
         Me.LineShape1.Name = "LineShape1"
         Me.LineShape1.X1 = 0
-        Me.LineShape1.X2 = 878
+        Me.LineShape1.X2 = 902
         Me.LineShape1.Y1 = 510
-        Me.LineShape1.Y2 = 510
+        Me.LineShape1.Y2 = 509
         '
         'frm_Deduction
         '
