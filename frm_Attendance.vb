@@ -9,7 +9,7 @@ Public Class frm_Attendance
     Dim rs As New ADODB.Recordset
 
 
-    Dim code, description, maxworkingday As String
+    Dim code, description, workingday As String
 
 
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
@@ -105,7 +105,7 @@ Public Class frm_Attendance
         For i As Integer = 0 To Me.dgv_data.Rows.Count - 2
             code = Me.dgv_data.Rows(i).Cells(0).Value.ToString()
             description = Me.dgv_data.Rows(i).Cells(1).Value.ToString()
-            maxworkingday = Me.dgv_data.Rows(i).Cells(2).Value.ToString()
+            workingday = Me.dgv_data.Rows(i).Cells(2).Value.ToString()
 
             Dim sqlInsert As String = "INSERT INTO [TM_tb_ImportDataAttendance] ([month],[year],[maxworkingday],[code],[description],[workingday]) VALUES "
             sqlInsert = sqlInsert & "('" & cbo_month.Text.ToString & "'" & _
@@ -113,10 +113,11 @@ Public Class frm_Attendance
              ",'" & txt_max.Text & "'" & _
              ",'" & code & "'" & _
              ",'" & description & "'" & _
-             ",'" & maxworkingday & "')"
+             ",'" & workingday & "')"
             cn.Execute(sqlInsert)
         Next
-
+        cn.Close()
+        cn.Open()
 
 
     End Sub

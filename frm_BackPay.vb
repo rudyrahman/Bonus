@@ -154,5 +154,7 @@ Public Class frm_BackPay
              ",'" & workingday & "')"
             cn.Execute(sqlInsert)
         Next
+        cn.Close()
+        cn.Open()
     End Sub
 End Class
