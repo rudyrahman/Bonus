@@ -47,7 +47,7 @@ Public Class frm_ImportDataAllowence
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-
+        cn.Close()
     End Sub
 
     Private Sub btn_ImportFromExcel_Click(sender As Object, e As EventArgs) Handles btn_ImportFromExcel.Click
@@ -137,6 +137,7 @@ Public Class frm_ImportDataAllowence
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+        cn.Close()
     End Sub
 
     Private Sub frm_ImportDataAllowence_Resize(sender As Object, e As EventArgs) Handles Me.Resize
