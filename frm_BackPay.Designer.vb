@@ -105,7 +105,7 @@ Partial Class frm_BackPay
         Me.txt_DocumentName.Location = New System.Drawing.Point(110, 55)
         Me.txt_DocumentName.MaxLength = 100
         Me.txt_DocumentName.Name = "txt_DocumentName"
-        Me.txt_DocumentName.Size = New System.Drawing.Size(479, 20)
+        Me.txt_DocumentName.Size = New System.Drawing.Size(435, 20)
         Me.txt_DocumentName.TabIndex = 48
         '
         'cbo_year
