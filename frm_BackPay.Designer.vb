@@ -121,7 +121,7 @@ Partial Class frm_BackPay
         '
         Me.cbo_month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_month.FormattingEnabled = True
-        Me.cbo_month.Location = New System.Drawing.Point(110, 1)
+        Me.cbo_month.Location = New System.Drawing.Point(110, 3)
         Me.cbo_month.Name = "cbo_month"
         Me.cbo_month.Size = New System.Drawing.Size(149, 21)
         Me.cbo_month.TabIndex = 46
