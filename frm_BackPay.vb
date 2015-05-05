@@ -114,7 +114,7 @@ Public Class frm_BackPay
 
         If Me.Width > 400 Then
             pnl_01.Width = Me.Width - (pnl_01.Left * 2) - 15
-           
+
 
         End If
     End Sub
