@@ -126,28 +126,20 @@ Public Class frm_Deduction
     End Sub
 
     Private Sub frm_Deduction_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        If Me.WindowState < FormWindowState.Minimized Then
-            dgv_Deduction.Top = 120
-            dgv_Deduction.Height = Me.Height - 240
-            dgv_Deduction.Width = Me.Width - 40
-            btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 30
-            LineShape1.Y1 = 506
-            LineShape1.Y2 = 506
-        Else
+
+        If Me.Height > 500 Then
+            pnl_Deduction.Height = Me.Height - (pnl_Deduction.Top * 2) - 40
+            btn_Save.Top = pnl_Deduction.Height - pnl_Deduction.Top - btn_Save.Height - 10
+            btn_Cancel.Top = pnl_Deduction.Height - pnl_Deduction.Top - btn_Cancel.Height - 10
             dgv_Deduction.Top = 120
             dgv_Deduction.Height = Me.Height - 240
             dgv_Deduction.Width = Me.Width - 40
             btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 30
             LineShape1.X2 = Me.Width
-            LineShape1.Y1 = 650
-            LineShape1.Y2 = 650
-
-        End If
-        If Me.Height > 500 Then
-            pnl_Deduction.Height = Me.Height - (pnl_Deduction.Top * 2) - 40
-          
-            btn_Save.Top = pnl_Deduction.Height - pnl_Deduction.Top - btn_Save.Height - 10
-            btn_Cancel.Top = pnl_Deduction.Height - pnl_Deduction.Top - btn_Cancel.Height - 10
+            LineShape1.Y1 = pnl_Deduction.Height
+            LineShape1.Y2 = pnl_Deduction.Height
+            LineShape1.Y1 = pnl_Deduction.Bottom - 60
+            LineShape1.Y2 = pnl_Deduction.Bottom - 60
 
         End If
         If Me.Width > 400 Then
