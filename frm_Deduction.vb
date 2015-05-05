@@ -14,15 +14,12 @@ Public Class frm_Deduction
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
 
-    Sub connect()
-        cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
-        cn.Open()
-    End Sub
     Private Sub frm_Deduction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Size = New Size(921, 600)
-        Me.MinimumSize = New Size(600, 400)
+        frm_Deduction_Resize(Me, Nothing)
+
         Try
-            connect()
+            cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
+            cn.Open()
             rs = cn.Execute("SELECT [month] FROM [AN_SUMATRA].[dbo].[TM_tb_month] ORDER BY [id] ASC")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 While Not rs.EOF
@@ -39,15 +36,10 @@ Public Class frm_Deduction
                 End While
             End If
 
-
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-
-    End Sub
-
-    Private Sub btn_ImportFromExcel_Click(sender As Object, e As EventArgs) Handles btn_ImportFromExcel.Click
-        OpenFileDialog1.ShowDialog()
+        cn.Close()
     End Sub
 
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
@@ -99,7 +91,7 @@ Public Class frm_Deduction
         End Using
     End Sub
 
-    Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
+    Private Sub btn_Save_Click(sender As Object, e As EventArgs)
         Try
             If cbo_Month.Text = "" Then
                 MsgBox("Month is empty", vbCritical, "Failed")
@@ -126,10 +118,11 @@ Public Class frm_Deduction
                     ",'" & value & "')"
                 cn.Execute(sqlInsert)
             Next
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-
+        cn.Close()
     End Sub
 
     Private Sub frm_Deduction_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -137,34 +130,37 @@ Public Class frm_Deduction
             dgv_Deduction.Top = 120
             dgv_Deduction.Height = Me.Height - 240
             dgv_Deduction.Width = Me.Width - 40
-
-            btn_Save.Top = Me.Height - btn_Save.Height - 45
-            btn_Save.Left = 12
-
-            btn_Cancel.Top = Me.Height - btn_Save.Height - 45
-            btn_Cancel.Left = 186
-
             btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 30
-
-
+            LineShape1.Y1 = 506
+            LineShape1.Y2 = 506
         Else
             dgv_Deduction.Top = 120
             dgv_Deduction.Height = Me.Height - 240
             dgv_Deduction.Width = Me.Width - 40
-
-            btn_Save.Top = Me.Height - btn_Save.Height - 45
-            btn_Save.Left = 12
-
-            btn_Cancel.Top = Me.Height - btn_Save.Height - 45
-            btn_Cancel.Left = 186
-
             btn_ImportFromExcel.Left = Me.Width - btn_ImportFromExcel.Width - 30
+            LineShape1.X2 = Me.Width
+            LineShape1.Y1 = 650
+            LineShape1.Y2 = 650
 
         End If
+        If Me.Height > 500 Then
+            pnl_Deduction.Height = Me.Height - (pnl_Deduction.Top * 2) - 40
+          
+            btn_Save.Top = pnl_Deduction.Height - pnl_Deduction.Top - btn_Save.Height - 10
+            btn_Cancel.Top = pnl_Deduction.Height - pnl_Deduction.Top - btn_Cancel.Height - 10
 
+        End If
+        If Me.Width > 400 Then
+            pnl_Deduction.Width = Me.Width - (pnl_Deduction.Left * 2) - 15
+        End If
     End Sub
 
-    Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+    Private Sub btn_Cancel_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
+
+    Private Sub btn_ImportFromExcel_Click_1(sender As Object, e As EventArgs) Handles btn_ImportFromExcel.Click
+        OpenFileDialog1.ShowDialog()
+    End Sub
+
 End Class

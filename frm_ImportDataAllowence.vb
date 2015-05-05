@@ -97,7 +97,7 @@ Public Class frm_ImportDataAllowence
                     con.Close()
 
                     'Populate DataGridView.
-                    DataGridView1.DataSource = dt
+                    dgv_ImportDataAllowence.DataSource = dt
                 End Using
             End Using
         End Using
@@ -118,10 +118,10 @@ Public Class frm_ImportDataAllowence
                 Exit Sub
             End If
 
-            For i As Integer = 0 To Me.DataGridView1.Rows.Count - 2
-                code = Me.DataGridView1.Rows(i).Cells(0).Value.ToString()
-                description = Me.DataGridView1.Rows(i).Cells(1).Value.ToString()
-                value = Me.DataGridView1.Rows(i).Cells(2).Value.ToString()
+            For i As Integer = 0 To Me.dgv_ImportDataAllowence.Rows.Count - 2
+                code = Me.dgv_ImportDataAllowence.Rows(i).Cells(0).Value.ToString()
+                description = Me.dgv_ImportDataAllowence.Rows(i).Cells(1).Value.ToString()
+                value = Me.dgv_ImportDataAllowence.Rows(i).Cells(2).Value.ToString()
 
                 Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_ImportDataAllowence] ([month],[year],[devision],[code],[description],[value]) VALUES "
                 sqlInsert = sqlInsert & " ('" & cbo_Month.Text.ToString & "'" & _
@@ -141,9 +141,9 @@ Public Class frm_ImportDataAllowence
 
     Private Sub frm_ImportDataAllowence_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.WindowState < FormWindowState.Minimized Then
-            DataGridView1.Top = 180
-            DataGridView1.Height = Me.Height - 290
-            DataGridView1.Width = Me.Width - 130
+            dgv_ImportDataAllowence.Top = 180
+            dgv_ImportDataAllowence.Height = Me.Height - 290
+            dgv_ImportDataAllowence.Width = Me.Width - 130
 
             btn_Save.Top = Me.Height - btn_Save.Height - 70
             btn_Save.Left = 53
@@ -155,9 +155,9 @@ Public Class frm_ImportDataAllowence
 
 
         Else
-            DataGridView1.Top = 180
-            DataGridView1.Height = Me.Height - 290
-            DataGridView1.Width = Me.Width - 134
+            dgv_ImportDataAllowence.Top = 180
+            dgv_ImportDataAllowence.Height = Me.Height - 290
+            dgv_ImportDataAllowence.Width = Me.Width - 134
 
             btn_Save.Top = Me.Height - btn_Save.Height - 70
             btn_Save.Left = 53

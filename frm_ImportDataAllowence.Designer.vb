@@ -25,7 +25,7 @@ Partial Class frm_ImportDataAllowence
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.btn_ImportFromExcel = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_ImportDataAllowence = New System.Windows.Forms.DataGridView()
         Me.cbo_Devision = New System.Windows.Forms.ComboBox()
         Me.cbo_year = New System.Windows.Forms.ComboBox()
         Me.cbo_Month = New System.Windows.Forms.ComboBox()
@@ -33,7 +33,7 @@ Partial Class frm_ImportDataAllowence
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_ImportDataAllowence, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_Cancel
@@ -65,14 +65,14 @@ Partial Class frm_ImportDataAllowence
         Me.btn_ImportFromExcel.Text = "Import From Excel"
         Me.btn_ImportFromExcel.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgv_ImportDataAllowence
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(55, 173)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(670, 320)
-        Me.DataGridView1.TabIndex = 16
+        Me.dgv_ImportDataAllowence.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgv_ImportDataAllowence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_ImportDataAllowence.Location = New System.Drawing.Point(55, 173)
+        Me.dgv_ImportDataAllowence.Name = "dgv_ImportDataAllowence"
+        Me.dgv_ImportDataAllowence.Size = New System.Drawing.Size(670, 320)
+        Me.dgv_ImportDataAllowence.TabIndex = 16
         '
         'cbo_Devision
         '
@@ -141,7 +141,7 @@ Partial Class frm_ImportDataAllowence
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_Save)
         Me.Controls.Add(Me.btn_ImportFromExcel)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgv_ImportDataAllowence)
         Me.Controls.Add(Me.cbo_Devision)
         Me.Controls.Add(Me.cbo_year)
         Me.Controls.Add(Me.cbo_Month)
@@ -150,7 +150,7 @@ Partial Class frm_ImportDataAllowence
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_ImportDataAllowence"
         Me.Text = "frm_ImportDataAllowence"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_ImportDataAllowence, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,7 +158,7 @@ Partial Class frm_ImportDataAllowence
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_Save As System.Windows.Forms.Button
     Friend WithEvents btn_ImportFromExcel As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgv_ImportDataAllowence As System.Windows.Forms.DataGridView
     Friend WithEvents cbo_Devision As System.Windows.Forms.ComboBox
     Friend WithEvents cbo_year As System.Windows.Forms.ComboBox
     Friend WithEvents cbo_Month As System.Windows.Forms.ComboBox
