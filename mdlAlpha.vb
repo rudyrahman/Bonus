@@ -1,7 +1,6 @@
 ﻿Module mdlAlpha
     Public mainconnectionstring As String
-    Public allowence As String
-    Public deduction As String
-    Public attendance As String
-    Public backpay As String
+    Public CurrentAccountId As String
+    Public CurrentAccountName As String
+
 End Module
