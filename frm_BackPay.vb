@@ -45,7 +45,7 @@ Public Class frm_BackPay
         'akhir tahun
     End Sub
 
-    Private Sub btn_import_Click(sender As Object, e As EventArgs) Handles btn_import.Click
+    Private Sub btn_import_Click(sender As Object, e As EventArgs)
         OpenFileDialog1.ShowDialog()
 
     End Sub
@@ -101,45 +101,26 @@ Public Class frm_BackPay
    
 
     Private Sub frm_BackPay_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        If Me.WindowState < FormWindowState.Minimized Then
-            'mengatur posisi dgv data
+        If Me.Height > 500 Then
+            pnl_01.Height = Me.Height - (pnl_01.Top * 2) - 40
+            btn_save.Top = pnl_01.Height - pnl_01.Top - btn_save.Height - 10
+            btn_cancel.Top = pnl_01.Height - pnl_01.Top - btn_cancel.Height - 10
+            btn_import.Left = Me.Width - btn_import.Width - 75
             dgv_BackPay.Top = 125
             dgv_BackPay.Height = Me.Height - 250
             dgv_BackPay.Width = Me.Width - 100
-            'akhir kode
-            'mengatur posisi btn save
-            btn_save.Top = Me.Height - btn_save.Height - 70
-            btn_save.Left = 45
-            'akhir kode
-            'mengatur posisi kode cancel
-            btn_cancel.Top = Me.Height - btn_save.Height - 70
-            btn_cancel.Left = 220
-            'akhir kode
-            'mengatur posisi btn import
-            btn_import.Left = Me.Width - btn_import.Width - 50
-            'akhir kode
+            LineShape1.Y1 = pnl_01.Height - pnl_01.Top - LineShape1.X1 - 45
+            LineShape1.Y2 = pnl_01.Height - pnl_01.Top - LineShape1.X1 - 45
 
-        Else
-            'mengatur posisi dgv data
-            dgv_BackPay.Top = 125
-            dgv_BackPay.Height = Me.Height - 250
-            dgv_BackPay.Width = Me.Width - 130
-            'akhir kode
-            'mengatur posisi btn save
-            btn_save.Top = Me.Height - btn_save.Height - 70
-            btn_save.Left = 45
-            'akhir kode
-            'mengatur posisi btn cancel
-            btn_cancel.Top = Me.Height - btn_save.Height - 70
-            btn_cancel.Left = 220
-            'akhir kode
-            'mengatur posisi btn import
-            btn_import.Left = Me.Width - btn_import.Width - 85
-            'akhir kode
+        End If
+
+        If Me.Width > 400 Then
+            pnl_01.Width = Me.Width - (pnl_01.Left * 2) - 15
+
         End If
     End Sub
 
-    Private Sub btn_save_Click_1(sender As Object, e As EventArgs) Handles btn_save.Click
+    Private Sub btn_save_Click_1(sender As Object, e As EventArgs)
         For i As Integer = 0 To Me.dgv_BackPay.Rows.Count - 2
             code = Me.dgv_BackPay.Rows(i).Cells(0).Value.ToString()
             description = Me.dgv_BackPay.Rows(i).Cells(1).Value.ToString()
