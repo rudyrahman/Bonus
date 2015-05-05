@@ -97,9 +97,6 @@ Public Class frm_BackPay
             End Using
         End Using
     End Sub
-
-   
-
     Private Sub frm_BackPay_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 500 Then
             pnl_01.Height = Me.Height - (pnl_01.Top * 2) - 40
@@ -109,13 +106,15 @@ Public Class frm_BackPay
             dgv_BackPay.Top = 125
             dgv_BackPay.Height = Me.Height - 250
             dgv_BackPay.Width = Me.Width - 100
-            LineShape1.Y1 = pnl_01.Height - pnl_01.Top - LineShape1.X1 - 45
-            LineShape1.Y2 = pnl_01.Height - pnl_01.Top - LineShape1.X1 - 45
-
+            LineShape1.Y1 = pnl_01.Height - pnl_01.Top - 45
+            LineShape1.Y2 = pnl_01.Height - pnl_01.Top - 45
+            LineShape1.X1 = 20
+            LineShape1.X2 = Me.Width - 70
         End If
 
         If Me.Width > 400 Then
             pnl_01.Width = Me.Width - (pnl_01.Left * 2) - 15
+           
 
         End If
     End Sub

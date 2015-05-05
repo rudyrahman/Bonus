@@ -34,8 +34,8 @@ Partial Class frm_BackPay
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.pnl_01.SuspendLayout()
         CType(Me.dgv_BackPay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -93,9 +93,9 @@ Partial Class frm_BackPay
         '
         'btn_import
         '
-        Me.btn_import.Location = New System.Drawing.Point(558, 88)
+        Me.btn_import.Location = New System.Drawing.Point(544, 88)
         Me.btn_import.Name = "btn_import"
-        Me.btn_import.Size = New System.Drawing.Size(161, 26)
+        Me.btn_import.Size = New System.Drawing.Size(175, 26)
         Me.btn_import.TabIndex = 49
         Me.btn_import.Text = "Import from Excel"
         Me.btn_import.UseVisualStyleBackColor = True
@@ -105,7 +105,7 @@ Partial Class frm_BackPay
         Me.txt_DocumentName.Location = New System.Drawing.Point(110, 55)
         Me.txt_DocumentName.MaxLength = 100
         Me.txt_DocumentName.Name = "txt_DocumentName"
-        Me.txt_DocumentName.Size = New System.Drawing.Size(376, 20)
+        Me.txt_DocumentName.Size = New System.Drawing.Size(479, 20)
         Me.txt_DocumentName.TabIndex = 48
         '
         'cbo_year
@@ -153,14 +153,6 @@ Partial Class frm_BackPay
         Me.Label1.TabIndex = 43
         Me.Label1.Text = "Month :"
         '
-        'LineShape1
-        '
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 0
-        Me.LineShape1.X2 = 776
-        Me.LineShape1.Y1 = 484
-        Me.LineShape1.Y2 = 483
-        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
@@ -170,6 +162,14 @@ Partial Class frm_BackPay
         Me.ShapeContainer1.Size = New System.Drawing.Size(781, 562)
         Me.ShapeContainer1.TabIndex = 53
         Me.ShapeContainer1.TabStop = False
+        '
+        'LineShape1
+        '
+        Me.LineShape1.Name = "LineShape1"
+        Me.LineShape1.X1 = 0
+        Me.LineShape1.X2 = 776
+        Me.LineShape1.Y1 = 484
+        Me.LineShape1.Y2 = 483
         '
         'frm_BackPay
         '
