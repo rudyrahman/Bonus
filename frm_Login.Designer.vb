@@ -39,24 +39,27 @@ Partial Class frm_login
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(22, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(154, 154)
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 23
         Me.PictureBox1.TabStop = False
         '
         'btn_login
         '
-        Me.btn_login.Location = New System.Drawing.Point(293, 196)
+        Me.btn_login.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Location = New System.Drawing.Point(284, 189)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(75, 23)
+        Me.btn_login.Size = New System.Drawing.Size(85, 34)
         Me.btn_login.TabIndex = 22
         Me.btn_login.Text = "Login"
         Me.btn_login.UseVisualStyleBackColor = True
         '
         'btn_exit
         '
-        Me.btn_exit.Location = New System.Drawing.Point(390, 196)
+        Me.btn_exit.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_exit.Location = New System.Drawing.Point(384, 189)
         Me.btn_exit.Name = "btn_exit"
-        Me.btn_exit.Size = New System.Drawing.Size(75, 23)
+        Me.btn_exit.Size = New System.Drawing.Size(75, 34)
         Me.btn_exit.TabIndex = 21
         Me.btn_exit.Text = "Exit"
         Me.btn_exit.UseVisualStyleBackColor = True
@@ -68,7 +71,6 @@ Partial Class frm_login
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(52, 47)
         Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'txt_password
@@ -88,18 +90,20 @@ Partial Class frm_login
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Kristen ITC", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(193, 104)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
+        Me.Label2.Size = New System.Drawing.Size(89, 22)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Password"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Kristen ITC", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(191, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.Size = New System.Drawing.Size(90, 22)
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Username"
         '
@@ -107,6 +111,7 @@ Partial Class frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(491, 242)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btn_login)
@@ -117,7 +122,8 @@ Partial Class frm_login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_login"
-        Me.Text = "frm_login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SYSTEM LOGIN"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
