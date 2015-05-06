@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.My.MyApplication</StartupObject>
+    <StartupObject>Bonus_System.frm_SystemLock</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -123,7 +123,7 @@
     <Compile Include="frm_ImportDataAllowence.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_SystemLock.Designer.vb">
+    <Compile Include="frm_SystemLock.designer.vb">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_SystemLock.vb">
