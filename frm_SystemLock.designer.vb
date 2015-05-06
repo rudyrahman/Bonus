@@ -107,9 +107,9 @@ Partial Class frm_SystemLock
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(386, 96)
+        Me.Button1.Location = New System.Drawing.Point(385, 99)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(44, 23)
+        Me.Button1.Size = New System.Drawing.Size(31, 20)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "<>"
         Me.Button1.UseVisualStyleBackColor = False
