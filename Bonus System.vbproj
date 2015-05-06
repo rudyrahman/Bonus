@@ -123,10 +123,10 @@
     <Compile Include="frm_ImportDataAllowence.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_SystemLock.Designer.vb">
-      <DependentUpon>frm_SystemLock.vb</DependentUpon>
+    <Compile Include="frm_login.Designer.vb">
+      <DependentUpon>frm_login.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_SystemLock.vb">
+    <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlAlpha.vb" />
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="frm_ImportDataAllowence.resx">
       <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_SystemLock.resx">
-      <DependentUpon>frm_SystemLock.vb</DependentUpon>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
