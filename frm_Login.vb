@@ -5,6 +5,8 @@ Public Class frm_login
     Dim rs As New ADODB.Recordset
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            Me.MinimumSize = New Size(507, 280)
+            Me.MaximumSize = New Size(507, 280)
             Me.MinimizeBox = False
             Me.MaximizeBox = False
             txt_password.PasswordChar = "*"
@@ -36,9 +38,10 @@ Public Class frm_login
                     Me.Close()
                     cn.Close()
                 Else
-                    MsgBox("Maaf User atau password salah", vbInformation, "Pemberitahuan")
+                    MsgBox("Maaf User atau password salah", vbExclamation, "Pemberitahuan")
                     txt_username.Text = ""
                     txt_password.Text = ""
+                    txt_username.Focus()
                 End If
             End If
         Catch ex As Exception
@@ -48,5 +51,17 @@ Public Class frm_login
 
     Private Sub btn_exit_Click(sender As Object, e As EventArgs) Handles btn_exit.Click
         End
+    End Sub
+
+    Private Sub txt_username_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_username.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            txt_password.Focus()
+        End If
+    End Sub
+
+    Private Sub txt_password_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_password.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            btn_login.Focus()
+        End If
     End Sub
 End Class
