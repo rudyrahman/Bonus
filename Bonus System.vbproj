@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.My.MyApplication</StartupObject>
+    <StartupObject>Bonus_System.frm_login</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -123,10 +123,10 @@
     <Compile Include="frm_ImportDataAllowence.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_login.Designer.vb">
-      <DependentUpon>frm_login.vb</DependentUpon>
+    <Compile Include="frm_SystemLock.designer.vb">
+      <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_login.vb">
+    <Compile Include="frm_SystemLock.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlAlpha.vb" />
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="frm_ImportDataAllowence.resx">
       <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_login.resx">
-      <DependentUpon>frm_login.vb</DependentUpon>
+    <EmbeddedResource Include="frm_SystemLock.resx">
+      <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
