@@ -2,23 +2,27 @@
 Public Class frm_SystemLock
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
-    Dim table As DataTable
+
+
     Private Sub btn_Unlock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Unlock.Click
+        
         Try
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
-
             If txt_Username.Text = "" Or txt_Password.Text = "" Then
-                MsgBox("Data is Empty")
-            End If
-            Exit Sub
-            table = cn.ExecuteQuery("Select * From [SY_tb_appsaccounts] Where [username] = '" & txt_Username.Text & "' and [password] ='" & txt_Password.Text & "'")
-            If table.Rows.Count = 0 Then
-                MessageBox.Show("Unlock Succes..!!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                txt_Username.Focus()
-
+                MsgBox("Data is Empty", vbInformation, "Unlock")
             Else
-                Me.Close()
+                rs = New ADODB.Recordset
+                rs.Open("SELECT * FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_Username.Text & "' and [password]='" & txt_Password.Text & "' and [priority] > 1", cn, CursorTypeEnum.adOpenKeyset)
+                If Not rs.EOF Then
+                    Me.Close()
+
+                Else
+                    MsgBox("Try Again", vbInformation, "Information")
+                    txt_Username.Text = ""
+                    txt_Password.Text = ""
+                    txt_Username.Focus()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

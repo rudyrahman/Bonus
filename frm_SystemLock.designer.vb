@@ -44,7 +44,7 @@ Partial Class frm_SystemLock
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.BackColor = System.Drawing.SystemColors.Control
+        Me.LogoPictureBox.BackColor = System.Drawing.Color.White
         Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
         Me.LogoPictureBox.Location = New System.Drawing.Point(6, 34)
         Me.LogoPictureBox.Name = "LogoPictureBox"
@@ -54,7 +54,7 @@ Partial Class frm_SystemLock
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Location = New System.Drawing.Point(220, 31)
+        Me.UsernameLabel.Location = New System.Drawing.Point(220, 47)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 0
@@ -63,7 +63,7 @@ Partial Class frm_SystemLock
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Location = New System.Drawing.Point(220, 73)
+        Me.PasswordLabel.Location = New System.Drawing.Point(220, 93)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 2
@@ -73,7 +73,8 @@ Partial Class frm_SystemLock
         'txt_Username
         '
         Me.txt_Username.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_Username.Location = New System.Drawing.Point(222, 51)
+        Me.txt_Username.Location = New System.Drawing.Point(222, 71)
+        Me.txt_Username.MaxLength = 50
         Me.txt_Username.Name = "txt_Username"
         Me.txt_Username.Size = New System.Drawing.Size(158, 20)
         Me.txt_Username.TabIndex = 1
@@ -81,7 +82,8 @@ Partial Class frm_SystemLock
         'txt_Password
         '
         Me.txt_Password.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txt_Password.Location = New System.Drawing.Point(222, 99)
+        Me.txt_Password.Location = New System.Drawing.Point(222, 119)
+        Me.txt_Password.MaxLength = 50
         Me.txt_Password.Name = "txt_Password"
         Me.txt_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_Password.Size = New System.Drawing.Size(157, 20)
@@ -89,25 +91,25 @@ Partial Class frm_SystemLock
         '
         'btn_Unlock
         '
-        Me.btn_Unlock.Location = New System.Drawing.Point(223, 201)
+        Me.btn_Unlock.Location = New System.Drawing.Point(223, 184)
         Me.btn_Unlock.Name = "btn_Unlock"
-        Me.btn_Unlock.Size = New System.Drawing.Size(94, 23)
+        Me.btn_Unlock.Size = New System.Drawing.Size(70, 23)
         Me.btn_Unlock.TabIndex = 4
         Me.btn_Unlock.Text = "Unlock"
         '
         'btn_Exit
         '
         Me.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_Exit.Location = New System.Drawing.Point(336, 201)
+        Me.btn_Exit.Location = New System.Drawing.Point(310, 184)
         Me.btn_Exit.Name = "btn_Exit"
-        Me.btn_Exit.Size = New System.Drawing.Size(94, 23)
+        Me.btn_Exit.Size = New System.Drawing.Size(70, 23)
         Me.btn_Exit.TabIndex = 5
         Me.btn_Exit.Text = "Exit"
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(385, 99)
+        Me.Button1.Location = New System.Drawing.Point(385, 118)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(31, 20)
         Me.Button1.TabIndex = 6
@@ -136,7 +138,7 @@ Partial Class frm_SystemLock
         Me.Name = "frm_SystemLock"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "frm_SystemLock"
+        Me.Text = "System Lock"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
