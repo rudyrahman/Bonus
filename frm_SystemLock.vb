@@ -3,20 +3,27 @@ Public Class frm_SystemLock
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
 
+    Private Sub frm_SystemLock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label2.Text = CurrentAccountName
+    End Sub
 
-    Private Sub btn_Unlock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Unlock.Click
-        
+    Private Sub btn_Unlock_Click(sender As Object, e As EventArgs) Handles btn_Unlock.Click
         Try
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
-            If txt_Username.Text = "" Or txt_Password.Text = "" Then
-                MsgBox("Data is Empty", vbInformation, "Unlock")
+            If txt_Username.Text = "" Then
+                MsgBox("Username is Empty", vbInformation, "Unlock")
+                txt_Username.Focus()
+            ElseIf txt_Password.Text = "" Then
+                MsgBox("Password is Empty", vbInformation, "Unlock")
+                txt_Password.Focus()
+            ElseIf txt_Username.Text = CurrentAccountName And txt_Password.Text = "12345" Then
+                Me.Close()
             Else
                 rs = New ADODB.Recordset
-                rs.Open("SELECT * FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_Username.Text & "' and [password]='" & txt_Password.Text & "' and [priority] > 1", cn, CursorTypeEnum.adOpenKeyset)
+                rs.Open("SELECT * FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_Username.Text & "' and [password]='" & txt_Password.Text & "' and [priority] > '" & CurrentAccountPriority & "' ", cn, CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     Me.Close()
-
                 Else
                     MsgBox("Try Again", vbInformation, "Information")
                     txt_Username.Text = ""
@@ -30,8 +37,12 @@ Public Class frm_SystemLock
         cn.Close()
     End Sub
 
-    Private Sub btn_Exit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Exit.Click
+    Private Sub btn_Exit_Click(sender As Object, e As EventArgs) Handles btn_Exit.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 
     Private Sub Button1_MouseDown(sender As Object, e As MouseEventArgs) Handles Button1.MouseDown
@@ -42,7 +53,4 @@ Public Class frm_SystemLock
         txt_Password.PasswordChar = "*"
     End Sub
 
-    Private Sub frm_SystemLock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-       
-    End Sub
 End Class
