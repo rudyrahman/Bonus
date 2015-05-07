@@ -66,11 +66,11 @@ Partial Class frm_login
         '
         'Button1
         '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(432, 119)
+        Me.Button1.Location = New System.Drawing.Point(428, 132)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(52, 47)
+        Me.Button1.Size = New System.Drawing.Size(52, 22)
         Me.Button1.TabIndex = 20
+        Me.Button1.Text = "<>"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'txt_password
@@ -112,7 +112,7 @@ Partial Class frm_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(491, 242)
+        Me.ClientSize = New System.Drawing.Size(492, 242)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btn_login)
         Me.Controls.Add(Me.btn_exit)
@@ -121,6 +121,7 @@ Partial Class frm_login
         Me.Controls.Add(Me.txt_username)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SYSTEM LOGIN"

@@ -1,8 +1,8 @@
 ﻿Imports ADODB
-
 Public Class frm_login
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
+    Dim Str As String
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Me.MinimumSize = New Size(507, 280)
@@ -28,11 +28,16 @@ Public Class frm_login
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Try
+            CurrentAccountId = "SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]"
+            CurrentAccountName = txt_username.Text
+            Str = "SELECT [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]"
+            CurrentAccountPriority = Convert.ToByte(Val(Str))
+
             If txt_username.Text = "" Or txt_password.Text = "" Then
                 MsgBox("Silahkan isi Username dan Password", vbInformation, "Login")
             Else
                 rs = New ADODB.Recordset
-                rs.Open("SELECT * FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
+                rs.Open("SELECT [id], [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     MsgBox("Selamat Anda Berhasil Login", vbInformation, "Pemberitahuan")
                     Me.Close()
