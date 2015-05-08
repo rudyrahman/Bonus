@@ -28,10 +28,10 @@ Public Class frm_login
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Try
-            rs = cn.Execute("SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]")
+            rs = cn.Execute("SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
             CurrentAccountId = rs(0).Value
             CurrentAccountName = txt_username.Text
-            rs = cn.Execute("SELECT [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]")
+            rs = cn.Execute("SELECT [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
             CurrentAccountPriority = rs(0).Value
 
             If txt_username.Text = "" Or txt_password.Text = "" Then
@@ -41,7 +41,8 @@ Public Class frm_login
                 rs.Open("SELECT [id], [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     MsgBox("Selamat Anda Berhasil Login", vbInformation, "Pemberitahuan")
-
+                    Me.Close()
+                    cn.Close()
                 Else
                     MsgBox("Maaf User atau password salah", vbExclamation, "Pemberitahuan")
                     txt_username.Text = ""
