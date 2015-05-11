@@ -136,10 +136,10 @@
     <Compile Include="frm_SystemLock.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDIParent1.Designer.vb">
-      <DependentUpon>MDIParent1.vb</DependentUpon>
+    <Compile Include="ANapps.Designer.vb">
+      <DependentUpon>ANapps.vb</DependentUpon>
     </Compile>
-    <Compile Include="MDIParent1.vb">
+    <Compile Include="ANapps.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlAlpha.vb" />
@@ -186,8 +186,8 @@
     <EmbeddedResource Include="frm_SystemLock.resx">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent1.resx">
-      <DependentUpon>MDIParent1.vb</DependentUpon>
+    <EmbeddedResource Include="ANapps.resx">
+      <DependentUpon>ANapps.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
