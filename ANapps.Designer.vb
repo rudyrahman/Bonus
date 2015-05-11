@@ -47,6 +47,7 @@ Partial Class ANapps
         Me.mnu_UserQuery = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_Reporting = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_SapB1Interface = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnu_PisiSoftInterface = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -68,7 +69,6 @@ Partial Class ANapps
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_LockSystem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnu_PisiSoftInterface = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -207,6 +207,12 @@ Partial Class ANapps
         Me.mnu_SapB1Interface.Name = "mnu_SapB1Interface"
         Me.mnu_SapB1Interface.Size = New System.Drawing.Size(105, 20)
         Me.mnu_SapB1Interface.Text = "SAP B1 Interface"
+        '
+        'mnu_PisiSoftInterface
+        '
+        Me.mnu_PisiSoftInterface.Name = "mnu_PisiSoftInterface"
+        Me.mnu_PisiSoftInterface.Size = New System.Drawing.Size(111, 20)
+        Me.mnu_PisiSoftInterface.Text = "PISI Soft Interface"
         '
         'StatusStrip
         '
@@ -350,12 +356,6 @@ Partial Class ANapps
         Me.mnu_LockSystem.Name = "mnu_LockSystem"
         Me.mnu_LockSystem.Size = New System.Drawing.Size(183, 22)
         Me.mnu_LockSystem.Text = "Lock System"
-        '
-        'mnu_PisiSoftInterface
-        '
-        Me.mnu_PisiSoftInterface.Name = "mnu_PisiSoftInterface"
-        Me.mnu_PisiSoftInterface.Size = New System.Drawing.Size(111, 20)
-        Me.mnu_PisiSoftInterface.Text = "PISI Soft Interface"
         '
         'ANapps
         '
