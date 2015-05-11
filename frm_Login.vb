@@ -29,22 +29,19 @@ Public Class frm_login
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Try
             If txt_username.Text = "" Or txt_password.Text = "" Then
-                MsgBox("Silahkan isi Username dan Password", vbInformation, "Login")
+                MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                rs = cn.Execute("SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
-                CurrentAccountId = rs(0).Value
-                CurrentAccountName = txt_username.Text
-                rs = cn.Execute("SELECT [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
-                CurrentAccountPriority = rs(0).Value
-
-                rs = New ADODB.Recordset
                 rs.Open("SELECT [id], [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
-                    MsgBox("Selamat Anda Berhasil Login", vbInformation, "Pemberitahuan")
+                    rs = cn.Execute("SELECT [id],[username],[priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
+                    CurrentAccountId = rs(0).Value
+                    CurrentAccountName = rs(1).Value
+                    CurrentAccountPriority = rs(2).Value
+
                     Me.Close()
                     cn.Close()
                 Else
-                    MsgBox("Maaf User atau password salah", vbExclamation, "Pemberitahuan")
+                    MsgBox(udv_msg_LoginNotAccepted, vbExclamation)
                     txt_username.Text = ""
                     txt_password.Text = ""
                     txt_username.Focus()
