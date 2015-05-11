@@ -5,14 +5,14 @@ Public Class frm_login
 
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Me.MinimumSize = New Size(507, 280)
-            Me.MaximumSize = New Size(507, 280)
+            Me.MinimumSize = New Size(431, 324)
+            Me.MaximumSize = New Size(431, 324)
             Me.MinimizeBox = False
             Me.MaximizeBox = False
             txt_password.PasswordChar = "*"
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
-
+            
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -28,15 +28,15 @@ Public Class frm_login
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Try
-            rs = cn.Execute("SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
-            CurrentAccountId = rs(0).Value
-            CurrentAccountName = txt_username.Text
-            rs = cn.Execute("SELECT [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
-            CurrentAccountPriority = rs(0).Value
-
             If txt_username.Text = "" Or txt_password.Text = "" Then
                 MsgBox("Silahkan isi Username dan Password", vbInformation, "Login")
             Else
+                rs = cn.Execute("SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
+                CurrentAccountId = rs(0).Value
+                CurrentAccountName = txt_username.Text
+                rs = cn.Execute("SELECT [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
+                CurrentAccountPriority = rs(0).Value
+
                 rs = New ADODB.Recordset
                 rs.Open("SELECT [id], [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
