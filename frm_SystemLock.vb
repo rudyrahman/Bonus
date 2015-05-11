@@ -50,4 +50,8 @@ Public Class frm_SystemLock
     Private Sub frm_SystemLock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_CurrentAccountName.Text = CurrentAccountName
     End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+        txt_Username.Focus()
+    End Sub
 End Class

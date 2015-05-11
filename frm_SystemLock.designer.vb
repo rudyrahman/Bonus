@@ -69,11 +69,12 @@ Partial Class frm_SystemLock
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.SystemColors.Desktop
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(8, 34)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(156, 15)
+        Me.Label4.Size = New System.Drawing.Size(158, 17)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "CAN UNLOCK THIS SYSTEM"
         '
@@ -81,11 +82,13 @@ Partial Class frm_SystemLock
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.SystemColors.Desktop
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(8, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(324, 15)
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label3.Size = New System.Drawing.Size(326, 17)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "ONLY CURRENT USER OR USER WITH HIGH LEVEL PRIORITY"
         '
@@ -101,7 +104,7 @@ Partial Class frm_SystemLock
         '
         'btn_Exit
         '
-        Me.btn_Exit.BackColor = System.Drawing.Color.Transparent
+        Me.btn_Exit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btn_Exit.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.btn_Exit.Location = New System.Drawing.Point(223, 4)
@@ -113,7 +116,7 @@ Partial Class frm_SystemLock
         '
         'btn_Unlock
         '
-        Me.btn_Unlock.BackColor = System.Drawing.Color.Transparent
+        Me.btn_Unlock.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btn_Unlock.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.btn_Unlock.Location = New System.Drawing.Point(147, 4)
         Me.btn_Unlock.Name = "btn_Unlock"
@@ -159,7 +162,7 @@ Partial Class frm_SystemLock
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.Button1.Location = New System.Drawing.Point(355, 56)
         Me.Button1.Name = "Button1"
@@ -216,7 +219,7 @@ Partial Class frm_SystemLock
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_SystemLock"
