@@ -160,12 +160,6 @@
     <Compile Include="ANapps.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_UserManagement.Designer.vb">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_UserManagement.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
     <Compile Include="My Project\Application1.Designer.vb">
@@ -221,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ANapps.resx">
       <DependentUpon>ANapps.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_UserManagement.resx">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
