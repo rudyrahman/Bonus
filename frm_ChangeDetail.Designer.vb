@@ -42,7 +42,7 @@ Partial Class frm_ChangeDetail
         '
         'txt_Time
         '
-        Me.txt_Time.Location = New System.Drawing.Point(124, 249)
+        Me.txt_Time.Location = New System.Drawing.Point(124, 243)
         Me.txt_Time.Name = "txt_Time"
         Me.txt_Time.Size = New System.Drawing.Size(243, 20)
         Me.txt_Time.TabIndex = 37
@@ -85,7 +85,7 @@ Partial Class frm_ChangeDetail
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(15, 249)
+        Me.Label9.Location = New System.Drawing.Point(15, 244)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 13)
         Me.Label9.TabIndex = 28

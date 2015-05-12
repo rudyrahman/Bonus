@@ -14,6 +14,15 @@ Public Class frm_ChangeDetail
     End Sub
 
     Private Sub cbo_username_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_username.SelectedIndexChanged
-       
+        Try
+            rs = cn.Execute("SELECT [id] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & cbo_username.Text.ToString & "' ORDER BY [id] ASC")
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+        
     End Sub
 End Class
