@@ -6,6 +6,7 @@ Public Class frm_ChangeDetail
     Private Sub frm_ChangeDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             cbo_id.Focus()
+            txt_username.Enabled = False
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
             rs = cn.Execute("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [priority] < '" & CurrentAccountPriority & "' ORDER BY [id] ASC")
