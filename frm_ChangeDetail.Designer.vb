@@ -223,6 +223,7 @@ Partial Class frm_ChangeDetail
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_ChangeDetail"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Change Detail User"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

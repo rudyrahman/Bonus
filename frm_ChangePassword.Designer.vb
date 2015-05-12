@@ -143,6 +143,7 @@ Partial Class frm_ChangePassword
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_ChangePassword"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Change Password"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
