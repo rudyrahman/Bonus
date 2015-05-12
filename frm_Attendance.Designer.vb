@@ -35,8 +35,8 @@ Partial Class frm_Attendance
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.pnl_01.SuspendLayout()
         CType(Me.dgv_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -163,14 +163,6 @@ Partial Class frm_Attendance
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "Month :"
         '
-        'LineShape1
-        '
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 8
-        Me.LineShape1.X2 = 784
-        Me.LineShape1.Y1 = 496
-        Me.LineShape1.Y2 = 495
-        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
@@ -180,6 +172,14 @@ Partial Class frm_Attendance
         Me.ShapeContainer1.Size = New System.Drawing.Size(786, 564)
         Me.ShapeContainer1.TabIndex = 44
         Me.ShapeContainer1.TabStop = False
+        '
+        'LineShape1
+        '
+        Me.LineShape1.Name = "LineShape1"
+        Me.LineShape1.X1 = 8
+        Me.LineShape1.X2 = 784
+        Me.LineShape1.Y1 = 496
+        Me.LineShape1.Y2 = 495
         '
         'frm_Attendance
         '

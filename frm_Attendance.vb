@@ -146,4 +146,6 @@ Public Class frm_Attendance
             pnl_01.Width = Me.Width - (pnl_01.Left * 2) - 15
         End If
     End Sub
+
+
 End Class

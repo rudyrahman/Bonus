@@ -8,10 +8,22 @@ Public Class ANapps
     End Sub
 
     Private Sub mnu_UserManagement_Click(sender As Object, e As EventArgs) Handles mnu_UserManagement.Click
-        frm_UserManagement.Show()
+        'frm_UserManagement.Show()
     End Sub
 
     Private Sub mnu_AddNewUser_Click(sender As Object, e As EventArgs) Handles mnu_AddNewUser.Click
+        frm_NewUser.Show()
+    End Sub
 
+    Private Sub mnu_ChangeMyPassword_Click(sender As Object, e As EventArgs) Handles mnu_ChangeMyPassword.Click
+        frm_ChangePassword.Show()
+    End Sub
+
+    Private Sub mnu_ChangeUserDetails_Click(sender As Object, e As EventArgs) Handles mnu_ChangeUserDetails.Click
+        frm_ChangeDetail.Show()
+    End Sub
+
+    Private Sub mnu_RemoveUser_Click(sender As Object, e As EventArgs) Handles mnu_RemoveUser.Click
+        frm_Remove.Show()
     End Sub
 End Class

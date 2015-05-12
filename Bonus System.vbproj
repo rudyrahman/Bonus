@@ -112,6 +112,18 @@
     <Compile Include="frm_BackPay.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_ChangeDetail.Designer.vb">
+      <DependentUpon>frm_ChangeDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ChangeDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ChangePassword.Designer.vb">
+      <DependentUpon>frm_ChangePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_Deduction.designer.vb">
       <DependentUpon>frm_Deduction.vb</DependentUpon>
     </Compile>
@@ -130,6 +142,18 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_NewUser.Designer.vb">
+      <DependentUpon>frm_NewUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NewUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Remove.Designer.vb">
+      <DependentUpon>frm_Remove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Remove.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_SystemLock.designer.vb">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </Compile>
@@ -140,12 +164,6 @@
       <DependentUpon>ANapps.vb</DependentUpon>
     </Compile>
     <Compile Include="ANapps.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_UserManagement.Designer.vb">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_UserManagement.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlAlpha.vb" />
@@ -180,6 +198,12 @@
     <EmbeddedResource Include="frm_BackPay.resx">
       <DependentUpon>frm_BackPay.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ChangeDetail.resx">
+      <DependentUpon>frm_ChangeDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ChangePassword.resx">
+      <DependentUpon>frm_ChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Deduction.resx">
       <DependentUpon>frm_Deduction.vb</DependentUpon>
     </EmbeddedResource>
@@ -189,14 +213,17 @@
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_NewUser.resx">
+      <DependentUpon>frm_NewUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Remove.resx">
+      <DependentUpon>frm_Remove.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_SystemLock.resx">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ANapps.resx">
       <DependentUpon>ANapps.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_UserManagement.resx">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
