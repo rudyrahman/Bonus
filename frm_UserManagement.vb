@@ -3,7 +3,6 @@
 Public Class frm_UserManagement
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
-
     Sub clearcheckbox()
         cek_File.Checked = False
         cek_SystemControl.Checked = False
@@ -18,15 +17,6 @@ Public Class frm_UserManagement
         cek_UserManagement.Checked = False
 
     End Sub
-    Private Sub frm_UserManagement_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        Try
-
-        Catch ex As Exception
-            MsgBox(ex.Message, vbCritical)
-        End Try
-
-    End Sub
-
     Private Sub frm_UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         cbo_Username.Focus()
@@ -126,20 +116,42 @@ Public Class frm_UserManagement
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
 
         Try
-            Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[TM_tb_Access] set [file]='" & CInt(cek_File.Checked) * -1 & "'," _
-            & "[system_control] = '" & CInt(cek_SystemControl.Checked) * -1 & "'," _
-            & "[office_modules] = '" & CInt(cek_OfficeModules.Checked) * -1 & "'," _
-            & "[log_application]='" & CInt(cek_LogApplication.Checked) * -1 & "'," _
-            & "[log_out]='" & CInt(cek_LogOut.Checked) * -1 & "'," _
-            & "[exit]='" & CInt(cek_Exit.Checked) * -1 & "'," _
-            & "[change_my_password]='" & CInt(cek_ChangeMyPassword.Checked) * -1 & "'," _
-            & "[add_new_user]='" & CInt(cek_AddNewUser.Checked) * -1 & "'," _
-            & "[change_user_details]='" & CInt(cek_ChangeUserDetails.Checked) * -1 & "'," _
-            & "[remove_user]='" & CInt(cek_RemoveUser.Checked) * -1 & "'," _
-            & "[user_management]='" & CInt(cek_UserManagement.Checked) * -1 & "' where [level]='" & cbo_Username.Text & "'"
+            If (rs.EOF = True) And (rs.BOF = True) Then
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_Access] ([level],[file],[system_control],[office_modules],[log_application],[log_out],[exit],[change_my_password],[add_new_user],[change_user_details],[remove_user],[user_management],[createdby]) VALUES "
+                sqlInsert = sqlInsert & " ('" & cbo_Username.Text.ToString & "'" & _
+                    ",'" & CInt(cek_File.Checked) * -1 & "'" & _
+                    ",'" & CInt(cek_SystemControl.Checked) * -1 & "'" & _
+                ",'" & CInt(cek_OfficeModules.Checked) * -1 & "'" & _
+               ",'" & CInt(cek_LogApplication.Checked) * -1 & "'" & _
+                ",'" & CInt(cek_LogOut.Checked) * -1 & "'" & _
+               ",'" & CInt(cek_Exit.Checked) * -1 & "'" & _
+                ",'" & CInt(cek_ChangeMyPassword.Checked) * -1 & "'" & _
+                ",'" & CInt(cek_AddNewUser.Checked) * -1 & "'" & _
+               ",'" & CInt(cek_ChangeUserDetails.Checked) * -1 & "'" & _
+               ",'" & CInt(cek_RemoveUser.Checked) * -1 & "'" & _
+               ",'" & CInt(cek_UserManagement.Checked) * -1 & "'" & _
+            ",'" & CurrentAccountName & "')"
+                cn.Execute(sqlInsert)
+                MsgBox("Save Success")
 
-            cn.Execute(sqlUpdate)
-            MsgBox("Access is Change")
+            Else
+                Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[TM_tb_Access] set [file]='" & CInt(cek_File.Checked) * -1 & "'," _
+                & "[system_control] = '" & CInt(cek_SystemControl.Checked) * -1 & "'," _
+                & "[office_modules] = '" & CInt(cek_OfficeModules.Checked) * -1 & "'," _
+                & "[log_application]='" & CInt(cek_LogApplication.Checked) * -1 & "'," _
+                & "[log_out]='" & CInt(cek_LogOut.Checked) * -1 & "'," _
+                & "[exit]='" & CInt(cek_Exit.Checked) * -1 & "'," _
+                & "[change_my_password]='" & CInt(cek_ChangeMyPassword.Checked) * -1 & "'," _
+                & "[add_new_user]='" & CInt(cek_AddNewUser.Checked) * -1 & "'," _
+                & "[change_user_details]='" & CInt(cek_ChangeUserDetails.Checked) * -1 & "'," _
+                & "[remove_user]='" & CInt(cek_RemoveUser.Checked) * -1 & "'," _
+                & "[user_management]='" & CInt(cek_UserManagement.Checked) * -1 & "' where [createdby]='" & CurrentAccountName & "'"
+
+                cn.Execute(sqlUpdate)
+                MsgBox("Access is Change")
+                End If
+        
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
