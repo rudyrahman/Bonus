@@ -31,7 +31,7 @@ Public Class frm_SystemLock
                 txt_Password.Focus()
             Else
                 rs = New ADODB.Recordset
-                rs.Open("SELECT * FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_Username.Text & "' and [password]='" & txt_Password.Text & "' and [priority] >= '" & CurrentAccountPriority & "' ", cn, CursorTypeEnum.adOpenKeyset)
+                rs.Open("SELECT * FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_Username.Text & "' and [password]='" & txt_Password.Text & "' and [priority] <= '" & CurrentAccountPriority & "' ", cn, CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     Me.Close()
                 Else
