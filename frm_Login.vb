@@ -31,7 +31,7 @@ Public Class frm_login
             If txt_username.Text = "" Or txt_password.Text = "" Then
                 MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                rs.Open("SELECT [id], [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
+                rs = cn.Execute("SELECT [id], [priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "' and [password]='" & txt_password.Text & "'", CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     rs = cn.Execute("SELECT [id],[username],[priority] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & txt_username.Text & "'")
                     CurrentAccountId = rs(0).Value

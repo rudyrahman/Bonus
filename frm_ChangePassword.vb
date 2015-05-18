@@ -17,13 +17,14 @@ Public Class frm_ChangePassword
         Try
             If e.KeyChar = Chr(13) Then
 
-                rs.Open("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & CurrentAccountName & "' and [password]='" & txt_passlama.Text & "'", cn, CursorTypeEnum.adOpenKeyset)
+                rs = cn.Execute("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & CurrentAccountName & "' and [password]='" & txt_passlama.Text & "'", CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     txt_passlama.Enabled = False
 
                     txt_passbaru.Focus()
                 Else
                     MsgBox("Password lama salah", MsgBoxStyle.Exclamation)
+                    txt_passlama.Text = ""
                 End If
             End If
         Catch ex As Exception

@@ -22,15 +22,12 @@ Partial Class frm_ChangeDetail
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txt_inactived = New System.Windows.Forms.TextBox()
         Me.txt_code = New System.Windows.Forms.TextBox()
         Me.txt_realname = New System.Windows.Forms.TextBox()
-        Me.txt_lastpass = New System.Windows.Forms.TextBox()
         Me.txt_pass = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_save = New System.Windows.Forms.Button()
@@ -40,36 +37,24 @@ Partial Class frm_ChangeDetail
         Me.txt_username = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbo_inactived = New System.Windows.Forms.ComboBox()
+        Me.txt_inactived = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'txt_inactived
-        '
-        Me.txt_inactived.Location = New System.Drawing.Point(124, 194)
-        Me.txt_inactived.Name = "txt_inactived"
-        Me.txt_inactived.Size = New System.Drawing.Size(106, 20)
-        Me.txt_inactived.TabIndex = 35
-        '
         'txt_code
         '
-        Me.txt_code.Location = New System.Drawing.Point(124, 172)
+        Me.txt_code.Location = New System.Drawing.Point(124, 149)
         Me.txt_code.Name = "txt_code"
         Me.txt_code.Size = New System.Drawing.Size(265, 20)
         Me.txt_code.TabIndex = 33
         '
         'txt_realname
         '
-        Me.txt_realname.Location = New System.Drawing.Point(124, 150)
+        Me.txt_realname.Location = New System.Drawing.Point(124, 127)
         Me.txt_realname.Name = "txt_realname"
         Me.txt_realname.Size = New System.Drawing.Size(265, 20)
         Me.txt_realname.TabIndex = 32
-        '
-        'txt_lastpass
-        '
-        Me.txt_lastpass.Location = New System.Drawing.Point(124, 128)
-        Me.txt_lastpass.Name = "txt_lastpass"
-        Me.txt_lastpass.Size = New System.Drawing.Size(265, 20)
-        Me.txt_lastpass.TabIndex = 31
         '
         'txt_pass
         '
@@ -81,7 +66,7 @@ Partial Class frm_ChangeDetail
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(17, 196)
+        Me.Label7.Location = New System.Drawing.Point(17, 173)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(51, 13)
         Me.Label7.TabIndex = 26
@@ -90,7 +75,7 @@ Partial Class frm_ChangeDetail
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 173)
+        Me.Label5.Location = New System.Drawing.Point(15, 150)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(81, 13)
         Me.Label5.TabIndex = 24
@@ -99,20 +84,11 @@ Partial Class frm_ChangeDetail
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 151)
+        Me.Label4.Location = New System.Drawing.Point(16, 128)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 13)
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "Real Name"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 128)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 13)
-        Me.Label3.TabIndex = 22
-        Me.Label3.Text = "Last Password"
         '
         'Label2
         '
@@ -134,7 +110,7 @@ Partial Class frm_ChangeDetail
         '
         'btn_save
         '
-        Me.btn_save.Location = New System.Drawing.Point(12, 247)
+        Me.btn_save.Location = New System.Drawing.Point(12, 219)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(75, 23)
         Me.btn_save.TabIndex = 38
@@ -143,7 +119,7 @@ Partial Class frm_ChangeDetail
         '
         'btn_cancel
         '
-        Me.btn_cancel.Location = New System.Drawing.Point(112, 247)
+        Me.btn_cancel.Location = New System.Drawing.Point(103, 219)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancel.TabIndex = 39
@@ -196,27 +172,43 @@ Partial Class frm_ChangeDetail
         Me.Label8.Text = "CHANGE USER DETAIL"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'cbo_inactived
+        '
+        Me.cbo_inactived.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_inactived.FormattingEnabled = True
+        Me.cbo_inactived.Items.AddRange(New Object() {"Yes", "No"})
+        Me.cbo_inactived.Location = New System.Drawing.Point(124, 170)
+        Me.cbo_inactived.Name = "cbo_inactived"
+        Me.cbo_inactived.Size = New System.Drawing.Size(121, 21)
+        Me.cbo_inactived.TabIndex = 44
+        '
+        'txt_inactived
+        '
+        Me.txt_inactived.Location = New System.Drawing.Point(251, 171)
+        Me.txt_inactived.Name = "txt_inactived"
+        Me.txt_inactived.Size = New System.Drawing.Size(39, 20)
+        Me.txt_inactived.TabIndex = 45
+        '
         'frm_ChangeDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuBar
-        Me.ClientSize = New System.Drawing.Size(448, 285)
+        Me.ClientSize = New System.Drawing.Size(448, 251)
+        Me.Controls.Add(Me.txt_inactived)
+        Me.Controls.Add(Me.cbo_inactived)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txt_username)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cbo_id)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_save)
-        Me.Controls.Add(Me.txt_inactived)
         Me.Controls.Add(Me.txt_code)
         Me.Controls.Add(Me.txt_realname)
-        Me.Controls.Add(Me.txt_lastpass)
         Me.Controls.Add(Me.txt_pass)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -231,15 +223,12 @@ Partial Class frm_ChangeDetail
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txt_inactived As System.Windows.Forms.TextBox
     Friend WithEvents txt_code As System.Windows.Forms.TextBox
     Friend WithEvents txt_realname As System.Windows.Forms.TextBox
-    Friend WithEvents txt_lastpass As System.Windows.Forms.TextBox
     Friend WithEvents txt_pass As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btn_save As System.Windows.Forms.Button
@@ -249,4 +238,6 @@ Partial Class frm_ChangeDetail
     Friend WithEvents txt_username As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents cbo_inactived As System.Windows.Forms.ComboBox
+    Friend WithEvents txt_inactived As System.Windows.Forms.TextBox
 End Class
