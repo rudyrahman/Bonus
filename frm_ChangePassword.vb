@@ -70,18 +70,23 @@ Public Class frm_ChangePassword
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Try
-            If MessageBox.Show("Yakin password lama <" & txt_passlama.Text & "> akan diganti dengan <" & txt_passbaru.Text & ">..?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-                Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] set [password]='" & txt_passbaru.Text & "' WHERE [id]='" & CurrentAccountId & "' and [username]='" & CurrentAccountName & "'"
-                cn.Execute(sqlUpdate)
-                txt_passlama.Clear()
-                txt_passbaru.Clear()
-                txt_ulangipass.Clear()
-                Me.Close()
-                cn.Close()
+            If txt_passlama.Text = "" Or txt_passbaru.Text = "" Or txt_ulangipass.Text = "" Then
+                MsgBox("Data belum lengkap !", MsgBoxStyle.Information)
+
             Else
-                txt_passbaru.Clear()
-                txt_passlama.Clear()
-                txt_ulangipass.Clear()
+                If MessageBox.Show("Yakin password lama <" & txt_passlama.Text & "> akan diganti dengan <" & txt_passbaru.Text & ">..?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+                    Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] set [password]='" & txt_passbaru.Text & "' WHERE [id]='" & CurrentAccountId & "' and [username]='" & CurrentAccountName & "'"
+                    cn.Execute(sqlUpdate)
+                    txt_passlama.Clear()
+                    txt_passbaru.Clear()
+                    txt_ulangipass.Clear()
+                    Me.Close()
+                    cn.Close()
+                Else
+                    txt_passbaru.Clear()
+                    txt_passlama.Clear()
+                    txt_ulangipass.Clear()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

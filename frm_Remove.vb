@@ -5,10 +5,10 @@ Public Class frm_Remove
     Dim rs As New ADODB.Recordset
     Private Sub frm_Remove_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            txt_username.Enabled = False
+
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
-            rs = cn.Execute("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [priority] < '" & CurrentAccountPriority & "' ORDER BY [id] ASC")
+            rs = cn.Execute("SELECT [id], [username], [createby] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [priority] > '" & CurrentAccountPriority & "' and [createby] = '" & CurrentAccountName & "' ORDER BY [id] ASC")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 While Not rs.EOF
                     cbo_id.Items.Add(rs(0).Value.ToString)
@@ -40,7 +40,6 @@ Public Class frm_Remove
             If MessageBox.Show("Yakin akan dihapus..?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                 Dim sqlDelete As String = "delete from [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where username='" & txt_username.Text & "'"
                 cn.Execute(sqlDelete)
-                MsgBox("Data sudah terhapus !", MsgBoxStyle.Information)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

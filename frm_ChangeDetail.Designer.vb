@@ -45,6 +45,7 @@ Partial Class frm_ChangeDetail
         'txt_code
         '
         Me.txt_code.Location = New System.Drawing.Point(124, 149)
+        Me.txt_code.MaxLength = 20
         Me.txt_code.Name = "txt_code"
         Me.txt_code.Size = New System.Drawing.Size(265, 20)
         Me.txt_code.TabIndex = 33
@@ -52,6 +53,7 @@ Partial Class frm_ChangeDetail
         'txt_realname
         '
         Me.txt_realname.Location = New System.Drawing.Point(124, 127)
+        Me.txt_realname.MaxLength = 200
         Me.txt_realname.Name = "txt_realname"
         Me.txt_realname.Size = New System.Drawing.Size(265, 20)
         Me.txt_realname.TabIndex = 32
@@ -59,7 +61,9 @@ Partial Class frm_ChangeDetail
         'txt_pass
         '
         Me.txt_pass.Location = New System.Drawing.Point(124, 105)
+        Me.txt_pass.MaxLength = 50
         Me.txt_pass.Name = "txt_pass"
+        Me.txt_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_pass.Size = New System.Drawing.Size(265, 20)
         Me.txt_pass.TabIndex = 30
         '
@@ -147,7 +151,9 @@ Partial Class frm_ChangeDetail
         'txt_username
         '
         Me.txt_username.Location = New System.Drawing.Point(124, 83)
+        Me.txt_username.MaxLength = 50
         Me.txt_username.Name = "txt_username"
+        Me.txt_username.ReadOnly = True
         Me.txt_username.Size = New System.Drawing.Size(265, 20)
         Me.txt_username.TabIndex = 42
         '

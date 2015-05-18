@@ -63,7 +63,9 @@ Partial Class frm_Remove
         'txt_username
         '
         Me.txt_username.Location = New System.Drawing.Point(124, 88)
+        Me.txt_username.MaxLength = 50
         Me.txt_username.Name = "txt_username"
+        Me.txt_username.ReadOnly = True
         Me.txt_username.Size = New System.Drawing.Size(243, 20)
         Me.txt_username.TabIndex = 5
         '
@@ -133,9 +135,9 @@ Partial Class frm_Remove
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cbo_id As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txt_username As System.Windows.Forms.TextBox
     Friend WithEvents btn_delete As System.Windows.Forms.Button
     Friend WithEvents btn_cancel As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txt_username As System.Windows.Forms.TextBox
 End Class
