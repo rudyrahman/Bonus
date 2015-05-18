@@ -6,7 +6,6 @@ Public Class frm_UserManagement
         cbo_Username.Focus()
         chk_SystemControl.Visible = False
         chk_file.Visible = False
-        Pic_Lock.Visible = False
         chk_Menu.Visible = False
         lbl_userm.Location = New Point(154, 234)
         btn_Save.Visible = False
@@ -42,7 +41,6 @@ Public Class frm_UserManagement
             rs = cn.Execute("SELECT TOP 1 [realname] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & cbo_Username.Text & "' ORDER BY [username] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_Name.Text = rs(0).Value.ToString
-                Pic_Lock.Visible = True
                 chk_Menu.Visible = True
                 lbl_userm.Visible = False
                 btn_Save.Visible = True
@@ -106,7 +104,6 @@ Public Class frm_UserManagement
                ",'" & CInt(chk_SystemControl.GetItemChecked(4)) * -1 & "'" & _
             ",'" & CurrentAccountName & "')"
                 cn.Execute(sqlInsert)
-                MsgBox("Save Success")
 
             Else
                 Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[TM_tb_Access] set [file]='" & CInt(chk_Menu.GetItemChecked(0)) * -1 & "'," _
@@ -122,10 +119,8 @@ Public Class frm_UserManagement
                 & "[user_management]='" & CInt(chk_SystemControl.GetItemChecked(4)) * -1 & "' where [createdby]='" & CurrentAccountName & "' AND [level]= '" & cbo_Username.Text & "'"
 
                 cn.Execute(sqlUpdate)
-                MsgBox("Access is Change")
-            End If
 
-
+                End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try

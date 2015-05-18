@@ -224,7 +224,7 @@ Partial Class frm_SystemLock
         Me.MinimizeBox = False
         Me.Name = "frm_SystemLock"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "System Lock"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

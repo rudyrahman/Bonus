@@ -33,7 +33,6 @@ Partial Class frm_UserManagement
         Me.cbo_Username = New System.Windows.Forms.ComboBox()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.btn_clear = New System.Windows.Forms.Button()
-        Me.Pic_Lock = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -41,7 +40,6 @@ Partial Class frm_UserManagement
         Me.chk_SystemControl = New System.Windows.Forms.CheckedListBox()
         Me.chk_file = New System.Windows.Forms.CheckedListBox()
         Me.chk_Menu = New System.Windows.Forms.CheckedListBox()
-        CType(Me.Pic_Lock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -133,16 +131,6 @@ Partial Class frm_UserManagement
         Me.btn_clear.Text = "Clear"
         Me.btn_clear.UseVisualStyleBackColor = True
         '
-        'Pic_Lock
-        '
-        Me.Pic_Lock.BackColor = System.Drawing.SystemColors.Control
-        Me.Pic_Lock.BackgroundImage = CType(resources.GetObject("Pic_Lock.BackgroundImage"), System.Drawing.Image)
-        Me.Pic_Lock.Location = New System.Drawing.Point(546, 84)
-        Me.Pic_Lock.Name = "Pic_Lock"
-        Me.Pic_Lock.Size = New System.Drawing.Size(24, 20)
-        Me.Pic_Lock.TabIndex = 29
-        Me.Pic_Lock.TabStop = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ControlLight
@@ -221,7 +209,6 @@ Partial Class frm_UserManagement
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Pic_Lock)
         Me.Controls.Add(Me.cbo_Username)
         Me.Controls.Add(Me.txt_Username)
         Me.Controls.Add(Me.txt_Id)
@@ -236,7 +223,6 @@ Partial Class frm_UserManagement
         Me.Name = "frm_UserManagement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_UserManagement"
-        CType(Me.Pic_Lock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -253,7 +239,6 @@ Partial Class frm_UserManagement
     Friend WithEvents cbo_Username As System.Windows.Forms.ComboBox
     Friend WithEvents btn_Save As System.Windows.Forms.Button
     Friend WithEvents btn_clear As System.Windows.Forms.Button
-    Friend WithEvents Pic_Lock As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
