@@ -26,4 +26,8 @@ Public Class ANapps
     Private Sub mnu_RemoveUser_Click(sender As Object, e As EventArgs) Handles mnu_RemoveUser.Click
         frm_Remove.Show()
     End Sub
+
+    Private Sub mnu_LockApplication_Click(sender As Object, e As EventArgs) Handles mnu_LockApplication.Click
+        frm_SystemLock.Show()
+    End Sub
 End Class
