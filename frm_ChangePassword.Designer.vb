@@ -79,6 +79,7 @@ Partial Class frm_ChangePassword
         Me.txt_ulangipass.Location = New System.Drawing.Point(117, 103)
         Me.txt_ulangipass.MaxLength = 50
         Me.txt_ulangipass.Name = "txt_ulangipass"
+        Me.txt_ulangipass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_ulangipass.Size = New System.Drawing.Size(146, 20)
         Me.txt_ulangipass.TabIndex = 31
         '
@@ -87,6 +88,7 @@ Partial Class frm_ChangePassword
         Me.txt_passbaru.Location = New System.Drawing.Point(117, 79)
         Me.txt_passbaru.MaxLength = 50
         Me.txt_passbaru.Name = "txt_passbaru"
+        Me.txt_passbaru.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_passbaru.Size = New System.Drawing.Size(146, 20)
         Me.txt_passbaru.TabIndex = 30
         '
@@ -95,6 +97,7 @@ Partial Class frm_ChangePassword
         Me.txt_passlama.Location = New System.Drawing.Point(117, 54)
         Me.txt_passlama.MaxLength = 50
         Me.txt_passlama.Name = "txt_passlama"
+        Me.txt_passlama.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_passlama.Size = New System.Drawing.Size(146, 20)
         Me.txt_passlama.TabIndex = 29
         '

@@ -7,10 +7,10 @@ Public Class frm_ChangeDetail
         Try
             txt_inactived.Visible = False
             cbo_id.Focus()
-            txt_username.Enabled = False
+
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
-            rs = cn.Execute("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [priority] < '" & CurrentAccountPriority & "' ORDER BY [id] ASC")
+            rs = cn.Execute("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [priority] > '" & CurrentAccountPriority & "' and [createby] = '" & CurrentAccountName & "' ORDER BY [id] ASC")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 While Not rs.EOF
                     cbo_id.Items.Add(rs(0).Value.ToString)
@@ -30,7 +30,6 @@ Public Class frm_ChangeDetail
             If MessageBox.Show("Yakin data akan diganti ?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                 Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] set [password]='" & txt_pass.Text & "', [lastpasswordchange]=" & "GETDATE()" & " " & ", [realname]='" & txt_realname.Text & "',[employeecode]='" & txt_code.Text & "', [inactived]='" & txt_inactived.Text & "' WHERE [id]='" & cbo_id.Text & "' and [username]='" & txt_username.Text & "'"
                 cn.Execute(sqlUpdate)
-                MsgBox("Data sudah tersimpan !", MsgBoxStyle.Information)
                 txt_code.Clear()
                 txt_pass.Clear()
                 txt_realname.Clear()
