@@ -30,31 +30,17 @@ Partial Class frm_UserManagement
         Me.txt_Name = New System.Windows.Forms.TextBox()
         Me.txt_Id = New System.Windows.Forms.TextBox()
         Me.txt_Username = New System.Windows.Forms.TextBox()
-        Me.cek_File = New System.Windows.Forms.CheckBox()
-        Me.cek_SystemControl = New System.Windows.Forms.CheckBox()
-        Me.cek_OfficeModules = New System.Windows.Forms.CheckBox()
         Me.cbo_Username = New System.Windows.Forms.ComboBox()
         Me.btn_Save = New System.Windows.Forms.Button()
-        Me.grp_2 = New System.Windows.Forms.GroupBox()
-        Me.cek_Exit = New System.Windows.Forms.CheckBox()
-        Me.cek_LogOut = New System.Windows.Forms.CheckBox()
-        Me.cek_LogApplication = New System.Windows.Forms.CheckBox()
-        Me.grp_3 = New System.Windows.Forms.GroupBox()
-        Me.cek_UserManagement = New System.Windows.Forms.CheckBox()
-        Me.cek_RemoveUser = New System.Windows.Forms.CheckBox()
-        Me.cek_ChangeUserDetails = New System.Windows.Forms.CheckBox()
-        Me.cek_AddNewUser = New System.Windows.Forms.CheckBox()
-        Me.cek_ChangeMyPassword = New System.Windows.Forms.CheckBox()
-        Me.grp_1 = New System.Windows.Forms.GroupBox()
         Me.btn_clear = New System.Windows.Forms.Button()
         Me.Pic_Lock = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_userm = New System.Windows.Forms.Label()
-        Me.grp_2.SuspendLayout()
-        Me.grp_3.SuspendLayout()
-        Me.grp_1.SuspendLayout()
+        Me.chk_SystemControl = New System.Windows.Forms.CheckedListBox()
+        Me.chk_file = New System.Windows.Forms.CheckedListBox()
+        Me.chk_Menu = New System.Windows.Forms.CheckedListBox()
         CType(Me.Pic_Lock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -120,36 +106,6 @@ Partial Class frm_UserManagement
         Me.txt_Username.Size = New System.Drawing.Size(166, 20)
         Me.txt_Username.TabIndex = 7
         '
-        'cek_File
-        '
-        Me.cek_File.AutoSize = True
-        Me.cek_File.Location = New System.Drawing.Point(21, 18)
-        Me.cek_File.Name = "cek_File"
-        Me.cek_File.Size = New System.Drawing.Size(42, 17)
-        Me.cek_File.TabIndex = 8
-        Me.cek_File.Text = "File"
-        Me.cek_File.UseVisualStyleBackColor = True
-        '
-        'cek_SystemControl
-        '
-        Me.cek_SystemControl.AutoSize = True
-        Me.cek_SystemControl.Location = New System.Drawing.Point(21, 42)
-        Me.cek_SystemControl.Name = "cek_SystemControl"
-        Me.cek_SystemControl.Size = New System.Drawing.Size(96, 17)
-        Me.cek_SystemControl.TabIndex = 9
-        Me.cek_SystemControl.Text = "System Control"
-        Me.cek_SystemControl.UseVisualStyleBackColor = True
-        '
-        'cek_OfficeModules
-        '
-        Me.cek_OfficeModules.AutoSize = True
-        Me.cek_OfficeModules.Location = New System.Drawing.Point(21, 66)
-        Me.cek_OfficeModules.Name = "cek_OfficeModules"
-        Me.cek_OfficeModules.Size = New System.Drawing.Size(97, 17)
-        Me.cek_OfficeModules.TabIndex = 10
-        Me.cek_OfficeModules.Text = "Office Modules"
-        Me.cek_OfficeModules.UseVisualStyleBackColor = True
-        '
         'cbo_Username
         '
         Me.cbo_Username.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -167,125 +123,6 @@ Partial Class frm_UserManagement
         Me.btn_Save.TabIndex = 23
         Me.btn_Save.Text = "Save"
         Me.btn_Save.UseVisualStyleBackColor = True
-        '
-        'grp_2
-        '
-        Me.grp_2.Controls.Add(Me.cek_Exit)
-        Me.grp_2.Controls.Add(Me.cek_LogOut)
-        Me.grp_2.Controls.Add(Me.cek_LogApplication)
-        Me.grp_2.Location = New System.Drawing.Point(139, 212)
-        Me.grp_2.Name = "grp_2"
-        Me.grp_2.Size = New System.Drawing.Size(103, 100)
-        Me.grp_2.TabIndex = 24
-        Me.grp_2.TabStop = False
-        Me.grp_2.Text = "File"
-        '
-        'cek_Exit
-        '
-        Me.cek_Exit.AutoSize = True
-        Me.cek_Exit.Location = New System.Drawing.Point(2, 66)
-        Me.cek_Exit.Name = "cek_Exit"
-        Me.cek_Exit.Size = New System.Drawing.Size(43, 17)
-        Me.cek_Exit.TabIndex = 19
-        Me.cek_Exit.Text = "Exit"
-        Me.cek_Exit.UseVisualStyleBackColor = True
-        '
-        'cek_LogOut
-        '
-        Me.cek_LogOut.AutoSize = True
-        Me.cek_LogOut.Location = New System.Drawing.Point(2, 42)
-        Me.cek_LogOut.Name = "cek_LogOut"
-        Me.cek_LogOut.Size = New System.Drawing.Size(64, 17)
-        Me.cek_LogOut.TabIndex = 18
-        Me.cek_LogOut.Text = "Log Out"
-        Me.cek_LogOut.UseVisualStyleBackColor = True
-        '
-        'cek_LogApplication
-        '
-        Me.cek_LogApplication.AutoSize = True
-        Me.cek_LogApplication.Location = New System.Drawing.Point(2, 18)
-        Me.cek_LogApplication.Name = "cek_LogApplication"
-        Me.cek_LogApplication.Size = New System.Drawing.Size(99, 17)
-        Me.cek_LogApplication.TabIndex = 17
-        Me.cek_LogApplication.Text = "Log Application"
-        Me.cek_LogApplication.UseVisualStyleBackColor = True
-        '
-        'grp_3
-        '
-        Me.grp_3.Controls.Add(Me.cek_UserManagement)
-        Me.grp_3.Controls.Add(Me.cek_RemoveUser)
-        Me.grp_3.Controls.Add(Me.cek_ChangeUserDetails)
-        Me.grp_3.Controls.Add(Me.cek_AddNewUser)
-        Me.grp_3.Controls.Add(Me.cek_ChangeMyPassword)
-        Me.grp_3.Location = New System.Drawing.Point(246, 210)
-        Me.grp_3.Name = "grp_3"
-        Me.grp_3.Size = New System.Drawing.Size(141, 139)
-        Me.grp_3.TabIndex = 25
-        Me.grp_3.TabStop = False
-        Me.grp_3.Tag = ""
-        Me.grp_3.Text = "System Control"
-        '
-        'cek_UserManagement
-        '
-        Me.cek_UserManagement.AutoSize = True
-        Me.cek_UserManagement.Location = New System.Drawing.Point(6, 114)
-        Me.cek_UserManagement.Name = "cek_UserManagement"
-        Me.cek_UserManagement.Size = New System.Drawing.Size(113, 17)
-        Me.cek_UserManagement.TabIndex = 25
-        Me.cek_UserManagement.Text = "User Management"
-        Me.cek_UserManagement.UseVisualStyleBackColor = True
-        '
-        'cek_RemoveUser
-        '
-        Me.cek_RemoveUser.AutoSize = True
-        Me.cek_RemoveUser.Location = New System.Drawing.Point(6, 91)
-        Me.cek_RemoveUser.Name = "cek_RemoveUser"
-        Me.cek_RemoveUser.Size = New System.Drawing.Size(91, 17)
-        Me.cek_RemoveUser.TabIndex = 24
-        Me.cek_RemoveUser.Text = "Remove User"
-        Me.cek_RemoveUser.UseVisualStyleBackColor = True
-        '
-        'cek_ChangeUserDetails
-        '
-        Me.cek_ChangeUserDetails.AutoSize = True
-        Me.cek_ChangeUserDetails.Location = New System.Drawing.Point(6, 68)
-        Me.cek_ChangeUserDetails.Name = "cek_ChangeUserDetails"
-        Me.cek_ChangeUserDetails.Size = New System.Drawing.Size(123, 17)
-        Me.cek_ChangeUserDetails.TabIndex = 23
-        Me.cek_ChangeUserDetails.Text = "Change User Details"
-        Me.cek_ChangeUserDetails.UseVisualStyleBackColor = True
-        '
-        'cek_AddNewUser
-        '
-        Me.cek_AddNewUser.AutoSize = True
-        Me.cek_AddNewUser.Location = New System.Drawing.Point(6, 44)
-        Me.cek_AddNewUser.Name = "cek_AddNewUser"
-        Me.cek_AddNewUser.Size = New System.Drawing.Size(95, 17)
-        Me.cek_AddNewUser.TabIndex = 22
-        Me.cek_AddNewUser.Text = "Add New User"
-        Me.cek_AddNewUser.UseVisualStyleBackColor = True
-        '
-        'cek_ChangeMyPassword
-        '
-        Me.cek_ChangeMyPassword.AutoSize = True
-        Me.cek_ChangeMyPassword.Location = New System.Drawing.Point(6, 20)
-        Me.cek_ChangeMyPassword.Name = "cek_ChangeMyPassword"
-        Me.cek_ChangeMyPassword.Size = New System.Drawing.Size(129, 17)
-        Me.cek_ChangeMyPassword.TabIndex = 21
-        Me.cek_ChangeMyPassword.Text = "Change My Password"
-        Me.cek_ChangeMyPassword.UseVisualStyleBackColor = True
-        '
-        'grp_1
-        '
-        Me.grp_1.Controls.Add(Me.cek_OfficeModules)
-        Me.grp_1.Controls.Add(Me.cek_File)
-        Me.grp_1.Controls.Add(Me.cek_SystemControl)
-        Me.grp_1.Location = New System.Drawing.Point(11, 212)
-        Me.grp_1.Name = "grp_1"
-        Me.grp_1.Size = New System.Drawing.Size(124, 108)
-        Me.grp_1.TabIndex = 26
-        Me.grp_1.TabStop = False
-        Me.grp_1.Text = "Select Access"
         '
         'btn_clear
         '
@@ -345,19 +182,46 @@ Partial Class frm_UserManagement
         Me.lbl_userm.TabIndex = 33
         Me.lbl_userm.Text = "User Management"
         '
+        'chk_SystemControl
+        '
+        Me.chk_SystemControl.FormattingEnabled = True
+        Me.chk_SystemControl.Items.AddRange(New Object() {"Change My Password", "Add New User", "Change User Details", "Remove User", "User Management"})
+        Me.chk_SystemControl.Location = New System.Drawing.Point(280, 234)
+        Me.chk_SystemControl.Name = "chk_SystemControl"
+        Me.chk_SystemControl.Size = New System.Drawing.Size(128, 94)
+        Me.chk_SystemControl.TabIndex = 36
+        '
+        'chk_file
+        '
+        Me.chk_file.FormattingEnabled = True
+        Me.chk_file.Items.AddRange(New Object() {"Log Application", "Log Out", "Exit"})
+        Me.chk_file.Location = New System.Drawing.Point(154, 234)
+        Me.chk_file.Name = "chk_file"
+        Me.chk_file.Size = New System.Drawing.Size(120, 94)
+        Me.chk_file.TabIndex = 35
+        '
+        'chk_Menu
+        '
+        Me.chk_Menu.FormattingEnabled = True
+        Me.chk_Menu.Items.AddRange(New Object() {"File", "System Control", "Office Modules"})
+        Me.chk_Menu.Location = New System.Drawing.Point(25, 234)
+        Me.chk_Menu.Name = "chk_Menu"
+        Me.chk_Menu.Size = New System.Drawing.Size(123, 94)
+        Me.chk_Menu.TabIndex = 34
+        '
         'frm_UserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(592, 422)
+        Me.Controls.Add(Me.chk_SystemControl)
+        Me.Controls.Add(Me.chk_file)
+        Me.Controls.Add(Me.chk_Menu)
         Me.Controls.Add(Me.lbl_userm)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Pic_Lock)
-        Me.Controls.Add(Me.grp_1)
-        Me.Controls.Add(Me.grp_3)
-        Me.Controls.Add(Me.grp_2)
         Me.Controls.Add(Me.cbo_Username)
         Me.Controls.Add(Me.txt_Username)
         Me.Controls.Add(Me.txt_Id)
@@ -372,12 +236,6 @@ Partial Class frm_UserManagement
         Me.Name = "frm_UserManagement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_UserManagement"
-        Me.grp_2.ResumeLayout(False)
-        Me.grp_2.PerformLayout()
-        Me.grp_3.ResumeLayout(False)
-        Me.grp_3.PerformLayout()
-        Me.grp_1.ResumeLayout(False)
-        Me.grp_1.PerformLayout()
         CType(Me.Pic_Lock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
@@ -392,26 +250,15 @@ Partial Class frm_UserManagement
     Friend WithEvents txt_Name As System.Windows.Forms.TextBox
     Friend WithEvents txt_Id As System.Windows.Forms.TextBox
     Friend WithEvents txt_Username As System.Windows.Forms.TextBox
-    Friend WithEvents cek_File As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_SystemControl As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_OfficeModules As System.Windows.Forms.CheckBox
     Friend WithEvents cbo_Username As System.Windows.Forms.ComboBox
     Friend WithEvents btn_Save As System.Windows.Forms.Button
-    Friend WithEvents grp_2 As System.Windows.Forms.GroupBox
-    Friend WithEvents cek_Exit As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_LogOut As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_LogApplication As System.Windows.Forms.CheckBox
-    Friend WithEvents grp_3 As System.Windows.Forms.GroupBox
-    Friend WithEvents cek_UserManagement As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_RemoveUser As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_ChangeUserDetails As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_AddNewUser As System.Windows.Forms.CheckBox
-    Friend WithEvents cek_ChangeMyPassword As System.Windows.Forms.CheckBox
-    Friend WithEvents grp_1 As System.Windows.Forms.GroupBox
     Friend WithEvents btn_clear As System.Windows.Forms.Button
     Friend WithEvents Pic_Lock As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents lbl_userm As System.Windows.Forms.Label
+    Friend WithEvents chk_SystemControl As System.Windows.Forms.CheckedListBox
+    Friend WithEvents chk_file As System.Windows.Forms.CheckedListBox
+    Friend WithEvents chk_Menu As System.Windows.Forms.CheckedListBox
 End Class
