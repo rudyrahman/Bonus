@@ -5,14 +5,7 @@ Public Class ANapps
     Dim rs As New ADODB.Recordset
 
     Private Sub ANapps_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mnu_ProcessingFloorModule.Visible = False
-        mnu_DataProcessing.Visible = False
-        mnu_DataRevision.Visible = False
-        mnu_SystemQuery.Visible = False
-        mnu_UserQuery.Visible = False
-        mnu_Reporting.Visible = False
-        mnu_SapB1Interface.Visible = False
-        mnu_PisiSoftInterface.Visible = False
+      
         Me.Visible = True
         frm_login.ShowDialog()
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
@@ -62,4 +55,7 @@ Public Class ANapps
         frm_SystemLock.Show()
     End Sub
 
+    Private Sub mnu_Exit_Click(sender As Object, e As EventArgs) Handles mnu_Exit.Click
+        Me.Close()
+    End Sub
 End Class
