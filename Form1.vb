@@ -17,4 +17,7 @@
         End If
     End Sub
 
+    Private Sub btn_Button1_Click(sender As Object, e As EventArgs) Handles btn_Button1.Click
+
+    End Sub
 End Class
