@@ -132,6 +132,14 @@ Public Class frm_UserManagement
                 Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[TM_tb_Access] set [file]='" & CInt(chk_Menu.GetItemChecked(0)) * -1 & "'," _
                 & "[system_control] = '" & CInt(chk_Menu.GetItemChecked(1)) * -1 & "'," _
                 & "[office_modules] = '" & CInt(chk_Menu.GetItemChecked(2)) * -1 & "'," _
+                & "[processing_floor_module] = '" & CInt(chk_Menu.GetItemChecked(3)) * -1 & "'," _
+                & "[data_processing] = '" & CInt(chk_Menu.GetItemChecked(4)) * -1 & "'," _
+                & "[data_revision] = '" & CInt(chk_Menu.GetItemChecked(5)) * -1 & "'," _
+                & "[system_ query] = '" & CInt(chk_Menu.GetItemChecked(6)) * -1 & "'," _
+                & "[user_query] = '" & CInt(chk_Menu.GetItemChecked(7)) * -1 & "'," _
+                & "[reporting] = '" & CInt(chk_Menu.GetItemChecked(8)) * -1 & "'," _
+                & "[sap_b1_interface] = '" & CInt(chk_Menu.GetItemChecked(9)) * -1 & "'," _
+                & "[pisi_soft_interface] = '" & CInt(chk_Menu.GetItemChecked(10)) * -1 & "'," _
                 & "[log_application]='" & CInt(chk_file.GetItemChecked(0)) * -1 & "'," _
                 & "[log_out]='" & CInt(chk_file.GetItemChecked(1)) * -1 & "'," _
                 & "[exit]='" & CInt(chk_file.GetItemChecked(2)) * -1 & "'," _
