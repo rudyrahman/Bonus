@@ -121,7 +121,7 @@ Partial Class frm_UserManagement
         '
         'btn_Save
         '
-        Me.btn_Save.Location = New System.Drawing.Point(22, 316)
+        Me.btn_Save.Location = New System.Drawing.Point(22, 381)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(123, 23)
         Me.btn_Save.TabIndex = 23
@@ -130,7 +130,7 @@ Partial Class frm_UserManagement
         '
         'btn_clear
         '
-        Me.btn_clear.Location = New System.Drawing.Point(151, 316)
+        Me.btn_clear.Location = New System.Drawing.Point(151, 381)
         Me.btn_clear.Name = "btn_clear"
         Me.btn_clear.Size = New System.Drawing.Size(120, 23)
         Me.btn_clear.TabIndex = 28
@@ -158,10 +158,10 @@ Partial Class frm_UserManagement
         'chk_Menu
         '
         Me.chk_Menu.FormattingEnabled = True
-        Me.chk_Menu.Items.AddRange(New Object() {"File", "System Control", "Office Modules"})
+        Me.chk_Menu.Items.AddRange(New Object() {"File", "System Control", "Office Modules", "Processing Floor Module", "Data Processing", "Data Revision", "System Query", "User Query", "Reporting", "SAP B1 Interface", "PISI Soft Interface"})
         Me.chk_Menu.Location = New System.Drawing.Point(22, 202)
         Me.chk_Menu.Name = "chk_Menu"
-        Me.chk_Menu.Size = New System.Drawing.Size(123, 94)
+        Me.chk_Menu.Size = New System.Drawing.Size(123, 169)
         Me.chk_Menu.TabIndex = 34
         '
         'CheckedListBox1
@@ -208,7 +208,7 @@ Partial Class frm_UserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 358)
+        Me.ClientSize = New System.Drawing.Size(559, 421)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.CheckedListBox1)
         Me.Controls.Add(Me.btn_clear)

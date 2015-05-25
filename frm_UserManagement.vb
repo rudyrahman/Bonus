@@ -10,10 +10,9 @@ Public Class frm_UserManagement
         chk_Menu.Visible = False
         btn_Save.Visible = False
         btn_clear.Visible = False
+        cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
+        cn.Open()
         Try
-            cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
-            cn.Open()
-
             rs = cn.Execute("SELECT [username] FROM  [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [priority] > '" & CurrentAccountPriority & "' ")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 While Not rs.EOF
@@ -61,6 +60,14 @@ Public Class frm_UserManagement
                 chk_Menu.SetItemChecked(0, rs(1).Value)
                 chk_Menu.SetItemChecked(1, rs(2).Value)
                 chk_Menu.SetItemChecked(2, rs(3).Value)
+                chk_Menu.SetItemChecked(3, rs(12).Value)
+                chk_Menu.SetItemChecked(4, rs(13).Value)
+                chk_Menu.SetItemChecked(5, rs(14).Value)
+                chk_Menu.SetItemChecked(6, rs(15).Value)
+                chk_Menu.SetItemChecked(7, rs(16).Value)
+                chk_Menu.SetItemChecked(8, rs(17).Value)
+                chk_Menu.SetItemChecked(9, rs(18).Value)
+                chk_Menu.SetItemChecked(10, rs(19).Value)
                 chk_file.SetItemChecked(0, rs(4).Value)
                 chk_file.SetItemChecked(1, rs(5).Value)
                 chk_file.SetItemChecked(2, rs(6).Value)
@@ -84,6 +91,14 @@ Public Class frm_UserManagement
         chk_Menu.SetItemChecked(0, False)
         chk_Menu.SetItemChecked(1, False)
         chk_Menu.SetItemChecked(2, False)
+        chk_Menu.SetItemChecked(3, False)
+        chk_Menu.SetItemChecked(4, False)
+        chk_Menu.SetItemChecked(5, False)
+        chk_Menu.SetItemChecked(6, False)
+        chk_Menu.SetItemChecked(7, False)
+        chk_Menu.SetItemChecked(8, False)
+        chk_Menu.SetItemChecked(9, False)
+        chk_Menu.SetItemChecked(10, False)
         chk_file.SetItemChecked(0, False)
         chk_file.SetItemChecked(1, False)
         chk_file.SetItemChecked(2, False)
