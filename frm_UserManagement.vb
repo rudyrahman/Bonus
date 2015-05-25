@@ -112,7 +112,7 @@ Public Class frm_UserManagement
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
         Try
             If (rs.EOF = True) And (rs.BOF = True) Then
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_Access] ([level],[file],[system_control],[office_modules],[log_application],[log_out],[exit],[change_my_password],[add_new_user],[change_user_details],[remove_user],[user_management],[createdby]) VALUES "
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_Access] ([level],[file],[system_control],[office_modules],[log_application],[log_out],[exit],[change_my_password],[add_new_user],[change_user_details],[remove_user],[user_management],[processing_floor_module],[data_processing],[data_revision],[system_ query],[user_query],[reporting],[sap_b1_interface],[pisi_soft_interface],[createdby]) VALUES "
                 sqlInsert = sqlInsert & " ('" & cbo_Username.Text.ToString & "'" & _
                     ",'" & CInt(chk_Menu.GetItemChecked(0)) * -1 & "'" & _
                     ",'" & CInt(chk_Menu.GetItemChecked(1)) * -1 & "'" & _
@@ -125,6 +125,14 @@ Public Class frm_UserManagement
                ",'" & CInt(chk_SystemControl.GetItemChecked(2)) * -1 & "'" & _
                ",'" & CInt(chk_SystemControl.GetItemChecked(3)) * -1 & "'" & _
                ",'" & CInt(chk_SystemControl.GetItemChecked(4)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(3)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(4)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(5)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(6)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(7)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(8)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(9)) * -1 & "'" & _
+               ",'" & CInt(chk_Menu.GetItemChecked(10)) * -1 & "'" & _
             ",'" & CurrentAccountName & "')"
                 cn.Execute(sqlInsert)
 
