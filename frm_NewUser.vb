@@ -34,7 +34,7 @@ Public Class frm_NewUser
         End Try
     End Sub
 
-    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Close()
     End Sub
 End Class
