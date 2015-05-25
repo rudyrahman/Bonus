@@ -141,7 +141,7 @@ Partial Class frm_UserManagement
         '
         Me.chk_SystemControl.FormattingEnabled = True
         Me.chk_SystemControl.Items.AddRange(New Object() {"Change My Password", "Add New User", "Change User Details", "Remove User", "User Management"})
-        Me.chk_SystemControl.Location = New System.Drawing.Point(277, 202)
+        Me.chk_SystemControl.Location = New System.Drawing.Point(297, 202)
         Me.chk_SystemControl.Name = "chk_SystemControl"
         Me.chk_SystemControl.Size = New System.Drawing.Size(128, 94)
         Me.chk_SystemControl.TabIndex = 36
@@ -150,7 +150,7 @@ Partial Class frm_UserManagement
         '
         Me.chk_file.FormattingEnabled = True
         Me.chk_file.Items.AddRange(New Object() {"Log Application", "Log Out", "Exit"})
-        Me.chk_file.Location = New System.Drawing.Point(151, 202)
+        Me.chk_file.Location = New System.Drawing.Point(171, 202)
         Me.chk_file.Name = "chk_file"
         Me.chk_file.Size = New System.Drawing.Size(120, 94)
         Me.chk_file.TabIndex = 35
@@ -161,13 +161,13 @@ Partial Class frm_UserManagement
         Me.chk_Menu.Items.AddRange(New Object() {"File", "System Control", "Office Modules", "Processing Floor Module", "Data Processing", "Data Revision", "System Query", "User Query", "Reporting", "SAP B1 Interface", "PISI Soft Interface"})
         Me.chk_Menu.Location = New System.Drawing.Point(22, 202)
         Me.chk_Menu.Name = "chk_Menu"
-        Me.chk_Menu.Size = New System.Drawing.Size(123, 169)
+        Me.chk_Menu.Size = New System.Drawing.Size(143, 169)
         Me.chk_Menu.TabIndex = 34
         '
         'CheckedListBox1
         '
         Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(411, 202)
+        Me.CheckedListBox1.Location = New System.Drawing.Point(431, 202)
         Me.CheckedListBox1.Name = "CheckedListBox1"
         Me.CheckedListBox1.Size = New System.Drawing.Size(120, 94)
         Me.CheckedListBox1.TabIndex = 37
@@ -208,7 +208,7 @@ Partial Class frm_UserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 421)
+        Me.ClientSize = New System.Drawing.Size(569, 421)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.CheckedListBox1)
         Me.Controls.Add(Me.btn_clear)

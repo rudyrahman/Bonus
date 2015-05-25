@@ -175,7 +175,7 @@ Public Class frm_UserManagement
         If chk_Menu.GetSelected(1) = True Then
             chk_SystemControl.Visible = True
             chk_file.Visible = False
-            chk_SystemControl.Location = New Point(154, 202)
+            chk_SystemControl.Location = New Point(171, 202)
             CheckedListBox1.Visible = False
         End If
         If chk_Menu.GetSelected(2) = True Then
@@ -188,14 +188,15 @@ Public Class frm_UserManagement
     Private Sub chk_SystemControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_SystemControl.SelectedIndexChanged
         If chk_SystemControl.GetSelected(0) = True Then
             CheckedListBox1.Visible = True
-            CheckedListBox1.Location = New Point(290, 202)
+            CheckedListBox1.Location = New Point(305, 202)
         End If
     End Sub
 
     Private Sub chk_file_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_file.SelectedIndexChanged
         If chk_file.GetSelected(0) = True Then
             CheckedListBox1.Visible = True
-            CheckedListBox1.Location = New Point(278, 202)
+            CheckedListBox1.Location = New Point(297, 202)
         End If
     End Sub
+
 End Class
