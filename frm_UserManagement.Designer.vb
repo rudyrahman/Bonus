@@ -36,12 +36,12 @@ Partial Class frm_UserManagement
         Me.chk_SystemControl = New System.Windows.Forms.CheckedListBox()
         Me.chk_file = New System.Windows.Forms.CheckedListBox()
         Me.chk_Menu = New System.Windows.Forms.CheckedListBox()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        ' Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        ' Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        ' Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        ' Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -166,11 +166,11 @@ Partial Class frm_UserManagement
         '
         'CheckedListBox1
         '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(411, 202)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(120, 94)
-        Me.CheckedListBox1.TabIndex = 37
+        ' Me.CheckedListBox1.FormattingEnabled = True
+        ' Me.CheckedListBox1.Location = New System.Drawing.Point(411, 202)
+        ' Me.CheckedListBox1.Name = "CheckedListBox1"
+        ' Me.CheckedListBox1.Size = New System.Drawing.Size(120, 94)
+        ' Me.CheckedListBox1.TabIndex = 37
         '
         'PictureBox1
         '
@@ -185,33 +185,33 @@ Partial Class frm_UserManagement
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 1)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(558, 47)
-        Me.GroupBox1.TabIndex = 75
-        Me.GroupBox1.TabStop = False
+        '  Me.GroupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        ' Me.GroupBox1.Controls.Add(Me.Label8)
+        'Me.GroupBox1.Location = New System.Drawing.Point(0, 1)
+        'Me.GroupBox1.Name = "GroupBox1"
+        'Me.GroupBox1.Size = New System.Drawing.Size(558, 47)
+        'Me.GroupBox1.TabIndex = 75
+        'Me.GroupBox1.TabStop = False
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(197, 18)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(161, 16)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "USER MANAGEMENT"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        ' Me.Label8.AutoSize = True
+        'Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'Me.Label8.Location = New System.Drawing.Point(197, 18)
+        'Me.Label8.Name = "Label8"
+        'Me.Label8.Size = New System.Drawing.Size(161, 16)
+        'Me.Label8.TabIndex = 0
+        'Me.Label8.Text = "USER MANAGEMENT"
+        'Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frm_UserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(559, 358)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.CheckedListBox1)
-        Me.Controls.Add(Me.btn_clear)
+        'Me.Controls.Add(Me.GroupBox1)
+        'Me.Controls.Add(Me.CheckedListBox1)
+        'Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_Save)
         Me.Controls.Add(Me.chk_SystemControl)
         Me.Controls.Add(Me.chk_file)

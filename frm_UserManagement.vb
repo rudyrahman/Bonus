@@ -4,7 +4,7 @@ Public Class frm_UserManagement
     Dim rs As New ADODB.Recordset
     Private Sub frm_UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbo_Username.Focus()
-        CheckedListBox1.Visible = False
+        ' CheckedListBox1.Visible = False
         chk_SystemControl.Visible = False
         chk_file.Visible = False
         chk_Menu.Visible = False
@@ -128,7 +128,7 @@ Public Class frm_UserManagement
 
                 cn.Execute(sqlUpdate)
 
-                End If
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -139,32 +139,32 @@ Public Class frm_UserManagement
         If chk_Menu.GetSelected(0) = True Then
             chk_file.Visible = True
             chk_SystemControl.Visible = False
-            CheckedListBox1.Visible = False
+            ' CheckedListBox1.Visible = False
         End If
         If chk_Menu.GetSelected(1) = True Then
             chk_SystemControl.Visible = True
             chk_file.Visible = False
             chk_SystemControl.Location = New Point(154, 202)
-            CheckedListBox1.Visible = False
+            ' CheckedListBox1.Visible = False
         End If
         If chk_Menu.GetSelected(2) = True Then
             chk_SystemControl.Visible = False
             chk_file.Visible = False
-            CheckedListBox1.Visible = False
+            ' CheckedListBox1.Visible = False
         End If
     End Sub
 
     Private Sub chk_SystemControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_SystemControl.SelectedIndexChanged
         If chk_SystemControl.GetSelected(0) = True Then
-            CheckedListBox1.Visible = True
-            CheckedListBox1.Location = New Point(290, 202)
+            ' CheckedListBox1.Visible = True
+            ' CheckedListBox1.Location = New Point(290, 202)
         End If
     End Sub
 
     Private Sub chk_file_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_file.SelectedIndexChanged
         If chk_file.GetSelected(0) = True Then
-            CheckedListBox1.Visible = True
-            CheckedListBox1.Location = New Point(278, 202)
+            '  CheckedListBox1.Visible = True
+            ' CheckedListBox1.Location = New Point(278, 202)
         End If
     End Sub
 End Class
