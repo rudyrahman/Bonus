@@ -76,8 +76,31 @@ Public Class frm_UserManagement
                 chk_SystemControl.SetItemChecked(2, rs(9).Value)
                 chk_SystemControl.SetItemChecked(3, rs(10).Value)
                 chk_SystemControl.SetItemChecked(4, rs(11).Value)
+
             End If
 
+            rs = cn.Execute("Select * From [AN_SUMATRA].[dbo].[TM_tb_Access] where [level] = '" & cbo_Username.Text & "'")
+            If Not rs.EOF = Nothing Then
+                chk_Menu.SetItemChecked(0, False)
+                chk_Menu.SetItemChecked(1, False)
+                chk_Menu.SetItemChecked(2, False)
+                chk_Menu.SetItemChecked(3, False)
+                chk_Menu.SetItemChecked(4, False)
+                chk_Menu.SetItemChecked(5, False)
+                chk_Menu.SetItemChecked(6, False)
+                chk_Menu.SetItemChecked(7, False)
+                chk_Menu.SetItemChecked(8, False)
+                chk_Menu.SetItemChecked(9, False)
+                chk_Menu.SetItemChecked(10, False)
+                chk_file.SetItemChecked(0, False)
+                chk_file.SetItemChecked(1, False)
+                chk_file.SetItemChecked(2, False)
+                chk_SystemControl.SetItemChecked(0, False)
+                chk_SystemControl.SetItemChecked(1, False)
+                chk_SystemControl.SetItemChecked(2, False)
+                chk_SystemControl.SetItemChecked(3, False)
+                chk_SystemControl.SetItemChecked(4, False)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -179,6 +202,46 @@ Public Class frm_UserManagement
             CheckedListBox1.Visible = False
         End If
         If chk_Menu.GetSelected(2) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(3) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(4) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(5) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(6) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(7) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(8) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(9) = True Then
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            CheckedListBox1.Visible = False
+        End If
+        If chk_Menu.GetSelected(10) = True Then
             chk_SystemControl.Visible = False
             chk_file.Visible = False
             CheckedListBox1.Visible = False

@@ -161,6 +161,24 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterDepartmen.Designer.vb">
+      <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDepartmen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterSection.Designer.vb">
+      <DependentUpon>frm_MasterSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterDevision.Designer.vb">
+      <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDevision.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_NewUser.Designer.vb">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </Compile>
@@ -171,6 +189,12 @@
       <DependentUpon>frm_Remove.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_Remove.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SubSectionvb.Designer.vb">
+      <DependentUpon>frm_SubSectionvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SubSectionvb.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_SystemLock.designer.vb">
@@ -249,11 +273,23 @@
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDepartmen.resx">
+      <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterSection.resx">
+      <DependentUpon>frm_MasterSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDevision.resx">
+      <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_NewUser.resx">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Remove.resx">
       <DependentUpon>frm_Remove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SubSectionvb.resx">
+      <DependentUpon>frm_SubSectionvb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SystemLock.resx">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
