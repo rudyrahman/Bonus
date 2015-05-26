@@ -149,6 +149,12 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MonthPeriode.Designer.vb">
+      <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MonthPeriode.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_NewUser.Designer.vb">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MonthPeriode.resx">
+      <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_NewUser.resx">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
