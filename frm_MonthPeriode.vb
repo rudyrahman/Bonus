@@ -4,12 +4,14 @@ Imports Excel = Microsoft.Office.Interop.Excel
 Public Class frm_MonthPeriode
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
+  
+
     Private Sub frm_MonthPeriode_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
 
         rs.Open("select * from TM_tb_month", cn)
-        
+
         DGV.DataSource = rs.DataSource
     End Sub
 
@@ -24,7 +26,7 @@ Public Class frm_MonthPeriode
 
             xlAPP = New Microsoft.Office.Interop.Excel.Application
             xlWorkBook = xlAPP.Workbooks.Add(misValue)
-            xlWorkSheet = xlWorkBook.Sheet("shhet1")
+            xlWorkSheet = xlWorkBook.Sheet("sheet1")
 
             For i = 0 To DGV.RowCount - 2
                 For j = 0 To DGV.ColumnCount - 1
@@ -34,7 +36,7 @@ Public Class frm_MonthPeriode
                     Next
                 Next
             Next
-            xlWorkSheet.SaveAs("D:\ .xlsx")
+            xlWorkSheet.SaveAs("D:\Book1.xlsx")
             xlWorkBook.Close()
             xlAPP.Quit()
 
