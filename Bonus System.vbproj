@@ -167,6 +167,18 @@
     <Compile Include="frm_MasterDepartmen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterDepartmentAddNew.Designer.vb">
+      <DependentUpon>frm_MasterDepartmentAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDepartmentAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterDevisionAddNew.Designer.vb">
+      <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDevisionAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterSection.Designer.vb">
       <DependentUpon>frm_MasterSection.vb</DependentUpon>
     </Compile>
@@ -177,6 +189,18 @@
       <DependentUpon>frm_MasterDevision.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterDevision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterSectionAddNew.Designer.vb">
+      <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterSectionAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterSubSectionAddNew.Designer.vb">
+      <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterSubSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_NewUser.Designer.vb">
@@ -191,10 +215,10 @@
     <Compile Include="frm_Remove.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_SubSectionvb.Designer.vb">
-      <DependentUpon>frm_SubSectionvb.vb</DependentUpon>
+    <Compile Include="frm_MasterSubSection.Designer.vb">
+      <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_SubSectionvb.vb">
+    <Compile Include="frm_MasterSubSection.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_SystemLock.designer.vb">
@@ -276,11 +300,23 @@
     <EmbeddedResource Include="frm_MasterDepartmen.resx">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDepartmentAddNew.resx">
+      <DependentUpon>frm_MasterDepartmentAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDevisionAddNew.resx">
+      <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSection.resx">
       <DependentUpon>frm_MasterSection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDevision.resx">
       <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterSectionAddNew.resx">
+      <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterSubSectionAddNew.resx">
+      <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_NewUser.resx">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
@@ -288,8 +324,8 @@
     <EmbeddedResource Include="frm_Remove.resx">
       <DependentUpon>frm_Remove.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_SubSectionvb.resx">
-      <DependentUpon>frm_SubSectionvb.vb</DependentUpon>
+    <EmbeddedResource Include="frm_MasterSubSection.resx">
+      <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SystemLock.resx">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
@@ -309,6 +345,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
