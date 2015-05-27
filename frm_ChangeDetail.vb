@@ -65,11 +65,14 @@ Public Class frm_ChangeDetail
     End Sub
 
     Private Sub cbo_inactived_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_inactived.SelectedIndexChanged
-
-        If cbo_inactived.Text = "Yes" Then
-            txt_inactived.Text = 1
-        Else
-            txt_inactived.Text = 0
-        End If
+        Try
+            If cbo_inactived.Text = "Yes" Then
+                txt_inactived.Text = 1
+            Else
+                txt_inactived.Text = 0
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class
