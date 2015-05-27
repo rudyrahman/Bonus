@@ -65,6 +65,7 @@ Public Class ANapps
     End Sub
 
     Private Sub mnu_Exit_Click(sender As Object, e As EventArgs) Handles mnu_Exit.Click
-        Me.Close()
+        End
     End Sub
+
 End Class
