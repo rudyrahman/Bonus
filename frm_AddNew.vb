@@ -18,8 +18,8 @@ Public Class frm_AddNew
 
             Else
                 If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-                    Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]([code],[description],[datefrom],[dateto]) values "
-                    sqlInsert = sqlInsert & " ('" & txt_code.Text & "','" & txt_desc.Text & "','" & DTP_From.Text & "','" & DTP_To.Text & "')"
+                    Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]([Code],[Description],[Periode_From],[Periode_To],[Create_By],[Create_Time],[System_Id]) values "
+                    sqlInsert = sqlInsert & " ('" & txt_code.Text & "','" & txt_desc.Text & "','" & DTP_From.Text & "','" & DTP_To.Text & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "')"
                     cn.Execute(sqlInsert)
                     txt_code.Text = ""
                     txt_desc.Text = ""
