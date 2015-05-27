@@ -139,7 +139,8 @@ Partial Class YearPeriode
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
         Me.Name = "YearPeriode"
-        Me.Text = "YearPeriode"
+        Me.Text = "Year Periode"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl1.ResumeLayout(False)
         Me.pnl1.PerformLayout()
         Me.pnl2.ResumeLayout(False)

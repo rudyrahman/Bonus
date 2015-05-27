@@ -85,4 +85,8 @@ Public Class YearPeriode
             btn_export.Left = Me.Width - btn_export.Width - 330
         End If
     End Sub
+
+    Private Sub btn_tambahbaru_Click(sender As Object, e As EventArgs) Handles btn_tambahbaru.Click
+
+    End Sub
 End Class
