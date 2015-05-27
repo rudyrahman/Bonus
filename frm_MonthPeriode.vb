@@ -74,4 +74,35 @@ Public Class frm_MonthPeriode
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Close()
     End Sub
+
+    Private Sub btn_tambahbaru_Click(sender As Object, e As EventArgs) Handles btn_tambahbaru.Click
+        frm_AddNew.ShowDialog()
+    End Sub
+
+    Private Sub frm_MonthPeriode_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        If Me.Height > 500 Then
+            pnl1.Height = Me.Height - (pnl1.Top * 2) - 695
+            pnl2.Height = Me.Height - (pnl2.Top * 2) - 50
+            DGV.Top = 10
+            DGV.Height = Me.Height - 170
+            DGV.Width = Me.Width - 30
+            btn_close.Left = Me.Width - btn_close.Width - 50
+            btn_tambahbaru.Left = Me.Width - btn_tambahbaru.Width - 130
+            btn_refresh.Left = Me.Width - btn_refresh.Width - 230
+            btn_export.Left = Me.Width - btn_export.Width - 330
+        End If
+
+        If Me.Width > 400 Then
+            pnl1.Width = Me.Width - (pnl1.Left * 2) - 15
+            pnl2.Width = Me.Width - (pnl2.Left * 2) - 15
+            pnl2.Height = Me.Height - (pnl2.Top * 2) - 50
+            DGV.Top = 10
+            DGV.Height = Me.Height - 170
+            DGV.Width = Me.Width - 30
+            btn_close.Left = Me.Width - btn_close.Width - 40
+            btn_tambahbaru.Left = Me.Width - btn_tambahbaru.Width - 130
+            btn_refresh.Left = Me.Width - btn_refresh.Width - 230
+            btn_export.Left = Me.Width - btn_export.Width - 330
+        End If
+    End Sub
 End Class

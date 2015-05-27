@@ -105,9 +105,10 @@ Partial Class frm_MonthPeriode
         Me.pnl3.Controls.Add(Me.btn_export)
         Me.pnl3.Controls.Add(Me.btn_tambahbaru)
         Me.pnl3.Controls.Add(Me.btn_refresh)
-        Me.pnl3.Location = New System.Drawing.Point(2, 352)
+        Me.pnl3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnl3.Location = New System.Drawing.Point(0, 357)
         Me.pnl3.Name = "pnl3"
-        Me.pnl3.Size = New System.Drawing.Size(692, 47)
+        Me.pnl3.Size = New System.Drawing.Size(696, 47)
         Me.pnl3.TabIndex = 3
         '
         'pnl2
@@ -139,6 +140,7 @@ Partial Class frm_MonthPeriode
         Me.Controls.Add(Me.pnl3)
         Me.Name = "frm_MonthPeriode"
         Me.Text = "frm_MonthPeriode"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl3.ResumeLayout(False)
         Me.pnl2.ResumeLayout(False)

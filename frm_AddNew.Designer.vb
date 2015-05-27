@@ -23,17 +23,17 @@ Partial Class frm_AddNew
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnl1 = New System.Windows.Forms.Panel()
+        Me.DTP_To = New System.Windows.Forms.DateTimePicker()
+        Me.DTP_From = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_desc = New System.Windows.Forms.TextBox()
+        Me.txt_code = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_code = New System.Windows.Forms.TextBox()
-        Me.txt_desc = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.DTP_From = New System.Windows.Forms.DateTimePicker()
-        Me.DTP_To = New System.Windows.Forms.DateTimePicker()
         Me.pnl2 = New System.Windows.Forms.Panel()
-        Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_addnew = New System.Windows.Forms.Button()
+        Me.btn_cancel = New System.Windows.Forms.Button()
         Me.pnl1.SuspendLayout()
         Me.pnl2.SuspendLayout()
         Me.SuspendLayout()
@@ -54,6 +54,53 @@ Partial Class frm_AddNew
         Me.pnl1.Size = New System.Drawing.Size(583, 182)
         Me.pnl1.TabIndex = 0
         '
+        'DTP_To
+        '
+        Me.DTP_To.Location = New System.Drawing.Point(103, 121)
+        Me.DTP_To.Name = "DTP_To"
+        Me.DTP_To.Size = New System.Drawing.Size(200, 20)
+        Me.DTP_To.TabIndex = 9
+        '
+        'DTP_From
+        '
+        Me.DTP_From.Location = New System.Drawing.Point(103, 95)
+        Me.DTP_From.Name = "DTP_From"
+        Me.DTP_From.Size = New System.Drawing.Size(200, 20)
+        Me.DTP_From.TabIndex = 8
+        Me.DTP_From.Value = New Date(2015, 5, 27, 9, 20, 9, 0)
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(19, 125)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Date To:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(19, 102)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Date From:"
+        '
+        'txt_desc
+        '
+        Me.txt_desc.Location = New System.Drawing.Point(103, 37)
+        Me.txt_desc.Name = "txt_desc"
+        Me.txt_desc.Size = New System.Drawing.Size(443, 20)
+        Me.txt_desc.TabIndex = 5
+        '
+        'txt_code
+        '
+        Me.txt_code.Location = New System.Drawing.Point(103, 11)
+        Me.txt_code.Name = "txt_code"
+        Me.txt_code.Size = New System.Drawing.Size(190, 20)
+        Me.txt_code.TabIndex = 4
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -72,53 +119,6 @@ Partial Class frm_AddNew
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Code:"
         '
-        'txt_code
-        '
-        Me.txt_code.Location = New System.Drawing.Point(103, 11)
-        Me.txt_code.Name = "txt_code"
-        Me.txt_code.Size = New System.Drawing.Size(190, 20)
-        Me.txt_code.TabIndex = 4
-        '
-        'txt_desc
-        '
-        Me.txt_desc.Location = New System.Drawing.Point(103, 37)
-        Me.txt_desc.Name = "txt_desc"
-        Me.txt_desc.Size = New System.Drawing.Size(443, 20)
-        Me.txt_desc.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 102)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Date From:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 125)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Date To:"
-        '
-        'DTP_From
-        '
-        Me.DTP_From.Location = New System.Drawing.Point(103, 95)
-        Me.DTP_From.Name = "DTP_From"
-        Me.DTP_From.Size = New System.Drawing.Size(200, 20)
-        Me.DTP_From.TabIndex = 8
-        Me.DTP_From.Value = New Date(2015, 5, 27, 9, 20, 9, 0)
-        '
-        'DTP_To
-        '
-        Me.DTP_To.Location = New System.Drawing.Point(103, 121)
-        Me.DTP_To.Name = "DTP_To"
-        Me.DTP_To.Size = New System.Drawing.Size(200, 20)
-        Me.DTP_To.TabIndex = 9
-        '
         'pnl2
         '
         Me.pnl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -129,15 +129,6 @@ Partial Class frm_AddNew
         Me.pnl2.Size = New System.Drawing.Size(583, 55)
         Me.pnl2.TabIndex = 1
         '
-        'btn_cancel
-        '
-        Me.btn_cancel.Location = New System.Drawing.Point(471, 20)
-        Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(102, 23)
-        Me.btn_cancel.TabIndex = 0
-        Me.btn_cancel.Text = "Cancel"
-        Me.btn_cancel.UseVisualStyleBackColor = True
-        '
         'btn_addnew
         '
         Me.btn_addnew.Location = New System.Drawing.Point(360, 20)
@@ -146,6 +137,15 @@ Partial Class frm_AddNew
         Me.btn_addnew.TabIndex = 1
         Me.btn_addnew.Text = "Add New"
         Me.btn_addnew.UseVisualStyleBackColor = True
+        '
+        'btn_cancel
+        '
+        Me.btn_cancel.Location = New System.Drawing.Point(471, 20)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(102, 23)
+        Me.btn_cancel.TabIndex = 0
+        Me.btn_cancel.Text = "Cancel"
+        Me.btn_cancel.UseVisualStyleBackColor = True
         '
         'frm_AddNew
         '
@@ -157,6 +157,7 @@ Partial Class frm_AddNew
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_AddNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AddNew"
         Me.pnl1.ResumeLayout(False)
         Me.pnl1.PerformLayout()
