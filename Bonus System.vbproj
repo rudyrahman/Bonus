@@ -125,6 +125,12 @@
     <Compile Include="frm_Attendance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_attendancestatus.Designer.vb">
+      <DependentUpon>frm_attendancestatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_attendancestatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_BackPay.Designer.vb">
       <DependentUpon>frm_BackPay.vb</DependentUpon>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Attendance.resx">
       <DependentUpon>frm_Attendance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_attendancestatus.resx">
+      <DependentUpon>frm_attendancestatus.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_BackPay.resx">
       <DependentUpon>frm_BackPay.vb</DependentUpon>
