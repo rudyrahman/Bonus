@@ -233,12 +233,6 @@
     <Compile Include="ANapps.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_UserManagement.designer.vb">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_UserManagement.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
     <Compile Include="My Project\Application1.Designer.vb">
@@ -333,9 +327,6 @@
     <EmbeddedResource Include="ANapps.resx">
       <DependentUpon>ANapps.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_UserManagement.resx">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -345,8 +336,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
