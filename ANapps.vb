@@ -32,7 +32,7 @@ Public Class ANapps
     End Sub
 
     Private Sub mnu_UserManagement_Click(sender As Object, e As EventArgs) Handles mnu_UserManagement.Click
-        frm_UserManagement.Show()
+
     End Sub
 
     Private Sub mnu_AddNewUser_Click(sender As Object, e As EventArgs) Handles mnu_AddNewUser.Click
