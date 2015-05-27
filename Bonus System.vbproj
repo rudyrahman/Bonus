@@ -99,12 +99,6 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddYear.Designer.vb">
-      <DependentUpon>AddYear.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AddYear.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -222,11 +216,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="YearPeriode.Designer.vb">
+      <DependentUpon>YearPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YearPeriode.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddYear.resx">
-      <DependentUpon>AddYear.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +274,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearPeriode.resx">
+      <DependentUpon>YearPeriode.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
