@@ -24,6 +24,15 @@ Public Class ANapps
                 mnu_ChangeUserDetails.Visible = rs(9).Value
                 mnu_RemoveUser.Visible = rs(10).Value
                 mnu_UserManagement.Visible = rs(11).Value
+                mnu_ProcessingFloorModule.Visible = rs(12).Value
+                mnu_DataProcessing.Visible = rs(13).Value
+                mnu_DataRevision.Visible = rs(14).Value
+                mnu_SystemQuery.Visible = rs(15).Value
+                mnu_UserQuery.Visible = rs(16).Value
+                mnu_Reporting.Visible = rs(17).Value
+                mnu_SapB1Interface.Visible = rs(18).Value
+                mnu_PisiSoftInterface.Visible = rs(19).Value
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
