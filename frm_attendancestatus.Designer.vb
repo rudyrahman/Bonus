@@ -140,6 +140,7 @@ Partial Class frm_attendancestatus
         Me.Controls.Add(Me.pnl1)
         Me.Name = "frm_attendancestatus"
         Me.Text = "Master Attandance Status"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl1.ResumeLayout(False)
         Me.pnl1.PerformLayout()
         Me.pnl2.ResumeLayout(False)

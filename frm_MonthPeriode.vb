@@ -1,18 +1,38 @@
 ﻿Imports ADODB
+Imports System.Data
+Imports System.Data.OleDb
 Imports Excel = Microsoft.Office.Interop.Excel
-
 Public Class frm_MonthPeriode
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
-  
+    Sub datagrid()
+        Dim sql As String
+        rs = New ADODB.Recordset
+        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] order by [id]"
+
+        With rs
+            .CursorLocation = CursorLocationEnum.adUseClient
+            .Open(sql, cn, CursorTypeEnum.adOpenKeyset, _
+                  LockTypeEnum.adLockReadOnly)
+            .ActiveConnection = Nothing
+        End With
+        Me.DGV.DataSource = RecordSetToDataTable(rs)
+        DGV.Refresh()
+    End Sub
+    Public Function RecordSetToDataTable( _
+              ByVal objRS As ADODB.Recordset) As DataTable
+
+        Dim objDA As New OleDbDataAdapter()
+        Dim objDT As New DataTable()
+        objDA.Fill(objDT, objRS)
+        Return objDT
+
+    End Function
 
     Private Sub frm_MonthPeriode_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
-
-        rs.Open("select * from TM_tb_month", cn)
-
-        DGV.DataSource = rs.DataSource
+        Call datagrid()
     End Sub
 
     Private Sub btn_export_Click(sender As Object, e As EventArgs) Handles btn_export.Click
@@ -26,7 +46,7 @@ Public Class frm_MonthPeriode
 
             xlAPP = New Microsoft.Office.Interop.Excel.Application
             xlWorkBook = xlAPP.Workbooks.Add(misValue)
-            xlWorkSheet = xlWorkBook.Sheet("sheet1")
+            xlWorkSheet = xlWorkBook.Sheets("sheet1")
 
             For i = 0 To DGV.RowCount - 2
                 For j = 0 To DGV.ColumnCount - 1
@@ -36,9 +56,8 @@ Public Class frm_MonthPeriode
                     Next
                 Next
             Next
-            xlWorkSheet.SaveAs("D:\Book1.xlsx")
-            xlWorkBook.Close()
-            xlAPP.Quit()
+
+            xlAPP.Visible = True
 
             releaseObject(xlAPP)
             releaseObject(xlWorkBook)
@@ -59,16 +78,28 @@ Public Class frm_MonthPeriode
     End Sub
 
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
-        rs.Open("select [month] from [TM_tb_month] where [month] like '%" & txt_cari.Text & "%'", cn)
-        If Not rs.EOF Then
-            DGV.DataSource = "select [month] from [TM_tb_month] where [month] like '%" & txt_cari.Text & "%'"
-            DGV.Refresh()
+        Dim sqlsearch As String
+        rs = New ADODB.Recordset
+        sqlsearch = "select * from [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [username] like '%" & txt_cari.Text & "%' order by [id]"
 
+        With rs
+            .CursorLocation = CursorLocationEnum.adUseClient
+            .Open(sqlsearch, cn, CursorTypeEnum.adOpenKeyset, _
+                  LockTypeEnum.adLockReadOnly)
+            .ActiveConnection = Nothing
+        End With
+        Me.DGV.DataSource = RecordSetToDataTable(rs)
+        If rs.BOF Then
+            DGV.DataSource = rs
+            DGV.Refresh()
         End If
+
     End Sub
 
     Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        Call datagrid()
         DGV.Refresh()
+        txt_cari.Text = ""
     End Sub
 
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
