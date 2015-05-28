@@ -111,16 +111,16 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_addattendance.Designer.vb">
-      <DependentUpon>frm_addattendance.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_addattendance.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frm_AddNew.Designer.vb">
       <DependentUpon>frm_AddNew.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_AddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_addnewattendance.Designer.vb">
+      <DependentUpon>frm_addnewattendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_addnewattendance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_addyear.Designer.vb">
@@ -243,11 +243,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_addattendance.resx">
-      <DependentUpon>frm_addattendance.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_AddNew.resx">
       <DependentUpon>frm_AddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_addnewattendance.resx">
+      <DependentUpon>frm_addnewattendance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_addyear.resx">
       <DependentUpon>frm_addyear.vb</DependentUpon>

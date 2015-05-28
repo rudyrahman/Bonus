@@ -13,7 +13,7 @@ Public Class frm_attendancestatus
     Sub datagrid()
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] order by [id]"
+        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_Number] order by [code]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
@@ -107,7 +107,7 @@ Public Class frm_attendancestatus
     End Sub
 
     Private Sub btn_tambahbaru_Click(sender As Object, e As EventArgs) Handles btn_tambahbaru.Click
-        frm_addattendance.ShowDialog()
+        frm_addnewattendance.ShowDialog()
     End Sub
 
     Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
@@ -119,7 +119,7 @@ Public Class frm_attendancestatus
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
         Dim sqlsearch As String
         rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [username] like '%" & txt_cari.Text & "%' order by [id]"
+        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_Number] where [description] like '%" & txt_cari.Text & "%' order by [code]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
