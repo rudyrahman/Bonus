@@ -104,25 +104,25 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Attendance.Designer.vb">
+    <Compile Include="frm_Attendance.designer.vb">
       <DependentUpon>frm_Attendance.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_Attendance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_BackPay.Designer.vb">
+    <Compile Include="frm_BackPay.designer.vb">
       <DependentUpon>frm_BackPay.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_BackPay.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ChangeDetail.Designer.vb">
+    <Compile Include="frm_ChangeDetail.designer.vb">
       <DependentUpon>frm_ChangeDetail.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_ChangeDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ChangePassword.Designer.vb">
+    <Compile Include="frm_ChangePassword.designer.vb">
       <DependentUpon>frm_ChangePassword.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_ChangePassword.vb">
@@ -140,10 +140,10 @@
     <Compile Include="frm_ImportDataAllowence.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_login.Designer.vb">
-      <DependentUpon>frm_login.vb</DependentUpon>
+    <Compile Include="frm_Login.designer.vb">
+      <DependentUpon>frm_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_login.vb">
+    <Compile Include="frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MasterDepartmen.Designer.vb">
@@ -188,22 +188,22 @@
     <Compile Include="frm_MasterSubSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_NewUser.Designer.vb">
+    <Compile Include="frm_NewUser.designer.vb">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_NewUser.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Remove.Designer.vb">
-      <DependentUpon>frm_Remove.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Remove.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MasterSubSection.Designer.vb">
       <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterSubSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Remove.designer.vb">
+      <DependentUpon>frm_Remove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Remove.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_SystemLock.designer.vb">
@@ -254,7 +254,7 @@
       <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
-      <DependentUpon>frm_login.vb</DependentUpon>
+      <DependentUpon>frm_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDepartmen.resx">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
@@ -280,11 +280,11 @@
     <EmbeddedResource Include="frm_NewUser.resx">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Remove.resx">
-      <DependentUpon>frm_Remove.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSubSection.resx">
       <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Remove.resx">
+      <DependentUpon>frm_Remove.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SystemLock.resx">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
