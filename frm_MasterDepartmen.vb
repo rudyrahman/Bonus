@@ -16,7 +16,7 @@ Public Class frm_MasterDepartment
 
     Private Sub frm_MasterDepartmen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frm_MasterDepartmen_Resize(Me, Nothing)
-        txt_CariData.Focus()
+
         Try
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
