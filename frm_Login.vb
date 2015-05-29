@@ -63,8 +63,13 @@ Public Class frm_login
     End Sub
 
     Private Sub txt_password_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_password.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            btn_login.Focus()
-        End If
+        Try
+            If Asc(e.KeyChar) = 13 Then
+                btn_login.Focus()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

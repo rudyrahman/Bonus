@@ -71,6 +71,10 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel1">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -97,11 +101,34 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="Form1.vb">
+=======
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddNew.Designer.vb">
+      <DependentUpon>frm_AddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddNew.vb">
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_addnewattendance.Designer.vb">
+      <DependentUpon>frm_addnewattendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_addnewattendance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_addyear.Designer.vb">
+      <DependentUpon>frm_addyear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_addyear.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Attendance.designer.vb">
@@ -110,7 +137,17 @@
     <Compile Include="frm_Attendance.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frm_BackPay.designer.vb">
+=======
+    <Compile Include="frm_attendancestatus.Designer.vb">
+      <DependentUpon>frm_attendancestatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_attendancestatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BackPay.Designer.vb">
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
       <DependentUpon>frm_BackPay.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_BackPay.vb">
@@ -146,6 +183,7 @@
     <Compile Include="frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frm_MasterDepartmen.Designer.vb">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
     </Compile>
@@ -172,8 +210,12 @@
     </Compile>
     <Compile Include="frm_MasterDevision.Designer.vb">
       <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+=======
+    <Compile Include="frm_MonthPeriode.Designer.vb">
+      <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     </Compile>
-    <Compile Include="frm_MasterDevision.vb">
+    <Compile Include="frm_MonthPeriode.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MasterSectionAddNew.Designer.vb">
@@ -188,6 +230,7 @@
     <Compile Include="frm_MasterSubSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frm_NewUser.designer.vb">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </Compile>
@@ -196,6 +239,10 @@
     </Compile>
     <Compile Include="frm_MasterSubSection.Designer.vb">
       <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
+=======
+    <Compile Include="frm_SystemLock.designer.vb">
+      <DependentUpon>frm_SystemLock.vb</DependentUpon>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     </Compile>
     <Compile Include="frm_MasterSubSection.vb">
       <SubType>Form</SubType>
@@ -218,8 +265,16 @@
     <Compile Include="frm_SystemLock.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
+=======
+    <Compile Include="My Project\Application3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -234,13 +289,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="YearPeriode.Designer.vb">
+      <DependentUpon>YearPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YearPeriode.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddNew.resx">
+      <DependentUpon>frm_AddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_addnewattendance.resx">
+      <DependentUpon>frm_addnewattendance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_addyear.resx">
+      <DependentUpon>frm_addyear.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Attendance.resx">
       <DependentUpon>frm_Attendance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_attendancestatus.resx">
+      <DependentUpon>frm_attendancestatus.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_BackPay.resx">
       <DependentUpon>frm_BackPay.vb</DependentUpon>
@@ -260,6 +333,7 @@
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.vb</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frm_MasterDepartmen.resx">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +348,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDevision.resx">
       <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+=======
+    <EmbeddedResource Include="frm_MonthPeriode.resx">
+      <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSectionAddNew.resx">
       <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
@@ -302,9 +380,20 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="YearPeriode.resx">
+      <DependentUpon>YearPeriode.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+<<<<<<< HEAD
+=======
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application3.Designer.vb</LastGenOutput>
+    </None>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -343,15 +432,6 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>5</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>7</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

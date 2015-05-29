@@ -20,7 +20,6 @@ Public Class frm_ChangePassword
                 rs = cn.Execute("SELECT [id], [username] FROM [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] WHERE [username]='" & CurrentAccountName & "' and [password]='" & txt_passlama.Text & "'", CursorTypeEnum.adOpenKeyset)
                 If Not rs.EOF Then
                     txt_passlama.Enabled = False
-
                     txt_passbaru.Focus()
                 Else
                     MsgBox("Password lama salah", MsgBoxStyle.Exclamation)

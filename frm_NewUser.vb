@@ -19,6 +19,7 @@ Public Class frm_NewUser
                 MsgBox("Data belum lengkap !", MsgBoxStyle.Information)
 
             Else
+
                 If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                     Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[SY_tb_appsaccounts]([username],[password],[lastpasswordchange],[realname],[employeecode],[priority],[createby],[createtime]) values "
                     sqlInsert = sqlInsert & " ('" & txt_username.Text & "','" & txt_pass.Text & "'," & "GETDATE()" & " " & ",'" & txt_realname.Text & "','" & txt_code.Text & "', '" & Math.Round(Val(CurrentAccountPriority + 1), 0) & "','" & CurrentAccountName & "', " & "GETDATE()" & " " & ")"
@@ -34,7 +35,7 @@ Public Class frm_NewUser
         End Try
     End Sub
 
-    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Close()
     End Sub
 End Class
