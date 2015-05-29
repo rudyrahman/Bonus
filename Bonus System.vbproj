@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.frm_MasterSubSection</StartupObject>
+    <StartupObject>Bonus_System.My.MyApplication</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -128,18 +128,6 @@
     <Compile Include="frm_ChangePassword.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Deduction.designer.vb">
-      <DependentUpon>frm_Deduction.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Deduction.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_ImportDataAllowence.Designer.vb">
-      <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_ImportDataAllowence.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frm_Login.designer.vb">
       <DependentUpon>frm_Login.vb</DependentUpon>
     </Compile>
@@ -200,26 +188,24 @@
     <Compile Include="frm_MasterSubSection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Remove.designer.vb">
-      <DependentUpon>frm_Remove.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Remove.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_SystemLock.designer.vb">
-      <DependentUpon>frm_SystemLock.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_SystemLock.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ANapps.Designer.vb">
       <DependentUpon>ANapps.vb</DependentUpon>
     </Compile>
     <Compile Include="ANapps.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_Remove.designer.vb">
+      <DependentUpon>frm_Remove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Remove.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -246,12 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Deduction.resx">
-      <DependentUpon>frm_Deduction.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_ImportDataAllowence.resx">
-      <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.vb</DependentUpon>
@@ -283,14 +263,11 @@
     <EmbeddedResource Include="frm_MasterSubSection.resx">
       <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Remove.resx">
-      <DependentUpon>frm_Remove.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_SystemLock.resx">
-      <DependentUpon>frm_SystemLock.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ANapps.resx">
       <DependentUpon>ANapps.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Remove.resx">
+      <DependentUpon>frm_Remove.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -378,6 +355,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
