@@ -19,6 +19,25 @@ Public Class frm_MasterSubSection
         Try
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
+            rs = New ADODB.Recordset
+            strs = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_tb_subsection] order by [id]"
+
+            With rs
+                .CursorLocation = CursorLocationEnum.adUseClient
+                .Open(strs, cn, CursorTypeEnum.adOpenKeyset, _
+                      LockTypeEnum.adLockReadOnly)
+                .ActiveConnection = Nothing
+            End With
+            Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
+            dgv_MasterSubSection.Columns(0).Width = 40
+            dgv_MasterSubSection.Columns(1).Width = 100
+            dgv_MasterSubSection.Columns(2).Width = 150
+            dgv_MasterSubSection.Columns(3).Width = 100
+            dgv_MasterSubSection.Columns(4).Width = 150
+            dgv_MasterSubSection.Columns(5).Width = 100
+            dgv_MasterSubSection.Columns(6).Width = 150
+            dgv_MasterSubSection.Columns(7).Width = 100
+            dgv_MasterSubSection.Columns(8).Width = 150
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

@@ -20,6 +20,19 @@ Public Class frm_MasterDevision
         Try
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
+            rs = New ADODB.Recordset
+            strs = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_tb_devision] order by [id]"
+
+            With rs
+                .CursorLocation = CursorLocationEnum.adUseClient
+                .Open(strs, cn, CursorTypeEnum.adOpenKeyset, _
+                      LockTypeEnum.adLockReadOnly)
+                .ActiveConnection = Nothing
+            End With
+            Me.dgv_MasterDevision.DataSource = RecordSetToDataTable(rs)
+            dgv_MasterDevision.Columns(0).Width = 40
+            dgv_MasterDevision.Columns(1).Width = 100
+            dgv_MasterDevision.Columns(2).Width = 150
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
