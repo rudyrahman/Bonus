@@ -220,6 +220,18 @@
     <Compile Include="frm_MasterSubSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MonthPeriode.Designer.vb">
+      <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MonthPeriode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_nationaldays.Designer.vb">
+      <DependentUpon>frm_nationaldays.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_nationaldays.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_NewUser.Designer.vb">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </Compile>
@@ -274,6 +286,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="YearPeriode.Designer.vb">
+      <DependentUpon>YearPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YearPeriode.vb">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +355,12 @@
     <EmbeddedResource Include="frm_MasterSubSectionAddNew.resx">
       <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MonthPeriode.resx">
+      <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_nationaldays.resx">
+      <DependentUpon>frm_nationaldays.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_NewUser.resx">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +381,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearPeriode.resx">
+      <DependentUpon>YearPeriode.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
