@@ -23,21 +23,24 @@ Partial Class frm_addnewnationaldays
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnl1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbo_yearpriode = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_datefrom = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txt_dateto = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_validation = New System.Windows.Forms.TextBox()
         Me.btn_validate = New System.Windows.Forms.Button()
+        Me.txt_validation = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_dateto = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_datefrom = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbo_yearpriode = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnl2 = New System.Windows.Forms.Panel()
         Me.DGV = New System.Windows.Forms.DataGridView()
         Me.pnl3 = New System.Windows.Forms.Panel()
-        Me.btn_export = New System.Windows.Forms.Button()
-        Me.btn_save = New System.Windows.Forms.Button()
         Me.btn_close = New System.Windows.Forms.Button()
+        Me.btn_save = New System.Windows.Forms.Button()
+        Me.btn_export = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl1.SuspendLayout()
         Me.pnl2.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,55 +64,21 @@ Partial Class frm_addnewnationaldays
         Me.pnl1.Size = New System.Drawing.Size(891, 77)
         Me.pnl1.TabIndex = 0
         '
-        'Label1
+        'btn_validate
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Year Priode:"
+        Me.btn_validate.Location = New System.Drawing.Point(786, 41)
+        Me.btn_validate.Name = "btn_validate"
+        Me.btn_validate.Size = New System.Drawing.Size(75, 23)
+        Me.btn_validate.TabIndex = 8
+        Me.btn_validate.Text = "Validate"
+        Me.btn_validate.UseVisualStyleBackColor = True
         '
-        'cbo_yearpriode
+        'txt_validation
         '
-        Me.cbo_yearpriode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbo_yearpriode.FormattingEnabled = True
-        Me.cbo_yearpriode.Location = New System.Drawing.Point(80, 6)
-        Me.cbo_yearpriode.Name = "cbo_yearpriode"
-        Me.cbo_yearpriode.Size = New System.Drawing.Size(204, 21)
-        Me.cbo_yearpriode.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(306, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Date From:"
-        '
-        'txt_datefrom
-        '
-        Me.txt_datefrom.Location = New System.Drawing.Point(367, 7)
-        Me.txt_datefrom.Name = "txt_datefrom"
-        Me.txt_datefrom.Size = New System.Drawing.Size(175, 20)
-        Me.txt_datefrom.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(554, 10)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Date To:"
-        '
-        'txt_dateto
-        '
-        Me.txt_dateto.Location = New System.Drawing.Point(605, 6)
-        Me.txt_dateto.Name = "txt_dateto"
-        Me.txt_dateto.Size = New System.Drawing.Size(175, 20)
-        Me.txt_dateto.TabIndex = 5
+        Me.txt_validation.Location = New System.Drawing.Point(86, 43)
+        Me.txt_validation.Name = "txt_validation"
+        Me.txt_validation.Size = New System.Drawing.Size(694, 20)
+        Me.txt_validation.TabIndex = 7
         '
         'Label4
         '
@@ -120,21 +89,55 @@ Partial Class frm_addnewnationaldays
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Validation By:"
         '
-        'txt_validation
+        'txt_dateto
         '
-        Me.txt_validation.Location = New System.Drawing.Point(86, 43)
-        Me.txt_validation.Name = "txt_validation"
-        Me.txt_validation.Size = New System.Drawing.Size(694, 20)
-        Me.txt_validation.TabIndex = 7
+        Me.txt_dateto.Location = New System.Drawing.Point(605, 6)
+        Me.txt_dateto.Name = "txt_dateto"
+        Me.txt_dateto.Size = New System.Drawing.Size(175, 20)
+        Me.txt_dateto.TabIndex = 5
         '
-        'btn_validate
+        'Label3
         '
-        Me.btn_validate.Location = New System.Drawing.Point(786, 41)
-        Me.btn_validate.Name = "btn_validate"
-        Me.btn_validate.Size = New System.Drawing.Size(75, 23)
-        Me.btn_validate.TabIndex = 8
-        Me.btn_validate.Text = "Validate"
-        Me.btn_validate.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(554, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Date To:"
+        '
+        'txt_datefrom
+        '
+        Me.txt_datefrom.Location = New System.Drawing.Point(367, 7)
+        Me.txt_datefrom.Name = "txt_datefrom"
+        Me.txt_datefrom.Size = New System.Drawing.Size(175, 20)
+        Me.txt_datefrom.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(306, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Date From:"
+        '
+        'cbo_yearpriode
+        '
+        Me.cbo_yearpriode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_yearpriode.FormattingEnabled = True
+        Me.cbo_yearpriode.Location = New System.Drawing.Point(80, 6)
+        Me.cbo_yearpriode.Name = "cbo_yearpriode"
+        Me.cbo_yearpriode.Size = New System.Drawing.Size(204, 21)
+        Me.cbo_yearpriode.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Year Priode:"
         '
         'pnl2
         '
@@ -147,7 +150,6 @@ Partial Class frm_addnewnationaldays
         '
         'DGV
         '
-        Me.DGV.AllowUserToOrderColumns = True
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(9, 9)
         Me.DGV.Name = "DGV"
@@ -165,14 +167,14 @@ Partial Class frm_addnewnationaldays
         Me.pnl3.Size = New System.Drawing.Size(891, 44)
         Me.pnl3.TabIndex = 2
         '
-        'btn_export
+        'btn_close
         '
-        Me.btn_export.Location = New System.Drawing.Point(284, 8)
-        Me.btn_export.Name = "btn_export"
-        Me.btn_export.Size = New System.Drawing.Size(117, 23)
-        Me.btn_export.TabIndex = 0
-        Me.btn_export.Text = "Export To Excel"
-        Me.btn_export.UseVisualStyleBackColor = True
+        Me.btn_close.Location = New System.Drawing.Point(779, 8)
+        Me.btn_close.Name = "btn_close"
+        Me.btn_close.Size = New System.Drawing.Size(91, 23)
+        Me.btn_close.TabIndex = 2
+        Me.btn_close.Text = "Close"
+        Me.btn_close.UseVisualStyleBackColor = True
         '
         'btn_save
         '
@@ -183,36 +185,52 @@ Partial Class frm_addnewnationaldays
         Me.btn_save.Text = "Save Data"
         Me.btn_save.UseVisualStyleBackColor = True
         '
-        'btn_close
+        'btn_export
         '
-        Me.btn_close.Location = New System.Drawing.Point(779, 8)
-        Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(91, 23)
-        Me.btn_close.TabIndex = 2
-        Me.btn_close.Text = "Close"
-        Me.btn_close.UseVisualStyleBackColor = True
+        Me.btn_export.Location = New System.Drawing.Point(284, 8)
+        Me.btn_export.Name = "btn_export"
+        Me.btn_export.Size = New System.Drawing.Size(117, 23)
+        Me.btn_export.TabIndex = 0
+        Me.btn_export.Text = "Export To Excel"
+        Me.btn_export.UseVisualStyleBackColor = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "No"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 300
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Event Description"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'frm_addnewnationaldays
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 607)
         Me.Controls.Add(Me.pnl3)
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MaximizeBox = false
+        Me.MinimizeBox = false
         Me.Name = "frm_addnewnationaldays"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New"
-        Me.pnl1.ResumeLayout(False)
-        Me.pnl1.PerformLayout()
-        Me.pnl2.ResumeLayout(False)
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnl3.ResumeLayout(False)
-        Me.ResumeLayout(False)
+        Me.pnl1.ResumeLayout(false)
+        Me.pnl1.PerformLayout
+        Me.pnl2.ResumeLayout(false)
+        CType(Me.DGV,System.ComponentModel.ISupportInitialize).EndInit
+        Me.pnl3.ResumeLayout(false)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
     Friend WithEvents pnl1 As System.Windows.Forms.Panel
     Friend WithEvents btn_validate As System.Windows.Forms.Button
     Friend WithEvents txt_validation As System.Windows.Forms.TextBox
@@ -229,4 +247,7 @@ Partial Class frm_addnewnationaldays
     Friend WithEvents btn_close As System.Windows.Forms.Button
     Friend WithEvents btn_save As System.Windows.Forms.Button
     Friend WithEvents btn_export As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
