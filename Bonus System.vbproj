@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.frm_nationaldays</StartupObject>
+    <StartupObject>Bonus_System.frm_MasterSubSection</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -130,7 +130,7 @@
     <Compile Include="frm_addnewattendance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_addnewnationaldays.designer.vb">
+    <Compile Include="frm_addnewnationaldays.Designer.vb">
       <DependentUpon>frm_addnewnationaldays.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_addnewnationaldays.vb">
