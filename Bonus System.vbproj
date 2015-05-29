@@ -200,6 +200,12 @@
     <Compile Include="frm_Remove.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_SystemLock.designer.vb">
+      <DependentUpon>frm_SystemLock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SystemLock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -268,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Remove.resx">
       <DependentUpon>frm_Remove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SystemLock.resx">
+      <DependentUpon>frm_SystemLock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
