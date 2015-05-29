@@ -10,7 +10,6 @@ Public Class frm_MasterDepartment
     Dim rsExcel As ADODB.Recordset
     Dim strExcel As String
 
-
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
 
