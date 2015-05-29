@@ -64,9 +64,7 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -103,6 +101,9 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="Form1.vb">
+=======
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -115,6 +116,7 @@
       <DependentUpon>frm_AddNew.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_AddNew.vb">
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_addnewattendance.Designer.vb">
@@ -123,24 +125,21 @@
     <Compile Include="frm_addnewattendance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_addnewnationaldays.Designer.vb">
-      <DependentUpon>frm_addnewnationaldays.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_addnewnationaldays.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frm_addyear.Designer.vb">
       <DependentUpon>frm_addyear.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_addyear.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Attendance.Designer.vb">
+    <Compile Include="frm_Attendance.designer.vb">
       <DependentUpon>frm_Attendance.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_Attendance.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="frm_BackPay.designer.vb">
+=======
     <Compile Include="frm_attendancestatus.Designer.vb">
       <DependentUpon>frm_attendancestatus.vb</DependentUpon>
     </Compile>
@@ -148,18 +147,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_BackPay.Designer.vb">
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
       <DependentUpon>frm_BackPay.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_BackPay.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ChangeDetail.Designer.vb">
+    <Compile Include="frm_ChangeDetail.designer.vb">
       <DependentUpon>frm_ChangeDetail.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_ChangeDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ChangePassword.Designer.vb">
+    <Compile Include="frm_ChangePassword.designer.vb">
       <DependentUpon>frm_ChangePassword.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_ChangePassword.vb">
@@ -171,37 +171,89 @@
     <Compile Include="frm_Deduction.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ImportDataAllowence.Designer.vb">
+    <Compile Include="frm_ImportDataAllowence.designer.vb">
       <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_ImportDataAllowence.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_login.Designer.vb">
-      <DependentUpon>frm_login.vb</DependentUpon>
+    <Compile Include="frm_Login.designer.vb">
+      <DependentUpon>frm_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_login.vb">
+    <Compile Include="frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="frm_MasterDepartmen.Designer.vb">
+      <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDepartmen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterDepartmentAddNew.Designer.vb">
+      <DependentUpon>frm_MasterDepartmentAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDepartmentAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterDevisionAddNew.Designer.vb">
+      <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterDevisionAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterSection.Designer.vb">
+      <DependentUpon>frm_MasterSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterDevision.Designer.vb">
+      <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+=======
     <Compile Include="frm_MonthPeriode.Designer.vb">
       <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     </Compile>
     <Compile Include="frm_MonthPeriode.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_nationaldays.Designer.vb">
-      <DependentUpon>frm_nationaldays.vb</DependentUpon>
+    <Compile Include="frm_MasterSectionAddNew.Designer.vb">
+      <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_nationaldays.vb">
+    <Compile Include="frm_MasterSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_NewUser.Designer.vb">
+    <Compile Include="frm_MasterSubSectionAddNew.Designer.vb">
+      <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterSubSectionAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Include="frm_NewUser.designer.vb">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_NewUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Remove.Designer.vb">
+    <Compile Include="frm_MasterSubSection.Designer.vb">
+      <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
+=======
+    <Compile Include="frm_SystemLock.designer.vb">
+      <DependentUpon>frm_SystemLock.vb</DependentUpon>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
+    </Compile>
+    <Compile Include="frm_MasterSubSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ANapps.Designer.vb">
+      <DependentUpon>ANapps.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ANapps.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Remove.designer.vb">
       <DependentUpon>frm_Remove.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_Remove.vb">
@@ -213,33 +265,16 @@
     <Compile Include="frm_SystemLock.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ANapps.Designer.vb">
-      <DependentUpon>ANapps.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ANapps.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_UserManagement.designer.vb">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_UserManagement.vb">
-      <SubType>Form</SubType>
-    </Compile>
+<<<<<<< HEAD
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
-    <Compile Include="My Project\Application1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Application2.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
+=======
     <Compile Include="My Project\Application3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -271,9 +306,6 @@
     <EmbeddedResource Include="frm_addnewattendance.resx">
       <DependentUpon>frm_addnewattendance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_addnewnationaldays.resx">
-      <DependentUpon>frm_addnewnationaldays.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_addyear.resx">
       <DependentUpon>frm_addyear.vb</DependentUpon>
     </EmbeddedResource>
@@ -299,28 +331,48 @@
       <DependentUpon>frm_ImportDataAllowence.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
-      <DependentUpon>frm_login.vb</DependentUpon>
+      <DependentUpon>frm_Login.vb</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="frm_MasterDepartmen.resx">
+      <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDepartmentAddNew.resx">
+      <DependentUpon>frm_MasterDepartmentAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDevisionAddNew.resx">
+      <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterSection.resx">
+      <DependentUpon>frm_MasterSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterDevision.resx">
+      <DependentUpon>frm_MasterDevision.vb</DependentUpon>
+=======
     <EmbeddedResource Include="frm_MonthPeriode.resx">
       <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_nationaldays.resx">
-      <DependentUpon>frm_nationaldays.vb</DependentUpon>
+    <EmbeddedResource Include="frm_MasterSectionAddNew.resx">
+      <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterSubSectionAddNew.resx">
+      <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_NewUser.resx">
       <DependentUpon>frm_NewUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterSubSection.resx">
+      <DependentUpon>frm_MasterSubSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ANapps.resx">
+      <DependentUpon>ANapps.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Remove.resx">
       <DependentUpon>frm_Remove.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SystemLock.resx">
       <DependentUpon>frm_SystemLock.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ANapps.resx">
-      <DependentUpon>ANapps.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_UserManagement.resx">
-      <DependentUpon>frm_UserManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -334,11 +386,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+<<<<<<< HEAD
+=======
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application3.Designer.vb</LastGenOutput>
     </None>
+>>>>>>> 05789bc4713b496665c807c4a132e7760f2291dd
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -407,6 +462,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
