@@ -67,6 +67,13 @@ Public Class frm_MasterSection
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterSection.DataSource = RecordSetToDataTable(rs)
+            dgv_MasterSection.Columns(0).Width = 40
+            dgv_MasterSection.Columns(1).Width = 100
+            dgv_MasterSection.Columns(2).Width = 150
+            dgv_MasterSection.Columns(3).Width = 100
+            dgv_MasterSection.Columns(4).Width = 150
+            dgv_MasterSection.Columns(5).Width = 100
+            dgv_MasterSection.Columns(6).Width = 150
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
@@ -128,6 +135,13 @@ Public Class frm_MasterSection
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterSection.DataSource = RecordSetToDataTable(rs)
+            dgv_MasterSection.Columns(0).Width = 40
+            dgv_MasterSection.Columns(1).Width = 100
+            dgv_MasterSection.Columns(2).Width = 150
+            dgv_MasterSection.Columns(3).Width = 100
+            dgv_MasterSection.Columns(4).Width = 150
+            dgv_MasterSection.Columns(5).Width = 100
+            dgv_MasterSection.Columns(6).Width = 150
             If rs.BOF Then
                 dgv_MasterSection.DataSource = rs
                 dgv_MasterSection.Refresh()
