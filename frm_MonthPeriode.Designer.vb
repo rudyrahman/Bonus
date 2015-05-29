@@ -139,7 +139,7 @@ Partial Class frm_MonthPeriode
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl3)
         Me.Name = "frm_MonthPeriode"
-        Me.Text = "frm_MonthPeriode"
+        Me.Text = "Month Periode"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl3.ResumeLayout(False)

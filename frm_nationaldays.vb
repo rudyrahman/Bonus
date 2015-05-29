@@ -2,7 +2,8 @@
 Imports System.Data
 Imports System.Data.OleDb
 Imports Excel = Microsoft.Office.Interop.Excel
-Public Class YearPeriode
+
+Public Class frm_nationaldays
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
     Sub datagrid()
@@ -28,25 +29,15 @@ Public Class YearPeriode
         Return objDT
 
     End Function
-    Private Sub YearPeriode_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frm_nationaldays_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn = New ADODB.Connection
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
         Call datagrid()
     End Sub
 
-    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
-        Me.Close()
-    End Sub
-
-    Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
-        Call datagrid()
-        DGV.Refresh()
-        txt_cari.Text = ""
-    End Sub
-
     Private Sub btn_export_Click(sender As Object, e As EventArgs) Handles btn_export.Click
-      Try
+        Try
             Dim xlAPP As Microsoft.Office.Interop.Excel.Application
             Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
             Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
@@ -87,12 +78,44 @@ Public Class YearPeriode
         End Try
     End Sub
 
-    Private Sub YearPeriode_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+    Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        Call datagrid()
+        DGV.Refresh()
+        txt_cari.Text = ""
+    End Sub
+
+    Private Sub btn_tambahbaru_Click(sender As Object, e As EventArgs) Handles btn_tambahbaru.Click
+        frm_addnewnationaldays.ShowDialog()
+    End Sub
+
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        Me.Close()
+    End Sub
+
+    Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
+        Dim sqlsearch As String
+        rs = New ADODB.Recordset
+        sqlsearch = "select * from [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [username] like '%" & txt_cari.Text & "%' order by [id]"
+
+        With rs
+            .CursorLocation = CursorLocationEnum.adUseClient
+            .Open(sqlsearch, cn, CursorTypeEnum.adOpenKeyset, _
+                  LockTypeEnum.adLockReadOnly)
+            .ActiveConnection = Nothing
+        End With
+        Me.DGV.DataSource = RecordSetToDataTable(rs)
+        If rs.BOF Then
+            DGV.DataSource = rs
+            DGV.Refresh()
+        End If
+    End Sub
+
+    Private Sub frm_nationaldays_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 500 Then
             pnl1.Height = Me.Height - (pnl1.Top * 2) - 695
             pnl2.Height = Me.Height - (pnl2.Top * 2) - 50
             DGV.Top = 10
-            DGV.Height = Me.Height - 200
+            DGV.Height = Me.Height - 170
             DGV.Width = Me.Width - 30
             btn_close.Left = Me.Width - btn_close.Width - 50
             btn_tambahbaru.Left = Me.Width - btn_tambahbaru.Width - 130
@@ -111,28 +134,6 @@ Public Class YearPeriode
             btn_tambahbaru.Left = Me.Width - btn_tambahbaru.Width - 130
             btn_refresh.Left = Me.Width - btn_refresh.Width - 230
             btn_export.Left = Me.Width - btn_export.Width - 330
-        End If
-    End Sub
-
-    Private Sub btn_tambahbaru_Click(sender As Object, e As EventArgs) Handles btn_tambahbaru.Click
-        frm_addyear.ShowDialog()
-    End Sub
-
-    Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
-        Dim sqlsearch As String
-        rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [username] like '%" & txt_cari.Text & "%' order by [id]"
-
-        With rs
-            .CursorLocation = CursorLocationEnum.adUseClient
-            .Open(sqlsearch, cn, CursorTypeEnum.adOpenKeyset, _
-                  LockTypeEnum.adLockReadOnly)
-            .ActiveConnection = Nothing
-        End With
-        Me.DGV.DataSource = RecordSetToDataTable(rs)
-        If rs.BOF Then
-            DGV.DataSource = rs
-            DGV.Refresh()
         End If
     End Sub
 End Class

@@ -3,8 +3,10 @@ Public Class frm_addnewattendance
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
     Private Sub frm_addnewattendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cn = New ADODB.Connection
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
+        txt_desc.Focus()
         Call AutoNumber()
         txt_code.Enabled = False
     End Sub
@@ -22,6 +24,7 @@ Public Class frm_addnewattendance
     Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_addnew.Click
         If txt_desc.Text = "" Then
             MsgBox("Input the description !", MsgBoxStyle.Information)
+            txt_desc.Focus()
         Else
             If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                 Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_Number]([code],[description]) values "
@@ -36,6 +39,8 @@ Public Class frm_addnewattendance
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        txt_desc.Focus()
+        cn.Close()
         Me.Close()
 
     End Sub

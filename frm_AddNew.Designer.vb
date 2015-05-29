@@ -158,7 +158,7 @@ Partial Class frm_AddNew
         Me.MinimizeBox = False
         Me.Name = "frm_AddNew"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AddNew"
+        Me.Text = "Add New"
         Me.pnl1.ResumeLayout(False)
         Me.pnl1.PerformLayout()
         Me.pnl2.ResumeLayout(False)
