@@ -10,9 +10,20 @@ Public Class frm_addnewnationaldays
         cn = New ADODB.Connection
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
+        rs = cn.Execute("SELECT [Description] FROM [AN_SUMATRA].[dbo].[TM_YearPeriode] ORDER BY [No] ASC")
+        If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+            While Not rs.EOF
+                cbo_yearpriode.Items.Add(rs(0).Value.ToString)
+                rs.MoveNext()
+            End While
+        End If
         DGVdate()
         AutoNumberRowsForGridView()
+
+
+
     End Sub
+    'show date in datagrid
     Sub DGVdate()
         Dim col As New GridDateControl()
         Me.DGV.Columns.Add(col)
@@ -25,6 +36,7 @@ Public Class frm_addnewnationaldays
             .Columns(1).Width = 500
         End With
     End Sub
+    'autonumber in datagrid
     Sub AutoNumberRowsForGridView()
         If DGV IsNot Nothing Then
             Dim count As Integer = 0
@@ -65,7 +77,8 @@ Public Class frm_addnewnationaldays
             Next
 
             xlAPP.Visible = True
-
+            xlWorkSheet.UsedRange.EntireRow.AutoFit()
+            xlWorkSheet.UsedRange.EntireColumn.AutoFit()
             releaseObject(xlAPP)
             releaseObject(xlWorkBook)
             releaseObject(xlWorkSheet)
@@ -86,6 +99,37 @@ Public Class frm_addnewnationaldays
 
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Close()
+    End Sub
+
+    Private Sub cbo_yearpriode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_yearpriode.SelectedIndexChanged
+        rs = cn.Execute("SELECT [Code], [Description], [Periode_From], [Periode_To] FROM [AN_SUMATRA].[dbo].[TM_YearPeriode] WHERE [Description]='" & cbo_yearpriode.Text.ToString & "' ORDER BY [No] ASC")
+        If (rs.EOF = False) And (rs.BOF = False) Then
+            txt_datefrom.Text = rs(2).Value.ToString
+            txt_dateto.Text = rs(3).Value.ToString
+        Else
+            txt_dateto.Text = ""
+            txt_datefrom.Text = ""
+        End If
+
+        If cbo_yearpriode.Text = "Year 2014" Then
+            txt_yearcode.Text = 2014
+        End If
+        If cbo_yearpriode.Text = "Year 2015" Then
+            txt_yearcode.Text = 2015
+        End If
+    End Sub
+
+    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+        For i As Integer = 0 To DGV.Rows.Count - 2
+            If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_NationalDays]([Year_Code],[Year_Description],[Date_Event],[Event_Description],[Create_By],[Create_Time],[Validate_By],[System_Id]) values "
+                sqlInsert = sqlInsert & " ('" & txt_yearcode.Text & "','" & cbo_yearpriode.Text.ToString & "','" & DGV.Rows(i).Cells(0).Value & "','" & DGV.Rows(i).Cells(1).Value & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & txt_validation.Text & "','" & CurrentAccountId & "')"
+                cn.Execute(sqlInsert)
+
+                cn.Close()
+                Me.Close()
+            End If
+        Next
     End Sub
 End Class
 Public Class GridDateControl

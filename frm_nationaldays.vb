@@ -9,7 +9,7 @@ Public Class frm_nationaldays
     Sub datagrid()
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] order by [id]"
+        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_NationalDays] order by [No]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
@@ -19,6 +19,17 @@ Public Class frm_nationaldays
         End With
         Me.DGV.DataSource = RecordSetToDataTable(rs)
         DGV.Refresh()
+        DGV.Columns(0).Width = 40
+        DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.Columns(1).Width = 80
+        DGV.Columns(2).Width = 100
+        DGV.Columns(3).Width = 100
+        DGV.Columns(4).Width = 150
+        DGV.Columns(5).Width = 250
+        DGV.Columns(6).Width = 150
+        DGV.Columns(7).Width = 170
+        DGV.Columns(8).Width = 60
+        DGV.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable
@@ -59,7 +70,8 @@ Public Class frm_nationaldays
             Next
 
             xlAPP.Visible = True
-
+            xlWorkSheet.UsedRange.EntireRow.AutoFit()
+            xlWorkSheet.UsedRange.EntireColumn.AutoFit()
             releaseObject(xlAPP)
             releaseObject(xlWorkBook)
             releaseObject(xlWorkSheet)
@@ -95,7 +107,7 @@ Public Class frm_nationaldays
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
         Dim sqlsearch As String
         rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [username] like '%" & txt_cari.Text & "%' order by [id]"
+        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_NationalDays] where [Year_Description] like '%" & txt_cari.Text & "%' order by [No]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient

@@ -14,7 +14,7 @@ Public Class frm_attendancestatus
     Sub datagrid()
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_Number] order by [code]"
+        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_AttendanceStatus] order by [code]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
@@ -24,6 +24,15 @@ Public Class frm_attendancestatus
         End With
         Me.DGV.DataSource = RecordSetToDataTable(rs)
         DGV.Refresh()
+        DGV.Columns(0).Width = 40
+        DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.Columns(1).Width = 40
+        DGV.Columns(2).Width = 150
+        DGV.Columns(3).Width = 250
+        DGV.Columns(4).Width = 150
+        DGV.Columns(5).Width = 60
+        DGV.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.Columns(6).Width = 70
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable
@@ -61,7 +70,8 @@ Public Class frm_attendancestatus
             Next
 
             xlAPP.Visible = True
-
+            xlWorkSheet.UsedRange.EntireRow.AutoFit()
+            xlWorkSheet.UsedRange.EntireColumn.AutoFit()
             releaseObject(xlAPP)
             releaseObject(xlWorkBook)
             releaseObject(xlWorkSheet)
@@ -120,7 +130,7 @@ Public Class frm_attendancestatus
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
         Dim sqlsearch As String
         rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_Number] where [description] like '%" & txt_cari.Text & "%' order by [code]"
+        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_AttendanceStatus] where [Description] like '%" & txt_cari.Text & "%' order by [code]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient

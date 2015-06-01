@@ -11,7 +11,7 @@ Public Class frm_addnewattendance
         txt_code.Enabled = False
     End Sub
     Sub AutoNumber()
-        rs = cn.Execute("Select * from [AN_SUMATRA].[dbo].[TM_Number] where code in (select max(code) from [AN_SUMATRA].[dbo].[TM_Number]) order by code desc")
+        rs = cn.Execute("Select * from [AN_SUMATRA].[dbo].[TM_AttendanceStatus] where Code in (select max(Code) from [AN_SUMATRA].[dbo].[TM_AttendanceStatus]) order by No desc")
         Dim Urut As String
         Dim Hitung As Long
         If (rs.EOF = False) And (rs.BOF = False) Then
@@ -27,8 +27,8 @@ Public Class frm_addnewattendance
             txt_desc.Focus()
         Else
             If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_Number]([code],[description]) values "
-                sqlInsert = sqlInsert & " ('" & txt_code.Text & "','" & txt_desc.Text & "')"
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_AttendanceStatus]([Code],[Description],[Create_By],[Create_Time],[System_Id],[Inactive]) values "
+                sqlInsert = sqlInsert & " ('" & txt_code.Text & "','" & txt_desc.Text & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "','" & CurrentAccountId & "')"
                 cn.Execute(sqlInsert)
                 txt_code.Text = ""
                 txt_desc.Text = ""
