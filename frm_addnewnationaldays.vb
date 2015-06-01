@@ -1,21 +1,27 @@
 ﻿Imports System
+Imports System.Data
 Imports System.Windows.Forms
+Imports ADODB
 Public Class frm_addnewnationaldays
     Inherits Form
+    Dim rs As New ADODB.Recordset
+    Dim cn As New ADODB.Connection
     Private Sub frm_addnewnationaldays_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        cn = New ADODB.Connection
+        cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
+        cn.Open()
         DGVdate()
-
+        AutoNumberRowsForGridView()
     End Sub
     Sub DGVdate()
         Dim col As New GridDateControl()
-
         Me.DGV.Columns.Add(col)
         DGV.Columns(0).HeaderText = "Date"
         DGV.Columns(0).Width = 200
+
         With DGV
             .ColumnCount = 2
-            .Columns(1).Name = "Event Description"
+            .Columns(1).HeaderText = "Event Description"
             .Columns(1).Width = 500
         End With
     End Sub
@@ -28,16 +34,58 @@ Public Class frm_addnewnationaldays
             End While
         End If
     End Sub
-
-    Private Sub DGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellClick
+    Private Sub DGV_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGV.CellFormatting
         AutoNumberRowsForGridView()
     End Sub
+
     Private Sub DGV_Click(sender As Object, e As EventArgs) Handles DGV.Click
         DGVdate()
     End Sub
 
-    Private Sub pnl2_Paint(sender As Object, e As PaintEventArgs) Handles pnl2.Paint
-        AutoNumberRowsForGridView()
+    Private Sub btn_export_Click(sender As Object, e As EventArgs) Handles btn_export.Click
+        Try
+            Dim xlAPP As Microsoft.Office.Interop.Excel.Application
+            Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+            Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+            Dim misValue As Object = System.Reflection.Missing.Value
+            Dim i As Integer
+            Dim j As Integer
+
+            xlAPP = New Microsoft.Office.Interop.Excel.Application
+            xlWorkBook = xlAPP.Workbooks.Add(misValue)
+            xlWorkSheet = xlWorkBook.Sheets("sheet1")
+
+            For i = 0 To DGV.RowCount - 2
+                For j = 0 To DGV.ColumnCount - 1
+                    For k As Integer = 1 To DGV.Columns.Count
+                        xlWorkSheet.Cells(1, k) = DGV.Columns(k - 1).HeaderText
+                        xlWorkSheet.Cells(i + 2, j + 1) = DGV(j, i).Value.ToString()
+                    Next
+                Next
+            Next
+
+            xlAPP.Visible = True
+
+            releaseObject(xlAPP)
+            releaseObject(xlWorkBook)
+            releaseObject(xlWorkSheet)
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch es As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        Me.Close()
     End Sub
 End Class
 Public Class GridDateControl
@@ -104,17 +152,6 @@ Public Class CalendarCell
             Return GetType(DateTime)
         End Get
     End Property
-    'Public Property CustomFocus() As Boolean
-    '    Get
-
-    '    End Get
-    '    Set(ByVal value As Boolean)
-    '        If CustomFocus Then
-    '            ctl.Select()
-    '            SendKeys.Send("%{Down}")
-    '        End If
-    '    End Set
-    'End Property
 End Class
 
 Class CalendarEditingControl

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.frm_addnewnationaldays</StartupObject>
+    <StartupObject>Bonus_System.frm_nationaldays</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -118,12 +118,6 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frm_AddNew.Designer.vb">
       <DependentUpon>frm_AddNew.vb</DependentUpon>
     </Compile>
@@ -212,18 +206,6 @@
       <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterDevisionAddNew.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_MasterEmployeesSchedule.Designer.vb">
-      <DependentUpon>frm_MasterEmployeesSchedule.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_MasterEmployeesSchedule.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_MasterEmployeesScheduleAddNew.Designer.vb">
-      <DependentUpon>frm_MasterEmployeesScheduleAddNew.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_MasterEmployeesScheduleAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MasterSection.Designer.vb">
@@ -333,9 +315,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_AddNew.resx">
       <DependentUpon>frm_AddNew.vb</DependentUpon>
     </EmbeddedResource>
@@ -380,12 +359,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDevisionAddNew.resx">
       <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_MasterEmployeesSchedule.resx">
-      <DependentUpon>frm_MasterEmployeesSchedule.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_MasterEmployeesScheduleAddNew.resx">
-      <DependentUpon>frm_MasterEmployeesScheduleAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSection.resx">
       <DependentUpon>frm_MasterSection.vb</DependentUpon>
