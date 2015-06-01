@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.YearPeriode</StartupObject>
+    <StartupObject>Bonus_System.frm_MasterSubSection</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -208,6 +208,36 @@
     <Compile Include="frm_MasterDevisionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_MasterEDataFromPayrolAddNew.Designer.vb">
+      <DependentUpon>Frm_MasterEDataFromPayrolAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MasterEDataFromPayrolAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterEmployeesSchedule.Designer.vb">
+      <DependentUpon>frm_MasterEmployeesSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterEmployeesSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterEmployeesScheduleAddNew.Designer.vb">
+      <DependentUpon>frm_MasterEmployeesScheduleAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterEmployeesScheduleAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterEStatusArragementAddNew.Designer.vb">
+      <DependentUpon>frm_MasterEStatusArragementAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterEStatusArragementAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterE_DataFromPayrol.Designer.vb">
+      <DependentUpon>frm_MasterE_DataFromPayrol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterE_DataFromPayrol.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterSection.Designer.vb">
       <DependentUpon>frm_MasterSection.vb</DependentUpon>
     </Compile>
@@ -359,6 +389,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDevisionAddNew.resx">
       <DependentUpon>frm_MasterDevisionAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MasterEDataFromPayrolAddNew.resx">
+      <DependentUpon>Frm_MasterEDataFromPayrolAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterEmployeesSchedule.resx">
+      <DependentUpon>frm_MasterEmployeesSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterEmployeesScheduleAddNew.resx">
+      <DependentUpon>frm_MasterEmployeesScheduleAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterEStatusArragementAddNew.resx">
+      <DependentUpon>frm_MasterEStatusArragementAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterE_DataFromPayrol.resx">
+      <DependentUpon>frm_MasterE_DataFromPayrol.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSection.resx">
       <DependentUpon>frm_MasterSection.vb</DependentUpon>

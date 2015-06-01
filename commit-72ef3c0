@@ -1,0 +1,133 @@
+commit 72ef3c0ecc79e4b18cb427fd35753c5aa5c2d62a
+Author: riza <rizayusuf@rocketmail.com>
+Date:   Fri May 29 11:07:38 2015 +0700
+
+    form
+
+diff --git a/frm_MasterDepartmen.vb b/frm_MasterDepartmen.vb
+index 7ecb628..46434d8 100644
+--- a/frm_MasterDepartmen.vb
++++ b/frm_MasterDepartmen.vb
+@@ -70,6 +70,11 @@ Public Class frm_MasterDepartment
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterDepartment.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterDepartment.Columns(0).Width = 40
++            dgv_MasterDepartment.Columns(1).Width = 100
++            dgv_MasterDepartment.Columns(2).Width = 150
++            dgv_MasterDepartment.Columns(3).Width = 100
++            dgv_MasterDepartment.Columns(4).Width = 150
+ 
+         Catch ex As Exception
+             MsgBox(ex.Message, vbCritical)
+@@ -135,8 +140,14 @@ Public Class frm_MasterDepartment
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterDepartment.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterDepartment.Columns(0).Width = 40
++            dgv_MasterDepartment.Columns(1).Width = 100
++            dgv_MasterDepartment.Columns(2).Width = 150
++            dgv_MasterDepartment.Columns(3).Width = 100
++            dgv_MasterDepartment.Columns(4).Width = 150
+             If rs.BOF Then
+                 dgv_MasterDepartment.DataSource = rs
++
+                 dgv_MasterDepartment.Refresh()
+             End If
+  
+diff --git a/frm_MasterDevision.vb b/frm_MasterDevision.vb
+index 2be0ce2..19e6dd4 100644
+--- a/frm_MasterDevision.vb
++++ b/frm_MasterDevision.vb
+@@ -69,6 +69,9 @@ Public Class frm_MasterDevision
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterDevision.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterDevision.Columns(0).Width = 40
++            dgv_MasterDevision.Columns(1).Width = 100
++            dgv_MasterDevision.Columns(2).Width = 150
+ 
+         Catch ex As Exception
+             MsgBox(ex.Message, vbCritical)
+@@ -131,6 +134,9 @@ Public Class frm_MasterDevision
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterDevision.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterDevision.Columns(0).Width = 40
++            dgv_MasterDevision.Columns(1).Width = 100
++            dgv_MasterDevision.Columns(2).Width = 150
+             If rs.BOF Then
+                 dgv_MasterDevision.DataSource = rs
+                 dgv_MasterDevision.Refresh()
+diff --git a/frm_MasterSection.vb b/frm_MasterSection.vb
+index efdce0e..89696fc 100644
+--- a/frm_MasterSection.vb
++++ b/frm_MasterSection.vb
+@@ -67,6 +67,13 @@ Public Class frm_MasterSection
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterSection.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterSection.Columns(0).Width = 40
++            dgv_MasterSection.Columns(1).Width = 100
++            dgv_MasterSection.Columns(2).Width = 150
++            dgv_MasterSection.Columns(3).Width = 100
++            dgv_MasterSection.Columns(4).Width = 150
++            dgv_MasterSection.Columns(5).Width = 100
++            dgv_MasterSection.Columns(6).Width = 150
+ 
+         Catch ex As Exception
+             MsgBox(ex.Message, vbCritical)
+@@ -128,6 +135,13 @@ Public Class frm_MasterSection
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterSection.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterSection.Columns(0).Width = 40
++            dgv_MasterSection.Columns(1).Width = 100
++            dgv_MasterSection.Columns(2).Width = 150
++            dgv_MasterSection.Columns(3).Width = 100
++            dgv_MasterSection.Columns(4).Width = 150
++            dgv_MasterSection.Columns(5).Width = 100
++            dgv_MasterSection.Columns(6).Width = 150
+             If rs.BOF Then
+                 dgv_MasterSection.DataSource = rs
+                 dgv_MasterSection.Refresh()
+diff --git a/frm_MasterSubSection.vb b/frm_MasterSubSection.vb
+index 1c3f1d4..730124d 100644
+--- a/frm_MasterSubSection.vb
++++ b/frm_MasterSubSection.vb
+@@ -65,6 +65,15 @@ Public Class frm_MasterSubSection
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterSubSection.Columns(0).Width = 40
++            dgv_MasterSubSection.Columns(1).Width = 100
++            dgv_MasterSubSection.Columns(2).Width = 150
++            dgv_MasterSubSection.Columns(3).Width = 100
++            dgv_MasterSubSection.Columns(4).Width = 150
++            dgv_MasterSubSection.Columns(5).Width = 100
++            dgv_MasterSubSection.Columns(6).Width = 150
++            dgv_MasterSubSection.Columns(7).Width = 100
++            dgv_MasterSubSection.Columns(8).Width = 150
+ 
+         Catch ex As Exception
+             MsgBox(ex.Message, vbCritical)
+@@ -90,9 +99,19 @@ Public Class frm_MasterSubSection
+                 .ActiveConnection = Nothing
+             End With
+             Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
++            dgv_MasterSubSection.Columns(0).Width = 40
++            dgv_MasterSubSection.Columns(1).Width = 100
++            dgv_MasterSubSection.Columns(2).Width = 150
++            dgv_MasterSubSection.Columns(3).Width = 100
++            dgv_MasterSubSection.Columns(4).Width = 150
++            dgv_MasterSubSection.Columns(5).Width = 100
++            dgv_MasterSubSection.Columns(6).Width = 150
++            dgv_MasterSubSection.Columns(7).Width = 100
++            dgv_MasterSubSection.Columns(8).Width = 150
+             If rs.BOF Then
+                 dgv_MasterSubSection.DataSource = rs
+                 dgv_MasterSubSection.Refresh()
++
+             End If
+ 
+         Catch ex As Exception

@@ -7,6 +7,10 @@ Public Class frm_MasterDepartmentAddNew
         cn.Close()
     End Sub
 
+    Private Sub frm_MasterDepartmentAddNew_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
+    End Sub
+
     Private Sub frm_MasterDepartmentAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbo_DevisionCode.Text = ""
         txt_DevisionDescription.Text = ""
@@ -16,9 +20,10 @@ Public Class frm_MasterDepartmentAddNew
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
             rs = cn.Execute("SELECT [code] FROM  [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [code] ")
-            If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+            If rs.EOF = False Then
+                cbo_DevisionCode.Items.Clear()
                 While Not rs.EOF
-                    cbo_DevisionCode.Items.Add(rs(0).Value.ToString)
+                    cbo_DevisionCode.Items.Add(rs(0).Value)
                     rs.MoveNext()
                 End While
             End If
@@ -34,7 +39,7 @@ Public Class frm_MasterDepartmentAddNew
 
     Private Sub cbo_DevisionCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_DevisionCode.SelectedIndexChanged
         Try
-            rs = cn.Execute("SELECT TOP 1 [description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [code]='" & cbo_DevisionCode.Text & "' ORDER BY [code] ASC")
+            rs = cn.Execute("SELECT [description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [code]='" & cbo_DevisionCode.Text & "' ORDER BY [code] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_DevisionDescription.Text = rs(0).Value.ToString
             End If
@@ -45,14 +50,20 @@ Public Class frm_MasterDepartmentAddNew
 
     Private Sub btn_AddNew_Click(sender As Object, e As EventArgs) Handles btn_AddNew.Click
         Try
-            Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_department] ([devision_code],[devision_description],[department_code],[department_description]) VALUES "
-            sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
-                 ",'" & txt_DevisionDescription.Text & "'" & _
-                 ",'" & txt_DepartmentCode.Text & "'" & _
-                ",'" & txt_DepartmentDescription.Text & "')"
-            cn.Execute(sqlInsert)
+            If cbo_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Or txt_DepartmentCode.Text = "" Or txt_DepartmentDescription.Text = "" Then
+                MsgBox(udv_msg_LoginBlank, vbInformation)
+            Else
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_department] ([devision_code],[devision_description],[department_code],[department_description]) VALUES "
+                sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
+                     ",'" & txt_DevisionDescription.Text & "'" & _
+                     ",'" & txt_DepartmentCode.Text & "'" & _
+                    ",'" & txt_DepartmentDescription.Text & "')"
+                cn.Execute(sqlInsert)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
+
+ 
 End Class

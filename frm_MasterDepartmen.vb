@@ -12,7 +12,6 @@ Public Class frm_MasterDepartment
 
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
-
     Private Sub frm_MasterDepartmen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frm_MasterDepartmen_Resize(Me, Nothing)
 

@@ -5,6 +5,7 @@ Public Class frm_MasterSubSectionAddNew
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         Me.Close()
         cn.Close()
+
     End Sub
 
     Private Sub frm_MasterSubSectionAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,6 +22,7 @@ Public Class frm_MasterSubSectionAddNew
             cn.Open()
             rs = cn.Execute("SELECT [code] FROM  [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [code] ")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+                cbo_DevisionCode.Items.Clear()
                 While Not rs.EOF
                     cbo_DevisionCode.Items.Add(rs(0).Value.ToString)
                     rs.MoveNext()
@@ -28,6 +30,7 @@ Public Class frm_MasterSubSectionAddNew
             End If
             rs = cn.Execute("SELECT [department_code] FROM  [AN_SUMATRA].[dbo].[TM_tb_department] ORDER BY [department_code] ")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+                cbo_DepartmentCode.Items.Clear()
                 While Not rs.EOF
                     cbo_DepartmentCode.Items.Add(rs(0).Value.ToString)
                     rs.MoveNext()
@@ -35,6 +38,7 @@ Public Class frm_MasterSubSectionAddNew
             End If
             rs = cn.Execute("SELECT [section_code] FROM  [AN_SUMATRA].[dbo].[TM_tb_section] ORDER BY [section_code] ")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+                cbo_SectionCode.Items.Clear()
                 While Not rs.EOF
                     cbo_SectionCode.Items.Add(rs(0).Value.ToString)
                     rs.MoveNext()
@@ -55,20 +59,25 @@ Public Class frm_MasterSubSectionAddNew
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+
     End Sub
 
     Private Sub btn_AddNew_Click(sender As Object, e As EventArgs) Handles btn_AddNew.Click
         Try
-            Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_subsection] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description],[subsection_code],[subsection_description]) VALUES "
-            sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
-                 ",'" & txt_DevisionDescription.Text & "'" & _
-                 ",'" & cbo_DepartmentCode.Text & "'" & _
-                ",'" & txt_DepartmentDescription.Text & "'" & _
-                ",'" & cbo_SectionCode.Text & "'" & _
-                ",'" & txt_SectionDescription.Text & "'" & _
-                ",'" & txt_SubSectionCode.Text & "'" & _
-                ",'" & txt_SubSectionDescription.Text & "')"
-            cn.Execute(sqlInsert)
+            If cbo_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Or cbo_DepartmentCode.Text = "" Or txt_DepartmentDescription.Text = "" Or cbo_SectionCode.Text = "" Or txt_SectionDescription.Text = "" Or txt_SubSectionCode.Text = "" Or txt_SubSectionDescription.Text = "" Then
+                MsgBox(udv_msg_LoginBlank, vbInformation)
+            Else
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_subsection] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description],[subsection_code],[subsection_description]) VALUES "
+                sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
+                     ",'" & txt_DevisionDescription.Text & "'" & _
+                     ",'" & cbo_DepartmentCode.Text & "'" & _
+                    ",'" & txt_DepartmentDescription.Text & "'" & _
+                    ",'" & cbo_SectionCode.Text & "'" & _
+                    ",'" & txt_SectionDescription.Text & "'" & _
+                    ",'" & txt_SubSectionCode.Text & "'" & _
+                    ",'" & txt_SubSectionDescription.Text & "')"
+                cn.Execute(sqlInsert)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try

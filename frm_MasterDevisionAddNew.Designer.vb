@@ -27,8 +27,8 @@ Partial Class frm_MasterDevisionAddNew
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_AddNew = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.txt_Description = New System.Windows.Forms.TextBox()
-        Me.txt_Code = New System.Windows.Forms.TextBox()
+        Me.txt_DevisionDescription = New System.Windows.Forms.TextBox()
+        Me.txt_DevisionCode = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -77,8 +77,8 @@ Partial Class frm_MasterDevisionAddNew
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.txt_Description)
-        Me.Panel3.Controls.Add(Me.txt_Code)
+        Me.Panel3.Controls.Add(Me.txt_DevisionDescription)
+        Me.Panel3.Controls.Add(Me.txt_DevisionCode)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(9, 12)
@@ -86,21 +86,21 @@ Partial Class frm_MasterDevisionAddNew
         Me.Panel3.Size = New System.Drawing.Size(566, 80)
         Me.Panel3.TabIndex = 6
         '
-        'txt_Description
+        'txt_DevisionDescription
         '
-        Me.txt_Description.Location = New System.Drawing.Point(106, 41)
-        Me.txt_Description.MaxLength = 100
-        Me.txt_Description.Name = "txt_Description"
-        Me.txt_Description.Size = New System.Drawing.Size(455, 20)
-        Me.txt_Description.TabIndex = 2
+        Me.txt_DevisionDescription.Location = New System.Drawing.Point(106, 41)
+        Me.txt_DevisionDescription.MaxLength = 100
+        Me.txt_DevisionDescription.Name = "txt_DevisionDescription"
+        Me.txt_DevisionDescription.Size = New System.Drawing.Size(455, 20)
+        Me.txt_DevisionDescription.TabIndex = 2
         '
-        'txt_Code
+        'txt_DevisionCode
         '
-        Me.txt_Code.Location = New System.Drawing.Point(106, 13)
-        Me.txt_Code.MaxLength = 20
-        Me.txt_Code.Name = "txt_Code"
-        Me.txt_Code.Size = New System.Drawing.Size(144, 20)
-        Me.txt_Code.TabIndex = 1
+        Me.txt_DevisionCode.Location = New System.Drawing.Point(106, 13)
+        Me.txt_DevisionCode.MaxLength = 20
+        Me.txt_DevisionCode.Name = "txt_DevisionCode"
+        Me.txt_DevisionCode.Size = New System.Drawing.Size(144, 20)
+        Me.txt_DevisionCode.TabIndex = 1
         '
         'Label2
         '
@@ -143,8 +143,8 @@ Partial Class frm_MasterDevisionAddNew
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_AddNew As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents txt_Description As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Code As System.Windows.Forms.TextBox
+    Friend WithEvents txt_DevisionDescription As System.Windows.Forms.TextBox
+    Friend WithEvents txt_DevisionCode As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

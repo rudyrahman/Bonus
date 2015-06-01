@@ -189,7 +189,7 @@ Partial Class frm_UserManagement
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Location = New System.Drawing.Point(0, 1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(558, 47)
+        Me.GroupBox1.Size = New System.Drawing.Size(569, 47)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
         '
