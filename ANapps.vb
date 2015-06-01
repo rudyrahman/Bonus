@@ -4,8 +4,11 @@ Public Class ANapps
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
 
-    Private Sub ANapps_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ANapps_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        status.Text = CurrentAccountName
+    End Sub
 
+    Private Sub ANapps_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Visible = True
         frm_login.ShowDialog()
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"

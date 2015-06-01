@@ -3,16 +3,17 @@ Public Class frm_UserManagement
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
     Private Sub frm_UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbo_Username.Focus()
-        CheckedListBox1.Visible = False
-        chk_SystemControl.Visible = False
-        chk_file.Visible = False
-        chk_Menu.Visible = False
-        btn_Save.Visible = False
-        btn_clear.Visible = False
-        cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
-        cn.Open()
         Try
+            cbo_Username.Focus()
+            CheckedListBox1.Visible = False
+            chk_SystemControl.Visible = False
+            chk_file.Visible = False
+            chk_Menu.Visible = False
+            btn_Save.Visible = False
+            btn_clear.Visible = False
+            cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
+            cn.Open()
+
             rs = cn.Execute("SELECT [username] FROM  [AN_SUMATRA].[dbo].[SY_tb_appsaccounts] where [priority] > '" & CurrentAccountPriority & "' ")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 While Not rs.EOF
@@ -111,25 +112,29 @@ Public Class frm_UserManagement
     End Sub
 
     Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
-        chk_Menu.SetItemChecked(0, False)
-        chk_Menu.SetItemChecked(1, False)
-        chk_Menu.SetItemChecked(2, False)
-        chk_Menu.SetItemChecked(3, False)
-        chk_Menu.SetItemChecked(4, False)
-        chk_Menu.SetItemChecked(5, False)
-        chk_Menu.SetItemChecked(6, False)
-        chk_Menu.SetItemChecked(7, False)
-        chk_Menu.SetItemChecked(8, False)
-        chk_Menu.SetItemChecked(9, False)
-        chk_Menu.SetItemChecked(10, False)
-        chk_file.SetItemChecked(0, False)
-        chk_file.SetItemChecked(1, False)
-        chk_file.SetItemChecked(2, False)
-        chk_SystemControl.SetItemChecked(0, False)
-        chk_SystemControl.SetItemChecked(1, False)
-        chk_SystemControl.SetItemChecked(2, False)
-        chk_SystemControl.SetItemChecked(3, False)
-        chk_SystemControl.SetItemChecked(4, False)
+        Try
+            chk_Menu.SetItemChecked(0, False)
+            chk_Menu.SetItemChecked(1, False)
+            chk_Menu.SetItemChecked(2, False)
+            chk_Menu.SetItemChecked(3, False)
+            chk_Menu.SetItemChecked(4, False)
+            chk_Menu.SetItemChecked(5, False)
+            chk_Menu.SetItemChecked(6, False)
+            chk_Menu.SetItemChecked(7, False)
+            chk_Menu.SetItemChecked(8, False)
+            chk_Menu.SetItemChecked(9, False)
+            chk_Menu.SetItemChecked(10, False)
+            chk_file.SetItemChecked(0, False)
+            chk_file.SetItemChecked(1, False)
+            chk_file.SetItemChecked(2, False)
+            chk_SystemControl.SetItemChecked(0, False)
+            chk_SystemControl.SetItemChecked(1, False)
+            chk_SystemControl.SetItemChecked(2, False)
+            chk_SystemControl.SetItemChecked(3, False)
+            chk_SystemControl.SetItemChecked(4, False)
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
@@ -190,76 +195,113 @@ Public Class frm_UserManagement
     End Sub
 
     Private Sub chk_Menu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_Menu.SelectedIndexChanged
-        If chk_Menu.GetSelected(0) = True Then
-            chk_file.Visible = True
-            chk_SystemControl.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(1) = True Then
-            chk_SystemControl.Visible = True
-            chk_file.Visible = False
-            chk_SystemControl.Location = New Point(171, 202)
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(2) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(3) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(4) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(5) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(6) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(7) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(8) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(9) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
-        If chk_Menu.GetSelected(10) = True Then
-            chk_SystemControl.Visible = False
-            chk_file.Visible = False
-            CheckedListBox1.Visible = False
-        End If
+        Try
+            If chk_Menu.GetSelected(0) = True Then
+                chk_file.Visible = True
+                chk_SystemControl.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(1) = True Then
+                chk_SystemControl.Visible = True
+                chk_file.Visible = False
+                chk_SystemControl.Location = New Point(171, 202)
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(2) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(3) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(4) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(5) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(6) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(7) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(8) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(9) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+            If chk_Menu.GetSelected(10) = True Then
+                chk_SystemControl.Visible = False
+                chk_file.Visible = False
+                CheckedListBox1.Visible = False
+            End If
+
+            If chk_Menu.GetItemChecked(0) = False Then
+                chk_file.SetItemChecked(0, False)
+                chk_file.SetItemChecked(1, False)
+                chk_file.SetItemChecked(2, False)
+            End If
+            If chk_Menu.GetItemChecked(0) = True Then
+                chk_file.SetItemChecked(0, True)
+                chk_file.SetItemChecked(1, True)
+                chk_file.SetItemChecked(2, True)
+            End If
+
+            If chk_Menu.GetItemChecked(1) = False Then
+                chk_SystemControl.SetItemChecked(0, False)
+                chk_SystemControl.SetItemChecked(1, False)
+                chk_SystemControl.SetItemChecked(2, False)
+                chk_SystemControl.SetItemChecked(3, False)
+                chk_SystemControl.SetItemChecked(4, False)
+            End If
+            If chk_Menu.GetItemChecked(1) = True Then
+                chk_SystemControl.SetItemChecked(0, True)
+                chk_SystemControl.SetItemChecked(1, True)
+                chk_SystemControl.SetItemChecked(2, True)
+                chk_SystemControl.SetItemChecked(3, True)
+                chk_SystemControl.SetItemChecked(4, True)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub chk_SystemControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_SystemControl.SelectedIndexChanged
-        If chk_SystemControl.GetSelected(0) = True Then
-            CheckedListBox1.Visible = True
-            CheckedListBox1.Location = New Point(305, 202)
-        End If
+        Try
+            If chk_SystemControl.GetSelected(0) = True Then
+                CheckedListBox1.Visible = True
+                CheckedListBox1.Location = New Point(305, 202)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub chk_file_SelectedIndexChanged(sender As Object, e As EventArgs) Handles chk_file.SelectedIndexChanged
-        If chk_file.GetSelected(0) = True Then
-            CheckedListBox1.Visible = True
-            CheckedListBox1.Location = New Point(297, 202)
-        End If
+        Try
+            If chk_file.GetSelected(0) = True Then
+                CheckedListBox1.Visible = True
+                CheckedListBox1.Location = New Point(297, 202)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
-
 End Class

@@ -69,6 +69,7 @@ Partial Class ANapps
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_LockSystem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.status = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -216,7 +217,7 @@ Partial Class ANapps
         '
         'StatusStrip
         '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel, Me.status})
         Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Size = New System.Drawing.Size(1050, 22)
@@ -357,6 +358,12 @@ Partial Class ANapps
         Me.mnu_LockSystem.Size = New System.Drawing.Size(183, 22)
         Me.mnu_LockSystem.Text = "Lock System"
         '
+        'status
+        '
+        Me.status.Name = "status"
+        Me.status.Size = New System.Drawing.Size(121, 17)
+        Me.status.Text = "ToolStripStatusLabel1"
+        '
         'ANapps
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -422,5 +429,6 @@ Partial Class ANapps
     Friend WithEvents mnu_Reporting As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnu_SapB1Interface As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnu_PisiSoftInterface As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents status As System.Windows.Forms.ToolStripStatusLabel
 
 End Class
