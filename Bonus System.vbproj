@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.frm_MasterEStatusArragementAddNew</StartupObject>
+    <StartupObject>Bonus_System.frm_MasterDepartment</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
