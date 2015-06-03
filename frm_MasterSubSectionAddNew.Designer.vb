@@ -116,6 +116,7 @@ Partial Class frm_MasterSubSectionAddNew
         'txt_SubSectionCode
         '
         Me.txt_SubSectionCode.Location = New System.Drawing.Point(139, 177)
+        Me.txt_SubSectionCode.MaxLength = 20
         Me.txt_SubSectionCode.Name = "txt_SubSectionCode"
         Me.txt_SubSectionCode.Size = New System.Drawing.Size(121, 20)
         Me.txt_SubSectionCode.TabIndex = 7
@@ -123,6 +124,7 @@ Partial Class frm_MasterSubSectionAddNew
         'txt_SubSectionDescription
         '
         Me.txt_SubSectionDescription.Location = New System.Drawing.Point(139, 204)
+        Me.txt_SubSectionDescription.MaxLength = 100
         Me.txt_SubSectionDescription.Name = "txt_SubSectionDescription"
         Me.txt_SubSectionDescription.Size = New System.Drawing.Size(423, 20)
         Me.txt_SubSectionDescription.TabIndex = 8
@@ -156,8 +158,11 @@ Partial Class frm_MasterSubSectionAddNew
         '
         'txt_SectionDescription
         '
+        Me.txt_SectionDescription.BackColor = System.Drawing.Color.White
         Me.txt_SectionDescription.Location = New System.Drawing.Point(139, 150)
+        Me.txt_SectionDescription.MaxLength = 100
         Me.txt_SectionDescription.Name = "txt_SectionDescription"
+        Me.txt_SectionDescription.ReadOnly = True
         Me.txt_SectionDescription.Size = New System.Drawing.Size(423, 20)
         Me.txt_SectionDescription.TabIndex = 6
         Me.txt_SectionDescription.TabStop = False
@@ -191,8 +196,11 @@ Partial Class frm_MasterSubSectionAddNew
         '
         'txt_DepartmentDescription
         '
+        Me.txt_DepartmentDescription.BackColor = System.Drawing.Color.White
         Me.txt_DepartmentDescription.Location = New System.Drawing.Point(139, 94)
+        Me.txt_DepartmentDescription.MaxLength = 100
         Me.txt_DepartmentDescription.Name = "txt_DepartmentDescription"
+        Me.txt_DepartmentDescription.ReadOnly = True
         Me.txt_DepartmentDescription.Size = New System.Drawing.Size(423, 20)
         Me.txt_DepartmentDescription.TabIndex = 4
         Me.txt_DepartmentDescription.TabStop = False
@@ -226,8 +234,11 @@ Partial Class frm_MasterSubSectionAddNew
         '
         'txt_DevisionDescription
         '
+        Me.txt_DevisionDescription.BackColor = System.Drawing.Color.White
         Me.txt_DevisionDescription.Location = New System.Drawing.Point(139, 39)
+        Me.txt_DevisionDescription.MaxLength = 100
         Me.txt_DevisionDescription.Name = "txt_DevisionDescription"
+        Me.txt_DevisionDescription.ReadOnly = True
         Me.txt_DevisionDescription.Size = New System.Drawing.Size(423, 20)
         Me.txt_DevisionDescription.TabIndex = 2
         Me.txt_DevisionDescription.TabStop = False

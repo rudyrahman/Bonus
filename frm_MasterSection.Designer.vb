@@ -89,6 +89,7 @@ Partial Class frm_MasterSection
         'txt_CariData
         '
         Me.txt_CariData.Location = New System.Drawing.Point(76, 20)
+        Me.txt_CariData.MaxLength = 100
         Me.txt_CariData.Name = "txt_CariData"
         Me.txt_CariData.Size = New System.Drawing.Size(374, 20)
         Me.txt_CariData.TabIndex = 1

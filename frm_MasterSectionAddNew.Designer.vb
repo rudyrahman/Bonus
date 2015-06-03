@@ -108,6 +108,7 @@ Partial Class frm_MasterSectionAddNew
         'txt_SectionDescription
         '
         Me.txt_SectionDescription.Location = New System.Drawing.Point(133, 153)
+        Me.txt_SectionDescription.MaxLength = 100
         Me.txt_SectionDescription.Name = "txt_SectionDescription"
         Me.txt_SectionDescription.Size = New System.Drawing.Size(435, 20)
         Me.txt_SectionDescription.TabIndex = 6
@@ -115,6 +116,7 @@ Partial Class frm_MasterSectionAddNew
         'txt_SectionCode
         '
         Me.txt_SectionCode.Location = New System.Drawing.Point(133, 125)
+        Me.txt_SectionCode.MaxLength = 20
         Me.txt_SectionCode.Name = "txt_SectionCode"
         Me.txt_SectionCode.Size = New System.Drawing.Size(121, 20)
         Me.txt_SectionCode.TabIndex = 5
@@ -148,8 +150,11 @@ Partial Class frm_MasterSectionAddNew
         '
         'txt_DepartmentDescription
         '
+        Me.txt_DepartmentDescription.BackColor = System.Drawing.Color.White
         Me.txt_DepartmentDescription.Location = New System.Drawing.Point(133, 96)
+        Me.txt_DepartmentDescription.MaxLength = 100
         Me.txt_DepartmentDescription.Name = "txt_DepartmentDescription"
+        Me.txt_DepartmentDescription.ReadOnly = True
         Me.txt_DepartmentDescription.Size = New System.Drawing.Size(435, 20)
         Me.txt_DepartmentDescription.TabIndex = 4
         Me.txt_DepartmentDescription.TabStop = False
@@ -183,8 +188,11 @@ Partial Class frm_MasterSectionAddNew
         '
         'txt_DevisionDescription
         '
+        Me.txt_DevisionDescription.BackColor = System.Drawing.Color.White
         Me.txt_DevisionDescription.Location = New System.Drawing.Point(133, 40)
+        Me.txt_DevisionDescription.MaxLength = 100
         Me.txt_DevisionDescription.Name = "txt_DevisionDescription"
+        Me.txt_DevisionDescription.ReadOnly = True
         Me.txt_DevisionDescription.Size = New System.Drawing.Size(435, 20)
         Me.txt_DevisionDescription.TabIndex = 2
         Me.txt_DevisionDescription.TabStop = False
