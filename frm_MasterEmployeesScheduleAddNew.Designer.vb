@@ -30,6 +30,8 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_AddNew = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -50,8 +52,6 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -146,6 +146,16 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(245, 117)
         Me.DataGridView1.TabIndex = 16
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Description"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Data Inputed"
+        Me.Column2.Name = "Column2"
         '
         'Label10
         '
@@ -312,16 +322,6 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.DataGridViewTextBoxColumn2.HeaderText = "Data Inputed"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Description"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Data Inputed"
-        Me.Column2.Name = "Column2"
         '
         'frm_MasterEmployeesScheduleAddNew
         '

@@ -89,6 +89,7 @@ Partial Class frm_MasterSection
         'txt_CariData
         '
         Me.txt_CariData.Location = New System.Drawing.Point(76, 20)
+        Me.txt_CariData.MaxLength = 100
         Me.txt_CariData.Name = "txt_CariData"
         Me.txt_CariData.Size = New System.Drawing.Size(374, 20)
         Me.txt_CariData.TabIndex = 1
@@ -119,8 +120,8 @@ Partial Class frm_MasterSection
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_MasterSection"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_MasterSection"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
         CType(Me.dgv_MasterSection, System.ComponentModel.ISupportInitialize).EndInit()

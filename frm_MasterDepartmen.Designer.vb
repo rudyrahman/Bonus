@@ -30,6 +30,7 @@ Partial Class frm_MasterDepartment
         Me.btn_ExportToExcel = New System.Windows.Forms.Button()
         Me.btn_RefreshData = New System.Windows.Forms.Button()
         Me.btn_TambahBaru = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_Form.SuspendLayout()
         CType(Me.dgv_MasterDepartment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,6 +54,7 @@ Partial Class frm_MasterDepartment
         'txt_CariData
         '
         Me.txt_CariData.Location = New System.Drawing.Point(76, 20)
+        Me.txt_CariData.MaxLength = 100
         Me.txt_CariData.Name = "txt_CariData"
         Me.txt_CariData.Size = New System.Drawing.Size(374, 20)
         Me.txt_CariData.TabIndex = 1
@@ -112,6 +114,11 @@ Partial Class frm_MasterDepartment
         Me.btn_TambahBaru.Text = "Tambah Baru"
         Me.btn_TambahBaru.UseVisualStyleBackColor = True
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
         'frm_MasterDepartment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -119,8 +126,8 @@ Partial Class frm_MasterDepartment
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_MasterDepartment"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_MasterDepartment"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
         CType(Me.dgv_MasterDepartment, System.ComponentModel.ISupportInitialize).EndInit()
@@ -135,4 +142,5 @@ Partial Class frm_MasterDepartment
     Friend WithEvents btn_ExportToExcel As System.Windows.Forms.Button
     Friend WithEvents btn_RefreshData As System.Windows.Forms.Button
     Friend WithEvents btn_TambahBaru As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

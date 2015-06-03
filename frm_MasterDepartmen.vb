@@ -33,6 +33,10 @@ Public Class frm_MasterDepartment
             dgv_MasterDepartment.Columns(2).Width = 150
             dgv_MasterDepartment.Columns(3).Width = 100
             dgv_MasterDepartment.Columns(4).Width = 150
+            dgv_MasterDepartment.Columns(5).Width = 100
+            dgv_MasterDepartment.Columns(6).Width = 100
+            dgv_MasterDepartment.Columns(7).Width = 100
+            dgv_MasterDepartment.Columns(8).Width = 100
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
@@ -145,7 +149,7 @@ Public Class frm_MasterDepartment
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Try
             rs = New ADODB.Recordset
-            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_department] where [department_description] like '%" & txt_CariData.Text & "%' order by [id]"
+            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_department] where [devision_description] like '%" & txt_CariData.Text & "%' order by [id]"
             With rs
                 .CursorLocation = CursorLocationEnum.adUseClient
                 .Open(search, cn, CursorTypeEnum.adOpenKeyset, _

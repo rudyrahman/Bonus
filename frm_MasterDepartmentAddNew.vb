@@ -53,12 +53,20 @@ Public Class frm_MasterDepartmentAddNew
             If cbo_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Or txt_DepartmentCode.Text = "" Or txt_DepartmentDescription.Text = "" Then
                 MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_department] ([devision_code],[devision_description],[department_code],[department_description]) VALUES "
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_department] ([devision_code],[devision_description],[department_code],[department_description],[create_by],[create_time],[system_id],[inactive]) VALUES "
                 sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
                      ",'" & txt_DevisionDescription.Text & "'" & _
                      ",'" & txt_DepartmentCode.Text & "'" & _
-                    ",'" & txt_DepartmentDescription.Text & "')"
+                      ",'" & txt_DepartmentDescription.Text & "'" & _
+                     ",'" & CurrentAccountName & "'" & _
+                     "," & "GETDATE()" & " " & "" & _
+                    ",'" & CurrentAccountId & "'" & _
+                    ",'')"
                 cn.Execute(sqlInsert)
+                cbo_DevisionCode.Items.Clear()
+                txt_DevisionDescription.Text = ""
+                txt_DepartmentCode.Text = ""
+                txt_DepartmentDescription.Text = ""
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

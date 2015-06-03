@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{079A5313-BCA9-46FC-978D-F9FAA8EB6275}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Bonus_System.frm_MasterWorkgrouptoShiftReference</StartupObject>
+    <StartupObject>Bonus_System.My.MyApplication</StartupObject>
     <RootNamespace>Bonus_System</RootNamespace>
     <AssemblyName>Bonus System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -256,22 +256,34 @@
     <Compile Include="frm_MasterSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterShift.Designer.vb">
+      <DependentUpon>frm_MasterShift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterShiftAddNew.Designer.vb">
+      <DependentUpon>frm_MasterShiftAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterShiftAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterSubSectionAddNew.Designer.vb">
       <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterSubSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MasterWorkgrouptoShiftReference.Designer.vb">
-      <DependentUpon>frm_MasterWorkgrouptoShiftReference.vb</DependentUpon>
+    <Compile Include="frm_MasterWorkgroup.Designer.vb">
+      <DependentUpon>frm_MasterWorkgroup.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_MasterWorkgrouptoShiftReference.vb">
+    <Compile Include="frm_MasterWorkgroup.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MasterWorkgrouptoShiftReferenceAddNew.Designer.vb">
-      <DependentUpon>frm_MasterWorkgrouptoShiftReferenceAddNew.vb</DependentUpon>
+    <Compile Include="frm_MasterWorkgroupAddNew.Designer.vb">
+      <DependentUpon>frm_MasterWorkgroupAddNew.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_MasterWorkgrouptoShiftReferenceAddNew.vb">
+    <Compile Include="frm_MasterWorkgroupAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MonthPeriode.Designer.vb">
@@ -324,11 +336,11 @@
     </Compile>
     <Compile Include="mdlAlpha.vb" />
     <Compile Include="mdl_Message.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
+    <Compile Include="My Project\Application1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -426,14 +438,20 @@
     <EmbeddedResource Include="frm_MasterSectionAddNew.resx">
       <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterShift.resx">
+      <DependentUpon>frm_MasterShift.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterShiftAddNew.resx">
+      <DependentUpon>frm_MasterShiftAddNew.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSubSectionAddNew.resx">
       <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MasterWorkgrouptoShiftReference.resx">
-      <DependentUpon>frm_MasterWorkgrouptoShiftReference.vb</DependentUpon>
+    <EmbeddedResource Include="frm_MasterWorkgroup.resx">
+      <DependentUpon>frm_MasterWorkgroup.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MasterWorkgrouptoShiftReferenceAddNew.resx">
-      <DependentUpon>frm_MasterWorkgrouptoShiftReferenceAddNew.vb</DependentUpon>
+    <EmbeddedResource Include="frm_MasterWorkgroupAddNew.resx">
+      <DependentUpon>frm_MasterWorkgroupAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MonthPeriode.resx">
       <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
@@ -474,6 +492,7 @@
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application1.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

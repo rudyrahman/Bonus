@@ -100,6 +100,7 @@ Partial Class frm_MasterDepartmentAddNew
         'txt_DepartmentDescription
         '
         Me.txt_DepartmentDescription.Location = New System.Drawing.Point(133, 94)
+        Me.txt_DepartmentDescription.MaxLength = 100
         Me.txt_DepartmentDescription.Name = "txt_DepartmentDescription"
         Me.txt_DepartmentDescription.Size = New System.Drawing.Size(428, 20)
         Me.txt_DepartmentDescription.TabIndex = 4
@@ -133,8 +134,11 @@ Partial Class frm_MasterDepartmentAddNew
         '
         'txt_DevisionDescription
         '
+        Me.txt_DevisionDescription.BackColor = System.Drawing.Color.White
         Me.txt_DevisionDescription.Location = New System.Drawing.Point(133, 40)
+        Me.txt_DevisionDescription.MaxLength = 100
         Me.txt_DevisionDescription.Name = "txt_DevisionDescription"
+        Me.txt_DevisionDescription.ReadOnly = True
         Me.txt_DevisionDescription.Size = New System.Drawing.Size(428, 20)
         Me.txt_DevisionDescription.TabIndex = 2
         Me.txt_DevisionDescription.TabStop = False
@@ -142,6 +146,7 @@ Partial Class frm_MasterDepartmentAddNew
         'txt_DepartmentCode
         '
         Me.txt_DepartmentCode.Location = New System.Drawing.Point(133, 67)
+        Me.txt_DepartmentCode.MaxLength = 20
         Me.txt_DepartmentCode.Name = "txt_DepartmentCode"
         Me.txt_DepartmentCode.Size = New System.Drawing.Size(126, 20)
         Me.txt_DepartmentCode.TabIndex = 3

@@ -36,6 +36,10 @@ Public Class frm_MasterSection
             dgv_MasterSection.Columns(4).Width = 150
             dgv_MasterSection.Columns(5).Width = 100
             dgv_MasterSection.Columns(6).Width = 150
+            dgv_MasterSection.Columns(7).Width = 100
+            dgv_MasterSection.Columns(8).Width = 100
+            dgv_MasterSection.Columns(9).Width = 100
+            dgv_MasterSection.Columns(10).Width = 100
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
