@@ -74,30 +74,36 @@ Public Class ANapps
     Private Sub MasterDevisionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterDevisionToolStripMenuItem.Click
         frm_MasterDevision.MdiParent = Me
         frm_MasterDevision.Show()
+        frm_MasterDevision.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub MasterDepartmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterDepartmentToolStripMenuItem.Click
         frm_MasterDepartment.MdiParent = Me
         frm_MasterDepartment.Show()
+        frm_MasterDepartment.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub MasterSectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterSectionToolStripMenuItem.Click
         frm_MasterSection.MdiParent = Me
         frm_MasterSection.Show()
+        frm_MasterSection.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub MasterSubSectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterSubSectionToolStripMenuItem.Click
         frm_MasterSubSection.MdiParent = Me
         frm_MasterSubSection.Show()
+        frm_MasterSubSection.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub MasterWorkgroupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterWorkgroupToolStripMenuItem.Click
         frm_MasterWorkgroup.MdiParent = Me
         frm_MasterWorkgroup.Show()
+        frm_MasterWorkgroup.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub MasterShiftToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterShiftToolStripMenuItem.Click
         frm_MasterShift.MdiParent = Me
         frm_MasterShift.Show()
+        frm_MasterShift.WindowState = FormWindowState.Maximized
     End Sub
 End Class

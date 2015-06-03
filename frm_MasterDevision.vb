@@ -85,6 +85,10 @@ Public Class frm_MasterDevision
             dgv_MasterDevision.Columns(0).Width = 40
             dgv_MasterDevision.Columns(1).Width = 100
             dgv_MasterDevision.Columns(2).Width = 150
+            dgv_MasterDevision.Columns(3).Width = 100
+            dgv_MasterDevision.Columns(4).Width = 100
+            dgv_MasterDevision.Columns(5).Width = 100
+            dgv_MasterDevision.Columns(6).Width = 100
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

@@ -33,6 +33,10 @@ Public Class frm_MasterDepartment
             dgv_MasterDepartment.Columns(2).Width = 150
             dgv_MasterDepartment.Columns(3).Width = 100
             dgv_MasterDepartment.Columns(4).Width = 150
+            dgv_MasterDepartment.Columns(5).Width = 100
+            dgv_MasterDepartment.Columns(6).Width = 100
+            dgv_MasterDepartment.Columns(7).Width = 100
+            dgv_MasterDepartment.Columns(8).Width = 100
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

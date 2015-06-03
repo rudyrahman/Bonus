@@ -29,15 +29,20 @@ Public Class frm_MasterSubSection
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterSubSection.Columns(0).Width = 40
+            dgv_MasterSubSection.Columns(0).Width = 30
             dgv_MasterSubSection.Columns(1).Width = 100
-            dgv_MasterSubSection.Columns(2).Width = 150
+            dgv_MasterSubSection.Columns(2).Width = 130
             dgv_MasterSubSection.Columns(3).Width = 100
-            dgv_MasterSubSection.Columns(4).Width = 150
+            dgv_MasterSubSection.Columns(4).Width = 130
             dgv_MasterSubSection.Columns(5).Width = 100
-            dgv_MasterSubSection.Columns(6).Width = 150
+            dgv_MasterSubSection.Columns(6).Width = 100
             dgv_MasterSubSection.Columns(7).Width = 100
-            dgv_MasterSubSection.Columns(8).Width = 150
+            dgv_MasterSubSection.Columns(8).Width = 130
+            dgv_MasterSubSection.Columns(9).Width = 100
+            dgv_MasterSubSection.Columns(10).Width = 100
+            dgv_MasterSubSection.Columns(11).Width = 100
+            dgv_MasterSubSection.Columns(12).Width = 50
+
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
