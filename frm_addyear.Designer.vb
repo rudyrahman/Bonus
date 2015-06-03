@@ -154,6 +154,7 @@ Partial Class frm_addyear
         Me.ClientSize = New System.Drawing.Size(593, 251)
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_addyear"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New"

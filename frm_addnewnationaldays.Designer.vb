@@ -222,14 +222,15 @@ Partial Class frm_addnewnationaldays
         '
         'frm_addnewnationaldays
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 607)
         Me.Controls.Add(Me.pnl3)
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
-        Me.MaximizeBox = false
-        Me.MinimizeBox = false
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_addnewnationaldays"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New"

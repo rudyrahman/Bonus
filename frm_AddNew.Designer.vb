@@ -154,6 +154,7 @@ Partial Class frm_AddNew
         Me.ClientSize = New System.Drawing.Size(589, 247)
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_AddNew"

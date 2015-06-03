@@ -113,6 +113,7 @@ Partial Class frm_addnewattendance
         Me.ClientSize = New System.Drawing.Size(589, 146)
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_addnewattendance"
