@@ -256,10 +256,34 @@
     <Compile Include="frm_MasterSectionAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterShift.Designer.vb">
+      <DependentUpon>frm_MasterShift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterShiftAddNew.Designer.vb">
+      <DependentUpon>frm_MasterShiftAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterShiftAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterSubSectionAddNew.Designer.vb">
       <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterSubSectionAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroup.Designer.vb">
+      <DependentUpon>frm_MasterWorkgroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroupAddNew.Designer.vb">
+      <DependentUpon>frm_MasterWorkgroupAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroupAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MonthPeriode.Designer.vb">
@@ -414,8 +438,20 @@
     <EmbeddedResource Include="frm_MasterSectionAddNew.resx">
       <DependentUpon>frm_MasterSectionAddNew.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterShift.resx">
+      <DependentUpon>frm_MasterShift.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterShiftAddNew.resx">
+      <DependentUpon>frm_MasterShiftAddNew.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterSubSectionAddNew.resx">
       <DependentUpon>frm_MasterSubSectionAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterWorkgroup.resx">
+      <DependentUpon>frm_MasterWorkgroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterWorkgroupAddNew.resx">
+      <DependentUpon>frm_MasterWorkgroupAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MonthPeriode.resx">
       <DependentUpon>frm_MonthPeriode.vb</DependentUpon>

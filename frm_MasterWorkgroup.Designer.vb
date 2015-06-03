@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_MasterSection
+Partial Class frm_MasterWorkgroup
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -29,9 +29,9 @@ Partial Class frm_MasterSection
         Me.btn_TambahBaru = New System.Windows.Forms.Button()
         Me.txt_CariData = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dgv_MasterSection = New System.Windows.Forms.DataGridView()
+        Me.dgv_MasterWorkgroup = New System.Windows.Forms.DataGridView()
         Me.pnl_Form.SuspendLayout()
-        CType(Me.dgv_MasterSection, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_MasterWorkgroup, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnl_Form
@@ -44,15 +44,15 @@ Partial Class frm_MasterSection
         Me.pnl_Form.Controls.Add(Me.btn_TambahBaru)
         Me.pnl_Form.Controls.Add(Me.txt_CariData)
         Me.pnl_Form.Controls.Add(Me.Label1)
-        Me.pnl_Form.Controls.Add(Me.dgv_MasterSection)
-        Me.pnl_Form.Location = New System.Drawing.Point(2, 3)
+        Me.pnl_Form.Controls.Add(Me.dgv_MasterWorkgroup)
+        Me.pnl_Form.Location = New System.Drawing.Point(2, 2)
         Me.pnl_Form.Name = "pnl_Form"
-        Me.pnl_Form.Size = New System.Drawing.Size(780, 457)
+        Me.pnl_Form.Size = New System.Drawing.Size(781, 459)
         Me.pnl_Form.TabIndex = 8
         '
         'btn_Close
         '
-        Me.btn_Close.Location = New System.Drawing.Point(666, 419)
+        Me.btn_Close.Location = New System.Drawing.Point(667, 420)
         Me.btn_Close.Name = "btn_Close"
         Me.btn_Close.Size = New System.Drawing.Size(103, 27)
         Me.btn_Close.TabIndex = 5
@@ -61,7 +61,7 @@ Partial Class frm_MasterSection
         '
         'btn_ExportToExcel
         '
-        Me.btn_ExportToExcel.Location = New System.Drawing.Point(339, 419)
+        Me.btn_ExportToExcel.Location = New System.Drawing.Point(340, 420)
         Me.btn_ExportToExcel.Name = "btn_ExportToExcel"
         Me.btn_ExportToExcel.Size = New System.Drawing.Size(103, 27)
         Me.btn_ExportToExcel.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Class frm_MasterSection
         '
         'btn_RefreshData
         '
-        Me.btn_RefreshData.Location = New System.Drawing.Point(448, 419)
+        Me.btn_RefreshData.Location = New System.Drawing.Point(449, 420)
         Me.btn_RefreshData.Name = "btn_RefreshData"
         Me.btn_RefreshData.Size = New System.Drawing.Size(103, 27)
         Me.btn_RefreshData.TabIndex = 3
@@ -79,7 +79,7 @@ Partial Class frm_MasterSection
         '
         'btn_TambahBaru
         '
-        Me.btn_TambahBaru.Location = New System.Drawing.Point(557, 419)
+        Me.btn_TambahBaru.Location = New System.Drawing.Point(558, 420)
         Me.btn_TambahBaru.Name = "btn_TambahBaru"
         Me.btn_TambahBaru.Size = New System.Drawing.Size(103, 27)
         Me.btn_TambahBaru.TabIndex = 4
@@ -103,36 +103,36 @@ Partial Class frm_MasterSection
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Cari Data :"
         '
-        'dgv_MasterSection
+        'dgv_MasterWorkgroup
         '
-        Me.dgv_MasterSection.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgv_MasterSection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_MasterSection.Location = New System.Drawing.Point(9, 66)
-        Me.dgv_MasterSection.Name = "dgv_MasterSection"
-        Me.dgv_MasterSection.Size = New System.Drawing.Size(760, 325)
-        Me.dgv_MasterSection.TabIndex = 21
-        Me.dgv_MasterSection.TabStop = False
+        Me.dgv_MasterWorkgroup.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgv_MasterWorkgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_MasterWorkgroup.Location = New System.Drawing.Point(9, 66)
+        Me.dgv_MasterWorkgroup.Name = "dgv_MasterWorkgroup"
+        Me.dgv_MasterWorkgroup.Size = New System.Drawing.Size(761, 325)
+        Me.dgv_MasterWorkgroup.TabIndex = 21
+        Me.dgv_MasterWorkgroup.TabStop = False
         '
-        'frm_MasterSection
+        'frm_MasterWorkgroup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.pnl_Form)
-        Me.Name = "frm_MasterSection"
-        Me.Text = "frm_MasterSection"
+        Me.Name = "frm_MasterWorkgroup"
+        Me.Text = "frm_MasterWorkgroup"
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
-        CType(Me.dgv_MasterSection, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_MasterWorkgroup, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents pnl_Form As System.Windows.Forms.Panel
-    Friend WithEvents txt_CariData As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents dgv_MasterSection As System.Windows.Forms.DataGridView
     Friend WithEvents btn_Close As System.Windows.Forms.Button
     Friend WithEvents btn_ExportToExcel As System.Windows.Forms.Button
     Friend WithEvents btn_RefreshData As System.Windows.Forms.Button
     Friend WithEvents btn_TambahBaru As System.Windows.Forms.Button
+    Friend WithEvents txt_CariData As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents dgv_MasterWorkgroup As System.Windows.Forms.DataGridView
 End Class

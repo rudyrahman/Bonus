@@ -121,7 +121,6 @@ Partial Class frm_MasterSubSection
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_MasterSubSection"
         Me.Text = "frm_SubSectionvb"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
         CType(Me.dgv_MasterSubSection, System.ComponentModel.ISupportInitialize).EndInit()

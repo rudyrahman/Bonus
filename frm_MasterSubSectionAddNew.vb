@@ -67,7 +67,7 @@ Public Class frm_MasterSubSectionAddNew
             If cbo_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Or cbo_DepartmentCode.Text = "" Or txt_DepartmentDescription.Text = "" Or cbo_SectionCode.Text = "" Or txt_SectionDescription.Text = "" Or txt_SubSectionCode.Text = "" Or txt_SubSectionDescription.Text = "" Then
                 MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_subsection] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description],[subsection_code],[subsection_description]) VALUES "
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_subsection] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description],[subsection_code],[subsection_description],[create_by],[create_time],[system_id],[inactive]) VALUES "
                 sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
                      ",'" & txt_DevisionDescription.Text & "'" & _
                      ",'" & cbo_DepartmentCode.Text & "'" & _
@@ -75,8 +75,21 @@ Public Class frm_MasterSubSectionAddNew
                     ",'" & cbo_SectionCode.Text & "'" & _
                     ",'" & txt_SectionDescription.Text & "'" & _
                     ",'" & txt_SubSectionCode.Text & "'" & _
-                    ",'" & txt_SubSectionDescription.Text & "')"
+                    ",'" & txt_SubSectionDescription.Text & "'" & _
+                    ",'" & CurrentAccountName & "'" & _
+                    "," & "GETDATE()" & " " & "" & _
+                    ",'" & CurrentAccountId & "'" & _
+                    ",'')"
                 cn.Execute(sqlInsert)
+
+                cbo_DevisionCode.Items.Clear()
+                txt_DevisionDescription.Text = ""
+                cbo_DepartmentCode.Items.Clear()
+                txt_DepartmentDescription.Text = ""
+                cbo_SectionCode.Items.Clear()
+                txt_SectionDescription.Text = ""
+                txt_SubSectionCode.Text = ""
+                txt_SubSectionDescription.Text = ""
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

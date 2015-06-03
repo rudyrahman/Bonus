@@ -40,6 +40,11 @@ Partial Class ANapps
         Me.mnu_spSystem_002 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnu_UserManagement = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_OfficeModule = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterDevisionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterDepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterSectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterSubSectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterWorkgroupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_ProcessingFloorModule = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_DataProcessing = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_DataRevision = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,6 +55,7 @@ Partial Class ANapps
         Me.mnu_PisiSoftInterface = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.status = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -69,7 +75,7 @@ Partial Class ANapps
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_LockSystem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.status = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.MasterShiftToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -163,9 +169,40 @@ Partial Class ANapps
         '
         'mnu_OfficeModule
         '
+        Me.mnu_OfficeModule.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterDevisionToolStripMenuItem, Me.MasterDepartmentToolStripMenuItem, Me.MasterSectionToolStripMenuItem, Me.MasterSubSectionToolStripMenuItem, Me.MasterWorkgroupToolStripMenuItem, Me.MasterShiftToolStripMenuItem})
         Me.mnu_OfficeModule.Name = "mnu_OfficeModule"
         Me.mnu_OfficeModule.Size = New System.Drawing.Size(100, 20)
         Me.mnu_OfficeModule.Text = "Office Modules"
+        '
+        'MasterDevisionToolStripMenuItem
+        '
+        Me.MasterDevisionToolStripMenuItem.Name = "MasterDevisionToolStripMenuItem"
+        Me.MasterDevisionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterDevisionToolStripMenuItem.Text = "Master Devision"
+        '
+        'MasterDepartmentToolStripMenuItem
+        '
+        Me.MasterDepartmentToolStripMenuItem.Name = "MasterDepartmentToolStripMenuItem"
+        Me.MasterDepartmentToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterDepartmentToolStripMenuItem.Text = "Master Department"
+        '
+        'MasterSectionToolStripMenuItem
+        '
+        Me.MasterSectionToolStripMenuItem.Name = "MasterSectionToolStripMenuItem"
+        Me.MasterSectionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterSectionToolStripMenuItem.Text = "Master Section"
+        '
+        'MasterSubSectionToolStripMenuItem
+        '
+        Me.MasterSubSectionToolStripMenuItem.Name = "MasterSubSectionToolStripMenuItem"
+        Me.MasterSubSectionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterSubSectionToolStripMenuItem.Text = "Master Sub Section"
+        '
+        'MasterWorkgroupToolStripMenuItem
+        '
+        Me.MasterWorkgroupToolStripMenuItem.Name = "MasterWorkgroupToolStripMenuItem"
+        Me.MasterWorkgroupToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterWorkgroupToolStripMenuItem.Text = "Master Workgroup"
         '
         'mnu_ProcessingFloorModule
         '
@@ -229,6 +266,12 @@ Partial Class ANapps
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(39, 17)
         Me.ToolStripStatusLabel.Text = "Status"
+        '
+        'status
+        '
+        Me.status.Name = "status"
+        Me.status.Size = New System.Drawing.Size(121, 17)
+        Me.status.Text = "ToolStripStatusLabel1"
         '
         'NewWindowToolStripMenuItem
         '
@@ -358,11 +401,11 @@ Partial Class ANapps
         Me.mnu_LockSystem.Size = New System.Drawing.Size(183, 22)
         Me.mnu_LockSystem.Text = "Lock System"
         '
-        'status
+        'MasterShiftToolStripMenuItem
         '
-        Me.status.Name = "status"
-        Me.status.Size = New System.Drawing.Size(121, 17)
-        Me.status.Text = "ToolStripStatusLabel1"
+        Me.MasterShiftToolStripMenuItem.Name = "MasterShiftToolStripMenuItem"
+        Me.MasterShiftToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterShiftToolStripMenuItem.Text = "Master Shift"
         '
         'ANapps
         '
@@ -430,5 +473,11 @@ Partial Class ANapps
     Friend WithEvents mnu_SapB1Interface As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnu_PisiSoftInterface As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents status As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents MasterDevisionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterDepartmentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterSectionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterSubSectionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterWorkgroupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterShiftToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

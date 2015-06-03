@@ -66,14 +66,24 @@ Public Class frm_MasterSectionAddNew
             If cbo_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Or cbo_DepartmentCode.Text = "" Or txt_DepartmentDescription.Text = "" Or txt_SectionCode.Text = "" Or txt_SectionDescription.Text = "" Then
                 MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_section] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description]) VALUES "
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_section] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description],[create_by],[create_time],[system_id],[inactive]) VALUES "
                 sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
                      ",'" & txt_DevisionDescription.Text & "'" & _
                      ",'" & cbo_DepartmentCode.Text & "'" & _
                     ",'" & txt_DepartmentDescription.Text & "'" & _
                     ",'" & txt_SectionCode.Text & "'" & _
-                    ",'" & txt_SectionDescription.Text & "')"
+                    ",'" & txt_SectionDescription.Text & "'" & _
+                    ",'" & CurrentAccountName & "'" & _
+                    "," & "GETDATE()" & " " & "" & _
+                    ",'" & CurrentAccountId & "'" & _
+                    ",'')"
                 cn.Execute(sqlInsert)
+                cbo_DevisionCode.Items.Clear()
+                txt_DevisionDescription.Text = ""
+                cbo_DepartmentCode.Items.Clear()
+                txt_DepartmentDescription.Text = ""
+                txt_SectionCode.Text = ""
+                txt_SectionDescription.Text = ""
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

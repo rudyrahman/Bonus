@@ -71,4 +71,33 @@ Public Class ANapps
         End
     End Sub
 
+    Private Sub MasterDevisionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterDevisionToolStripMenuItem.Click
+        frm_MasterDevision.MdiParent = Me
+        frm_MasterDevision.Show()
+    End Sub
+
+    Private Sub MasterDepartmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterDepartmentToolStripMenuItem.Click
+        frm_MasterDepartment.MdiParent = Me
+        frm_MasterDepartment.Show()
+    End Sub
+
+    Private Sub MasterSectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterSectionToolStripMenuItem.Click
+        frm_MasterSection.MdiParent = Me
+        frm_MasterSection.Show()
+    End Sub
+
+    Private Sub MasterSubSectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterSubSectionToolStripMenuItem.Click
+        frm_MasterSubSection.MdiParent = Me
+        frm_MasterSubSection.Show()
+    End Sub
+
+    Private Sub MasterWorkgroupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterWorkgroupToolStripMenuItem.Click
+        frm_MasterWorkgroup.MdiParent = Me
+        frm_MasterWorkgroup.Show()
+    End Sub
+
+    Private Sub MasterShiftToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterShiftToolStripMenuItem.Click
+        frm_MasterShift.MdiParent = Me
+        frm_MasterShift.Show()
+    End Sub
 End Class
