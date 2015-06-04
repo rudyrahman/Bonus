@@ -42,7 +42,6 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.btn_AddNew = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dgv_StatusArragement = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -232,17 +231,11 @@ Partial Class frm_MasterEStatusArragementAddNew
         'dgv_StatusArragement
         '
         Me.dgv_StatusArragement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_StatusArragement.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
+        Me.dgv_StatusArragement.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         Me.dgv_StatusArragement.Location = New System.Drawing.Point(8, 252)
         Me.dgv_StatusArragement.Name = "dgv_StatusArragement"
         Me.dgv_StatusArragement.Size = New System.Drawing.Size(843, 83)
         Me.dgv_StatusArragement.TabIndex = 17
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "#Day of Week"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'Column2
         '
@@ -382,7 +375,6 @@ Partial Class frm_MasterEStatusArragementAddNew
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -44,7 +44,9 @@ Partial Class ANapps
         Me.MasterDepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterSectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterSubSectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.MasterWorkgroupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterShiftToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_ProcessingFloorModule = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_DataProcessing = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_DataRevision = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,7 +77,9 @@ Partial Class ANapps
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_LockSystem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MasterShiftToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.MasterEmployeesStatusArragementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterEmployeesStatusArragementToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -169,7 +173,7 @@ Partial Class ANapps
         '
         'mnu_OfficeModule
         '
-        Me.mnu_OfficeModule.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterDevisionToolStripMenuItem, Me.MasterDepartmentToolStripMenuItem, Me.MasterSectionToolStripMenuItem, Me.MasterSubSectionToolStripMenuItem, Me.MasterWorkgroupToolStripMenuItem, Me.MasterShiftToolStripMenuItem})
+        Me.mnu_OfficeModule.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterDevisionToolStripMenuItem, Me.MasterDepartmentToolStripMenuItem, Me.MasterSectionToolStripMenuItem, Me.MasterSubSectionToolStripMenuItem, Me.ToolStripSeparator1, Me.MasterWorkgroupToolStripMenuItem, Me.MasterShiftToolStripMenuItem, Me.ToolStripSeparator2, Me.MasterEmployeesStatusArragementToolStripMenuItem, Me.MasterEmployeesStatusArragementToolStripMenuItem1})
         Me.mnu_OfficeModule.Name = "mnu_OfficeModule"
         Me.mnu_OfficeModule.Size = New System.Drawing.Size(100, 20)
         Me.mnu_OfficeModule.Text = "Office Modules"
@@ -177,32 +181,43 @@ Partial Class ANapps
         'MasterDevisionToolStripMenuItem
         '
         Me.MasterDevisionToolStripMenuItem.Name = "MasterDevisionToolStripMenuItem"
-        Me.MasterDevisionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterDevisionToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
         Me.MasterDevisionToolStripMenuItem.Text = "Master Devision"
         '
         'MasterDepartmentToolStripMenuItem
         '
         Me.MasterDepartmentToolStripMenuItem.Name = "MasterDepartmentToolStripMenuItem"
-        Me.MasterDepartmentToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterDepartmentToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
         Me.MasterDepartmentToolStripMenuItem.Text = "Master Department"
         '
         'MasterSectionToolStripMenuItem
         '
         Me.MasterSectionToolStripMenuItem.Name = "MasterSectionToolStripMenuItem"
-        Me.MasterSectionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterSectionToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
         Me.MasterSectionToolStripMenuItem.Text = "Master Section"
         '
         'MasterSubSectionToolStripMenuItem
         '
         Me.MasterSubSectionToolStripMenuItem.Name = "MasterSubSectionToolStripMenuItem"
-        Me.MasterSubSectionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterSubSectionToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
         Me.MasterSubSectionToolStripMenuItem.Text = "Master Sub Section"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(268, 6)
         '
         'MasterWorkgroupToolStripMenuItem
         '
         Me.MasterWorkgroupToolStripMenuItem.Name = "MasterWorkgroupToolStripMenuItem"
-        Me.MasterWorkgroupToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MasterWorkgroupToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
         Me.MasterWorkgroupToolStripMenuItem.Text = "Master Workgroup"
+        '
+        'MasterShiftToolStripMenuItem
+        '
+        Me.MasterShiftToolStripMenuItem.Name = "MasterShiftToolStripMenuItem"
+        Me.MasterShiftToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
+        Me.MasterShiftToolStripMenuItem.Text = "Master Shift"
         '
         'mnu_ProcessingFloorModule
         '
@@ -401,11 +416,22 @@ Partial Class ANapps
         Me.mnu_LockSystem.Size = New System.Drawing.Size(183, 22)
         Me.mnu_LockSystem.Text = "Lock System"
         '
-        'MasterShiftToolStripMenuItem
+        'ToolStripSeparator2
         '
-        Me.MasterShiftToolStripMenuItem.Name = "MasterShiftToolStripMenuItem"
-        Me.MasterShiftToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.MasterShiftToolStripMenuItem.Text = "Master Shift"
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(268, 6)
+        '
+        'MasterEmployeesStatusArragementToolStripMenuItem
+        '
+        Me.MasterEmployeesStatusArragementToolStripMenuItem.Name = "MasterEmployeesStatusArragementToolStripMenuItem"
+        Me.MasterEmployeesStatusArragementToolStripMenuItem.Size = New System.Drawing.Size(271, 22)
+        Me.MasterEmployeesStatusArragementToolStripMenuItem.Text = "Master Employees Registration"
+        '
+        'MasterEmployeesStatusArragementToolStripMenuItem1
+        '
+        Me.MasterEmployeesStatusArragementToolStripMenuItem1.Name = "MasterEmployeesStatusArragementToolStripMenuItem1"
+        Me.MasterEmployeesStatusArragementToolStripMenuItem1.Size = New System.Drawing.Size(271, 22)
+        Me.MasterEmployeesStatusArragementToolStripMenuItem1.Text = "Master Employees Status Arragement"
         '
         'ANapps
         '
@@ -473,11 +499,15 @@ Partial Class ANapps
     Friend WithEvents mnu_SapB1Interface As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnu_PisiSoftInterface As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents status As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents MasterDevisionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MasterDepartmentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MasterSectionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MasterSubSectionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MasterWorkgroupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MasterShiftToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterDevisionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents MasterEmployeesStatusArragementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MasterEmployeesStatusArragementToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

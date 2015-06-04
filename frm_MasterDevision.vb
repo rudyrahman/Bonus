@@ -38,9 +38,9 @@ Public Class frm_MasterDevision
     End Sub
     Sub tampilgrid()
         dgv_MasterDevision.Columns(0).Width = 40
-        dgv_MasterDevision.Columns(1).Width = 100
+        dgv_MasterDevision.Columns(1).Width = 60
         dgv_MasterDevision.Columns(2).Width = 150
-        dgv_MasterDevision.Columns(3).Width = 100
+        dgv_MasterDevision.Columns(3).Width = 150
         dgv_MasterDevision.Columns(4).Width = 100
         dgv_MasterDevision.Columns(5).Width = 70
         dgv_MasterDevision.Columns(6).Width = 60
@@ -79,6 +79,7 @@ Public Class frm_MasterDevision
 
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
         Me.Close()
+        cn.Close()
     End Sub
 
     Private Sub btn_RefreshData_Click(sender As Object, e As EventArgs) Handles btn_RefreshData.Click

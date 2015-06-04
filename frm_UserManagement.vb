@@ -3,9 +3,8 @@ Public Class frm_UserManagement
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
 
- 
     Private Sub frm_UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-  
+
         Try
             cbo_Username.Focus()
             CheckedListBox1.Visible = False
