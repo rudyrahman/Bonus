@@ -244,6 +244,12 @@
     <Compile Include="frm_MasterEmployeesScheduleAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterEStatusArragement.Designer.vb">
+      <DependentUpon>frm_MasterEStatusArragement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterEStatusArragement.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterEStatusArragementAddNew.Designer.vb">
       <DependentUpon>frm_MasterEStatusArragementAddNew.vb</DependentUpon>
     </Compile>
@@ -449,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterEmployeesScheduleAddNew.resx">
       <DependentUpon>frm_MasterEmployeesScheduleAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterEStatusArragement.resx">
+      <DependentUpon>frm_MasterEStatusArragement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterEStatusArragementAddNew.resx">
       <DependentUpon>frm_MasterEStatusArragementAddNew.vb</DependentUpon>
