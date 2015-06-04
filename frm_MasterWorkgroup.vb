@@ -30,13 +30,23 @@ Public Class frm_MasterWorkgroup
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterWorkgroup.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterWorkgroup.Columns(0).Width = 40
-            dgv_MasterWorkgroup.Columns(1).Width = 100
-            dgv_MasterWorkgroup.Columns(2).Width = 150
-
+            Call tampilgrid()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+    Sub tampilgrid()
+        dgv_MasterWorkgroup.Columns(0).Width = 40
+        dgv_MasterWorkgroup.Columns(1).Width = 100
+        dgv_MasterWorkgroup.Columns(2).Width = 150
+        dgv_MasterWorkgroup.Columns(3).Width = 100
+        dgv_MasterWorkgroup.Columns(4).Width = 100
+        dgv_MasterWorkgroup.Columns(5).Width = 60
+        dgv_MasterWorkgroup.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+        dgv_MasterWorkgroup.RowTemplate.Height = 17
+        dgv_MasterWorkgroup.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterWorkgroup.RowsDefaultCellStyle.BackColor = Color.Lavender
+        dgv_MasterWorkgroup.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
 
     Private Sub frm_MasterWorkgroup_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -82,9 +92,7 @@ Public Class frm_MasterWorkgroup
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterWorkgroup.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterWorkgroup.Columns(0).Width = 40
-            dgv_MasterWorkgroup.Columns(1).Width = 100
-            dgv_MasterWorkgroup.Columns(2).Width = 150
+            Call tampilgrid()
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
@@ -147,9 +155,7 @@ Public Class frm_MasterWorkgroup
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterWorkgroup.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterWorkgroup.Columns(0).Width = 40
-            dgv_MasterWorkgroup.Columns(1).Width = 100
-            dgv_MasterWorkgroup.Columns(2).Width = 150
+            Call tampilgrid()
             If rs.BOF Then
                 dgv_MasterWorkgroup.DataSource = rs
                 dgv_MasterWorkgroup.Refresh()

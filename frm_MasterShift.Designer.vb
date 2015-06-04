@@ -120,6 +120,7 @@ Partial Class frm_MasterShift
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_MasterShift"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_MasterShift"
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()

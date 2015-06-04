@@ -30,15 +30,26 @@ Public Class frm_MasterDevision
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterDevision.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterDevision.Columns(0).Width = 40
-            dgv_MasterDevision.Columns(1).Width = 100
-            dgv_MasterDevision.Columns(2).Width = 150
+            Call tampilgrid()
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
+    Sub tampilgrid()
+        dgv_MasterDevision.Columns(0).Width = 40
+        dgv_MasterDevision.Columns(1).Width = 100
+        dgv_MasterDevision.Columns(2).Width = 150
+        dgv_MasterDevision.Columns(3).Width = 100
+        dgv_MasterDevision.Columns(4).Width = 100
+        dgv_MasterDevision.Columns(5).Width = 70
+        dgv_MasterDevision.Columns(6).Width = 60
+        dgv_MasterDevision.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+        dgv_MasterDevision.RowTemplate.Height = 17
+        dgv_MasterDevision.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterDevision.RowsDefaultCellStyle.BackColor = Color.Lavender
+        dgv_MasterDevision.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+    End Sub
     Private Sub frm_Master_Devision_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 300 Then
             pnl_Form.Height = Me.Height - (pnl_Form.Top * 2) - 40
@@ -82,14 +93,7 @@ Public Class frm_MasterDevision
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterDevision.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterDevision.Columns(0).Width = 40
-            dgv_MasterDevision.Columns(1).Width = 100
-            dgv_MasterDevision.Columns(2).Width = 150
-            dgv_MasterDevision.Columns(3).Width = 100
-            dgv_MasterDevision.Columns(4).Width = 100
-            dgv_MasterDevision.Columns(5).Width = 100
-            dgv_MasterDevision.Columns(6).Width = 100
-
+            Call tampilgrid()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -151,9 +155,7 @@ Public Class frm_MasterDevision
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterDevision.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterDevision.Columns(0).Width = 40
-            dgv_MasterDevision.Columns(1).Width = 100
-            dgv_MasterDevision.Columns(2).Width = 150
+            Call tampilgrid()
             If rs.BOF Then
                 dgv_MasterDevision.DataSource = rs
                 dgv_MasterDevision.Refresh()

@@ -28,20 +28,28 @@ Public Class frm_MasterDepartment
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterDepartment.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterDepartment.Columns(0).Width = 40
-            dgv_MasterDepartment.Columns(1).Width = 100
-            dgv_MasterDepartment.Columns(2).Width = 150
-            dgv_MasterDepartment.Columns(3).Width = 100
-            dgv_MasterDepartment.Columns(4).Width = 150
-            dgv_MasterDepartment.Columns(5).Width = 100
-            dgv_MasterDepartment.Columns(6).Width = 100
-            dgv_MasterDepartment.Columns(7).Width = 100
-            dgv_MasterDepartment.Columns(8).Width = 100
+            Call tampilgrid()
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
 
+    End Sub
+    Sub tampilgrid()
+        dgv_MasterDepartment.Columns(0).Width = 40
+        dgv_MasterDepartment.Columns(1).Width = 100
+        dgv_MasterDepartment.Columns(2).Width = 150
+        dgv_MasterDepartment.Columns(3).Width = 100
+        dgv_MasterDepartment.Columns(4).Width = 150
+        dgv_MasterDepartment.Columns(5).Width = 100
+        dgv_MasterDepartment.Columns(6).Width = 100
+        dgv_MasterDepartment.Columns(7).Width = 70
+        dgv_MasterDepartment.Columns(8).Width = 60
+        dgv_MasterDepartment.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+        dgv_MasterDepartment.RowTemplate.Height = 17
+        dgv_MasterDepartment.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterDepartment.RowsDefaultCellStyle.BackColor = Color.Lavender
+        dgv_MasterDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
 
     Private Sub frm_MasterDepartmen_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -87,11 +95,7 @@ Public Class frm_MasterDepartment
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterDepartment.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterDepartment.Columns(0).Width = 40
-            dgv_MasterDepartment.Columns(1).Width = 100
-            dgv_MasterDepartment.Columns(2).Width = 150
-            dgv_MasterDepartment.Columns(3).Width = 100
-            dgv_MasterDepartment.Columns(4).Width = 150
+            Call tampilgrid()
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
@@ -157,11 +161,7 @@ Public Class frm_MasterDepartment
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterDepartment.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterDepartment.Columns(0).Width = 40
-            dgv_MasterDepartment.Columns(1).Width = 100
-            dgv_MasterDepartment.Columns(2).Width = 150
-            dgv_MasterDepartment.Columns(3).Width = 100
-            dgv_MasterDepartment.Columns(4).Width = 150
+            Call tampilgrid()
             If rs.BOF Then
                 dgv_MasterDepartment.DataSource = rs
 
