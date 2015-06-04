@@ -25,20 +25,24 @@ Public Class frm_MasterWorkgroupRelationAddNew
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        If txt_desc.Text = "" Then
-            MsgBox("Input the description !", MsgBoxStyle.Information)
-            txt_desc.Focus()
-        Else
-            If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_AttendanceStatus]([Code],[Description],[Create_By],[Create_Time],[System_Id],[Inactive]) values "
-                sqlInsert = sqlInsert & " ('" & txt_code.Text & "','" & txt_desc.Text & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "','" & CurrentAccountId & "')"
-                cn.Execute(sqlInsert)
-                txt_code.Text = ""
-                txt_desc.Text = ""
-                cn.Close()
-                Me.Close()
+        Try
+            If txt_desc.Text = "" Then
+                MsgBox("Input the description !", MsgBoxStyle.Information)
+                txt_desc.Focus()
+            Else
+                If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+                    Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_AttendanceStatus]([Code],[Description],[Create_By],[Create_Time],[System_Id],[Inactive]) values "
+                    sqlInsert = sqlInsert & " ('" & txt_code.Text & "','" & txt_desc.Text & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "','" & CurrentAccountId & "')"
+                    cn.Execute(sqlInsert)
+                    txt_code.Text = ""
+                    txt_desc.Text = ""
+                    cn.Close()
+                    Me.Close()
+                End If
             End If
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click

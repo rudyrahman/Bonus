@@ -104,21 +104,25 @@ Public Class frm_MasterWorkgroupRelation
     End Sub
 
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
-        Dim sqlsearch As String
-        rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_MonthPeriode] where [Description] like '%" & txt_cari.Text & "%' order by [No]"
+        Try
+            Dim sqlsearch As String
+            rs = New ADODB.Recordset
+            sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_MonthPeriode] where [Description] like '%" & txt_cari.Text & "%' order by [No]"
 
-        With rs
-            .CursorLocation = CursorLocationEnum.adUseClient
-            .Open(sqlsearch, cn, CursorTypeEnum.adOpenKeyset, _
-                  LockTypeEnum.adLockReadOnly)
-            .ActiveConnection = Nothing
-        End With
-        Me.DGV.DataSource = RecordSetToDataTable(rs)
-        If rs.BOF Then
-            DGV.DataSource = rs
-            DGV.Refresh()
-        End If
+            With rs
+                .CursorLocation = CursorLocationEnum.adUseClient
+                .Open(sqlsearch, cn, CursorTypeEnum.adOpenKeyset, _
+                      LockTypeEnum.adLockReadOnly)
+                .ActiveConnection = Nothing
+            End With
+            Me.DGV.DataSource = RecordSetToDataTable(rs)
+            If rs.BOF Then
+                DGV.DataSource = rs
+                DGV.Refresh()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub frm_MasterWorkgroupRelation_Resize(sender As Object, e As EventArgs) Handles Me.Resize
