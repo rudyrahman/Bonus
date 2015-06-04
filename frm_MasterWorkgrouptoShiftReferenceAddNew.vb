@@ -8,34 +8,37 @@ Public Class frm_MasterWorkgrouptoShiftReferenceAddNew
         cn = New ADODB.Connection
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
-
+       
+        'DGV.Columns.Insert(0, v_checkcol)
         rs = cn.Execute("SELECT distinct [Workgroup] FROM [AN_SUMATRA].[dbo].[TM_Shift] ORDER BY [Workgroup] ASC")
         If ((rs.EOF = False) And (rs.BOF = False)) = True Then
             While Not rs.EOF
                 cbo_workgroup.Items.Add(rs(0).Value.ToString)
                 rs.MoveNext()
+
             End While
         End If
+       
     End Sub
 
     Private Sub cbo_workgroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_workgroup.SelectedIndexChanged
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT [No],[Shift_Code],[Shift_Desc] FROM [AN_SUMATRA].[dbo].[TM_Shift] ORDER BY [Workgroup] ASC"
-
+        sql = "SELECT [No],[Shift_Code],[Shift_Desc] FROM [AN_SUMATRA].[dbo].[TM_Shift] where [Workgroup] like '%" & cbo_workgroup.Text & "%' order BY [Workgroup] ASC"
+       
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
             .Open(sql, cn, CursorTypeEnum.adOpenKeyset, _
                   LockTypeEnum.adLockReadOnly)
             .ActiveConnection = Nothing
         End With
-
+       
         If (rs.EOF = False) And (rs.BOF = False) Then
             Me.DGV.DataSource = RecordSetToDataTable(rs)
-            'txt_username.Text = rs(1).Value.ToString
+            Dim v_checkcol As New DataGridViewCheckBoxColumn
+            DGV.Columns.Add(v_checkcol)
+            DGV.Columns(3).HeaderText = ""
             cbo_workgroup.Refresh()
-        Else
-            'txt_username.Text = ""
         End If
     End Sub
     Public Function RecordSetToDataTable( _

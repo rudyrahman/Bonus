@@ -286,6 +286,30 @@
     <Compile Include="frm_MasterWorkgroupAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterWorkgroupRelation.Designer.vb">
+      <DependentUpon>frm_MasterWorkgroupRelation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroupRelation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroupRelationAddNew.Designer.vb">
+      <DependentUpon>frm_MasterWorkgroupRelationAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterWorkgroupRelationAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterWorkgrouptoShiftReference.Designer.vb">
+      <DependentUpon>frm_MasterWorkgrouptoShiftReference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterWorkgrouptoShiftReference.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterWorkgrouptoShiftReferenceAddNew.Designer.vb">
+      <DependentUpon>frm_MasterWorkgrouptoShiftReferenceAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterWorkgrouptoShiftReferenceAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MonthPeriode.Designer.vb">
       <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
     </Compile>
@@ -452,6 +476,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterWorkgroupAddNew.resx">
       <DependentUpon>frm_MasterWorkgroupAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterWorkgroupRelation.resx">
+      <DependentUpon>frm_MasterWorkgroupRelation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterWorkgroupRelationAddNew.resx">
+      <DependentUpon>frm_MasterWorkgroupRelationAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterWorkgrouptoShiftReference.resx">
+      <DependentUpon>frm_MasterWorkgrouptoShiftReference.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterWorkgrouptoShiftReferenceAddNew.resx">
+      <DependentUpon>frm_MasterWorkgrouptoShiftReferenceAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MonthPeriode.resx">
       <DependentUpon>frm_MonthPeriode.vb</DependentUpon>
