@@ -38,6 +38,7 @@ Partial Class frm_MasterWorkgroupAddNew
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Lavender
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Panel3)

@@ -29,26 +29,31 @@ Public Class frm_MasterSubSection
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterSubSection.Columns(0).Width = 30
-            dgv_MasterSubSection.Columns(1).Width = 100
-            dgv_MasterSubSection.Columns(2).Width = 130
-            dgv_MasterSubSection.Columns(3).Width = 100
-            dgv_MasterSubSection.Columns(4).Width = 130
-            dgv_MasterSubSection.Columns(5).Width = 100
-            dgv_MasterSubSection.Columns(6).Width = 100
-            dgv_MasterSubSection.Columns(7).Width = 100
-            dgv_MasterSubSection.Columns(8).Width = 130
-            dgv_MasterSubSection.Columns(9).Width = 100
-            dgv_MasterSubSection.Columns(10).Width = 100
-            dgv_MasterSubSection.Columns(11).Width = 100
-            dgv_MasterSubSection.Columns(12).Width = 50
-
-
+            Call tampilgrid()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
+    Sub tampilgrid()
+        dgv_MasterSubSection.Columns(0).Width = 30
+        dgv_MasterSubSection.Columns(1).Width = 90
+        dgv_MasterSubSection.Columns(2).Width = 120
+        dgv_MasterSubSection.Columns(3).Width = 100
+        dgv_MasterSubSection.Columns(4).Width = 130
+        dgv_MasterSubSection.Columns(5).Width = 80
+        dgv_MasterSubSection.Columns(6).Width = 100
+        dgv_MasterSubSection.Columns(7).Width = 100
+        dgv_MasterSubSection.Columns(8).Width = 130
+        dgv_MasterSubSection.Columns(9).Width = 100
+        dgv_MasterSubSection.Columns(10).Width = 100
+        dgv_MasterSubSection.Columns(11).Width = 70
+        dgv_MasterSubSection.Columns(12).Width = 60
+        dgv_MasterSubSection.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+        dgv_MasterSubSection.RowTemplate.Height = 17
+        dgv_MasterSubSection.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterSubSection.RowsDefaultCellStyle.BackColor = Color.Lavender
+        dgv_MasterSubSection.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+    End Sub
     Private Sub frm_SubSectionvb_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 300 Then
             pnl_Form.Height = Me.Height - (pnl_Form.Top * 2) - 40
@@ -75,6 +80,7 @@ Public Class frm_MasterSubSection
 
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
         Me.Close()
+        cn.Close()
     End Sub
 
     Private Sub btn_RefreshData_Click(sender As Object, e As EventArgs) Handles btn_RefreshData.Click
@@ -89,16 +95,7 @@ Public Class frm_MasterSubSection
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterSubSection.Columns(0).Width = 40
-            dgv_MasterSubSection.Columns(1).Width = 100
-            dgv_MasterSubSection.Columns(2).Width = 150
-            dgv_MasterSubSection.Columns(3).Width = 100
-            dgv_MasterSubSection.Columns(4).Width = 150
-            dgv_MasterSubSection.Columns(5).Width = 100
-            dgv_MasterSubSection.Columns(6).Width = 150
-            dgv_MasterSubSection.Columns(7).Width = 100
-            dgv_MasterSubSection.Columns(8).Width = 150
-
+            Call tampilgrid()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -115,7 +112,7 @@ Public Class frm_MasterSubSection
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Try
             rs = New ADODB.Recordset
-            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_subsection] where [subsection_description] like '%" & txt_CariData.Text & "%' order by [id]"
+            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_subsection] where [devision_description] like '%" & txt_CariData.Text & "%' order by [id]"
             With rs
                 .CursorLocation = CursorLocationEnum.adUseClient
                 .Open(search, cn, CursorTypeEnum.adOpenKeyset, _
@@ -123,15 +120,7 @@ Public Class frm_MasterSubSection
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterSubSection.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterSubSection.Columns(0).Width = 40
-            dgv_MasterSubSection.Columns(1).Width = 100
-            dgv_MasterSubSection.Columns(2).Width = 150
-            dgv_MasterSubSection.Columns(3).Width = 100
-            dgv_MasterSubSection.Columns(4).Width = 150
-            dgv_MasterSubSection.Columns(5).Width = 100
-            dgv_MasterSubSection.Columns(6).Width = 150
-            dgv_MasterSubSection.Columns(7).Width = 100
-            dgv_MasterSubSection.Columns(8).Width = 150
+            Call tampilgrid()
             If rs.BOF Then
                 dgv_MasterSubSection.DataSource = rs
                 dgv_MasterSubSection.Refresh()

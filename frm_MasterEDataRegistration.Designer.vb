@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_MasterWorkgroup
+Partial Class frm_MasterEDataRegistration
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -29,9 +29,9 @@ Partial Class frm_MasterWorkgroup
         Me.btn_TambahBaru = New System.Windows.Forms.Button()
         Me.txt_CariData = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dgv_MasterWorkgroup = New System.Windows.Forms.DataGridView()
+        Me.dgv_MasterEDataRegistration = New System.Windows.Forms.DataGridView()
         Me.pnl_Form.SuspendLayout()
-        CType(Me.dgv_MasterWorkgroup, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_MasterEDataRegistration, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnl_Form
@@ -44,7 +44,7 @@ Partial Class frm_MasterWorkgroup
         Me.pnl_Form.Controls.Add(Me.btn_TambahBaru)
         Me.pnl_Form.Controls.Add(Me.txt_CariData)
         Me.pnl_Form.Controls.Add(Me.Label1)
-        Me.pnl_Form.Controls.Add(Me.dgv_MasterWorkgroup)
+        Me.pnl_Form.Controls.Add(Me.dgv_MasterEDataRegistration)
         Me.pnl_Form.Location = New System.Drawing.Point(2, 2)
         Me.pnl_Form.Name = "pnl_Form"
         Me.pnl_Form.Size = New System.Drawing.Size(781, 459)
@@ -103,28 +103,27 @@ Partial Class frm_MasterWorkgroup
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Cari Data :"
         '
-        'dgv_MasterWorkgroup
+        'dgv_MasterEDataRegistration
         '
-        Me.dgv_MasterWorkgroup.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgv_MasterWorkgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_MasterWorkgroup.Location = New System.Drawing.Point(9, 66)
-        Me.dgv_MasterWorkgroup.Name = "dgv_MasterWorkgroup"
-        Me.dgv_MasterWorkgroup.Size = New System.Drawing.Size(761, 325)
-        Me.dgv_MasterWorkgroup.TabIndex = 21
-        Me.dgv_MasterWorkgroup.TabStop = False
+        Me.dgv_MasterEDataRegistration.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgv_MasterEDataRegistration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_MasterEDataRegistration.Location = New System.Drawing.Point(9, 66)
+        Me.dgv_MasterEDataRegistration.Name = "dgv_MasterEDataRegistration"
+        Me.dgv_MasterEDataRegistration.Size = New System.Drawing.Size(761, 325)
+        Me.dgv_MasterEDataRegistration.TabIndex = 21
+        Me.dgv_MasterEDataRegistration.TabStop = False
         '
-        'frm_MasterWorkgroup
+        'frm_MasterEDataRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.pnl_Form)
-        Me.Name = "frm_MasterWorkgroup"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_MasterWorkgroup"
+        Me.Name = "frm_MasterEDataRegistration"
+        Me.Text = "frm_MasterEDataRegistration"
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
-        CType(Me.dgv_MasterWorkgroup, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_MasterEDataRegistration, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -135,5 +134,5 @@ Partial Class frm_MasterWorkgroup
     Friend WithEvents btn_TambahBaru As System.Windows.Forms.Button
     Friend WithEvents txt_CariData As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents dgv_MasterWorkgroup As System.Windows.Forms.DataGridView
+    Friend WithEvents dgv_MasterEDataRegistration As System.Windows.Forms.DataGridView
 End Class

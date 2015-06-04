@@ -79,7 +79,7 @@ Public Class frm_MasterSubSectionAddNew
                     ",'" & CurrentAccountName & "'" & _
                     "," & "GETDATE()" & " " & "" & _
                     ",'" & CurrentAccountId & "'" & _
-                    ",'')"
+                    ",'N')"
                 cn.Execute(sqlInsert)
 
                 cbo_DevisionCode.Items.Clear()

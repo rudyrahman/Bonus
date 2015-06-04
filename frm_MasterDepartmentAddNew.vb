@@ -61,7 +61,7 @@ Public Class frm_MasterDepartmentAddNew
                      ",'" & CurrentAccountName & "'" & _
                      "," & "GETDATE()" & " " & "" & _
                     ",'" & CurrentAccountId & "'" & _
-                    ",'')"
+                    ",'N')"
                 cn.Execute(sqlInsert)
                 cbo_DevisionCode.Items.Clear()
                 txt_DevisionDescription.Text = ""

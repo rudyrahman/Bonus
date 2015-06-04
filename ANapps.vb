@@ -106,4 +106,16 @@ Public Class ANapps
         frm_MasterShift.Show()
         frm_MasterShift.WindowState = FormWindowState.Maximized
     End Sub
+
+    Private Sub MasterEmployeesStatusArragementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterEmployeesStatusArragementToolStripMenuItem.Click
+        frm_MasterEDataRegistration.MdiParent = Me
+        frm_MasterEDataRegistration.Show()
+        frm_MasterEDataRegistration.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub MasterEmployeesStatusArragementToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MasterEmployeesStatusArragementToolStripMenuItem1.Click
+        'frm_MasterEStatusArragement.MdiParent = Me
+        'frm_MasterEStatusArragement.Show()
+        'frm_MasterEStatusArragement.WindowState = FormWindowState.Maximized
+    End Sub
 End Class

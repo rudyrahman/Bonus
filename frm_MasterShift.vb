@@ -30,13 +30,23 @@ Public Class frm_MasterShift
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterShift.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterShift.Columns(0).Width = 40
-            dgv_MasterShift.Columns(1).Width = 100
-            dgv_MasterShift.Columns(2).Width = 150
-
+            Call tampilgrid()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+    Sub tampilgrid()
+        dgv_MasterShift.Columns(0).Width = 40
+        dgv_MasterShift.Columns(1).Width = 100
+        dgv_MasterShift.Columns(2).Width = 150
+        dgv_MasterShift.Columns(3).Width = 100
+        dgv_MasterShift.Columns(4).Width = 100
+        dgv_MasterShift.Columns(5).Width = 60
+        dgv_MasterShift.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+        dgv_MasterShift.RowTemplate.Height = 17
+        dgv_MasterShift.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterShift.RowsDefaultCellStyle.BackColor = Color.Lavender
+        dgv_MasterShift.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
 
     Private Sub frm_MasterShift_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -68,6 +78,7 @@ Public Class frm_MasterShift
 
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
         Me.Close()
+        cn.Close()
     End Sub
 
     Private Sub btn_RefreshData_Click(sender As Object, e As EventArgs) Handles btn_RefreshData.Click
@@ -82,9 +93,7 @@ Public Class frm_MasterShift
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterShift.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterShift.Columns(0).Width = 40
-            dgv_MasterShift.Columns(1).Width = 100
-            dgv_MasterShift.Columns(2).Width = 150
+            Call tampilgrid()
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
@@ -147,9 +156,7 @@ Public Class frm_MasterShift
                 .ActiveConnection = Nothing
             End With
             Me.dgv_MasterShift.DataSource = RecordSetToDataTable(rs)
-            dgv_MasterShift.Columns(0).Width = 40
-            dgv_MasterShift.Columns(1).Width = 100
-            dgv_MasterShift.Columns(2).Width = 150
+            Call tampilgrid()
             If rs.BOF Then
                 dgv_MasterShift.DataSource = rs
                 dgv_MasterShift.Refresh()

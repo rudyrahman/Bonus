@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_MasterShiftAddNew
+Partial Class frm_MasterEDataRegistrationAddNew
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -27,8 +27,8 @@ Partial Class frm_MasterShiftAddNew
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_AddNew = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.txt_ShiftDescription = New System.Windows.Forms.TextBox()
-        Me.txt_ShiftCode = New System.Windows.Forms.TextBox()
+        Me.txt_EmployeeDescription = New System.Windows.Forms.TextBox()
+        Me.txt_EmployeeCode = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -38,14 +38,13 @@ Partial Class frm_MasterShiftAddNew
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Lavender
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Location = New System.Drawing.Point(2, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(586, 153)
-        Me.Panel1.TabIndex = 2
+        Me.Panel1.TabIndex = 1
         '
         'Panel2
         '
@@ -78,8 +77,8 @@ Partial Class frm_MasterShiftAddNew
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.txt_ShiftDescription)
-        Me.Panel3.Controls.Add(Me.txt_ShiftCode)
+        Me.Panel3.Controls.Add(Me.txt_EmployeeDescription)
+        Me.Panel3.Controls.Add(Me.txt_EmployeeCode)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(9, 12)
@@ -87,21 +86,21 @@ Partial Class frm_MasterShiftAddNew
         Me.Panel3.Size = New System.Drawing.Size(566, 80)
         Me.Panel3.TabIndex = 6
         '
-        'txt_ShiftDescription
+        'txt_EmployeeDescription
         '
-        Me.txt_ShiftDescription.Location = New System.Drawing.Point(106, 41)
-        Me.txt_ShiftDescription.MaxLength = 100
-        Me.txt_ShiftDescription.Name = "txt_ShiftDescription"
-        Me.txt_ShiftDescription.Size = New System.Drawing.Size(455, 20)
-        Me.txt_ShiftDescription.TabIndex = 2
+        Me.txt_EmployeeDescription.Location = New System.Drawing.Point(106, 41)
+        Me.txt_EmployeeDescription.MaxLength = 100
+        Me.txt_EmployeeDescription.Name = "txt_EmployeeDescription"
+        Me.txt_EmployeeDescription.Size = New System.Drawing.Size(455, 20)
+        Me.txt_EmployeeDescription.TabIndex = 2
         '
-        'txt_ShiftCode
+        'txt_EmployeeCode
         '
-        Me.txt_ShiftCode.Location = New System.Drawing.Point(106, 13)
-        Me.txt_ShiftCode.MaxLength = 20
-        Me.txt_ShiftCode.Name = "txt_ShiftCode"
-        Me.txt_ShiftCode.Size = New System.Drawing.Size(144, 20)
-        Me.txt_ShiftCode.TabIndex = 1
+        Me.txt_EmployeeCode.Location = New System.Drawing.Point(106, 13)
+        Me.txt_EmployeeCode.MaxLength = 20
+        Me.txt_EmployeeCode.Name = "txt_EmployeeCode"
+        Me.txt_EmployeeCode.Size = New System.Drawing.Size(144, 20)
+        Me.txt_EmployeeCode.TabIndex = 1
         '
         'Label2
         '
@@ -121,15 +120,15 @@ Partial Class frm_MasterShiftAddNew
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Code :"
         '
-        'frm_MasterShiftAddNew
+        'frm_MasterEDataRegistrationAddNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(590, 152)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "frm_MasterShiftAddNew"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "frm_MasterShiftAddNew"
+        Me.Name = "frm_MasterEDataRegistrationAddNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "frm_MasterEDataRegistrationAddNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
@@ -142,8 +141,8 @@ Partial Class frm_MasterShiftAddNew
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_AddNew As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents txt_ShiftDescription As System.Windows.Forms.TextBox
-    Friend WithEvents txt_ShiftCode As System.Windows.Forms.TextBox
+    Friend WithEvents txt_EmployeeDescription As System.Windows.Forms.TextBox
+    Friend WithEvents txt_EmployeeCode As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

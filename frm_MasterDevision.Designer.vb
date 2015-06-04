@@ -121,7 +121,6 @@ Partial Class frm_MasterDevision
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_MasterDevision"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Master Devision"
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
         CType(Me.dgv_MasterDevision, System.ComponentModel.ISupportInitialize).EndInit()
