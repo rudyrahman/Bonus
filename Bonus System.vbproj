@@ -310,13 +310,13 @@
     <Compile Include="frm_MasterWorkgroupAddNew.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MasterWorkgroupRelation.Designer.vb">
+    <Compile Include="frm_MasterWorkgroupRelation.designer.vb">
       <DependentUpon>frm_MasterWorkgroupRelation.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterWorkgroupRelation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MasterWorkgroupRelationAddNew.Designer.vb">
+    <Compile Include="frm_MasterWorkgroupRelationAddNew.designer.vb">
       <DependentUpon>frm_MasterWorkgroupRelationAddNew.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_MasterWorkgroupRelationAddNew.vb">
