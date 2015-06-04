@@ -114,8 +114,8 @@ Public Class ANapps
     End Sub
 
     Private Sub MasterEmployeesStatusArragementToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MasterEmployeesStatusArragementToolStripMenuItem1.Click
-        'frm_MasterEStatusArragement.MdiParent = Me
-        'frm_MasterEStatusArragement.Show()
-        'frm_MasterEStatusArragement.WindowState = FormWindowState.Maximized
+        frm_MasterEStatusArragement.MdiParent = Me
+        frm_MasterEStatusArragement.Show()
+        frm_MasterEStatusArragement.WindowState = FormWindowState.Maximized
     End Sub
 End Class
