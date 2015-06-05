@@ -23,70 +23,75 @@ Partial Class frm_MasterEmployeesScheduleAddNew
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lst_schedule = New System.Windows.Forms.ListView()
         Me.dmn_FinishTime = New System.Windows.Forms.DomainUpDown()
         Me.dmn_BreakinTime = New System.Windows.Forms.DomainUpDown()
         Me.dmn_BreakoutTime = New System.Windows.Forms.DomainUpDown()
         Me.dmn_StartTime = New System.Windows.Forms.DomainUpDown()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_AddNew = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.cbo_shift = New System.Windows.Forms.ComboBox()
+        Me.cbo_day = New System.Windows.Forms.ComboBox()
+        Me.cbo_subsection = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbo_section = New System.Windows.Forms.ComboBox()
+        Me.cbo_departemen = New System.Windows.Forms.ComboBox()
+        Me.cbo_devision = New System.Windows.Forms.ComboBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.lst_schedule)
         Me.Panel1.Controls.Add(Me.dmn_FinishTime)
         Me.Panel1.Controls.Add(Me.dmn_BreakinTime)
         Me.Panel1.Controls.Add(Me.dmn_BreakoutTime)
         Me.Panel1.Controls.Add(Me.dmn_StartTime)
         Me.Panel1.Controls.Add(Me.btn_Cancel)
         Me.Panel1.Controls.Add(Me.btn_AddNew)
-        Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.ComboBox6)
-        Me.Panel1.Controls.Add(Me.ComboBox5)
-        Me.Panel1.Controls.Add(Me.ComboBox4)
+        Me.Panel1.Controls.Add(Me.cbo_shift)
+        Me.Panel1.Controls.Add(Me.cbo_day)
+        Me.Panel1.Controls.Add(Me.cbo_subsection)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.label1)
-        Me.Panel1.Controls.Add(Me.ComboBox3)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.cbo_section)
+        Me.Panel1.Controls.Add(Me.cbo_departemen)
+        Me.Panel1.Controls.Add(Me.cbo_devision)
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(2, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(780, 358)
         Me.Panel1.TabIndex = 0
+        '
+        'lst_schedule
+        '
+        Me.lst_schedule.Location = New System.Drawing.Point(16, 186)
+        Me.lst_schedule.Name = "lst_schedule"
+        Me.lst_schedule.Size = New System.Drawing.Size(285, 89)
+        Me.lst_schedule.TabIndex = 25
+        Me.lst_schedule.UseCompatibleStateImageBehavior = False
         '
         'dmn_FinishTime
         '
@@ -137,25 +142,6 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.btn_AddNew.TabIndex = 17
         Me.btn_AddNew.Text = "Add New"
         Me.btn_AddNew.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 168)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(245, 117)
-        Me.DataGridView1.TabIndex = 16
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Description"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Data Inputed"
-        Me.Column2.Name = "Column2"
         '
         'Label10
         '
@@ -211,29 +197,30 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Day Name"
         '
-        'ComboBox6
+        'cbo_shift
         '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(385, 77)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(82, 21)
-        Me.ComboBox6.TabIndex = 9
+        Me.cbo_shift.FormattingEnabled = True
+        Me.cbo_shift.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.cbo_shift.Location = New System.Drawing.Point(385, 77)
+        Me.cbo_shift.Name = "cbo_shift"
+        Me.cbo_shift.Size = New System.Drawing.Size(82, 21)
+        Me.cbo_shift.TabIndex = 9
         '
-        'ComboBox5
+        'cbo_day
         '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(76, 77)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(241, 21)
-        Me.ComboBox5.TabIndex = 8
+        Me.cbo_day.FormattingEnabled = True
+        Me.cbo_day.Location = New System.Drawing.Point(76, 77)
+        Me.cbo_day.Name = "cbo_day"
+        Me.cbo_day.Size = New System.Drawing.Size(241, 21)
+        Me.cbo_day.TabIndex = 8
         '
-        'ComboBox4
+        'cbo_subsection
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(90, 42)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(672, 21)
-        Me.ComboBox4.TabIndex = 7
+        Me.cbo_subsection.FormattingEnabled = True
+        Me.cbo_subsection.Location = New System.Drawing.Point(90, 42)
+        Me.cbo_subsection.Name = "cbo_subsection"
+        Me.cbo_subsection.Size = New System.Drawing.Size(672, 21)
+        Me.cbo_subsection.TabIndex = 7
         '
         'Label4
         '
@@ -271,29 +258,29 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.label1.TabIndex = 3
         Me.label1.Text = "Devision :"
         '
-        'ComboBox3
+        'cbo_section
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(577, 9)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox3.TabIndex = 2
+        Me.cbo_section.FormattingEnabled = True
+        Me.cbo_section.Location = New System.Drawing.Point(577, 9)
+        Me.cbo_section.Name = "cbo_section"
+        Me.cbo_section.Size = New System.Drawing.Size(185, 21)
+        Me.cbo_section.TabIndex = 2
         '
-        'ComboBox2
+        'cbo_departemen
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(338, 9)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox2.TabIndex = 1
+        Me.cbo_departemen.FormattingEnabled = True
+        Me.cbo_departemen.Location = New System.Drawing.Point(338, 9)
+        Me.cbo_departemen.Name = "cbo_departemen"
+        Me.cbo_departemen.Size = New System.Drawing.Size(185, 21)
+        Me.cbo_departemen.TabIndex = 1
         '
-        'ComboBox1
+        'cbo_devision
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(73, 9)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox1.TabIndex = 0
+        Me.cbo_devision.FormattingEnabled = True
+        Me.cbo_devision.Location = New System.Drawing.Point(73, 9)
+        Me.cbo_devision.Name = "cbo_devision"
+        Me.cbo_devision.Size = New System.Drawing.Size(185, 21)
+        Me.cbo_devision.TabIndex = 0
         '
         'ShapeContainer1
         '
@@ -335,38 +322,35 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Text = "frm_MasterEmployeesScheduleAddNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_AddNew As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox5 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbo_shift As System.Windows.Forms.ComboBox
+    Friend WithEvents cbo_day As System.Windows.Forms.ComboBox
+    Friend WithEvents cbo_subsection As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbo_section As System.Windows.Forms.ComboBox
+    Friend WithEvents cbo_departemen As System.Windows.Forms.ComboBox
+    Friend WithEvents cbo_devision As System.Windows.Forms.ComboBox
     Friend WithEvents dmn_FinishTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents dmn_BreakinTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents dmn_BreakoutTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents dmn_StartTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lst_schedule As System.Windows.Forms.ListView
 End Class

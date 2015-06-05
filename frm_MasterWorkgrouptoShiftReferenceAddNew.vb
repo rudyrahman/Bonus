@@ -50,4 +50,8 @@ Public Class frm_MasterWorkgrouptoShiftReferenceAddNew
         Return objDT
 
     End Function
+
+    Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+
+    End Sub
 End Class
