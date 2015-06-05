@@ -167,4 +167,5 @@ Public Class frm_MasterDevision
         End Try
 
     End Sub
+
 End Class
