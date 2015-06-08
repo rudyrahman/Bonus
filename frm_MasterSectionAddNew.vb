@@ -44,7 +44,7 @@ Public Class frm_MasterSectionAddNew
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_DevisionDescription.Text = rs(0).Value.ToString
             End If
-            
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
