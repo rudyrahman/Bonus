@@ -23,6 +23,9 @@ Partial Class frm_MasterEmployeesScheduleAddNew
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txt2 = New System.Windows.Forms.TextBox()
+        Me.txt1 = New System.Windows.Forms.TextBox()
+        Me.txt = New System.Windows.Forms.TextBox()
         Me.lst_schedule = New System.Windows.Forms.ListView()
         Me.dmn_FinishTime = New System.Windows.Forms.DomainUpDown()
         Me.dmn_BreakinTime = New System.Windows.Forms.DomainUpDown()
@@ -56,6 +59,9 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.txt2)
+        Me.Panel1.Controls.Add(Me.txt1)
+        Me.Panel1.Controls.Add(Me.txt)
         Me.Panel1.Controls.Add(Me.lst_schedule)
         Me.Panel1.Controls.Add(Me.dmn_FinishTime)
         Me.Panel1.Controls.Add(Me.dmn_BreakinTime)
@@ -85,8 +91,34 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Panel1.Size = New System.Drawing.Size(780, 358)
         Me.Panel1.TabIndex = 0
         '
+        'txt2
+        '
+        Me.txt2.Location = New System.Drawing.Point(149, 246)
+        Me.txt2.Margin = New System.Windows.Forms.Padding(1)
+        Me.txt2.Name = "txt2"
+        Me.txt2.Size = New System.Drawing.Size(150, 20)
+        Me.txt2.TabIndex = 28
+        '
+        'txt1
+        '
+        Me.txt1.Location = New System.Drawing.Point(149, 227)
+        Me.txt1.Margin = New System.Windows.Forms.Padding(1)
+        Me.txt1.Name = "txt1"
+        Me.txt1.Size = New System.Drawing.Size(150, 20)
+        Me.txt1.TabIndex = 27
+        '
+        'txt
+        '
+        Me.txt.Location = New System.Drawing.Point(149, 208)
+        Me.txt.Margin = New System.Windows.Forms.Padding(1)
+        Me.txt.Name = "txt"
+        Me.txt.Size = New System.Drawing.Size(150, 20)
+        Me.txt.TabIndex = 26
+        '
         'lst_schedule
         '
+        Me.lst_schedule.FullRowSelect = True
+        Me.lst_schedule.GridLines = True
         Me.lst_schedule.Location = New System.Drawing.Point(16, 186)
         Me.lst_schedule.Name = "lst_schedule"
         Me.lst_schedule.Size = New System.Drawing.Size(285, 89)
@@ -97,6 +129,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.dmn_FinishTime.Location = New System.Drawing.Point(671, 123)
         Me.dmn_FinishTime.Name = "dmn_FinishTime"
+        Me.dmn_FinishTime.ReadOnly = True
         Me.dmn_FinishTime.Size = New System.Drawing.Size(70, 20)
         Me.dmn_FinishTime.TabIndex = 23
         Me.dmn_FinishTime.Text = "00 : 00"
@@ -105,6 +138,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.dmn_BreakinTime.Location = New System.Drawing.Point(497, 123)
         Me.dmn_BreakinTime.Name = "dmn_BreakinTime"
+        Me.dmn_BreakinTime.ReadOnly = True
         Me.dmn_BreakinTime.Size = New System.Drawing.Size(70, 20)
         Me.dmn_BreakinTime.TabIndex = 22
         Me.dmn_BreakinTime.Text = "00 : 00"
@@ -113,6 +147,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.dmn_BreakoutTime.Location = New System.Drawing.Point(294, 123)
         Me.dmn_BreakoutTime.Name = "dmn_BreakoutTime"
+        Me.dmn_BreakoutTime.ReadOnly = True
         Me.dmn_BreakoutTime.Size = New System.Drawing.Size(70, 20)
         Me.dmn_BreakoutTime.TabIndex = 21
         Me.dmn_BreakoutTime.Text = "00 : 00"
@@ -121,6 +156,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.dmn_StartTime.Location = New System.Drawing.Point(89, 123)
         Me.dmn_StartTime.Name = "dmn_StartTime"
+        Me.dmn_StartTime.ReadOnly = True
         Me.dmn_StartTime.Size = New System.Drawing.Size(70, 20)
         Me.dmn_StartTime.TabIndex = 20
         Me.dmn_StartTime.Text = "00 : 00"
@@ -184,18 +220,18 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(351, 81)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(28, 13)
+        Me.Label6.Size = New System.Drawing.Size(34, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Shift"
+        Me.Label6.Text = "Shift :"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(13, 80)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 13)
+        Me.Label5.Size = New System.Drawing.Size(63, 13)
         Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Day Name"
+        Me.Label5.Text = "Day Name :"
         '
         'cbo_shift
         '
@@ -236,9 +272,9 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(528, 12)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Section"
+        Me.Label3.Text = "Section :"
         '
         'Label2
         '
@@ -319,7 +355,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frm_MasterEmployeesScheduleAddNew"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "frm_MasterEmployeesScheduleAddNew"
+        Me.Text = "Master Employees Schedule Add New"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -347,10 +383,13 @@ Partial Class frm_MasterEmployeesScheduleAddNew
     Friend WithEvents dmn_FinishTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents dmn_BreakinTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents dmn_BreakoutTime As System.Windows.Forms.DomainUpDown
-    Friend WithEvents dmn_StartTime As System.Windows.Forms.DomainUpDown
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents lst_schedule As System.Windows.Forms.ListView
+    Friend WithEvents dmn_StartTime As System.Windows.Forms.DomainUpDown
+    Friend WithEvents txt As System.Windows.Forms.TextBox
+    Friend WithEvents txt1 As System.Windows.Forms.TextBox
+    Friend WithEvents txt2 As System.Windows.Forms.TextBox
 End Class
