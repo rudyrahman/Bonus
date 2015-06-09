@@ -15,9 +15,9 @@ Public Class frm_MasterDevision
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
 
     Private Sub frm_Master_Devision_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        frm_Master_Devision_Resize(Me, Nothing)
-        txt_CariData.Focus()
         Try
+            frm_Master_Devision_Resize(Me, Nothing)
+            txt_CariData.Focus()
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
             rs = New ADODB.Recordset
@@ -78,8 +78,12 @@ Public Class frm_MasterDevision
     End Sub
 
     Private Sub btn_Close_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
-        Me.Close()
-        cn.Close()
+        Try
+            Me.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub btn_RefreshData_Click(sender As Object, e As EventArgs) Handles btn_RefreshData.Click

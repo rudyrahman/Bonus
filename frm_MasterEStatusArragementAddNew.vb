@@ -74,6 +74,34 @@ Public Class frm_MasterEStatusArragementAddNew
 
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            Column1.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            Column2.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            Column3.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            Column4.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            Column5.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            Column6.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            Column7.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+
+            Select Case Column1.Items(0)
+                Case "senin"
+                    Column2.Items.Add("selasa")
+                    Column2.Items.Add("rabu")
+                    Column2.Items.Add("kamis")
+                    Column2.Items.Add("jum'at")
+                    Column2.Items.Add("sabtu")
+                    Column2.Items.Add("minggu")
+                Case "selasa"
+                    Column2.Items.Add("rabu")
+                    Column2.Items.Add("kamis")
+            End Select
+
+
+            'If Column1.Items(0) = "senin" Then
+            'Column2.Items.Add("selasa")
+            'Column2.Items.Add("rabu")
+            'Column2.Items.Add("kamis")
+            'End If
+
             txt_code.Text = ""
             txt_Name.Text = ""
             cbo_Workgroup.Text = ""
@@ -133,26 +161,31 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub rdo_DefaultTimeTable_CheckedChanged(sender As Object, e As EventArgs) Handles rdo_DefaultTimeTable.CheckedChanged
-        If rdo_DefaultTimeTable.Checked = True Then
-            dgv_StatusArragementAddNew.Rows.Clear()
-            Column1.Items.Clear()
-            Column2.Items.Clear()
-            Column3.Items.Clear()
-            Column4.Items.Clear()
-            Column5.Items.Clear()
-            Column6.Items.Clear()
-            Column7.Items.Clear()
-            Column1.Items.Add("senin")
-            Column2.Items.Add("selasa")
-            Column3.Items.Add("rabu")
-            Column4.Items.Add("kamis")
-            Column5.Items.Add("jum'at")
-            Column6.Items.Add("sabtu")
-            Column7.Items.Add("minggu")
-        End If
+        Try
+            If rdo_DefaultTimeTable.Checked = True Then
+                dgv_StatusArragementAddNew.Rows.Clear()
+                Column1.Items.Clear()
+                Column2.Items.Clear()
+                Column3.Items.Clear()
+                Column4.Items.Clear()
+                Column5.Items.Clear()
+                Column6.Items.Clear()
+                Column7.Items.Clear()
+                Column1.Items.Add("senin")
+                Column2.Items.Add("selasa")
+                Column3.Items.Add("rabu")
+                Column4.Items.Add("kamis")
+                Column5.Items.Add("jum'at")
+                Column6.Items.Add("sabtu")
+                Column7.Items.Add("minggu")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub dgv_StatusArragementAddNew_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_StatusArragementAddNew.CellContentClick
-
+ 
     End Sub
 End Class
