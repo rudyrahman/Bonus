@@ -55,7 +55,7 @@ Partial Class frm_MasterWorkgrouptoShiftReferenceAddNew
         '
         'DGV
         '
-        Me.DGV.AllowUserToDeleteRows = False
+        Me.DGV.AllowUserToOrderColumns = True
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(5, 74)
         Me.DGV.Name = "DGV"
@@ -161,7 +161,7 @@ Partial Class frm_MasterWorkgrouptoShiftReferenceAddNew
         Me.ClientSize = New System.Drawing.Size(701, 366)
         Me.Controls.Add(Me.pnl2)
         Me.Controls.Add(Me.pnl1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_MasterWorkgrouptoShiftReferenceAddNew"

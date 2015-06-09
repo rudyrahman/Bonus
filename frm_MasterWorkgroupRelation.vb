@@ -8,7 +8,7 @@ Public Class frm_MasterWorkgroupRelation
     Sub datagrid()
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_MonthPeriode] order by [No]"
+        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_WorkgroupRelation] order by [No]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
@@ -20,14 +20,13 @@ Public Class frm_MasterWorkgroupRelation
         DGV.Refresh()
         DGV.Columns(0).Width = 40
         DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
-        DGV.Columns(1).Width = 70
+        DGV.Columns(1).Width = 100
         DGV.Columns(2).Width = 130
-        DGV.Columns(3).Width = 100
-        DGV.Columns(4).Width = 100
-        DGV.Columns(5).Width = 250
-        DGV.Columns(6).Width = 150
-        DGV.Columns(7).Width = 80
-        DGV.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.Columns(3).Width = 130
+        DGV.Columns(4).Width = 220
+        DGV.Columns(5).Width = 220
+        DGV.Columns(6).Width = 70
+        DGV.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable
@@ -107,7 +106,7 @@ Public Class frm_MasterWorkgroupRelation
         Try
             Dim sqlsearch As String
             rs = New ADODB.Recordset
-            sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_MonthPeriode] where [Description] like '%" & txt_cari.Text & "%' order by [No]"
+            sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_WorkgroupRelation] where [Code] like '%" & txt_cari.Text & "%' order by [No]"
 
             With rs
                 .CursorLocation = CursorLocationEnum.adUseClient
