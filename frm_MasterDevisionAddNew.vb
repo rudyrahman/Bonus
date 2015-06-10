@@ -13,7 +13,7 @@ Public Class frm_MasterDevisionAddNew
             If txt_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Then
                 MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_devision] ([code],[description],[create_by],[create_time],[system_id],[inactive]) VALUES "
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_devision] ([division_code],[division_description],[create_by],[create_time],[system_id],[inactive]) VALUES "
                 sqlInsert = sqlInsert & " ('" & txt_DevisionCode.Text.ToString & "','" & txt_DevisionDescription.Text & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "','N')"
                 cn.Execute(sqlInsert)
                 txt_DevisionCode.Text = ""

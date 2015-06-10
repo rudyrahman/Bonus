@@ -31,7 +31,6 @@ Public Class frm_MasterEStatusArragementAddNew
                 cbo_Subsection.Text = rs(8).Value & " | " & rs(9).Value.ToString
                 rdo_CustomTimeTable.Checked = True
 
-
                 'Column1 = rs(10).Value
                 Column1.Items.Add(rs(10).Value.ToString)
                 Column2.Items.Add(rs(11).Value.ToString)
@@ -47,11 +46,9 @@ Public Class frm_MasterEStatusArragementAddNew
                 MsgBox("data salah")
             End If
 
-
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-
     End Sub
 
     Public Function RecordSetToDataTable( _
@@ -77,7 +74,7 @@ Public Class frm_MasterEStatusArragementAddNew
             'Column6.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
             'Column7.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
 
-            Select Case Column1.Items(0)
+            Select Case dgv_StatusArragementAddNew.Item(0, 0).Value.ToString
                 Case "senin"
                     Column2.Items.Add("selasa")
                     Column2.Items.Add("rabu")
@@ -106,7 +103,64 @@ Public Class frm_MasterEStatusArragementAddNew
             cbo_Subsection.Text = ""
 
             connect()
+            Try
 
+                rs = cn.Execute("SELECT [workgroup_code] FROM [AN_SUMATRA].[dbo].[TM_tb_workgroup] ORDER BY [workgroup_code] ASC")
+                If rs.EOF = False Then
+                    cbo_Workgroup.Items.Clear()
+                    While Not rs.EOF
+                        cbo_Workgroup.Items.Add(rs(0).Value)
+                        rs.MoveNext()
+                    End While
+                End If
+
+                rs = cn.Execute("SELECT [division_code],[division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [division_code] ASC")
+                If rs.EOF = False Then
+                    cbo_division.Items.Clear()
+                    While Not rs.EOF
+                        cbo_division.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                        rs.MoveNext()
+                    End While
+                End If
+
+                rs = cn.Execute("SELECT [department_code],[department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] ORDER BY [department_code] ASC")
+                If rs.EOF = False Then
+                    cbo_Department.Items.Clear()
+                    While Not rs.EOF
+                        cbo_Department.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                        rs.MoveNext()
+                    End While
+                End If
+
+                rs = cn.Execute("SELECT [department_code],[department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] ORDER BY [department_code] ASC")
+                If rs.EOF = False Then
+                    cbo_Department.Items.Clear()
+                    While Not rs.EOF
+                        cbo_Department.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                        rs.MoveNext()
+                    End While
+                End If
+
+                rs = cn.Execute("SELECT [section_code],[section_description] FROM [AN_SUMATRA].[dbo].[TM_tb_section] ORDER BY [section_code] ASC")
+                If rs.EOF = False Then
+                    cbo_Section.Items.Clear()
+                    While Not rs.EOF
+                        cbo_Section.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                        rs.MoveNext()
+                    End While
+                End If
+
+                rs = cn.Execute("SELECT [subsection_code],[subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] ORDER BY [subsection_code] ASC")
+                If rs.EOF = False Then
+                    cbo_Subsection.Items.Clear()
+                    While Not rs.EOF
+                        cbo_Subsection.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                        rs.MoveNext()
+                    End While
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, vbCritical)
+            End Try
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -122,7 +176,7 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Workgroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Workgroup.SelectedIndexChanged
-
+       
     End Sub
 
     Private Sub cbo_division_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_division.MouseClick
@@ -181,6 +235,10 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub dgv_StatusArragementAddNew_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_StatusArragementAddNew.CellContentClick
- 
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(dgv_StatusArragementAddNew.Item(0, 0).Value.ToString)
     End Sub
 End Class

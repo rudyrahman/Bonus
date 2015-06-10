@@ -20,7 +20,7 @@ Public Class frm_MasterSubSectionAddNew
         Try
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
-            rs = cn.Execute("SELECT [code] FROM  [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [code] ")
+            rs = cn.Execute("SELECT [division_code] FROM  [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [division_code] ")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 cbo_DevisionCode.Items.Clear()
                 While Not rs.EOF
@@ -52,7 +52,7 @@ Public Class frm_MasterSubSectionAddNew
 
     Private Sub cbo_DevisionCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_DevisionCode.SelectedIndexChanged
         Try
-            rs = cn.Execute("SELECT TOP 1 [description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [code]='" & cbo_DevisionCode.Text & "' ORDER BY [code] ASC")
+            rs = cn.Execute("SELECT TOP 1 [division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_DevisionCode.Text & "' ORDER BY [division_code] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_DevisionDescription.Text = rs(0).Value.ToString
             End If
@@ -67,7 +67,7 @@ Public Class frm_MasterSubSectionAddNew
             If cbo_DevisionCode.Text = "" Or txt_DevisionDescription.Text = "" Or cbo_DepartmentCode.Text = "" Or txt_DepartmentDescription.Text = "" Or cbo_SectionCode.Text = "" Or txt_SectionDescription.Text = "" Or txt_SubSectionCode.Text = "" Or txt_SubSectionDescription.Text = "" Then
                 MsgBox(udv_msg_LoginBlank, vbInformation)
             Else
-                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_subsection] ([devision_code],[devision_description],[department_code],[department_description],[section_code],[section_description],[subsection_code],[subsection_description],[create_by],[create_time],[system_id],[inactive]) VALUES "
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_subsection] ([division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[subsection_code],[subsection_description],[create_by],[create_time],[system_id],[inactive]) VALUES "
                 sqlInsert = sqlInsert & " ('" & cbo_DevisionCode.Text.ToString & "'" & _
                      ",'" & txt_DevisionDescription.Text & "'" & _
                      ",'" & cbo_DepartmentCode.Text & "'" & _
