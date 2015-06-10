@@ -15,23 +15,33 @@ Public Class frm_MasterEmployeesScheduleAddNew
         txt2.Text = total & Space(1) & "Min"
     End Sub
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+        cn.Close()
         Me.Close()
+
     End Sub
     Private Sub frm_MasterEmployeesScheduleAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cn = New ADODB.Connection
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
+        lst_schedule.Columns.Add("Description", 130, HorizontalAlignment.Left)
+        lst_schedule.Columns.Add("Data Inputed", 150, HorizontalAlignment.Left)
+        lst_schedule.Items.Add("Work Time", "Description")
+        lst_schedule.Items.Add("Break Time", "Description")
+        lst_schedule.Items.Add("Work Time Total", "Description")
+        lst_schedule.GridLines = True
+        lst_schedule.View = View.Details
+        lst_schedule.FullRowSelect = True
         cbo_departemen.Enabled = False
         cbo_section.Enabled = False
         cbo_subsection.Enabled = False
-        'cbo_day.Enabled = False
+        cbo_day.Enabled = False
         cbo_shift.Enabled = False
         dmn_StartTime.Enabled = False
         dmn_BreakinTime.Enabled = False
         dmn_BreakoutTime.Enabled = False
         dmn_FinishTime.Enabled = False
         hitung()
-       
-        rs = cn.Execute("SELECT distinct [devision_code], [devision_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] order by [devision_code]")
+        rs = cn.Execute("SELECT [division_code], [division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] order by [division_code]")
         If ((rs.EOF = False) And (rs.BOF = False)) = True Then
             While Not rs.EOF
                 cbo_devision.Items.Add(rs(0).Value.ToString & Space(2) & "|" & Space(2) & rs(1).Value.ToString)
@@ -40,10 +50,28 @@ Public Class frm_MasterEmployeesScheduleAddNew
             End While
             'cbo_devision.Refresh()
         End If
-        rs = cn.Execute("SELECT distinct [devision_code], [department_code], [department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] WHERE [devision_code] = '" & cbo_devision.SelectedText & "'")
+       
+        rs = cn.Execute("SELECT [division_code], [department_code], [department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] WHERE [division_code]='" & cbo_devision.SelectedValue & "' order by [division_code]")
         If ((rs.EOF = False) And (rs.BOF = False)) = True Then
             While Not rs.EOF
+                'cbo_departemen.Items.Add(cbo_devision.SelectedValue)
                 cbo_departemen.Items.Add(rs(1).Value.ToString & Space(2) & "|" & Space(2) & rs(2).Value.ToString)
+                rs.MoveNext()
+            End While
+            'cbo_devision.Refresh()
+        End If
+        rs = cn.Execute("SELECT distinct [section_code], [section_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] ")
+        If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+            While Not rs.EOF
+                cbo_section.Items.Add(rs(0).Value.ToString & Space(2) & "|" & Space(2) & rs(1).Value.ToString)
+                rs.MoveNext()
+            End While
+            'cbo_devision.Refresh()
+        End If
+        rs = cn.Execute("SELECT distinct [subsection_code], [subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] ")
+        If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+            While Not rs.EOF
+                cbo_subsection.Items.Add(rs(0).Value.ToString & Space(2) & "|" & Space(2) & rs(1).Value.ToString)
                 rs.MoveNext()
             End While
             'cbo_devision.Refresh()
@@ -59,14 +87,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
             'cbo_devision.Refresh()
         End If
 
-        lst_schedule.Columns.Add("Description", 130, HorizontalAlignment.Left)
-        lst_schedule.Columns.Add("Data Inputed", 150, HorizontalAlignment.Left)
-        lst_schedule.Items.Add("Work Time", "Description")
-        lst_schedule.Items.Add("Break Time", "Description")
-        lst_schedule.Items.Add("Work Time Total", "Description")
-        lst_schedule.GridLines = True
-        lst_schedule.View = View.Details
-        lst_schedule.FullRowSelect = True
+        
 
 
         
@@ -121,25 +142,21 @@ Public Class frm_MasterEmployeesScheduleAddNew
 
     Private Sub cbo_devision_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_devision.SelectedIndexChanged
         cbo_departemen.Enabled = True
+        rs = cn.Execute("SELECT [division_code], [division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_devision.SelectedValue & "' ORDER BY [division_code] ASC")
 
-
-        '  Dim id As Integer = cbo_devision.Text.ToString
-        rs = cn.Execute("SELECT distinct [devision_code], [devision_description], [department_code], [department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] WHERE [devision_code]='" & cbo_devision.Text.ToString & "' ORDER BY [devision_code] ASC")
         If (rs.EOF = False) And (rs.BOF = False) Then
-
-            'cbo_departemen.Text = rs(2).Value.ToString
-            'txt_dateto.Text = rs(3).Value.ToString
+            ' txt_DivisionCode.Text = rs(0).Value.ToString
+            ' txt_DivisionDesc.Text = rs(1).Value.ToString
         Else
-            'txt_dateto.Text = ""
-            'txt_datefrom.Text = ""
+            'txt_DivisionCode.Text = ""
+            ' txt_DivisionDesc.Text = ""
         End If
-
-
+       
     End Sub
 
     Private Sub cbo_departemen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_departemen.SelectedIndexChanged
         cbo_section.Enabled = True
-        rs = cn.Execute("SELECT distinct [devision_code], [department_code], [department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] WHERE [devision_code] = '" & cbo_devision.SelectedIndex & "' and [department_code]='" & cbo_departemen.Text.ToString & "'")
+        rs = cn.Execute("SELECT [department_code], [department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] WHERE [department_code]='" & cbo_departemen.Text.ToString & "'")
     End Sub
     Private Sub cbo_day_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_day.SelectedIndexChanged
         cbo_shift.Enabled = True
@@ -266,8 +283,17 @@ Public Class frm_MasterEmployeesScheduleAddNew
     End Sub
 
     Private Sub btn_AddNew_Click(sender As Object, e As EventArgs) Handles btn_AddNew.Click
+       
 
+    End Sub
 
+    Private Sub cbo_section_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_section.SelectedIndexChanged
+        cbo_subsection.Enabled = True
+        rs = cn.Execute("SELECT distinct [section_code], [section_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] WHERE [section_code]='" & cbo_section.Text.ToString & "' ")
+    End Sub
 
+    Private Sub cbo_subsection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_subsection.SelectedIndexChanged
+        cbo_day.Enabled = True
+        rs = cn.Execute("SELECT distinct [subsection_code], [subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] WHERE [subsection_code]='" & cbo_subsection.Text.ToString & "' ")
     End Sub
 End Class

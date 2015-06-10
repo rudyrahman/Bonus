@@ -28,6 +28,8 @@ Public Class YearPeriode
         DGV.Columns(6).Width = 150
         DGV.Columns(7).Width = 70
         DGV.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.RowsDefaultCellStyle.BackColor = Color.Lavender
+        DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable
