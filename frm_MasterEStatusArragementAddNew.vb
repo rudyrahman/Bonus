@@ -1,11 +1,6 @@
 ﻿Imports ADODB
 Imports System.Data.OleDb
 Public Class frm_MasterEStatusArragementAddNew
-    Dim cn As New ADODB.Connection
-    Dim rs As New ADODB.Recordset
-
-    Dim dgv As String
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             Me.Close()
@@ -75,12 +70,12 @@ Public Class frm_MasterEStatusArragementAddNew
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Column1.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
-            Column2.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
-            Column3.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
-            Column4.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
-            Column5.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
-            Column6.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
-            Column7.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            'Column2.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            'Column3.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            'Column4.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            'Column5.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            'Column6.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
+            'Column7.Items.AddRange("senin", "selasa", "rabu.", "kamis", "jum'at", "sabtu", "minggu")
 
             Select Case Column1.Items(0)
                 Case "senin"
@@ -109,9 +104,9 @@ Public Class frm_MasterEStatusArragementAddNew
             cbo_Department.Text = ""
             cbo_Section.Text = ""
             cbo_Subsection.Text = ""
-            cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
-            cn.Open()
-            rs = New ADODB.Recordset
+
+            connect()
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
