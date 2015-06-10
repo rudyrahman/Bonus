@@ -27,6 +27,8 @@ Public Class frm_MasterWorkgroupRelation
         DGV.Columns(5).Width = 220
         DGV.Columns(6).Width = 70
         DGV.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.RowsDefaultCellStyle.BackColor = Color.Lavender
+        DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable

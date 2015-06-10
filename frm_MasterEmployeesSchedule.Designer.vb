@@ -119,7 +119,8 @@ Partial Class frm_MasterEmployeesSchedule
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_MasterEmployeesSchedule"
-        Me.Text = "frm_MasterEmployeesSchedule"
+        Me.Text = "Master Employees Schedule"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
         CType(Me.dgv_MasterEmployeesSchedule, System.ComponentModel.ISupportInitialize).EndInit()

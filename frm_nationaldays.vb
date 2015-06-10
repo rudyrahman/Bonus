@@ -30,6 +30,8 @@ Public Class frm_nationaldays
         DGV.Columns(7).Width = 170
         DGV.Columns(8).Width = 60
         DGV.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.RowsDefaultCellStyle.BackColor = Color.Lavender
+        DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable

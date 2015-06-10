@@ -23,9 +23,11 @@ Public Class frm_MasterWorkgrouptoShiftReference
         DGV.Columns(1).Width = 100
         DGV.Columns(2).Width = 90
         DGV.Columns(3).Width = 200
-        DGV.Columns(4).Width = 250
+        DGV.Columns(4).Width = 130
         DGV.Columns(5).Width = 80
         DGV.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        DGV.RowsDefaultCellStyle.BackColor = Color.Lavender
+        DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable

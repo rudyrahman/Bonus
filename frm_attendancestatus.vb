@@ -33,6 +33,8 @@ Public Class frm_attendancestatus
         DGV.Columns(5).Width = 60
         DGV.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
         DGV.Columns(6).Width = 70
+        DGV.RowsDefaultCellStyle.BackColor = Color.Lavender
+        DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
     Public Function RecordSetToDataTable( _
               ByVal objRS As ADODB.Recordset) As DataTable
