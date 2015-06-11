@@ -16,12 +16,13 @@ Public Class frm_MasterWorkgrouptoShiftReferenceAddNew
 
             End While
         End If
+        cbo_workgroup.Refresh()
     End Sub
 
     Private Sub cbo_workgroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_workgroup.SelectedIndexChanged
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT [No],[Shift_Code],[Shif_Desc],[Check] FROM [AN_SUMATRA].[dbo].[TM_Shift1] where [Workgroup] like '%" & cbo_workgroup.Text & "%' order BY [Workgroup] ASC"
+        sql = "SELECT distinct [No],[Shift_Code],[Shif_Desc],[Check] FROM [AN_SUMATRA].[dbo].[TM_Shift1] where [Workgroup] like '%" & cbo_workgroup.Text & "%' order BY [No] ASC"
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
             .Open(sql, cn, CursorTypeEnum.adOpenKeyset, _
@@ -31,6 +32,8 @@ Public Class frm_MasterWorkgrouptoShiftReferenceAddNew
 
         If (rs.EOF = False) And (rs.BOF = False) Then
             Me.DGV.DataSource = RecordSetToDataTable(rs)
+            DGV.RowsDefaultCellStyle.BackColor = Color.Lavender
+            DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.White
             cbo_workgroup.Refresh()
         End If
     End Sub
@@ -45,20 +48,35 @@ Public Class frm_MasterWorkgrouptoShiftReferenceAddNew
     End Function
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+        For Each row As DataGridViewRow In DGV.Rows
             For i As Integer = 0 To DGV.Rows.Count - 2
-                For Each row As DataGridViewRow In DGV.Rows
-                    If row.Cells("Check").Selected = True Then
-                        Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_ShiftReference]([Workgorup_Code],[Shift_Code],[Create_By],[Create_Time],[System_Id]) values "
-                        sqlInsert = sqlInsert & " ('" & cbo_workgroup.Text.ToString & "','" & DGV.Rows(i).Cells(0).Value & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "')"
-                        cn.Execute(sqlInsert)
-                        Me.Close()
-                    End If
-                Next
-            Next
-            'cn.Close()
+                If row.Cells("Check").Selected = True Then
+                    Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_ShiftReference]([Workgorup_Code],[Shift_Code],[Create_By],[Create_Time],[System_Id]) values "
+                    sqlInsert = sqlInsert & " ('" & cbo_workgroup.Text.ToString & "','" & DGV.Rows(i).Cells(0).Value & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & CurrentAccountId & "')"
+                    cn.Execute(sqlInsert)
+                    Me.Close()
 
-        End If
+                End If
+            Next
+        Next
+        Dim akses As String
+        For i As Integer = 0 To DGV.Rows.Count - 2
+            ' DGV.Rows(i) = DGV.Rows(i).Selected
+            If DGV.Rows(i).Cells(3).Selected Then
+                akses = "True"
+            Else
+                akses = "False"
+            End If
+            Dim sqlUpdate As String = "Update [AN_SUMATRA].[dbo].[TM_Shift1] set [Check]= '" & akses & "' where [Workgroup] = '" & cbo_workgroup.Text & "'"
+            cn.Execute(sqlUpdate)
+
+        Next
+        cbo_workgroup.Refresh()
+        'If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+
+        ' cn.Close()
+
+        'End If
     End Sub
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Close()

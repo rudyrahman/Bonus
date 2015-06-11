@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Bonus_System.frm_MasterEmployeesScheduleAddNew
+            Me.MainForm = Global.Bonus_System.frm_MasterWorkgrouptoShiftReference
         End Sub
     End Class
 End Namespace

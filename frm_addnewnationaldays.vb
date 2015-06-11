@@ -126,7 +126,7 @@ Public Class frm_addnewnationaldays
                 sqlInsert = sqlInsert & " ('" & txt_yearcode.Text & "','" & cbo_yearpriode.Text.ToString & "','" & DGV.Rows(i).Cells(0).Value & "','" & DGV.Rows(i).Cells(1).Value & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & txt_validation.Text & "','" & CurrentAccountId & "')"
                 cn.Execute(sqlInsert)
 
-                cn.Close()
+                ' cn.Close()
                 Me.Close()
             End If
         Next

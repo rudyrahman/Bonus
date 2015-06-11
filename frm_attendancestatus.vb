@@ -14,7 +14,7 @@ Public Class frm_attendancestatus
     Sub datagrid()
         Dim sql As String
         rs = New ADODB.Recordset
-        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_AttendanceStatus] order by [code]"
+        sql = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_AttendanceStatus] order by [no]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
