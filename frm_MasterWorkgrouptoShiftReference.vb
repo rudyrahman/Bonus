@@ -106,7 +106,7 @@ Public Class frm_MasterWorkgrouptoShiftReference
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged
         Dim sqlsearch As String
         rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_ShiftReference] where [Workgroup_Code] like '%" & txt_cari.Text & "%' order by [No]"
+        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_ShiftReference] where [Workgorup_Code] like '%" & txt_cari.Text & "%' order by [No]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient
