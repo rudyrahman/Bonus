@@ -1,8 +1,8 @@
 ﻿Imports ADODB
 Imports System.Data.OleDb
 Public Class frm_MasterEStatusArragementAddNew
-    Dim hari() As String
-
+    Dim hari() As String = {"Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu", "Minggu"}
+    Dim h As String = "selasa"
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             txt_code.Text = ""
@@ -124,7 +124,6 @@ Public Class frm_MasterEStatusArragementAddNew
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
     Public Function RecordSetToDataTable( _
           ByVal objRS As ADODB.Recordset) As DataTable
 
@@ -139,11 +138,15 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Workgroup_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Workgroup.MouseClick
-        cbo_Workgroup.Text = ""
-        cbo_division.Text = ""
-        cbo_Department.Text = ""
-        cbo_Section.Text = ""
-        cbo_Subsection.Text = ""
+        Try
+            cbo_Workgroup.Text = ""
+            cbo_division.Text = ""
+            cbo_Department.Text = ""
+            cbo_Section.Text = ""
+            cbo_Subsection.Text = ""
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub cbo_Workgroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Workgroup.SelectedIndexChanged
@@ -211,33 +214,58 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MsgBox(dgv_StatusArragementAddNew.Item(0, 0).Value.ToString)
+        Try
+            'MsgBox(dgv_StatusArragementAddNew.Item(0, 0).Value.ToString)
+            If hari.Contains("senin") Then
+                MsgBox("true")
+            Else
+                MsgBox("false")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+  
     End Sub
 
     Private Sub dgv_StatusArragementAddNew_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgv_StatusArragementAddNew.CellMouseClick
-        hari = New String((7) - 1) {}
-        hari(0) = "senin"
-        hari(1) = "selasa"
-        hari(2) = "rabu"
-        hari(3) = "kamis"
-        hari(4) = "jum'at"
-        hari(5) = "sabtu"
-        hari(6) = "minggu"
-        Column1.Items.Clear()
-        Column2.Items.Clear()
-        Column3.Items.Clear()
-        Column4.Items.Clear()
-        Column5.Items.Clear()
-        Column6.Items.Clear()
-        Column7.Items.Clear()
-        For i As Integer = 0 To hari.Length - 1
-            Column1.Items.Add(hari(i).ToString)
-            Column2.Items.Add(hari(i).ToString)
-            Column3.Items.Add(hari(i).ToString)
-            Column4.Items.Add(hari(i).ToString)
-            Column5.Items.Add(hari(i).ToString)
-            Column6.Items.Add(hari(i).ToString)
-            Column7.Items.Add(hari(i).ToString)
-        Next
+        Try
+            'hari = New String((6) - 1) {}
+            'hari(0) = "senin"
+            'hari(1) = "selasa"
+            'hari(2) = "rabu"
+            'hari(3) = "kamis"
+            'hari(4) = "jum'at"
+            'hari(5) = "sabtu"
+            'hari(6) = "minggu"
+            Column1.Items.Clear()
+            Column2.Items.Clear()
+            Column3.Items.Clear()
+            Column4.Items.Clear()
+            Column5.Items.Clear()
+            Column6.Items.Clear()
+            Column7.Items.Clear()
+            For i As Integer = 0 To hari.Length - 1
+                Column1.Items.Add(hari(i).ToString)
+                Column2.Items.Add(hari(i).ToString)
+                Column3.Items.Add(hari(i).ToString)
+                Column4.Items.Add(hari(i).ToString)
+                Column5.Items.Add(hari(i).ToString)
+                Column6.Items.Add(hari(i).ToString)
+                Column7.Items.Add(hari(i).ToString)
+            Next
+
+            'Dim c As String
+            'For a As Integer = 0 To hari.Length - 1
+            'For b As Integer = 0 To hari.Length - 1
+            'If hari(a) = dgv_StatusArragementAddNew.Item(0, 0).Value.ToString Then
+            'If c <> hari(a) Then
+            'c = hari(a)
+            'End If
+            'End If
+            'Next
+            'Next
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

@@ -154,7 +154,6 @@ Public Class frm_MasterEStatusArragement
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Try
             rs = New ADODB.Recordset
