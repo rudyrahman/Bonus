@@ -47,6 +47,18 @@ Public Class frm_MasterEStatusArragement
         dgv_MasterEStatusArragement.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterEStatusArragement.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterEStatusArragement.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        Call AutoNumberRowsForGridView()
+        'dgv_MasterEStatusArragement.ColumnHeadersVisible = true
+
+    End Sub
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterEStatusArragement IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterEStatusArragement.Rows.Count - 2))
+                dgv_MasterEStatusArragement.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
     End Sub
     Public Function RecordSetToDataTable( _
              ByVal objRS As ADODB.Recordset) As DataTable

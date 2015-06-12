@@ -49,6 +49,7 @@ Public Class frm_MasterDevision
         dgv_MasterDevision.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterDevision.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterDevision.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        Call AutoNumberRowsForGridView()
     End Sub
     Private Sub frm_Master_Devision_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 300 Then
@@ -170,6 +171,16 @@ Public Class frm_MasterDevision
             MsgBox(ex.Message, vbCritical)
         End Try
 
+    End Sub
+
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterDevision IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterDevision.Rows.Count - 2))
+                dgv_MasterDevision.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
     End Sub
 
 End Class

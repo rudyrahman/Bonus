@@ -49,6 +49,7 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.Column5 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,7 +58,6 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgv_StatusArragementAddNew, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -294,6 +294,15 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(269, 354)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(179, 22)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.HeaderText = "#Day of Week"
@@ -334,15 +343,6 @@ Partial Class frm_MasterEStatusArragementAddNew
         '
         Me.DataGridViewTextBoxColumn8.HeaderText = "#7"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(269, 354)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(179, 22)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_MasterEStatusArragementAddNew
         '
@@ -407,6 +407,7 @@ Partial Class frm_MasterEStatusArragementAddNew
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewComboBoxColumn
@@ -414,5 +415,4 @@ Partial Class frm_MasterEStatusArragementAddNew
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

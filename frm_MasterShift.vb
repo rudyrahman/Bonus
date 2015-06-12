@@ -48,6 +48,15 @@ Public Class frm_MasterShift
         dgv_MasterShift.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterShift.AlternatingRowsDefaultCellStyle.BackColor = Color.White
     End Sub
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterShift IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterShift.Rows.Count - 2))
+                dgv_MasterShift.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
+    End Sub
 
     Private Sub frm_MasterShift_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 300 Then

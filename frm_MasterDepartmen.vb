@@ -50,6 +50,7 @@ Public Class frm_MasterDepartment
         dgv_MasterDepartment.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterDepartment.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        Call AutoNumberRowsForGridView()
     End Sub
 
     Private Sub frm_MasterDepartmen_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -149,7 +150,15 @@ Public Class frm_MasterDepartment
         End Try
 
     End Sub
-
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterDepartment IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterDepartment.Rows.Count - 2))
+                dgv_MasterDepartment.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
+    End Sub
 
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Try

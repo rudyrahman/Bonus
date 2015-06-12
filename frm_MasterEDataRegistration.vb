@@ -49,6 +49,16 @@ Public Class frm_MasterEDataRegistration
         dgv_MasterEDataRegistration.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterEDataRegistration.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterEDataRegistration.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        Call AutoNumberRowsForGridView()
+    End Sub
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterEDataRegistration IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterEDataRegistration.Rows.Count - 2))
+                dgv_MasterEDataRegistration.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
     End Sub
     Private Sub frm_MasterEDataRegistration_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 300 Then

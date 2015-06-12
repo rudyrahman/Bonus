@@ -53,6 +53,16 @@ Public Class frm_MasterSubSection
         dgv_MasterSubSection.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterSubSection.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterSubSection.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        Call AutoNumberRowsForGridView()
+    End Sub
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterSubSection IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterSubSection.Rows.Count - 2))
+                dgv_MasterSubSection.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
     End Sub
     Private Sub frm_SubSectionvb_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Me.Height > 300 Then

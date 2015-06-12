@@ -51,6 +51,16 @@ Public Class frm_MasterSection
         dgv_MasterSection.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterSection.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterSection.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        Call AutoNumberRowsForGridView()
+    End Sub
+    Private Sub AutoNumberRowsForGridView()
+        If dgv_MasterSection IsNot Nothing Then
+            Dim count As Integer = 0
+            While (count <= (dgv_MasterSection.Rows.Count - 2))
+                dgv_MasterSection.Item(0, count).Value = String.Format((count + 1).ToString(), "0")
+                count += 1
+            End While
+        End If
     End Sub
 
     Private Sub frm_MasterSection_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -150,7 +160,7 @@ Public Class frm_MasterSection
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Try
             rs = New ADODB.Recordset
-            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_section] where [devision_description] like '%" & txt_CariData.Text & "%' order by [id]"
+            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_section] where [division_description] like '%" & txt_CariData.Text & "%' order by [id]"
             With rs
                 .CursorLocation = CursorLocationEnum.adUseClient
                 .Open(search, cn, CursorTypeEnum.adOpenKeyset, _
