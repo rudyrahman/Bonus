@@ -75,6 +75,7 @@ Partial Class frm_attendancestatus
         '
         'DGV
         '
+        Me.DGV.AllowUserToAddRows = False
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(3, 3)
         Me.DGV.Name = "DGV"

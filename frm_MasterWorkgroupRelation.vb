@@ -20,11 +20,12 @@ Public Class frm_MasterWorkgroupRelation
         DGV.Refresh()
         DGV.Columns(0).Width = 40
         DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
-        DGV.Columns(1).Width = 100
-        DGV.Columns(2).Width = 130
-        DGV.Columns(3).Width = 130
+        DGV.Columns(1).Width = 90
+        DGV.Columns(2).Width = 100
+        DGV.Columns(3).Width = 100
         DGV.Columns(4).Width = 220
-        DGV.Columns(5).Width = 220
+        DGV.Columns(5).Width = 130
+        DGV.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
         DGV.Columns(6).Width = 70
         DGV.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
         DGV.RowsDefaultCellStyle.BackColor = Color.Lavender

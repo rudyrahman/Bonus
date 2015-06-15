@@ -55,6 +55,7 @@ Partial Class frm_MasterWorkgrouptoShiftReferenceAddNew
         '
         'DGV
         '
+        Me.DGV.AllowUserToAddRows = False
         Me.DGV.AllowUserToOrderColumns = True
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(5, 74)
