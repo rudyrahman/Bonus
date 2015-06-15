@@ -39,7 +39,7 @@ Public Class frm_MasterDepartmentAddNew
 
     Private Sub cbo_DevisionCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_DevisionCode.SelectedIndexChanged
         Try
-            rs = cn.Execute("SELECT [divison_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_DevisionCode.Text & "' ORDER BY [division_code] ASC")
+            rs = cn.Execute("SELECT [division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_DevisionCode.Text & "' ORDER BY [division_code] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_DevisionDescription.Text = rs(0).Value.ToString
             End If
