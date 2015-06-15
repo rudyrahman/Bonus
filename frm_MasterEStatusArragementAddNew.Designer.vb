@@ -40,16 +40,8 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.rdo_DefaultTimeTable = New System.Windows.Forms.RadioButton()
         Me.rdo_CustomTimeTable = New System.Windows.Forms.RadioButton()
         Me.btn_AddNew = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.dgv_StatusArragementAddNew = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -220,88 +212,22 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.btn_AddNew.Text = "Add New"
         Me.btn_AddNew.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_Cancel
         '
-        Me.Button2.Location = New System.Drawing.Point(748, 350)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(103, 27)
-        Me.Button2.TabIndex = 19
-        Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_Cancel.Location = New System.Drawing.Point(748, 350)
+        Me.btn_Cancel.Name = "btn_Cancel"
+        Me.btn_Cancel.Size = New System.Drawing.Size(103, 27)
+        Me.btn_Cancel.TabIndex = 19
+        Me.btn_Cancel.Text = "Cancel"
+        Me.btn_Cancel.UseVisualStyleBackColor = True
         '
         'dgv_StatusArragementAddNew
         '
         Me.dgv_StatusArragementAddNew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_StatusArragementAddNew.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
         Me.dgv_StatusArragementAddNew.Location = New System.Drawing.Point(8, 252)
         Me.dgv_StatusArragementAddNew.Name = "dgv_StatusArragementAddNew"
         Me.dgv_StatusArragementAddNew.Size = New System.Drawing.Size(843, 83)
         Me.dgv_StatusArragementAddNew.TabIndex = 17
-        '
-        'Column1
-        '
-        Me.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column1.HeaderText = "#1"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column2
-        '
-        Me.Column2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column2.HeaderText = "#2"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column3
-        '
-        Me.Column3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column3.HeaderText = "#3"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column4
-        '
-        Me.Column4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column4.HeaderText = "#4"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column5
-        '
-        Me.Column5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column5.HeaderText = "#5"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column6
-        '
-        Me.Column6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column6.HeaderText = "#6"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column7
-        '
-        Me.Column7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column7.HeaderText = "#7"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(269, 354)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(179, 22)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -349,8 +275,7 @@ Partial Class frm_MasterEStatusArragementAddNew
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(859, 389)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_AddNew)
         Me.Controls.Add(Me.dgv_StatusArragementAddNew)
         Me.Controls.Add(Me.rdo_CustomTimeTable)
@@ -398,7 +323,7 @@ Partial Class frm_MasterEStatusArragementAddNew
     Friend WithEvents rdo_CustomTimeTable As System.Windows.Forms.RadioButton
     Friend WithEvents dgv_StatusArragementAddNew As System.Windows.Forms.DataGridView
     Friend WithEvents btn_AddNew As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -407,12 +332,4 @@ Partial Class frm_MasterEStatusArragementAddNew
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewComboBoxColumn
 End Class

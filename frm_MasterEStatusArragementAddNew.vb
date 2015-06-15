@@ -1,10 +1,25 @@
 ﻿Imports ADODB
 Imports System.Data.OleDb
+
 Public Class frm_MasterEStatusArragementAddNew
-    Dim hari() As String = {"Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu", "Minggu"}
-    Dim h As String = "selasa"
+    Dim hari As String() = {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
+    Dim h1, h2, h3, h4, h5, h6, h7 As String
+
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Try
+            dgv_StatusArragementAddNew.Enabled = False
+            rdo_CustomTimeTable.Enabled = False
+            rdo_DefaultTimeTable.Enabled = False
+            dgv_StatusArragementAddNew.Columns.Clear()
+          
+            For i As Integer = 0 To 6
+                Dim cmb As New DataGridViewComboBoxColumn()
+                cmb.HeaderText = "#" & (i + 1).ToString
+                cmb.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
+                dgv_StatusArragementAddNew.Columns.Add(cmb)
+            Next
+
             txt_code.Text = ""
             txt_Name.Text = ""
             cbo_Workgroup.Text = ""
@@ -76,25 +91,45 @@ Public Class frm_MasterEStatusArragementAddNew
         End Try
 
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Function DayExistRow(ByVal row As Integer, _
+            ByVal DayName As String) As Boolean
         Try
-            Me.Close()
-            cn.Close()
-            dgv_StatusArragementAddNew.Rows.Clear()
-            Column1.Items.Clear()
-            Column2.Items.Clear()
-            Column3.Items.Clear()
-            Column4.Items.Clear()
-            Column5.Items.Clear()
-            Column6.Items.Clear()
-            Column7.Items.Clear()
+            For x As Integer = 0 To dgv_StatusArragementAddNew.Columns.Count - 1
+                If IsNothing(dgv_StatusArragementAddNew.Rows(row).Cells(x).Value) = False And _
+                  x <> dgv_StatusArragementAddNew.CurrentCell.ColumnIndex Then
+                    If dgv_StatusArragementAddNew.Rows(row).Cells(x).Value = DayName Then Return True
+                End If
+            Next
         Catch ex As Exception
-            MsgBox(ex.Message, vbCritical)
+            MsgBox(ex.Message)
         End Try
+        Return False
+    End Function
+
+    Sub SetListCombo(ByVal row As Integer, ByVal col As Integer)
+        Dim cmb As New DataGridViewComboBoxCell
+        cmb = dgv_StatusArragementAddNew.Rows(row).Cells("cmb" & (col + 1).ToString)
+        cmb.Items.Clear()
+        cmb.Items.Add("")
+        For i As Integer = 0 To 6
+            If DayExistRow(row, hari(i)) = False Then
+                cmb.Items.Add(hari(i))
+            End If
+        Next
     End Sub
+
+    Private Sub dgv_StatusArragementAddNew_CellBeginEdit(sender As Object, _
+      e As DataGridViewCellCancelEventArgs) _
+      Handles dgv_StatusArragementAddNew.CellBeginEdit
+
+        SetListCombo(e.RowIndex, e.ColumnIndex)
+
+    End Sub
+
 
     Private Sub txt_code_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_code.KeyPress
         Try
+          
             rs = cn.Execute("SELECT [employee_name],[workgroup_code],[division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[sub_sectioncode],[sub_sectioncode_description],[day_of_week_#1],[day_of_week_#2],[day_of_week_#3],[day_of_week_#4],[day_of_week_#5],[day_of_week_#6],[day_of_week_#7] FROM [AN_SUMATRA].[dbo].[TM_tb_statusarragement] WHERE [employee_code]='" & txt_code.Text & "' ORDER BY [employee_code] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_Name.Text = rs(0).Value.ToString
@@ -104,15 +139,20 @@ Public Class frm_MasterEStatusArragementAddNew
                 cbo_Section.Text = rs(6).Value & " | " & rs(7).Value.ToString
                 cbo_Subsection.Text = rs(8).Value & " | " & rs(9).Value.ToString
                 rdo_CustomTimeTable.Checked = True
+                dgv_StatusArragementAddNew.Enabled = True
+                rdo_CustomTimeTable.Enabled = True
+                rdo_DefaultTimeTable.Enabled = True
+                rdo_DefaultTimeTable.Checked = False
 
                 'Column1 = rs(10).Value
-                Column1.Items.Add(rs(10).Value.ToString)
-                Column2.Items.Add(rs(11).Value.ToString)
-                Column3.Items.Add(rs(12).Value.ToString)
-                Column4.Items.Add(rs(13).Value.ToString)
-                Column5.Items.Add(rs(14).Value.ToString)
-                Column6.Items.Add(rs(15).Value.ToString)
-                Column7.Items.Add(rs(16).Value.ToString)
+                'Column1.DataGridView.Columns.Contains(rs(10).Value.ToString)
+                'Column1.Items.Add(rs(10).Value.ToString)
+                'Column2.Items.Add(rs(11).Value.ToString)
+                'Column3.Items.Add(rs(12).Value.ToString)
+                'Column4.Items.Add(rs(13).Value.ToString)
+                'Column5.Items.Add(rs(14).Value.ToString)
+                'Column6.Items.Add(rs(15).Value.ToString)
+                'Column7.Items.Add(rs(16).Value.ToString)
 
             ElseIf Asc(e.KeyChar) = 13 Then
                 frm_ItemListing.ShowDialog()
@@ -124,15 +164,7 @@ Public Class frm_MasterEStatusArragementAddNew
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-    Public Function RecordSetToDataTable( _
-          ByVal objRS As ADODB.Recordset) As DataTable
 
-        Dim objDA As New OleDbDataAdapter()
-        Dim objDT As New DataTable()
-        objDA.Fill(objDT, objRS)
-        Return objDT
-
-    End Function
     Private Sub txt_code_TextChanged(sender As Object, e As EventArgs) Handles txt_code.TextChanged
 
     End Sub
@@ -185,24 +217,22 @@ Public Class frm_MasterEStatusArragementAddNew
 
     Private Sub rdo_DefaultTimeTable_CheckedChanged(sender As Object, e As EventArgs) Handles rdo_DefaultTimeTable.CheckedChanged
         Try
-            If rdo_DefaultTimeTable.Checked = True Then
-                dgv_StatusArragementAddNew.Rows.Clear()
-                Column1.Items.Clear()
-                Column2.Items.Clear()
-                Column3.Items.Clear()
-                Column4.Items.Clear()
-                Column5.Items.Clear()
-                Column6.Items.Clear()
-                Column7.Items.Clear()
-                Column1.Items.Add("senin")
-                Column2.Items.Add("selasa")
-                Column3.Items.Add("rabu")
-                Column4.Items.Add("kamis")
-                Column5.Items.Add("jum'at")
-                Column6.Items.Add("sabtu")
-                Column7.Items.Add("minggu")
-            End If
-
+            dgv_StatusArragementAddNew.Enabled = False
+            dgv_StatusArragementAddNew.Enabled = False
+            With dgv_StatusArragementAddNew
+                .ColumnCount = 7
+                .Columns(0).Name = "#1"
+                .Columns(1).Name = "#2"
+                .Columns(2).Name = "#3"
+                .Columns(3).Name = "#4"
+                .Columns(4).Name = "#5"
+                .Columns(5).Name = "#6"
+                .Columns(6).Name = "#7"
+            End With
+            With dgv_StatusArragementAddNew
+                Dim row As String() = New String() {"senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"}
+                .Rows.Add(row)
+            End With
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -213,7 +243,7 @@ Public Class frm_MasterEStatusArragementAddNew
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
             'MsgBox(dgv_StatusArragementAddNew.Item(0, 0).Value.ToString)
             If hari.Contains("senin") Then
@@ -224,35 +254,20 @@ Public Class frm_MasterEStatusArragementAddNew
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-  
     End Sub
 
     Private Sub dgv_StatusArragementAddNew_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgv_StatusArragementAddNew.CellMouseClick
         Try
-            'hari = New String((6) - 1) {}
-            'hari(0) = "senin"
-            'hari(1) = "selasa"
-            'hari(2) = "rabu"
-            'hari(3) = "kamis"
-            'hari(4) = "jum'at"
-            'hari(5) = "sabtu"
-            'hari(6) = "minggu"
-            Column1.Items.Clear()
-            Column2.Items.Clear()
-            Column3.Items.Clear()
-            Column4.Items.Clear()
-            Column5.Items.Clear()
-            Column6.Items.Clear()
-            Column7.Items.Clear()
-            For i As Integer = 0 To hari.Length - 1
-                Column1.Items.Add(hari(i).ToString)
-                Column2.Items.Add(hari(i).ToString)
-                Column3.Items.Add(hari(i).ToString)
-                Column4.Items.Add(hari(i).ToString)
-                Column5.Items.Add(hari(i).ToString)
-                Column6.Items.Add(hari(i).ToString)
-                Column7.Items.Add(hari(i).ToString)
-            Next
+           
+            'For i As Integer = 0 To hari.Length - 1
+            'Column1.Items.Add(hari(i).ToString)
+            'Column2.Items.Add(hari(i).ToString)
+            'Column3.Items.Add(hari(i).ToString)
+            'Column4.Items.Add(hari(i).ToString)
+            'Column5.Items.Add(hari(i).ToString)
+            'Column6.Items.Add(hari(i).ToString)
+            'Column7.Items.Add(hari(i).ToString)
+            'Next
 
             'Dim c As String
             'For a As Integer = 0 To hari.Length - 1
@@ -267,5 +282,68 @@ Public Class frm_MasterEStatusArragementAddNew
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+        Try
+            Me.Close()
+            cn.Close()
+            dgv_StatusArragementAddNew.Rows.Clear()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Private Sub btn_AddNew_Click(sender As Object, e As EventArgs) Handles btn_AddNew.Click
+
+        Try
+
+            h1 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(0).Value.ToString()
+            h2 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(1).Value.ToString()
+            h3 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(2).Value.ToString()
+            h4 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(3).Value.ToString()
+            h5 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(4).Value.ToString()
+            h6 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(5).Value.ToString()
+            h7 = Me.dgv_StatusArragementAddNew.Rows(1).Cells(6).Value.ToString()
+
+            Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_statusarragement] ([division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[sub_sectioncode],[sub_sectioncode_description],[workgroup_code],[employee_code],[employee_name],[day_of_week_#1],[day_of_week_#2],[day_of_week_#3],[day_of_week_#4],[day_of_week_#5],[day_of_week_#6],[day_of_week_#7],[create_by],[create_time],[system_id]) VALUES "
+            sqlInsert = sqlInsert & " ('" & txt_code.Text.ToString & "'" & _
+            ",'" & txt_Name.Text & "'" & _
+            ",'" & cbo_Workgroup.Text & "'" & _
+            ",'" & cbo_division.Text & "'" & _
+            ",'" & cbo_Department.Text & "'" & _
+            ",'" & cbo_Section.Text & "'" & _
+            ",'" & cbo_Subsection.Text & "'" & _
+            ",'" & h1 & "'" & _
+            ",'" & h2 & "'" & _
+            ",'" & h3 & "'" & _
+            ",'" & h4 & "'" & _
+            ",'" & h5 & "'" & _
+            ",'" & h6 & "'" & _
+            ",'" & h7 & "')"
+
+            cn.Execute(sqlInsert)
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Private Sub rdo_CustomTimeTable_CheckedChanged(sender As Object, e As EventArgs) Handles rdo_CustomTimeTable.CheckedChanged
+        dgv_StatusArragementAddNew.Enabled = True
+        dgv_StatusArragementAddNew.Columns.Clear()
+        For i As Integer = 0 To 6
+            Dim cmb As New DataGridViewComboBoxColumn()
+            cmb.HeaderText = "#" & (i + 1).ToString
+            cmb.Name = "cmb" & (i + 1).ToString
+            cmb.MaxDropDownItems = 7
+            cmb.Items.Add("")
+            cmb.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
+            For x As Integer = 0 To 6
+                cmb.Items.Add(hari(x))
+            Next
+            dgv_StatusArragementAddNew.Columns.Add(cmb)
+        Next
     End Sub
 End Class
