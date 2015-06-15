@@ -52,12 +52,12 @@ Partial Class frm_MasterWorkgroupRelationAddNew
         Me.pnl1.Controls.Add(Me.ShapeContainer1)
         Me.pnl1.Location = New System.Drawing.Point(3, 1)
         Me.pnl1.Name = "pnl1"
-        Me.pnl1.Size = New System.Drawing.Size(672, 392)
+        Me.pnl1.Size = New System.Drawing.Size(672, 425)
         Me.pnl1.TabIndex = 0
         '
         'btn_cancel
         '
-        Me.btn_cancel.Location = New System.Drawing.Point(564, 351)
+        Me.btn_cancel.Location = New System.Drawing.Point(561, 387)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(90, 26)
         Me.btn_cancel.TabIndex = 8
@@ -66,7 +66,7 @@ Partial Class frm_MasterWorkgroupRelationAddNew
         '
         'btn_add
         '
-        Me.btn_add.Location = New System.Drawing.Point(460, 351)
+        Me.btn_add.Location = New System.Drawing.Point(455, 387)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(100, 26)
         Me.btn_add.TabIndex = 7
@@ -75,10 +75,11 @@ Partial Class frm_MasterWorkgroupRelationAddNew
         '
         'DGV_Workgroup
         '
+        Me.DGV_Workgroup.AllowUserToAddRows = False
         Me.DGV_Workgroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Workgroup.Location = New System.Drawing.Point(9, 124)
         Me.DGV_Workgroup.Name = "DGV_Workgroup"
-        Me.DGV_Workgroup.Size = New System.Drawing.Size(655, 204)
+        Me.DGV_Workgroup.Size = New System.Drawing.Size(655, 244)
         Me.DGV_Workgroup.TabIndex = 6
         '
         'Label3
@@ -129,7 +130,7 @@ Partial Class frm_MasterWorkgroupRelationAddNew
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(670, 390)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(670, 423)
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
         '
@@ -138,8 +139,8 @@ Partial Class frm_MasterWorkgroupRelationAddNew
         Me.LineShape2.Name = "LineShape2"
         Me.LineShape2.X1 = 3
         Me.LineShape2.X2 = 667
-        Me.LineShape2.Y1 = 337
-        Me.LineShape2.Y2 = 337
+        Me.LineShape2.Y1 = 376
+        Me.LineShape2.Y2 = 376
         '
         'LineShape1
         '
@@ -153,7 +154,7 @@ Partial Class frm_MasterWorkgroupRelationAddNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(679, 394)
+        Me.ClientSize = New System.Drawing.Size(679, 427)
         Me.Controls.Add(Me.pnl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False

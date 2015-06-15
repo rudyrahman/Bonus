@@ -235,6 +235,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'cbo_shift
         '
+        Me.cbo_shift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_shift.FormattingEnabled = True
         Me.cbo_shift.Items.AddRange(New Object() {"1", "2", "3"})
         Me.cbo_shift.Location = New System.Drawing.Point(385, 77)
@@ -244,6 +245,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'cbo_day
         '
+        Me.cbo_day.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_day.FormattingEnabled = True
         Me.cbo_day.Location = New System.Drawing.Point(76, 77)
         Me.cbo_day.Name = "cbo_day"
@@ -252,6 +254,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'cbo_subsection
         '
+        Me.cbo_subsection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_subsection.FormattingEnabled = True
         Me.cbo_subsection.Location = New System.Drawing.Point(90, 42)
         Me.cbo_subsection.Name = "cbo_subsection"
@@ -296,6 +299,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'cbo_section
         '
+        Me.cbo_section.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_section.FormattingEnabled = True
         Me.cbo_section.Location = New System.Drawing.Point(577, 9)
         Me.cbo_section.Name = "cbo_section"
@@ -304,6 +308,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'cbo_departemen
         '
+        Me.cbo_departemen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_departemen.FormattingEnabled = True
         Me.cbo_departemen.Location = New System.Drawing.Point(338, 9)
         Me.cbo_departemen.Name = "cbo_departemen"
@@ -312,6 +317,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'cbo_devision
         '
+        Me.cbo_devision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_devision.FormattingEnabled = True
         Me.cbo_devision.Location = New System.Drawing.Point(73, 9)
         Me.cbo_devision.Name = "cbo_devision"

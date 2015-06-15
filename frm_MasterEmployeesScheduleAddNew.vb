@@ -272,8 +272,33 @@ Public Class frm_MasterEmployeesScheduleAddNew
     End Sub
 
     Private Sub btn_AddNew_Click(sender As Object, e As EventArgs) Handles btn_AddNew.Click
-       
-
+        Try
+            If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+                Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_EmployeesSchedule] ([Division_Code],[Division_Description],[Department_Code],[Department_Description],[Section_Code],[Section_Description],[Sub_Section_Code],[Sub_Section_Description],[Day_Name_Code],[Day_Name_Description],[Shift],[Start],[Finish],[Break_Out],[Break_In],[Create_By],[Craete_Time],[System_id]) VALUES "
+                sqlInsert = sqlInsert & " ('" & Microsoft.VisualBasic.Strings.Left(cbo_devision.Text, 3) & "'" & _
+                     ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_devision.Text, 9, 20) & "'" & _
+                     ",'" & Microsoft.VisualBasic.Strings.Left(cbo_departemen.Text, 7) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_departemen.Text, 9, 25) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Left(cbo_section.Text, 9) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_section.Text, 9, 25) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Left(cbo_subsection.Text, 11) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_subsection.Text, 9, 25) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Left(cbo_day.Text, 1) & "'" & _
+                      ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_day.Text, 7, 10) & "'" & _
+                       ",'" & cbo_shift.Text.ToString & "'" & _
+                      ",'" & dmn_StartTime.Text.ToString & "'" & _
+                       ",'" & dmn_FinishTime.Text.ToString & "'" & _
+                     ",'" & dmn_BreakoutTime.Text.ToString & "'" & _
+                     ",'" & dmn_BreakinTime.Text.ToString & "'" & _
+                     ",'" & CurrentAccountName & "'" & _
+                     "," & "GETDATE()" & " " & "" & _
+                    ",'" & CurrentAccountId & "')"
+                cn.Execute(sqlInsert)
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub cbo_section_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_section.SelectedIndexChanged

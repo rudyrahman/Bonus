@@ -24,6 +24,7 @@ Public Class frm_MasterWorkgrouptoShiftReference
         DGV.Columns(2).Width = 90
         DGV.Columns(3).Width = 200
         DGV.Columns(4).Width = 130
+        DGV.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
         DGV.Columns(5).Width = 80
         DGV.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
         DGV.RowsDefaultCellStyle.BackColor = Color.Lavender

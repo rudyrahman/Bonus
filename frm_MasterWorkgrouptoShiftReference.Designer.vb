@@ -52,6 +52,7 @@ Partial Class frm_MasterWorkgrouptoShiftReference
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(3, 3)
         Me.DGV.Name = "DGV"
+        Me.DGV.ReadOnly = True
         Me.DGV.Size = New System.Drawing.Size(686, 288)
         Me.DGV.TabIndex = 0
         '
