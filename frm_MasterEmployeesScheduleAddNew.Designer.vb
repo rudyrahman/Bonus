@@ -360,7 +360,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frm_MasterEmployeesScheduleAddNew"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Employees Schedule Add New"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

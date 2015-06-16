@@ -10,6 +10,7 @@ Public Class frm_MasterWorkgrouptoShiftReferenceAddNew
         cn.Open()
         rs = cn.Execute("SELECT distinct [Workgroup] FROM [AN_SUMATRA].[dbo].[TM_Shift1] ORDER BY [Workgroup] ASC")
         If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+            cbo_workgroup.Items.Clear()
             While Not rs.EOF
                 cbo_workgroup.Items.Add(rs(0).Value.ToString)
                 rs.MoveNext()

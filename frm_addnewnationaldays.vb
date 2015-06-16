@@ -12,6 +12,7 @@ Public Class frm_addnewnationaldays
         cn.Open()
         rs = cn.Execute("SELECT [Description] FROM [AN_SUMATRA].[dbo].[TM_YearPeriode] ORDER BY [No] ASC")
         If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+            cbo_yearpriode.Items.Clear()
             While Not rs.EOF
                 cbo_yearpriode.Items.Add(rs(0).Value.ToString)
                 rs.MoveNext()

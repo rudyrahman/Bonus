@@ -166,6 +166,7 @@ Partial Class frm_MasterWorkgrouptoShiftReferenceAddNew
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_MasterWorkgrouptoShiftReferenceAddNew"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New"
         Me.TopMost = True
         Me.pnl1.ResumeLayout(False)
