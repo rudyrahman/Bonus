@@ -163,7 +163,7 @@ Public Class frm_MasterDepartment
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Try
             rs = New ADODB.Recordset
-            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_department] where [devision_description] like '%" & txt_CariData.Text & "%' order by [id]"
+            search = "select * from [AN_SUMATRA].[dbo].[TM_tb_department] where [division_description] like '%" & txt_CariData.Text & "%' order by [id]"
             With rs
                 .CursorLocation = CursorLocationEnum.adUseClient
                 .Open(search, cn, CursorTypeEnum.adOpenKeyset, _
