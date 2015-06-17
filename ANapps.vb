@@ -120,8 +120,6 @@ Public Class ANapps
     End Sub
 
     Private Sub MasterAttendanceStaffClassToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterAttendanceStaffClassToolStripMenuItem.Click
-        frm_MasterAstaffClass.MdiParent = Me
-        frm_MasterAstaffClass.Show()
-        frm_MasterAstaffClass.WindowState = FormWindowState.Maximized
+ 
     End Sub
 End Class
