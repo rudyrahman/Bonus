@@ -1,5 +1,4 @@
 ﻿Imports ADODB
-
 Public Class frm_MasterAttendanceStaffRegistrasiAddNew
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
@@ -23,6 +22,21 @@ Public Class frm_MasterAttendanceStaffRegistrasiAddNew
             txt_department.Text = rs(4).Value.ToString
             txt_section.Text = rs(5).Value.ToString
             txt_subsection.Text = rs(6).Value.ToString
+        ElseIf Asc(e.KeyChar) = 13 Then
+            MsgBox("Kode Karyawan Tidak Ditemukan")
         End If
+    End Sub
+
+    Private Sub txt_code_TextChanged(sender As Object, e As EventArgs) Handles txt_code.TextChanged
+        txt_nama.Text = ""
+        txt_workgroup.Text = ""
+        txt_Division.Text = ""
+        txt_department.Text = ""
+        txt_section.Text = ""
+        txt_subsection.Text = ""
+    End Sub
+
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        Me.Close()
     End Sub
 End Class

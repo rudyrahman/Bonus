@@ -87,4 +87,18 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
+
+    Private Sub dgv_ItemListing_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ItemListing.CellContentDoubleClick
+        If dgv_ItemListing.Rows.Count > 0 Then
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_code.Text = dgv_ItemListing("Employee_Code", e.RowIndex).Value.ToString()
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_nama.Text = dgv_ItemListing("Employee_Name", e.RowIndex).Value.ToString()
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_workgroup.Text = dgv_ItemListing("Workgroup_Code", e.RowIndex).Value.ToString()
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_Division.Text = dgv_ItemListing("Division", e.RowIndex).Value.ToString()
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_department.Text = dgv_ItemListing("Department", e.RowIndex).Value.ToString()
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_section.Text = dgv_ItemListing("Section", e.RowIndex).Value.ToString()
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_subsection.Text = dgv_ItemListing("Subsection", e.RowIndex).Value.ToString()
+
+        End If
+        Me.Close()
+    End Sub
 End Class

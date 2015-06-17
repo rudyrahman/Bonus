@@ -23,6 +23,16 @@ Partial Class frm_MasterAttendanceStaffRegistrasiAddNew
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_close = New System.Windows.Forms.Button()
+        Me.btn_addnew = New System.Windows.Forms.Button()
+        Me.cbo_staff = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txt_subsection = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txt_section = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_department = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_Division = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_workgroup = New System.Windows.Forms.TextBox()
@@ -31,19 +41,9 @@ Partial Class frm_MasterAttendanceStaffRegistrasiAddNew
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_code = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt_department = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txt_section = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txt_subsection = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.cbo_staff = New System.Windows.Forms.ComboBox()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.btn_addnew = New System.Windows.Forms.Button()
-        Me.btn_close = New System.Windows.Forms.Button()
+        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,6 +73,89 @@ Partial Class frm_MasterAttendanceStaffRegistrasiAddNew
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(668, 423)
         Me.Panel1.TabIndex = 0
+        '
+        'btn_close
+        '
+        Me.btn_close.Location = New System.Drawing.Point(556, 389)
+        Me.btn_close.Name = "btn_close"
+        Me.btn_close.Size = New System.Drawing.Size(94, 24)
+        Me.btn_close.TabIndex = 18
+        Me.btn_close.Text = "Close"
+        Me.btn_close.UseVisualStyleBackColor = True
+        '
+        'btn_addnew
+        '
+        Me.btn_addnew.Location = New System.Drawing.Point(456, 389)
+        Me.btn_addnew.Name = "btn_addnew"
+        Me.btn_addnew.Size = New System.Drawing.Size(94, 24)
+        Me.btn_addnew.TabIndex = 17
+        Me.btn_addnew.Text = "Add New"
+        Me.btn_addnew.UseVisualStyleBackColor = True
+        '
+        'cbo_staff
+        '
+        Me.cbo_staff.FormattingEnabled = True
+        Me.cbo_staff.Location = New System.Drawing.Point(91, 230)
+        Me.cbo_staff.Name = "cbo_staff"
+        Me.cbo_staff.Size = New System.Drawing.Size(551, 21)
+        Me.cbo_staff.TabIndex = 15
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(19, 238)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(63, 13)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Staff Class :"
+        '
+        'txt_subsection
+        '
+        Me.txt_subsection.Location = New System.Drawing.Point(91, 187)
+        Me.txt_subsection.Name = "txt_subsection"
+        Me.txt_subsection.Size = New System.Drawing.Size(476, 20)
+        Me.txt_subsection.TabIndex = 13
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(18, 190)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(71, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Sub Section :"
+        '
+        'txt_section
+        '
+        Me.txt_section.Location = New System.Drawing.Point(91, 161)
+        Me.txt_section.Name = "txt_section"
+        Me.txt_section.Size = New System.Drawing.Size(428, 20)
+        Me.txt_section.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(19, 164)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Section :"
+        '
+        'txt_department
+        '
+        Me.txt_department.Location = New System.Drawing.Point(91, 135)
+        Me.txt_department.Name = "txt_department"
+        Me.txt_department.Size = New System.Drawing.Size(375, 20)
+        Me.txt_department.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(19, 138)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(68, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Department :"
         '
         'txt_Division
         '
@@ -138,79 +221,6 @@ Partial Class frm_MasterAttendanceStaffRegistrasiAddNew
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Code :"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 138)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Department :"
-        '
-        'txt_department
-        '
-        Me.txt_department.Location = New System.Drawing.Point(91, 135)
-        Me.txt_department.Name = "txt_department"
-        Me.txt_department.Size = New System.Drawing.Size(375, 20)
-        Me.txt_department.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 164)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Section :"
-        '
-        'txt_section
-        '
-        Me.txt_section.Location = New System.Drawing.Point(91, 161)
-        Me.txt_section.Name = "txt_section"
-        Me.txt_section.Size = New System.Drawing.Size(428, 20)
-        Me.txt_section.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(18, 190)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Sub Section :"
-        '
-        'txt_subsection
-        '
-        Me.txt_subsection.Location = New System.Drawing.Point(91, 187)
-        Me.txt_subsection.Name = "txt_subsection"
-        Me.txt_subsection.Size = New System.Drawing.Size(476, 20)
-        Me.txt_subsection.TabIndex = 13
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(19, 238)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 13)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Staff Class :"
-        '
-        'cbo_staff
-        '
-        Me.cbo_staff.FormattingEnabled = True
-        Me.cbo_staff.Location = New System.Drawing.Point(91, 230)
-        Me.cbo_staff.Name = "cbo_staff"
-        Me.cbo_staff.Size = New System.Drawing.Size(551, 21)
-        Me.cbo_staff.TabIndex = 15
-        '
-        'LineShape1
-        '
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 15
-        Me.LineShape1.X2 = 647
-        Me.LineShape1.Y1 = 51
-        Me.LineShape1.Y2 = 51
-        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
@@ -229,32 +239,22 @@ Partial Class frm_MasterAttendanceStaffRegistrasiAddNew
         Me.LineShape2.Y1 = 215
         Me.LineShape2.Y2 = 215
         '
-        'btn_addnew
+        'LineShape1
         '
-        Me.btn_addnew.Location = New System.Drawing.Point(456, 389)
-        Me.btn_addnew.Name = "btn_addnew"
-        Me.btn_addnew.Size = New System.Drawing.Size(94, 24)
-        Me.btn_addnew.TabIndex = 17
-        Me.btn_addnew.Text = "Add New"
-        Me.btn_addnew.UseVisualStyleBackColor = True
+        Me.LineShape1.Name = "LineShape1"
+        Me.LineShape1.X1 = 15
+        Me.LineShape1.X2 = 647
+        Me.LineShape1.Y1 = 51
+        Me.LineShape1.Y2 = 51
         '
-        'btn_close
-        '
-        Me.btn_close.Location = New System.Drawing.Point(556, 389)
-        Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(94, 24)
-        Me.btn_close.TabIndex = 18
-        Me.btn_close.Text = "Close"
-        Me.btn_close.UseVisualStyleBackColor = True
-        '
-        'frm_MasterAttendanceStaffClassAddNew
+        'frm_MasterAttendanceStaffRegistrasiAddNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(675, 429)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "frm_MasterAttendanceStaffClassAddNew"
+        Me.Name = "frm_MasterAttendanceStaffRegistrasiAddNew"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New"
         Me.Panel1.ResumeLayout(False)
