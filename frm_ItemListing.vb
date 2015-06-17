@@ -1,5 +1,4 @@
 ﻿Imports ADODB
-Imports vbexcel = Microsoft.Office.Interop.Excel
 Imports System.Data.OleDb
 Public Class frm_ItemListing
     Dim cn As New ADODB.Connection
@@ -116,6 +115,7 @@ Public Class frm_ItemListing
 
         If dgv_ItemListing.Rows.Count > 0 Then
             frm_MasterEStatusArragementAddNew.txt_code.Text = dgv_ItemListing("code", e.RowIndex).Value.ToString()
+            frm_MasterEStatusArragementAddNew.txt_Name.Text = dgv_ItemListing("name", e.RowIndex).Value.ToString()
         End If
         Me.Close()
     End Sub
