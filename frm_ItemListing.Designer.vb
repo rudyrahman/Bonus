@@ -27,8 +27,8 @@ Partial Class frm_ItemListing
         Me.btn_Choose = New System.Windows.Forms.Button()
         Me.dgv_ItemListing = New System.Windows.Forms.DataGridView()
         Me.grb_Search = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btn_Search = New System.Windows.Forms.Button()
+        Me.txt_CariData = New System.Windows.Forms.TextBox()
         Me.pnl_Form.SuspendLayout()
         CType(Me.dgv_ItemListing, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grb_Search.SuspendLayout()
@@ -75,8 +75,8 @@ Partial Class frm_ItemListing
         '
         'grb_Search
         '
-        Me.grb_Search.Controls.Add(Me.Button1)
-        Me.grb_Search.Controls.Add(Me.TextBox1)
+        Me.grb_Search.Controls.Add(Me.btn_Search)
+        Me.grb_Search.Controls.Add(Me.txt_CariData)
         Me.grb_Search.Location = New System.Drawing.Point(10, 10)
         Me.grb_Search.Name = "grb_Search"
         Me.grb_Search.Size = New System.Drawing.Size(682, 47)
@@ -84,21 +84,21 @@ Partial Class frm_ItemListing
         Me.grb_Search.TabStop = False
         Me.grb_Search.Text = "Search Box"
         '
-        'Button1
+        'btn_Search
         '
-        Me.Button1.Location = New System.Drawing.Point(294, 18)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_Search.Location = New System.Drawing.Point(294, 18)
+        Me.btn_Search.Name = "btn_Search"
+        Me.btn_Search.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Search.TabIndex = 1
+        Me.btn_Search.Text = "Search"
+        Me.btn_Search.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txt_CariData
         '
-        Me.TextBox1.Location = New System.Drawing.Point(7, 18)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(280, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.txt_CariData.Location = New System.Drawing.Point(7, 18)
+        Me.txt_CariData.Name = "txt_CariData"
+        Me.txt_CariData.Size = New System.Drawing.Size(280, 20)
+        Me.txt_CariData.TabIndex = 0
         '
         'frm_ItemListing
         '
@@ -122,6 +122,6 @@ Partial Class frm_ItemListing
     Friend WithEvents btn_Choose As System.Windows.Forms.Button
     Friend WithEvents dgv_ItemListing As System.Windows.Forms.DataGridView
     Friend WithEvents grb_Search As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents btn_Search As System.Windows.Forms.Button
+    Friend WithEvents txt_CariData As System.Windows.Forms.TextBox
 End Class
