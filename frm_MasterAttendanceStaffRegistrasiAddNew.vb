@@ -1,6 +1,6 @@
 ﻿Imports ADODB
 
-Public Class frm_MasterAttendanceStaffClassAddNew
+Public Class frm_MasterAttendanceStaffRegistrasiAddNew
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
     Private Sub frm_MasterAttendanceStaffClassAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,7 +12,7 @@ Public Class frm_MasterAttendanceStaffClassAddNew
 
     Private Sub txt_code_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_code.KeyPress
         If txt_code.Text = "" And Asc(e.KeyChar) = 13 = True Then
-            frm_MasterAttendanceStaffClassItemListing.ShowDialog()
+            frm_MasterAttendanceStaffRegistrasiItemListing.ShowDialog()
             Exit Sub
         End If
         rs = cn.Execute("SELECT [Employee_Code],[Employee_Name],[Workgroup_Code],[Division],[Department],[Section],[Subsection] FROM  [AN_SUMATRA].[dbo].[TM_AttendanceListing] WHERE [Employee_Code]='" & txt_code.Text & "' ORDER BY [Employee_Code] ASC")

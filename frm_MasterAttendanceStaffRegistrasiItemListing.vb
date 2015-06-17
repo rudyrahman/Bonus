@@ -1,6 +1,6 @@
 ﻿Imports ADODB
 Imports System.Data.OleDb
-Public Class frm_MasterAttendanceStaffClassItemListing
+Public Class frm_MasterAttendanceStaffRegistrasiItemListing
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
     Dim search As String

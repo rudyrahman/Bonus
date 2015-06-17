@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_MasterAttendanceStaffClassItemListing
+Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.

@@ -2,7 +2,7 @@
 Imports System.Data
 Imports System.Data.OleDb
 Imports Excel = Microsoft.Office.Interop.Excel
-Public Class frm_MasterAttendanceStaffClass
+Public Class frm_MasterAttendanceStaffRegistrasi
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
     Sub datagrid()
@@ -127,7 +127,7 @@ Public Class frm_MasterAttendanceStaffClass
     End Sub
 
     Private Sub btn_TambahBaru_Click(sender As Object, e As EventArgs) Handles btn_TambahBaru.Click
-        frm_MasterAttendanceStaffClassAddNew.Show()
+        frm_MasterAttendanceStaffRegistrasiAddNew.Show()
     End Sub
 
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
