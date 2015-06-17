@@ -202,6 +202,24 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterAttendanceStaffClass.Designer.vb">
+      <DependentUpon>frm_MasterAttendanceStaffClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterAttendanceStaffClass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterAttendanceStaffClassAddNew.Designer.vb">
+      <DependentUpon>frm_MasterAttendanceStaffClassAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterAttendanceStaffClassAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterAttendanceStaffClassItemListing.Designer.vb">
+      <DependentUpon>frm_MasterAttendanceStaffClassItemListing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterAttendanceStaffClassItemListing.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterDepartmen.Designer.vb">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
     </Compile>
@@ -464,6 +482,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterAttendanceStaffClass.resx">
+      <DependentUpon>frm_MasterAttendanceStaffClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterAttendanceStaffClassAddNew.resx">
+      <DependentUpon>frm_MasterAttendanceStaffClassAddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterAttendanceStaffClassItemListing.resx">
+      <DependentUpon>frm_MasterAttendanceStaffClassItemListing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDepartmen.resx">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>

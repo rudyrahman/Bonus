@@ -237,7 +237,6 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.cbo_shift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_shift.FormattingEnabled = True
-        Me.cbo_shift.Items.AddRange(New Object() {"1", "2", "3"})
         Me.cbo_shift.Location = New System.Drawing.Point(385, 77)
         Me.cbo_shift.Name = "cbo_shift"
         Me.cbo_shift.Size = New System.Drawing.Size(82, 21)
