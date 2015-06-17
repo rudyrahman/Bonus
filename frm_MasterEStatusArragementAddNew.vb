@@ -14,6 +14,13 @@ Public Class frm_MasterEStatusArragementAddNew
             rdo_DefaultTimeTable.Enabled = False
             dgv_StatusArragementAddNew.Columns.Clear()
             dgv_StatusArragementAddNew.AllowUserToAddRows = True
+            txt_code.Text = ""
+            txt_Name.Text = ""
+            cbo_Workgroup.Items.Clear()
+            cbo_division.Items.Clear()
+            cbo_Department.Items.Clear()
+            cbo_Section.Items.Clear()
+            cbo_Subsection.Items.Clear()
 
             With dgv_StatusArragementAddNew
                 .ColumnCount = 7
@@ -33,38 +40,8 @@ Public Class frm_MasterEStatusArragementAddNew
             '   dgv_StatusArragementAddNew.Columns.Add(cmb)
             'Next
 
-            txt_code.Text = ""
-            txt_Name.Text = ""
-            cbo_Workgroup.Text = ""
-            cbo_division.Text = ""
-            cbo_Department.Text = ""
-            cbo_Section.Text = ""
-            cbo_Subsection.Text = ""
-
             connect()
-            Try
-                rs = cn.Execute("SELECT [workgroup_code] FROM [AN_SUMATRA].[dbo].[TM_tb_workgroup] ORDER BY [workgroup_code] ASC")
-                If rs.EOF = False Then
-                    cbo_Workgroup.Items.Clear()
-                    While Not rs.EOF
-                        cbo_Workgroup.Items.Add(rs(0).Value)
-                        rs.MoveNext()
-                    End While
-                End If
 
-                rs = cn.Execute("SELECT [division_code],[division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [division_code] ASC")
-                If rs.EOF = False Then
-                    cbo_division.Items.Clear()
-                    While Not rs.EOF
-                        cbo_division.Items.Add(rs(0).Value.ToString)
-                        '& " | " & rs(1).Value.ToString)
-                        rs.MoveNext()
-                    End While
-                End If
-
-            Catch ex As Exception
-                MsgBox(ex.Message, vbCritical)
-            End Try
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -159,6 +136,18 @@ Public Class frm_MasterEStatusArragementAddNew
 
     Private Sub cbo_Workgroup_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Workgroup.MouseClick
         Try
+            If txt_code.Text = "" Then
+                cbo_Workgroup.Items.Clear()
+            Else
+                rs = cn.Execute("SELECT [workgroup_code] FROM [AN_SUMATRA].[dbo].[TM_tb_workgroup] ORDER BY [workgroup_code] ASC")
+                If rs.EOF = False Then
+                    cbo_Workgroup.Items.Clear()
+                    While Not rs.EOF
+                        cbo_Workgroup.Items.Add(rs(0).Value)
+                        rs.MoveNext()
+                    End While
+                End If
+            End If
             cbo_Workgroup.Text = ""
             cbo_division.Text = ""
             cbo_Department.Text = ""
@@ -177,6 +166,18 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_division_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_division.MouseClick
+        If txt_code.Text = "" Then
+            cbo_division.Items.Clear()
+        Else
+            rs = cn.Execute("SELECT [division_code],[division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [division_code] ASC")
+            If rs.EOF = False Then
+                cbo_division.Items.Clear()
+                While Not rs.EOF
+                    cbo_division.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    rs.MoveNext()
+                End While
+            End If
+        End If
         cbo_division.Text = ""
         cbo_Department.Text = ""
         cbo_Section.Text = ""
@@ -191,13 +192,19 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Department_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Department.MouseClick
-        rs = cn.Execute("SELECT [department_code],[department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] where [department_code] like '%" & cbo_division.Text & "%' order by [department_code] ASC")
-        If rs.EOF = False Then
+        If cbo_division.Text = "" Then
             cbo_Department.Items.Clear()
-            While Not rs.EOF
-                cbo_Department.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
-                rs.MoveNext()
-            End While
+            cbo_Section.Items.Clear()
+            cbo_Subsection.Items.Clear()
+        Else
+            rs = cn.Execute("SELECT [department_code],[department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] where [department_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_division.Text, 3) & "%' order by [department_code] ASC")
+            If rs.EOF = False Then
+                cbo_Department.Items.Clear()
+                While Not rs.EOF
+                    cbo_Department.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    rs.MoveNext()
+                End While
+            End If
         End If
 
         cbo_Department.Text = ""
@@ -214,7 +221,19 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Section_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Section.MouseClick
-
+        If cbo_division.Text = "" And cbo_Department.Text = "" Then
+            cbo_Section.Items.Clear()
+            cbo_Subsection.Items.Clear()
+        Else
+            rs = cn.Execute("SELECT [section_code],[section_description] FROM [AN_SUMATRA].[dbo].[TM_tb_section] where [section_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_Department.Text, 8) & "%' ORDER BY [section_code] ASC")
+            If rs.EOF = False Then
+                cbo_Section.Items.Clear()
+                While Not rs.EOF
+                    cbo_Section.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    rs.MoveNext()
+                End While
+            End If
+        End If
         cbo_Section.Text = ""
         cbo_Subsection.Text = ""
         rdo_CustomTimeTable.Checked = False
@@ -369,6 +388,18 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Subsection_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Subsection.MouseClick
+        If cbo_division.Text = "" And cbo_Department.Text = "" And cbo_Section.Text = "" Then
+            cbo_Subsection.Items.Clear()
+        Else
+            rs = cn.Execute("SELECT [subsection_code],[subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] where [subsection_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_Section.Text, 10) & "%' ORDER BY [subsection_code] ASC")
+            If rs.EOF = False Then
+                cbo_Subsection.Items.Clear()
+                While Not rs.EOF
+                    cbo_Subsection.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    rs.MoveNext()
+                End While
+            End If
+        End If
         rdo_CustomTimeTable.Checked = False
         rdo_DefaultTimeTable.Checked = False
         dgv_StatusArragementAddNew.Rows.Clear()

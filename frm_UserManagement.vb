@@ -3,9 +3,20 @@ Public Class frm_UserManagement
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
 
-    Private Sub frm_UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub frm_UserManagement_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Try
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Private Sub frm_UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            cbo_Username.Items.Clear()
+            txt_Name.Text = ""
+            txt_Id.Text = ""
+            txt_Username.Text = ""
             cbo_Username.Focus()
             CheckedListBox1.Visible = False
             chk_SystemControl.Visible = False
