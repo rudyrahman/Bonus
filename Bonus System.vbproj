@@ -196,6 +196,18 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_MasterAstaffClass.Designer.vb">
+      <DependentUpon>frm_MasterAstaffClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterAstaffClass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MasterAstaffClassAddNew.Designer.vb">
+      <DependentUpon>frm_MasterAstaffClassAddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MasterAstaffClassAddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MasterDepartmen.Designer.vb">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>
     </Compile>
@@ -455,6 +467,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterAstaffClass.resx">
+      <DependentUpon>frm_MasterAstaffClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MasterAstaffClassAddNew.resx">
+      <DependentUpon>frm_MasterAstaffClassAddNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MasterDepartmen.resx">
       <DependentUpon>frm_MasterDepartmen.vb</DependentUpon>

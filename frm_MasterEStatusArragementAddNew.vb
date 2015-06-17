@@ -6,7 +6,7 @@ Public Class frm_MasterEStatusArragementAddNew
     Dim h1, h2, h3, h4, h5, h6, h7 As String
 
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    
+
         Try
             txt_code.Focus()
             dgv_StatusArragementAddNew.Enabled = False
@@ -77,7 +77,7 @@ Public Class frm_MasterEStatusArragementAddNew
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-       
+
     End Sub
 
     Private Sub dgv_StatusArragementAddNew_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) _
@@ -90,7 +90,6 @@ Public Class frm_MasterEStatusArragementAddNew
         Try
             If txt_code.Text = "" And Asc(e.KeyChar) = 13 = True Then
                 frm_ItemListing.ShowDialog()
-                Exit Sub
             End If
             dgv_StatusArragementAddNew.Rows.Clear()
             rs = cn.Execute("SELECT [employee_name],[workgroup_code],[division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[sub_sectioncode],[sub_sectioncode_description],[day_of_week_#1],[day_of_week_#2],[day_of_week_#3],[day_of_week_#4],[day_of_week_#5],[day_of_week_#6],[day_of_week_#7] FROM [AN_SUMATRA].[dbo].[TM_tb_statusarragement] WHERE [employee_code]='" & txt_code.Text & "' ORDER BY [employee_code] ASC")
@@ -111,7 +110,7 @@ Public Class frm_MasterEStatusArragementAddNew
                     Dim row As String() = {(rs(10)).Value.ToString, (rs(11)).Value.ToString, (rs(12)).Value.ToString, (rs(13)).Value.ToString, (rs(14)).Value.ToString, (rs(15)).Value.ToString, (rs(16)).Value.ToString}
                     .Rows.Add(row)
                 End With
-
+                Exit Sub
             ElseIf Asc(e.KeyChar) = 13 Then
                 MsgBox("data salah")
             End If
@@ -120,6 +119,7 @@ Public Class frm_MasterEStatusArragementAddNew
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
+
 
     Private Sub txt_code_TextChanged(sender As Object, e As EventArgs) Handles txt_code.TextChanged
         txt_Name.Text = ""
