@@ -128,7 +128,6 @@ Partial Class frm_MasterAstaffClassAddNew
         Me.ClientSize = New System.Drawing.Size(590, 152)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frm_MasterAstaffClassAddNew"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_MasterAstaffClassAddNew"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
