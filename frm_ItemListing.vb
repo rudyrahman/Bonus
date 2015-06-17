@@ -113,14 +113,11 @@ Public Class frm_ItemListing
     End Sub
 
     Private Sub dgv_ItemListing_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ItemListing.CellContentClick
+
         If dgv_ItemListing.Rows.Count > 0 Then
-            If DialogResult.Yes = MessageBox.Show("Anda yakin?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
-                Dim f As New frm_MasterEStatusArragementAddNew()
-                f.txt_code.Text = dgv_ItemListing("code", e.RowIndex).Value.ToString()
-                f.txt_Name.Text = dgv_ItemListing("name", e.RowIndex).Value.ToString()
-                Me.Close()
-            End If
+            frm_MasterEStatusArragementAddNew.txt_code.Text = dgv_ItemListing("code", e.RowIndex).Value.ToString()
         End If
+        Me.Close()
     End Sub
 
     Private Sub dgv_ItemListing_SelectionChanged(sender As Object, e As EventArgs) Handles dgv_ItemListing.SelectionChanged
