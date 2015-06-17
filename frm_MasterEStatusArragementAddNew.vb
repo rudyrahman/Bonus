@@ -56,29 +56,12 @@ Public Class frm_MasterEStatusArragementAddNew
                 If rs.EOF = False Then
                     cbo_division.Items.Clear()
                     While Not rs.EOF
-                        cbo_division.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                        cbo_division.Items.Add(rs(0).Value.ToString)
+                        '& " | " & rs(1).Value.ToString)
                         rs.MoveNext()
                     End While
                 End If
 
-
-                rs = cn.Execute("SELECT [section_code],[section_description] FROM [AN_SUMATRA].[dbo].[TM_tb_section] ORDER BY [section_code] ASC")
-                If rs.EOF = False Then
-                    cbo_Section.Items.Clear()
-                    While Not rs.EOF
-                        cbo_Section.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
-                        rs.MoveNext()
-                    End While
-                End If
-
-                rs = cn.Execute("SELECT [subsection_code],[subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] ORDER BY [subsection_code] ASC")
-                If rs.EOF = False Then
-                    cbo_Subsection.Items.Clear()
-                    While Not rs.EOF
-                        cbo_Subsection.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
-                        rs.MoveNext()
-                    End While
-                End If
             Catch ex As Exception
                 MsgBox(ex.Message, vbCritical)
             End Try
@@ -208,16 +191,7 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Department_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Department.MouseClick
-        cbo_Department.Text = ""
-        cbo_Section.Text = ""
-        cbo_Subsection.Text = ""
-        rdo_CustomTimeTable.Checked = False
-        rdo_DefaultTimeTable.Checked = False
-        dgv_StatusArragementAddNew.Rows.Clear()
-    End Sub
-
-    Private Sub cbo_Department_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Department.SelectedIndexChanged
-        rs = cn.Execute("SELECT [department_code],[department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] where [department_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_division.Text, 3) & "%' ORDER BY [department_code] ASC")
+        rs = cn.Execute("SELECT [department_code],[department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] where [department_code] like '%" & cbo_division.Text & "%' order by [department_code] ASC")
         If rs.EOF = False Then
             cbo_Department.Items.Clear()
             While Not rs.EOF
@@ -225,6 +199,18 @@ Public Class frm_MasterEStatusArragementAddNew
                 rs.MoveNext()
             End While
         End If
+
+        cbo_Department.Text = ""
+        cbo_Section.Text = ""
+        cbo_Subsection.Text = ""
+        rdo_CustomTimeTable.Checked = False
+        rdo_DefaultTimeTable.Checked = False
+        dgv_StatusArragementAddNew.Rows.Clear()
+
+    End Sub
+
+    Private Sub cbo_Department_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Department.SelectedIndexChanged
+
     End Sub
 
     Private Sub cbo_Section_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Section.MouseClick
@@ -311,6 +297,7 @@ Public Class frm_MasterEStatusArragementAddNew
             dgv_StatusArragementAddNew.Rows.Clear()
             rdo_CustomTimeTable.Checked = False
             rdo_DefaultTimeTable.Checked = False
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -390,4 +377,5 @@ Public Class frm_MasterEStatusArragementAddNew
     Private Sub cbo_Subsection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Subsection.SelectedIndexChanged
 
     End Sub
+
 End Class
