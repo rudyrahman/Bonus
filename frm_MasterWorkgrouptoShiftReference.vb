@@ -44,6 +44,7 @@ Public Class frm_MasterWorkgrouptoShiftReference
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
         Call datagrid()
+        txt_cari.Focus()
     End Sub
 
     Private Sub btn_export_Click(sender As Object, e As EventArgs) Handles btn_export.Click
@@ -94,6 +95,7 @@ Public Class frm_MasterWorkgrouptoShiftReference
         Call datagrid()
         DGV.Refresh()
         txt_cari.Text = ""
+        txt_cari.Focus()
     End Sub
 
     Private Sub btn_tambahbaru_Click(sender As Object, e As EventArgs) Handles btn_tambahbaru.Click
