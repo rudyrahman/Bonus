@@ -67,6 +67,7 @@ Partial Class frm_ItemListing
         '
         'dgv_ItemListing
         '
+        Me.dgv_ItemListing.AllowUserToAddRows = False
         Me.dgv_ItemListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_ItemListing.Location = New System.Drawing.Point(10, 78)
         Me.dgv_ItemListing.Name = "dgv_ItemListing"

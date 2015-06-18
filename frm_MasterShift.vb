@@ -14,6 +14,12 @@ Public Class frm_MasterShift
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
 
+    Private Sub frm_MasterShift_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        If (dgv_MasterShift.Rows.Count > 0) Then
+            dgv_MasterShift.Rows(0).Selected = True
+        End If
+    End Sub
+
     Private Sub frm_MasterShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frm_MasterShift_Resize(Me, Nothing)
         txt_CariData.Focus()
@@ -47,6 +53,9 @@ Public Class frm_MasterShift
         dgv_MasterShift.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         dgv_MasterShift.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterShift.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        If (dgv_MasterShift.Rows.Count > 0) Then
+            dgv_MasterShift.Rows(0).Selected = True
+        End If
     End Sub
     Private Sub AutoNumberRowsForGridView()
         If dgv_MasterShift IsNot Nothing Then

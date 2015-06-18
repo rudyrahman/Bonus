@@ -5,6 +5,7 @@ Public Class frm_MasterEStatusArragementAddNew
     Dim hari As String() = {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
     Dim h1, h2, h3, h4, h5, h6, h7 As String
 
+
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
@@ -247,7 +248,6 @@ Public Class frm_MasterEStatusArragementAddNew
 
     Private Sub rdo_DefaultTimeTable_CheckedChanged(sender As Object, e As EventArgs) Handles rdo_DefaultTimeTable.CheckedChanged
         Try
-
             dgv_StatusArragementAddNew.Enabled = False
             dgv_StatusArragementAddNew.Columns.Clear()
             'dgv_StatusArragementAddNew.AllowUserToAddRows = False

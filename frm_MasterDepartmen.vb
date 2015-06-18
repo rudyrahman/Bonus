@@ -12,10 +12,15 @@ Public Class frm_MasterDepartment
 
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
-    Private Sub frm_MasterDepartmen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        frm_MasterDepartmen_Resize(Me, Nothing)
 
+    Private Sub frm_MasterDepartment_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        If (dgv_MasterDepartment.Rows.Count > 0) Then
+            dgv_MasterDepartment.Rows(0).Selected = True
+        End If
+    End Sub
+    Private Sub frm_MasterDepartmen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            frm_MasterDepartmen_Resize(Me, Nothing)
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
             rs = New ADODB.Recordset
@@ -51,6 +56,9 @@ Public Class frm_MasterDepartment
         dgv_MasterDepartment.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterDepartment.AlternatingRowsDefaultCellStyle.BackColor = Color.White
         Call AutoNumberRowsForGridView()
+        If (dgv_MasterDepartment.Rows.Count > 0) Then
+            dgv_MasterDepartment.Rows(0).Selected = True
+        End If
     End Sub
 
     Private Sub frm_MasterDepartmen_Resize(sender As Object, e As EventArgs) Handles Me.Resize

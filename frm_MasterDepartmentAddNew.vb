@@ -2,6 +2,7 @@
 Public Class frm_MasterDepartmentAddNew
     Dim cn As New ADODB.Connection
     Dim rs As New ADODB.Recordset
+    'Dim d As New ADODB.Recordset
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         Me.Close()
         cn.Close()
@@ -10,13 +11,13 @@ Public Class frm_MasterDepartmentAddNew
     Private Sub frm_MasterDepartmentAddNew_Activated(sender As Object, e As EventArgs) Handles Me.Activated
 
     End Sub
-
     Private Sub frm_MasterDepartmentAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbo_DevisionCode.Text = ""
-        txt_DevisionDescription.Text = ""
-        txt_DepartmentCode.Text = ""
-        txt_DepartmentDescription.Text = ""
         Try
+            cbo_DevisionCode.Text = ""
+            txt_DevisionDescription.Text = ""
+            txt_DepartmentCode.Text = ""
+            txt_DepartmentDescription.Text = ""
+
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
             rs = cn.Execute("SELECT [division_code] FROM  [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [division_code] ")
@@ -37,12 +38,32 @@ Public Class frm_MasterDepartmentAddNew
         cbo_DevisionCode.Focus()
     End Sub
 
+    Private Sub cbo_DevisionCode_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_DevisionCode.MouseClick
+
+    End Sub
+
     Private Sub cbo_DevisionCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_DevisionCode.SelectedIndexChanged
         Try
-            rs = cn.Execute("SELECT [division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_DevisionCode.Text & "' ORDER BY [division_code] ASC")
-            If (rs.EOF = False) And (rs.BOF = False) Then
-                txt_DevisionDescription.Text = rs(0).Value.ToString
+            'Dim Urutan As String
+            'Dim Hitung As Long
+
+            rs = cn.Execute("SELECT [division_code],[division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_DevisionCode.Text & "' ORDER BY [division_code] ASC")
+            If rs.EOF = False Then
+                txt_DevisionDescription.Text = rs(1).Value.ToString
+                'Urutan = rs(0).Value.ToString + " 01"
+                'txt_DepartmentCode.Text = Urutan
+
+                'd = cn.Execute("Select [department_code] from [AN_SUMATRA].[dbo].[TM_tb_department] order by id desc")
+
+
+                'If cbo_DevisionCode.Text = "DWH" Then
+                'Hitung = Val(Microsoft.VisualBasic.Strings.Right(d(0).Value.ToString, 3)) + 1
+                'Urutan = rs(0).Value.ToString + Microsoft.VisualBasic.Strings.Right(" 0" & Hitung, 3)
+                'End If
+                'txt_DepartmentCode.Text = Urutan
+
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try

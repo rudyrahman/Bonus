@@ -6,11 +6,28 @@ Public Class frm_ItemListing
     Dim itemlisting As String
     Dim search As String
 
+    Private Sub frm_ItemListing_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        If (dgv_ItemListing.Rows.Count > 0) Then
+            dgv_ItemListing.Rows(0).Selected = True
+        End If
+        rs = New ADODB.Recordset
+        itemlisting = "SELECT [Code],[Name],[Tag] FROM  [AN_SUMATRA].[dbo].[TM_tb_itemlisting] order by [code]"
+
+        With rs
+            .CursorLocation = CursorLocationEnum.adUseClient
+            .Open(itemlisting, cn, CursorTypeEnum.adOpenKeyset, _
+                  LockTypeEnum.adLockReadOnly)
+            .ActiveConnection = Nothing
+        End With
+        Me.dgv_ItemListing.DataSource = RecordSetToDataTable(rs)
+        Call tampilgrid()
+        dgv_ItemListing.Refresh()
+    End Sub
+
     Private Sub frm_ItemListing_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         cn.Close()
     End Sub
     Private Sub frm_ItemListing_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Try
             frm_ItemListing_Resize(Me, Nothing)
             txt_CariData.Focus()
@@ -27,6 +44,7 @@ Public Class frm_ItemListing
             End With
             Me.dgv_ItemListing.DataSource = RecordSetToDataTable(rs)
             Call tampilgrid()
+            dgv_ItemListing.Refresh()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -38,6 +56,8 @@ Public Class frm_ItemListing
         dgv_ItemListing.RowTemplate.Height = 17
         dgv_ItemListing.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_ItemListing.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+      
+        'dgv_ItemListing.Rows(dgv_ItemListing.Rows.Count - 1).Selected = True
     End Sub
     Public Function RecordSetToDataTable( _
            ByVal objRS As ADODB.Recordset) As DataTable
@@ -58,7 +78,7 @@ Public Class frm_ItemListing
             dgv_ItemListing.Height = Me.Height - 180
 
         End If
-        If Me.Width > 570 Then
+        If Me.Width > 420 Then
             pnl_Form.Width = Me.Width - (pnl_Form.Left * 2) - 15
             grb_Search.Width = pnl_Form.Width - (grb_Search.Left * 2) - 5
             btn_Choose.Left = Me.Width - btn_Choose.Width - 30
@@ -112,8 +132,7 @@ Public Class frm_ItemListing
     End Sub
 
     Private Sub dgv_ItemListing_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ItemListing.CellContentClick
-
-        If dgv_ItemListing.Rows.Count > 0 Then
+        If (dgv_ItemListing.Rows.Count > 0) Then
             frm_MasterEStatusArragementAddNew.txt_code.Text = dgv_ItemListing("code", e.RowIndex).Value.ToString()
             frm_MasterEStatusArragementAddNew.txt_Name.Text = dgv_ItemListing("name", e.RowIndex).Value.ToString()
         End If
@@ -127,5 +146,12 @@ Public Class frm_ItemListing
 
     Private Sub btn_Choose_Click(sender As Object, e As EventArgs) Handles btn_Choose.Click
 
+        If dgv_ItemListing.Rows(0).Selected = True Then
+
+            frm_MasterEStatusArragementAddNew.txt_code.Text = dgv_ItemListing("code", 0).Value.ToString()
+            frm_MasterEStatusArragementAddNew.txt_Name.Text = dgv_ItemListing("name", 1).Value.ToString()
+            Me.Close()
+
+        End If
     End Sub
 End Class
