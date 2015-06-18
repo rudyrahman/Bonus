@@ -145,6 +145,7 @@ Partial Class frm_MasterDepartmentAddNew
         '
         'txt_DepartmentCode
         '
+        Me.txt_DepartmentCode.BackColor = System.Drawing.Color.White
         Me.txt_DepartmentCode.Location = New System.Drawing.Point(133, 67)
         Me.txt_DepartmentCode.MaxLength = 20
         Me.txt_DepartmentCode.Name = "txt_DepartmentCode"

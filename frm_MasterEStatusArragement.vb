@@ -11,6 +11,12 @@ Public Class frm_MasterEStatusArragement
     Dim strExcel As String
     Private Excel03ConString As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
     Private Excel07ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'"
+
+    Private Sub frm_MasterEStatusArragement_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        If (dgv_MasterEStatusArragement.Rows.Count > 0) Then
+            dgv_MasterEStatusArragement.Rows(0).Selected = True
+        End If
+    End Sub
     Private Sub frm_MasterEStatusArragement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frm_MasterEStatusArragement_Resize(Me, Nothing)
         txt_CariData.Focus()
@@ -48,8 +54,10 @@ Public Class frm_MasterEStatusArragement
         dgv_MasterEStatusArragement.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterEStatusArragement.AlternatingRowsDefaultCellStyle.BackColor = Color.White
         Call AutoNumberRowsForGridView()
+        If (dgv_MasterEStatusArragement.Rows.Count > 0) Then
+            dgv_MasterEStatusArragement.Rows(0).Selected = True
+        End If
         'dgv_MasterEStatusArragement.ColumnHeadersVisible = true
-
     End Sub
     Private Sub AutoNumberRowsForGridView()
         If dgv_MasterEStatusArragement IsNot Nothing Then

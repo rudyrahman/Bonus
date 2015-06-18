@@ -47,6 +47,7 @@ Public Class frm_MasterAstaffClassAddNew
                 cn.Execute(sqlInsert)
                 txt_Code.Text = ""
                 txt_Description.Text = ""
+                Call autonomor()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
