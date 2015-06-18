@@ -68,10 +68,12 @@ Partial Class frm_MasterAttendanceStaffRegistrasi
         '
         'dgv_StaffClass
         '
+        Me.dgv_StaffClass.AllowUserToDeleteRows = False
         Me.dgv_StaffClass.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv_StaffClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_StaffClass.Location = New System.Drawing.Point(9, 66)
         Me.dgv_StaffClass.Name = "dgv_StaffClass"
+        Me.dgv_StaffClass.ReadOnly = True
         Me.dgv_StaffClass.Size = New System.Drawing.Size(760, 325)
         Me.dgv_StaffClass.TabIndex = 21
         Me.dgv_StaffClass.TabStop = False
@@ -112,13 +114,13 @@ Partial Class frm_MasterAttendanceStaffRegistrasi
         Me.btn_TambahBaru.Text = "Tambah Baru"
         Me.btn_TambahBaru.UseVisualStyleBackColor = True
         '
-        'frm_MasterAttendanceStaffClass
+        'frm_MasterAttendanceStaffRegistrasi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 463)
         Me.Controls.Add(Me.pnl_Form)
-        Me.Name = "frm_MasterAttendanceStaffClass"
+        Me.Name = "frm_MasterAttendanceStaffRegistrasi"
         Me.Text = "Master Attendance Staff Class"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnl_Form.ResumeLayout(False)

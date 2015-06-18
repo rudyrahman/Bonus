@@ -18,11 +18,19 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
         End With
         Me.dgv_ItemListing.DataSource = RecordSetToDataTable(rs)
         dgv_ItemListing.Columns(0).Width = 100
-        dgv_ItemListing.Columns(1).Width = 100
-        dgv_ItemListing.Columns(2).Width = 150
+        dgv_ItemListing.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
+        dgv_ItemListing.Columns(1).Width = 150
+        dgv_ItemListing.Columns(2).Width = 100
+        dgv_ItemListing.Columns(3).Width = 100
+        dgv_ItemListing.Columns(4).Width = 100
+        dgv_ItemListing.Columns(5).Width = 100
+        dgv_ItemListing.Columns(6).Width = 100
         dgv_ItemListing.RowTemplate.Height = 17
         dgv_ItemListing.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_ItemListing.AlternatingRowsDefaultCellStyle.BackColor = Color.White
+
+
+
     End Sub
     Private Sub frm_MasterAttendanceStaffClassItemListing_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -46,8 +54,10 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
 
     Private Sub txt_caridata_TextChanged(sender As Object, e As EventArgs) Handles txt_caridata.TextChanged
         Try
+
             rs = New ADODB.Recordset
-            search = "SELECT [Employee_Code],[Employee_Name],[Workgroup_Code],[Division],[Department],[Section],[Subsection] FROM  [AN_SUMATRA].[dbo].[TM_AttendanceListing] where [Employee_Code] like '%" & txt_caridata.Text & "%' order by [Employee_Code]"
+            search = "SELECT [Employee_Code],[Employee_Name],[Workgroup_Code],[Division],[Department],[Section],[Subsection] FROM  [AN_SUMATRA].[dbo].[TM_AttendanceListing] where [Employee_Code] like '%" & txt_caridata.Text & "%' order by [No]"
+
             With rs
                 .CursorLocation = CursorLocationEnum.adUseClient
                 .Open(search, cn, CursorTypeEnum.adOpenKeyset, _
@@ -55,7 +65,6 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
                 .ActiveConnection = Nothing
             End With
             Me.dgv_ItemListing.DataSource = RecordSetToDataTable(rs)
-            Call datagrid()
             If rs.BOF Then
                 dgv_ItemListing.DataSource = rs
                 dgv_ItemListing.Refresh()
@@ -77,18 +86,37 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
                 .ActiveConnection = Nothing
             End With
             Me.dgv_ItemListing.DataSource = RecordSetToDataTable(rs)
-            Call datagrid()
             If rs.BOF Then
                 dgv_ItemListing.DataSource = rs
                 dgv_ItemListing.Refresh()
+
             End If
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
+    Private Sub btn_Choose_Click(sender As Object, e As EventArgs) Handles btn_Choose.Click
+        Dim i As Integer
+        i = Me.dgv_ItemListing.CurrentRow.Index
+        With dgv_ItemListing.Rows.Item(i)
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_code.Text = .Cells(0).Value
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_nama.Text = .Cells(1).Value
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_workgroup.Text = .Cells(2).Value
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_Division.Text = .Cells(3).Value
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_department.Text = .Cells(4).Value
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_section.Text = .Cells(5).Value
+            frm_MasterAttendanceStaffRegistrasiAddNew.txt_subsection.Text = .Cells(6).Value
+        End With
+        rs = cn.Execute("SELECT [code],[description] FROM  [AN_SUMATRA].[dbo].[TM_tb_staffclass] ORDER BY [code] ASC")
+        If (rs.EOF = False) And (rs.BOF = False) Then
+            frm_MasterAttendanceStaffRegistrasiAddNew.cbo_staff.Text = rs(0).Value & " | " & rs(1).Value.ToString
+        End If
+        Me.Close()
+        cn.Close()
+    End Sub
 
-    Private Sub dgv_ItemListing_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ItemListing.CellContentDoubleClick
+    Private Sub dgv_ItemListing_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ItemListing.CellDoubleClick
         If dgv_ItemListing.Rows.Count > 0 Then
             frm_MasterAttendanceStaffRegistrasiAddNew.txt_code.Text = dgv_ItemListing("Employee_Code", e.RowIndex).Value.ToString()
             frm_MasterAttendanceStaffRegistrasiAddNew.txt_nama.Text = dgv_ItemListing("Employee_Name", e.RowIndex).Value.ToString()
@@ -97,8 +125,12 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
             frm_MasterAttendanceStaffRegistrasiAddNew.txt_department.Text = dgv_ItemListing("Department", e.RowIndex).Value.ToString()
             frm_MasterAttendanceStaffRegistrasiAddNew.txt_section.Text = dgv_ItemListing("Section", e.RowIndex).Value.ToString()
             frm_MasterAttendanceStaffRegistrasiAddNew.txt_subsection.Text = dgv_ItemListing("Subsection", e.RowIndex).Value.ToString()
-
+            rs = cn.Execute("SELECT [code],[description] FROM  [AN_SUMATRA].[dbo].[TM_tb_staffclass] ORDER BY [code] ASC")
+            If (rs.EOF = False) And (rs.BOF = False) Then
+                frm_MasterAttendanceStaffRegistrasiAddNew.cbo_staff.Text = rs(0).Value & " | " & rs(1).Value.ToString
+            End If
         End If
         Me.Close()
+        cn.Close()
     End Sub
 End Class

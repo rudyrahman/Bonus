@@ -20,14 +20,14 @@ Public Class frm_MasterAttendanceStaffRegistrasi
         dgv_StaffClass.Refresh()
         dgv_StaffClass.Columns(0).Width = 40
         dgv_StaffClass.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
-        dgv_StaffClass.Columns(1).Width = 90
-        dgv_StaffClass.Columns(2).Width = 170
-        dgv_StaffClass.Columns(3).Width = 130
-        dgv_StaffClass.Columns(4).Width = 170
-        dgv_StaffClass.Columns(5).Width = 130
-        dgv_StaffClass.Columns(6).Width = 170
+        dgv_StaffClass.Columns(1).Width = 70
+        dgv_StaffClass.Columns(2).Width = 130
+        dgv_StaffClass.Columns(3).Width = 70
+        dgv_StaffClass.Columns(4).Width = 130
+        dgv_StaffClass.Columns(5).Width = 150
+        dgv_StaffClass.Columns(6).Width = 130
         dgv_StaffClass.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
-        dgv_StaffClass.Columns(7).Width = 130
+        dgv_StaffClass.Columns(7).Width = 70
         dgv_StaffClass.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight
         dgv_StaffClass.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_StaffClass.AlternatingRowsDefaultCellStyle.BackColor = Color.White
@@ -133,7 +133,7 @@ Public Class frm_MasterAttendanceStaffRegistrasi
     Private Sub txt_CariData_TextChanged(sender As Object, e As EventArgs) Handles txt_CariData.TextChanged
         Dim sqlsearch As String
         rs = New ADODB.Recordset
-        sqlsearch = "select * from [AN_SUMATRA].[dbo].[TM_AttendanceStaffClass] where [Day_Name_Description] like '%" & txt_CariData.Text & "%' order by [No]"
+        sqlsearch = "SELECT * FROM  [AN_SUMATRA].[dbo].[TM_AttendanceStaffClass] where [Staff_Name] like '%" & txt_CariData.Text & "%' order by [No]"
 
         With rs
             .CursorLocation = CursorLocationEnum.adUseClient

@@ -26,12 +26,12 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
         Me.chk_Maximize = New System.Windows.Forms.CheckBox()
         Me.btn_Choose = New System.Windows.Forms.Button()
         Me.dgv_ItemListing = New System.Windows.Forms.DataGridView()
-        Me.grb_Search = New System.Windows.Forms.GroupBox()
+        Me.grp_Searchbox = New System.Windows.Forms.GroupBox()
         Me.btn_search = New System.Windows.Forms.Button()
         Me.txt_caridata = New System.Windows.Forms.TextBox()
         Me.pnl_Form.SuspendLayout()
         CType(Me.dgv_ItemListing, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grb_Search.SuspendLayout()
+        Me.grp_Searchbox.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_Form
@@ -40,7 +40,7 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
         Me.pnl_Form.Controls.Add(Me.chk_Maximize)
         Me.pnl_Form.Controls.Add(Me.btn_Choose)
         Me.pnl_Form.Controls.Add(Me.dgv_ItemListing)
-        Me.pnl_Form.Controls.Add(Me.grb_Search)
+        Me.pnl_Form.Controls.Add(Me.grp_Searchbox)
         Me.pnl_Form.Location = New System.Drawing.Point(2, 3)
         Me.pnl_Form.Name = "pnl_Form"
         Me.pnl_Form.Size = New System.Drawing.Size(704, 366)
@@ -72,19 +72,20 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
         Me.dgv_ItemListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_ItemListing.Location = New System.Drawing.Point(10, 78)
         Me.dgv_ItemListing.Name = "dgv_ItemListing"
+        Me.dgv_ItemListing.ReadOnly = True
         Me.dgv_ItemListing.Size = New System.Drawing.Size(682, 230)
         Me.dgv_ItemListing.TabIndex = 5
         '
-        'grb_Search
+        'grp_Searchbox
         '
-        Me.grb_Search.Controls.Add(Me.btn_search)
-        Me.grb_Search.Controls.Add(Me.txt_caridata)
-        Me.grb_Search.Location = New System.Drawing.Point(10, 10)
-        Me.grb_Search.Name = "grb_Search"
-        Me.grb_Search.Size = New System.Drawing.Size(682, 47)
-        Me.grb_Search.TabIndex = 4
-        Me.grb_Search.TabStop = False
-        Me.grb_Search.Text = "Search Box"
+        Me.grp_Searchbox.Controls.Add(Me.btn_search)
+        Me.grp_Searchbox.Controls.Add(Me.txt_caridata)
+        Me.grp_Searchbox.Location = New System.Drawing.Point(10, 10)
+        Me.grp_Searchbox.Name = "grp_Searchbox"
+        Me.grp_Searchbox.Size = New System.Drawing.Size(682, 47)
+        Me.grp_Searchbox.TabIndex = 4
+        Me.grp_Searchbox.TabStop = False
+        Me.grp_Searchbox.Text = "Search Box"
         '
         'btn_search
         '
@@ -102,20 +103,20 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
         Me.txt_caridata.Size = New System.Drawing.Size(280, 20)
         Me.txt_caridata.TabIndex = 0
         '
-        'frm_MasterAttendanceStaffClassItemListing
+        'frm_MasterAttendanceStaffRegistrasiItemListing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(710, 374)
         Me.Controls.Add(Me.pnl_Form)
-        Me.Name = "frm_MasterAttendanceStaffClassItemListing"
+        Me.Name = "frm_MasterAttendanceStaffRegistrasiItemListing"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Item Listing"
         Me.pnl_Form.ResumeLayout(False)
         Me.pnl_Form.PerformLayout()
         CType(Me.dgv_ItemListing, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grb_Search.ResumeLayout(False)
-        Me.grb_Search.PerformLayout()
+        Me.grp_Searchbox.ResumeLayout(False)
+        Me.grp_Searchbox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -123,7 +124,7 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
     Friend WithEvents chk_Maximize As System.Windows.Forms.CheckBox
     Friend WithEvents btn_Choose As System.Windows.Forms.Button
     Friend WithEvents dgv_ItemListing As System.Windows.Forms.DataGridView
-    Friend WithEvents grb_Search As System.Windows.Forms.GroupBox
+    Friend WithEvents grp_Searchbox As System.Windows.Forms.GroupBox
     Friend WithEvents btn_search As System.Windows.Forms.Button
     Friend WithEvents txt_caridata As System.Windows.Forms.TextBox
 End Class

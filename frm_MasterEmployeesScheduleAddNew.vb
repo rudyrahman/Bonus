@@ -34,11 +34,29 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_BreakoutTime.Enabled = False
         dmn_FinishTime.Enabled = False
         hitung()
-        cbo_shift.Items.Add("1")
-        cbo_shift.Items.Add("2")
-        cbo_shift.Items.Add("3")
-       
+    End Sub
 
+    Private Sub cbo_shift_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_shift.MouseClick
+        If cbo_day.Text = "" Then
+            cbo_shift.Text = ""
+        Else
+            rs = cn.Execute("SELECT distinct [Shift_Code] FROM [AN_SUMATRA].[dbo].[TM_Shift1]")
+            If ((rs.EOF = False) And (rs.BOF = False)) = True Then
+                cbo_shift.Items.Clear()
+                txt.Text = "0" & Space(1) & "Min"
+                txt1.Text = "0" & Space(1) & "Min"
+                txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.Enabled = False
+                dmn_BreakinTime.Enabled = False
+                dmn_BreakoutTime.Enabled = False
+                dmn_FinishTime.Enabled = False
+                While Not rs.EOF
+                    cbo_shift.Items.Add(rs(0).Value.ToString)
+                    rs.MoveNext()
+                End While
+            End If
+
+        End If
     End Sub
     Private Sub cbo_shift_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_shift.SelectedIndexChanged
 
@@ -99,7 +117,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
             cbo_departemen.Items.Clear()
             cbo_section.Items.Clear()
             cbo_subsection.Items.Clear()
-            ' cbo_shift.Items.Clear()
+            cbo_shift.Items.Clear()
             cbo_day.Items.Clear()
             txt.Text = "0" & Space(1) & "Min"
             txt1.Text = "0" & Space(1) & "Min"
@@ -123,7 +141,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 cbo_departemen.Items.Clear()
                 cbo_section.Items.Clear()
                 cbo_subsection.Items.Clear()
-                ' cbo_shift.Items.Clear()
+                cbo_shift.Items.Clear()
                 cbo_day.Items.Clear()
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
@@ -146,10 +164,17 @@ Public Class frm_MasterEmployeesScheduleAddNew
         If cbo_subsection.Text = "" Then
             cbo_day.Text = ""
         Else
-            cbo_shift.Enabled = True
             rs = cn.Execute("SELECT [id], [day_name] FROM [AN_SUMATRA].[dbo].[TM_DayName]  ORDER BY [id] ASC")
             If ((rs.EOF = False) And (rs.BOF = False)) = True Then
                 cbo_day.Items.Clear()
+                cbo_shift.Items.Clear()
+                txt.Text = "0" & Space(1) & "Min"
+                txt1.Text = "0" & Space(1) & "Min"
+                txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.Enabled = False
+                dmn_BreakinTime.Enabled = False
+                dmn_BreakoutTime.Enabled = False
+                dmn_FinishTime.Enabled = False
                 While Not rs.EOF
                     cbo_day.Items.Add(rs(0).Value.ToString & Space(2) & "|" & Space(2) & rs(1).Value.ToString)
                     rs.MoveNext()
@@ -307,7 +332,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
             If rs.EOF = False Then
                 cbo_section.Items.Clear()
                 cbo_subsection.Items.Clear()
-                ' cbo_shift.Items.Clear()
+                cbo_shift.Items.Clear()
                 cbo_day.Items.Clear()
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
@@ -332,7 +357,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
             rs = cn.Execute("SELECT distinct [subsection_code], [subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] where [subsection_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_section.Text, 8) & "%' order by [subsection_code] ASC")
             If rs.EOF = False Then
                 cbo_subsection.Items.Clear()
-                ' cbo_shift.Items.Clear()
+                cbo_shift.Items.Clear()
                 cbo_day.Items.Clear()
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
