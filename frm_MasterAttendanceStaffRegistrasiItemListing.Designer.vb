@@ -22,29 +22,29 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.pnl_Form = New System.Windows.Forms.Panel()
+        Me.pnl1 = New System.Windows.Forms.Panel()
         Me.chk_Maximize = New System.Windows.Forms.CheckBox()
         Me.btn_Choose = New System.Windows.Forms.Button()
         Me.dgv_ItemListing = New System.Windows.Forms.DataGridView()
         Me.grp_Searchbox = New System.Windows.Forms.GroupBox()
         Me.btn_search = New System.Windows.Forms.Button()
         Me.txt_caridata = New System.Windows.Forms.TextBox()
-        Me.pnl_Form.SuspendLayout()
+        Me.pnl1.SuspendLayout()
         CType(Me.dgv_ItemListing, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_Searchbox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'pnl_Form
+        'pnl1
         '
-        Me.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnl_Form.Controls.Add(Me.chk_Maximize)
-        Me.pnl_Form.Controls.Add(Me.btn_Choose)
-        Me.pnl_Form.Controls.Add(Me.dgv_ItemListing)
-        Me.pnl_Form.Controls.Add(Me.grp_Searchbox)
-        Me.pnl_Form.Location = New System.Drawing.Point(2, 3)
-        Me.pnl_Form.Name = "pnl_Form"
-        Me.pnl_Form.Size = New System.Drawing.Size(704, 366)
-        Me.pnl_Form.TabIndex = 1
+        Me.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl1.Controls.Add(Me.chk_Maximize)
+        Me.pnl1.Controls.Add(Me.btn_Choose)
+        Me.pnl1.Controls.Add(Me.dgv_ItemListing)
+        Me.pnl1.Controls.Add(Me.grp_Searchbox)
+        Me.pnl1.Location = New System.Drawing.Point(2, 3)
+        Me.pnl1.Name = "pnl1"
+        Me.pnl1.Size = New System.Drawing.Size(704, 366)
+        Me.pnl1.TabIndex = 1
         '
         'chk_Maximize
         '
@@ -108,19 +108,19 @@ Partial Class frm_MasterAttendanceStaffRegistrasiItemListing
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(710, 374)
-        Me.Controls.Add(Me.pnl_Form)
+        Me.Controls.Add(Me.pnl1)
         Me.Name = "frm_MasterAttendanceStaffRegistrasiItemListing"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Item Listing"
-        Me.pnl_Form.ResumeLayout(False)
-        Me.pnl_Form.PerformLayout()
+        Me.pnl1.ResumeLayout(False)
+        Me.pnl1.PerformLayout()
         CType(Me.dgv_ItemListing, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grp_Searchbox.ResumeLayout(False)
         Me.grp_Searchbox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents pnl_Form As System.Windows.Forms.Panel
+    Friend WithEvents pnl1 As System.Windows.Forms.Panel
     Friend WithEvents chk_Maximize As System.Windows.Forms.CheckBox
     Friend WithEvents btn_Choose As System.Windows.Forms.Button
     Friend WithEvents dgv_ItemListing As System.Windows.Forms.DataGridView

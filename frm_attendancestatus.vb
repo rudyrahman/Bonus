@@ -10,6 +10,7 @@ Public Class frm_attendancestatus
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
         Call datagrid()
+        txt_cari.Focus()
     End Sub
     Sub datagrid()
         Dim sql As String
@@ -127,6 +128,7 @@ Public Class frm_attendancestatus
         Call datagrid()
         DGV.Refresh()
         txt_cari.Text = ""
+        txt_cari.Focus()
     End Sub
 
     Private Sub txt_cari_TextChanged(sender As Object, e As EventArgs) Handles txt_cari.TextChanged

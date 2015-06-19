@@ -23,7 +23,6 @@ Partial Class frm_addnewnationaldays
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnl1 = New System.Windows.Forms.Panel()
-        Me.txt_yearcode = New System.Windows.Forms.TextBox()
         Me.btn_validate = New System.Windows.Forms.Button()
         Me.txt_validation = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -51,7 +50,6 @@ Partial Class frm_addnewnationaldays
         'pnl1
         '
         Me.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnl1.Controls.Add(Me.txt_yearcode)
         Me.pnl1.Controls.Add(Me.btn_validate)
         Me.pnl1.Controls.Add(Me.txt_validation)
         Me.pnl1.Controls.Add(Me.Label4)
@@ -65,14 +63,6 @@ Partial Class frm_addnewnationaldays
         Me.pnl1.Name = "pnl1"
         Me.pnl1.Size = New System.Drawing.Size(891, 77)
         Me.pnl1.TabIndex = 0
-        '
-        'txt_yearcode
-        '
-        Me.txt_yearcode.Location = New System.Drawing.Point(786, 6)
-        Me.txt_yearcode.Name = "txt_yearcode"
-        Me.txt_yearcode.Size = New System.Drawing.Size(58, 20)
-        Me.txt_yearcode.TabIndex = 9
-        Me.txt_yearcode.Visible = False
         '
         'btn_validate
         '
@@ -234,14 +224,14 @@ Partial Class frm_addnewnationaldays
         Me.Name = "frm_addnewnationaldays"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add New"
-        Me.pnl1.ResumeLayout(false)
-        Me.pnl1.PerformLayout
-        Me.pnl2.ResumeLayout(false)
-        CType(Me.DGV,System.ComponentModel.ISupportInitialize).EndInit
-        Me.pnl3.ResumeLayout(false)
-        Me.ResumeLayout(false)
+        Me.pnl1.ResumeLayout(False)
+        Me.pnl1.PerformLayout()
+        Me.pnl2.ResumeLayout(False)
+        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl3.ResumeLayout(False)
+        Me.ResumeLayout(False)
 
-End Sub
+    End Sub
     Friend WithEvents pnl1 As System.Windows.Forms.Panel
     Friend WithEvents btn_validate As System.Windows.Forms.Button
     Friend WithEvents txt_validation As System.Windows.Forms.TextBox
@@ -261,5 +251,4 @@ End Sub
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_yearcode As System.Windows.Forms.TextBox
 End Class

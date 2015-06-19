@@ -6,6 +6,7 @@ Public Class frm_addyear
         cn = New ADODB.Connection
         cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
         cn.Open()
+        txt_code.Focus()
     End Sub
 
     Private Sub btn_addnew_Click(sender As Object, e As EventArgs) Handles btn_addnew.Click
@@ -24,6 +25,7 @@ Public Class frm_addyear
 
                 End If
             End If
+            Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try

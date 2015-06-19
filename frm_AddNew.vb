@@ -32,6 +32,7 @@ Public Class frm_AddNew
 
                 End If
             End If
+            Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
