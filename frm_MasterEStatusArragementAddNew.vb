@@ -7,7 +7,6 @@ Public Class frm_MasterEStatusArragementAddNew
 
 
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Try
             txt_code.Focus()
             dgv_StatusArragementAddNew.Enabled = False
