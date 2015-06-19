@@ -5,7 +5,6 @@ Public Class frm_MasterEStatusArragementAddNew
     Dim hari As String() = {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
     Dim h1, h2, h3, h4, h5, h6, h7 As String
 
-
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             txt_code.Focus()
@@ -112,7 +111,7 @@ Public Class frm_MasterEStatusArragementAddNew
                 End With
                 Exit Sub
             ElseIf Asc(e.KeyChar) = 13 Then
-                MsgBox("data salah")
+                MsgBox("Employee code not found")
             End If
 
         Catch ex As Exception
@@ -338,12 +337,12 @@ Public Class frm_MasterEStatusArragementAddNew
                 Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_statusarragement] ([division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[sub_sectioncode],[sub_sectioncode_description],[workgroup_code],[employee_code],[employee_name],[day_of_week_#1],[day_of_week_#2],[day_of_week_#3],[day_of_week_#4],[day_of_week_#5],[day_of_week_#6],[day_of_week_#7],[create_by],[create_time],[system_id]) VALUES "
                 sqlInsert = sqlInsert & " ('" & Microsoft.VisualBasic.Strings.Left(cbo_division.Text, 3) & "'" & _
                       ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_division.Text, 7, 20) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Department.Text, 7) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Department.Text, 10, 25) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Section.Text, 9) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Section.Text, 12, 25) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Subsection.Text, 11) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Subsection.Text, 9, 25) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Department.Text, 8) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Department.Text, 12, 25) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Section.Text, 10) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Section.Text, 14, 25) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Subsection.Text, 12) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Subsection.Text, 16, 25) & "'" & _
                 ",'" & cbo_Workgroup.Text & "'" & _
                 ",'" & txt_code.Text & "'" & _
                 ",'" & txt_Name.Text & "'" & _
@@ -405,7 +404,8 @@ Public Class frm_MasterEStatusArragementAddNew
     End Sub
 
     Private Sub cbo_Subsection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Subsection.SelectedIndexChanged
-
+        rdo_CustomTimeTable.Checked = True
+        rdo_CustomTimeTable.Enabled = True
+        rdo_DefaultTimeTable.Enabled = True
     End Sub
-
 End Class
