@@ -28,7 +28,7 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
         dgv_ItemListing.RowTemplate.Height = 17
         dgv_ItemListing.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_ItemListing.AlternatingRowsDefaultCellStyle.BackColor = Color.White
-
+        'dgv_ItemListing.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
     Private Sub frm_MasterAttendanceStaffRegistrasiItemListing_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -45,8 +45,8 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
             dgv_ItemListing.Focus()
             cn.ConnectionString = "Provider=SQLNCLI11;Server=192.168.0.1;Database=AN_SUMATRA;Uid=itdevelopment;Pwd=itdevelopment2015"
             cn.Open()
+            dgv_ItemListing.SelectionMode = DataGridViewSelectionMode.FullRowSelect
             Call datagrid()
-
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
