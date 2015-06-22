@@ -28,12 +28,10 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
         dgv_ItemListing.RowTemplate.Height = 17
         dgv_ItemListing.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_ItemListing.AlternatingRowsDefaultCellStyle.BackColor = Color.White
-        'dgv_ItemListing.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
     Private Sub frm_MasterAttendanceStaffRegistrasiItemListing_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         cn.Close()
-        
     End Sub
     Private Sub frm_MasterAttendanceStaffClassItemListing_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -157,11 +155,6 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
 
         End If
     End Sub
-
-    Private Sub chk_Maximize_CheckedChanged(sender As Object, e As EventArgs) Handles chk_Maximize.CheckedChanged
-       
-    End Sub
-
     Private Sub dgv_ItemListing_KeyDown(sender As Object, e As KeyEventArgs) Handles dgv_ItemListing.KeyDown
         Dim i As Integer
         Select Case e.KeyCode

@@ -8,14 +8,48 @@ Public Class frm_MasterEmployeesScheduleAddNew
         Dim total As Integer
         kerja = DateDiff("n", dmn_StartTime.SelectedItem, dmn_FinishTime.SelectedItem)
         txt.Text = kerja & Space(1) & "Min"
+        If dmn_FinishTime.SelectedItem < dmn_StartTime.SelectedItem Then
+            txt.Text = kerja + 1440 & Space(1) & "Min"
+        End If
         istirahat = DateDiff("n", dmn_BreakoutTime.SelectedItem, dmn_BreakinTime.SelectedItem)
         txt1.Text = istirahat & Space(1) & "Min"
-        total = Val(kerja + istirahat)
+        If dmn_BreakinTime.SelectedItem < dmn_BreakoutTime.SelectedItem Then
+            txt1.Text = istirahat + 1440 & Space(1) & "Min"
+        End If
+        total = Val(txt.Text) + Val(txt1.Text)
         txt2.Text = total & Space(1) & "Min"
     End Sub
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
-        cn.Close()
         Me.Close()
+    End Sub
+
+    Private Sub frm_MasterEmployeesScheduleAddNew_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        cbo_devision.Items.Clear()
+        cbo_departemen.Items.Clear()
+        cbo_section.Items.Clear()
+        cbo_subsection.Items.Clear()
+        cbo_shift.Items.Clear()
+        cbo_day.Items.Clear()
+        dmn_StartTime.Enabled = False
+        dmn_BreakinTime.Enabled = False
+        dmn_BreakoutTime.Enabled = False
+        dmn_FinishTime.Enabled = False
+        lst_schedule.Columns.Add("Description", 130, HorizontalAlignment.Left)
+        lst_schedule.Columns.Add("Data Inputed", 150, HorizontalAlignment.Left)
+        lst_schedule.Items.Add("Work Time", "Description")
+        lst_schedule.Items.Add("Break Time", "Description")
+        lst_schedule.Items.Add("Work Time Total", "Description")
+        lst_schedule.GridLines = True
+        lst_schedule.View = View.Details
+        lst_schedule.FullRowSelect = True
+        dmn_StartTime.SelectedIndex = 0
+        dmn_FinishTime.SelectedIndex = 0
+        dmn_BreakoutTime.SelectedIndex = 0
+        dmn_BreakinTime.SelectedIndex = 0
+        txt.Text = "0" & Space(1) & "Min"
+        txt1.Text = "0" & Space(1) & "Min"
+        txt2.Text = "0" & Space(1) & "Min"
+        cn.Close()
     End Sub
     Private Sub frm_MasterEmployeesScheduleAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn = New ADODB.Connection
@@ -188,6 +222,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_StartTime.Items.Add("01 : 00")
         dmn_StartTime.Items.Add("02 : 00")
         dmn_StartTime.Items.Add("03 : 00")
+        dmn_StartTime.Items.Add("04 : 00")
         dmn_StartTime.Items.Add("05 : 00")
         dmn_StartTime.Items.Add("06 : 00")
         dmn_StartTime.Items.Add("07 : 00")
@@ -206,7 +241,6 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_StartTime.Items.Add("20 : 00")
         dmn_StartTime.Items.Add("21 : 00")
         dmn_StartTime.Items.Add("22 : 00")
-        dmn_StartTime.Items.Add("22 : 00")
         dmn_StartTime.Items.Add("23 : 00")
         hitung()
     End Sub
@@ -215,6 +249,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_FinishTime.Items.Add("01 : 00")
         dmn_FinishTime.Items.Add("02 : 00")
         dmn_FinishTime.Items.Add("03 : 00")
+        dmn_FinishTime.Items.Add("04 : 00")
         dmn_FinishTime.Items.Add("05 : 00")
         dmn_FinishTime.Items.Add("06 : 00")
         dmn_FinishTime.Items.Add("07 : 00")
@@ -233,7 +268,6 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_FinishTime.Items.Add("20 : 00")
         dmn_FinishTime.Items.Add("21 : 00")
         dmn_FinishTime.Items.Add("22 : 00")
-        dmn_FinishTime.Items.Add("22 : 00")
         dmn_FinishTime.Items.Add("23 : 00")
         hitung()
     End Sub
@@ -242,6 +276,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_BreakoutTime.Items.Add("01 : 00")
         dmn_BreakoutTime.Items.Add("02 : 00")
         dmn_BreakoutTime.Items.Add("03 : 00")
+        dmn_BreakoutTime.Items.Add("04 : 00")
         dmn_BreakoutTime.Items.Add("05 : 00")
         dmn_BreakoutTime.Items.Add("06 : 00")
         dmn_BreakoutTime.Items.Add("07 : 00")
@@ -260,7 +295,6 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_BreakoutTime.Items.Add("20 : 00")
         dmn_BreakoutTime.Items.Add("21 : 00")
         dmn_BreakoutTime.Items.Add("22 : 00")
-        dmn_BreakoutTime.Items.Add("22 : 00")
         dmn_BreakoutTime.Items.Add("23 : 00")
         hitung()
     End Sub
@@ -269,6 +303,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_BreakinTime.Items.Add("01 : 00")
         dmn_BreakinTime.Items.Add("02 : 00")
         dmn_BreakinTime.Items.Add("03 : 00")
+        dmn_BreakinTime.Items.Add("04 : 00")
         dmn_BreakinTime.Items.Add("05 : 00")
         dmn_BreakinTime.Items.Add("06 : 00")
         dmn_BreakinTime.Items.Add("07 : 00")
@@ -286,7 +321,6 @@ Public Class frm_MasterEmployeesScheduleAddNew
         dmn_BreakinTime.Items.Add("19 : 00")
         dmn_BreakinTime.Items.Add("20 : 00")
         dmn_BreakinTime.Items.Add("21 : 00")
-        dmn_BreakinTime.Items.Add("22 : 00")
         dmn_BreakinTime.Items.Add("22 : 00")
         dmn_BreakinTime.Items.Add("23 : 00")
         hitung()

@@ -121,7 +121,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.lst_schedule.GridLines = True
         Me.lst_schedule.Location = New System.Drawing.Point(16, 186)
         Me.lst_schedule.Name = "lst_schedule"
-        Me.lst_schedule.Size = New System.Drawing.Size(285, 89)
+        Me.lst_schedule.Size = New System.Drawing.Size(285, 93)
         Me.lst_schedule.TabIndex = 25
         Me.lst_schedule.UseCompatibleStateImageBehavior = False
         '
