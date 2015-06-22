@@ -5,12 +5,13 @@ Public Class frm_MasterEStatusArragementAddNew
     Dim hari As String() = {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
     Dim h1, h2, h3, h4, h5, h6, h7 As String
 
-
     Private Sub frm_MasterEStatusArragementAddNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            'dgv_StatusArragementAddNew.SelectionMode = DataGridViewSelectionMode.FullRowSelect
             txt_code.Focus()
             dgv_StatusArragementAddNew.Enabled = False
             rdo_CustomTimeTable.Enabled = False
+            rdo_CustomTimeTable.UseVisualStyleBackColor = True
             rdo_DefaultTimeTable.Enabled = False
             dgv_StatusArragementAddNew.Columns.Clear()
             dgv_StatusArragementAddNew.AllowUserToAddRows = True
@@ -90,6 +91,13 @@ Public Class frm_MasterEStatusArragementAddNew
         Try
             If txt_code.Text = "" And Asc(e.KeyChar) = 13 = True Then
                 frm_ItemListing.ShowDialog()
+                If frm_ItemListing.chk_Maximize.Checked = True Then
+                    frm_ItemListing.WindowState = FormWindowState.Maximized
+                End If
+                If frm_ItemListing.chk_Maximize.Checked = False Then
+                    frm_ItemListing.WindowState = FormWindowState.Normal
+                    frm_ItemListing.Size = New Size(722, 405)
+                End If
             End If
             dgv_StatusArragementAddNew.Rows.Clear()
             rs = cn.Execute("SELECT [employee_name],[workgroup_code],[division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[sub_sectioncode],[sub_sectioncode_description],[day_of_week_#1],[day_of_week_#2],[day_of_week_#3],[day_of_week_#4],[day_of_week_#5],[day_of_week_#6],[day_of_week_#7] FROM [AN_SUMATRA].[dbo].[TM_tb_statusarragement] WHERE [employee_code]='" & txt_code.Text & "' ORDER BY [employee_code] ASC")
@@ -112,7 +120,7 @@ Public Class frm_MasterEStatusArragementAddNew
                 End With
                 Exit Sub
             ElseIf Asc(e.KeyChar) = 13 Then
-                MsgBox("data salah")
+                MsgBox("Employee code not found")
             End If
 
         Catch ex As Exception
@@ -131,7 +139,8 @@ Public Class frm_MasterEStatusArragementAddNew
         rdo_CustomTimeTable.Checked = False
         rdo_DefaultTimeTable.Checked = False
         dgv_StatusArragementAddNew.Rows.Clear()
-
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+        dgv_StatusArragementAddNew.Enabled = False
     End Sub
 
     Private Sub cbo_Workgroup_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Workgroup.MouseClick
@@ -156,6 +165,8 @@ Public Class frm_MasterEStatusArragementAddNew
             rdo_CustomTimeTable.Checked = False
             rdo_DefaultTimeTable.Checked = False
             dgv_StatusArragementAddNew.Rows.Clear()
+            dgv_StatusArragementAddNew.AllowUserToAddRows = True
+            dgv_StatusArragementAddNew.Enabled = False
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
@@ -185,6 +196,8 @@ Public Class frm_MasterEStatusArragementAddNew
         rdo_CustomTimeTable.Checked = False
         rdo_DefaultTimeTable.Checked = False
         dgv_StatusArragementAddNew.Rows.Clear()
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+        dgv_StatusArragementAddNew.Enabled = False
     End Sub
 
     Private Sub cbo_division_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_division.SelectedIndexChanged
@@ -213,7 +226,8 @@ Public Class frm_MasterEStatusArragementAddNew
         rdo_CustomTimeTable.Checked = False
         rdo_DefaultTimeTable.Checked = False
         dgv_StatusArragementAddNew.Rows.Clear()
-
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+        dgv_StatusArragementAddNew.Enabled = False
     End Sub
 
     Private Sub cbo_Department_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Department.SelectedIndexChanged
@@ -239,6 +253,8 @@ Public Class frm_MasterEStatusArragementAddNew
         rdo_CustomTimeTable.Checked = False
         rdo_DefaultTimeTable.Checked = False
         dgv_StatusArragementAddNew.Rows.Clear()
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+        dgv_StatusArragementAddNew.Enabled = False
     End Sub
 
     Private Sub cbo_Section_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Section.SelectedIndexChanged
@@ -249,7 +265,7 @@ Public Class frm_MasterEStatusArragementAddNew
         Try
             dgv_StatusArragementAddNew.Enabled = False
             dgv_StatusArragementAddNew.Columns.Clear()
-            'dgv_StatusArragementAddNew.AllowUserToAddRows = False
+            dgv_StatusArragementAddNew.AllowUserToAddRows = False
 
             With dgv_StatusArragementAddNew
                 .ColumnCount = 7
@@ -268,11 +284,6 @@ Public Class frm_MasterEStatusArragementAddNew
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
-    End Sub
-
-
-    Private Sub dgv_StatusArragementAddNew_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_StatusArragementAddNew.CellContentClick
- 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -325,7 +336,7 @@ Public Class frm_MasterEStatusArragementAddNew
 
         Try
 
-            For i As Integer = 0 To Me.dgv_StatusArragementAddNew.Rows.Count - 2
+            For i As Integer = 0 To Me.dgv_StatusArragementAddNew.Rows.Count - 1
                 h1 = Me.dgv_StatusArragementAddNew.Rows(i).Cells(0).Value.ToString()
                 h2 = Me.dgv_StatusArragementAddNew.Rows(i).Cells(1).Value.ToString()
                 h3 = Me.dgv_StatusArragementAddNew.Rows(i).Cells(2).Value.ToString()
@@ -338,12 +349,12 @@ Public Class frm_MasterEStatusArragementAddNew
                 Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_tb_statusarragement] ([division_code],[division_description],[department_code],[department_description],[section_code],[section_description],[sub_sectioncode],[sub_sectioncode_description],[workgroup_code],[employee_code],[employee_name],[day_of_week_#1],[day_of_week_#2],[day_of_week_#3],[day_of_week_#4],[day_of_week_#5],[day_of_week_#6],[day_of_week_#7],[create_by],[create_time],[system_id]) VALUES "
                 sqlInsert = sqlInsert & " ('" & Microsoft.VisualBasic.Strings.Left(cbo_division.Text, 3) & "'" & _
                       ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_division.Text, 7, 20) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Department.Text, 7) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Department.Text, 10, 25) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Section.Text, 9) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Section.Text, 12, 25) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Subsection.Text, 11) & "'" & _
-                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Subsection.Text, 9, 25) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Department.Text, 8) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Department.Text, 12, 25) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Section.Text, 10) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Section.Text, 14, 25) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Left(cbo_Subsection.Text, 12) & "'" & _
+                ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_Subsection.Text, 16, 25) & "'" & _
                 ",'" & cbo_Workgroup.Text & "'" & _
                 ",'" & txt_code.Text & "'" & _
                 ",'" & txt_Name.Text & "'" & _
@@ -369,7 +380,7 @@ Public Class frm_MasterEStatusArragementAddNew
     Private Sub rdo_CustomTimeTable_CheckedChanged(sender As Object, e As EventArgs) Handles rdo_CustomTimeTable.CheckedChanged
         dgv_StatusArragementAddNew.Enabled = True
         dgv_StatusArragementAddNew.Columns.Clear()
-        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+        dgv_StatusArragementAddNew.AllowUserToAddRows = False
 
         For i As Integer = 0 To 6
             Dim cmb As New DataGridViewComboBoxColumn()
@@ -402,10 +413,22 @@ Public Class frm_MasterEStatusArragementAddNew
         rdo_CustomTimeTable.Checked = False
         rdo_DefaultTimeTable.Checked = False
         dgv_StatusArragementAddNew.Rows.Clear()
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+        dgv_StatusArragementAddNew.Enabled = False
     End Sub
 
     Private Sub cbo_Subsection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Subsection.SelectedIndexChanged
-
+        rdo_CustomTimeTable.Checked = True
+        rdo_CustomTimeTable.Enabled = True
+        rdo_DefaultTimeTable.Enabled = True
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
     End Sub
 
+    Private Sub rdo_CustomTimeTable_Click(sender As Object, e As EventArgs) Handles rdo_CustomTimeTable.Click
+        dgv_StatusArragementAddNew.AllowUserToAddRows = True
+    End Sub
+
+    Private Sub dgv_StatusArragementAddNew_UserAddedRow(sender As Object, e As DataGridViewRowEventArgs) Handles dgv_StatusArragementAddNew.UserAddedRow
+        dgv_StatusArragementAddNew.AllowUserToAddRows = False
+    End Sub
 End Class

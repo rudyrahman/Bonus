@@ -50,10 +50,21 @@ Public Class frm_MasterSubSectionAddNew
         End Try
     End Sub
 
+    Private Sub cbo_DevisionCode_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_DevisionCode.MouseClick
+        cbo_DepartmentCode.Items.Clear()
+        txt_DepartmentDescription.Text = ""
+        cbo_SectionCode.Items.Clear()
+        txt_SectionDescription.Text = ""
+    End Sub
+
     Private Sub cbo_DevisionCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_DevisionCode.SelectedIndexChanged
         Try
             rs = cn.Execute("SELECT TOP 1 [division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] WHERE [division_code]='" & cbo_DevisionCode.Text & "' ORDER BY [division_code] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
+                cbo_DepartmentCode.Items.Clear()
+                txt_DepartmentDescription.Text = ""
+                cbo_SectionCode.Items.Clear()
+                txt_SectionDescription.Text = ""
                 txt_DevisionDescription.Text = rs(0).Value.ToString
             End If
         Catch ex As Exception
@@ -96,8 +107,24 @@ Public Class frm_MasterSubSectionAddNew
         End Try
     End Sub
 
+    Private Sub cbo_DepartmentCode_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_DepartmentCode.MouseClick
+        rs = cn.Execute("SELECT [department_code] FROM [AN_SUMATRA].[dbo].[TM_tb_department] where [department_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_DevisionCode.Text, 3) & "%' ORDER BY [department_code] ASC")
+        If rs.EOF = False Then
+            cbo_DepartmentCode.Items.Clear()
+            While Not rs.EOF
+                cbo_DepartmentCode.Items.Add(rs(0).Value.ToString)
+                cbo_SectionCode.Items.Clear()
+                txt_SectionDescription.Text = ""
+                rs.MoveNext()
+            End While
+        End If
+    End Sub
+
     Private Sub cbo_DepartmentCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_DepartmentCode.SelectedIndexChanged
         Try
+            cbo_SectionCode.Items.Clear()
+            txt_SectionDescription.Text = ""
+            txt_DepartmentDescription.Text = ""
             rs = cn.Execute("SELECT TOP 1 [department_description] FROM [AN_SUMATRA].[dbo].[TM_tb_department] WHERE [department_code]='" & cbo_DepartmentCode.Text & "' ORDER BY [department_code] ASC")
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_DepartmentDescription.Text = rs(0).Value.ToString
@@ -105,6 +132,17 @@ Public Class frm_MasterSubSectionAddNew
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub cbo_SectionCode_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_SectionCode.MouseClick
+        rs = cn.Execute("SELECT [section_code] FROM [AN_SUMATRA].[dbo].[TM_tb_section] where [section_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_DepartmentCode.Text, 8) & "%' ORDER BY [section_code] ASC")
+        If rs.EOF = False Then
+            cbo_SectionCode.Items.Clear()
+            While Not rs.EOF
+                cbo_SectionCode.Items.Add(rs(0).Value.ToString)
+                rs.MoveNext()
+            End While
+        End If
     End Sub
 
     Private Sub cbo_SectionCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_SectionCode.SelectedIndexChanged

@@ -44,13 +44,30 @@ Public Class frm_MasterEStatusArragement
         dgv_MasterEStatusArragement.Columns(0).Width = 40
         dgv_MasterEStatusArragement.Columns(1).Width = 100
         dgv_MasterEStatusArragement.Columns(2).Width = 150
-        dgv_MasterEStatusArragement.Columns(3).Width = 150
-        dgv_MasterEStatusArragement.Columns(4).Width = 100
-        dgv_MasterEStatusArragement.Columns(5).Width = 70
-        dgv_MasterEStatusArragement.Columns(6).Width = 60
+        dgv_MasterEStatusArragement.Columns(3).Width = 100
+        dgv_MasterEStatusArragement.Columns(4).Width = 150
+        dgv_MasterEStatusArragement.Columns(5).Width = 100
+        dgv_MasterEStatusArragement.Columns(6).Width = 100
+        dgv_MasterEStatusArragement.Columns(7).Width = 100
+        dgv_MasterEStatusArragement.Columns(8).Width = 150
+        dgv_MasterEStatusArragement.Columns(9).Width = 100
+        dgv_MasterEStatusArragement.Columns(10).Width = 100
+        dgv_MasterEStatusArragement.Columns(11).Width = 150
+        dgv_MasterEStatusArragement.Columns(12).Width = 100
+        dgv_MasterEStatusArragement.Columns(13).Width = 100
+        dgv_MasterEStatusArragement.Columns(14).Width = 100
+        dgv_MasterEStatusArragement.Columns(15).Width = 100
+        dgv_MasterEStatusArragement.Columns(16).Width = 100
+        dgv_MasterEStatusArragement.Columns(17).Width = 100
+        dgv_MasterEStatusArragement.Columns(18).Width = 150
+        dgv_MasterEStatusArragement.Columns(19).Width = 150
+        dgv_MasterEStatusArragement.Columns(20).Width = 150
+        dgv_MasterEStatusArragement.Columns(21).Width = 70
+
         dgv_MasterEStatusArragement.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
         dgv_MasterEStatusArragement.RowTemplate.Height = 17
-        dgv_MasterEStatusArragement.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterEStatusArragement.Columns(21).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgv_MasterEStatusArragement.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         dgv_MasterEStatusArragement.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_MasterEStatusArragement.AlternatingRowsDefaultCellStyle.BackColor = Color.White
         Call AutoNumberRowsForGridView()
