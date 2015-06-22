@@ -68,10 +68,12 @@ Partial Class frm_MasterEmployeesSchedule
         '
         'dgv_MasterEmployeesSchedule
         '
+        Me.dgv_MasterEmployeesSchedule.AllowUserToDeleteRows = False
         Me.dgv_MasterEmployeesSchedule.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv_MasterEmployeesSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_MasterEmployeesSchedule.Location = New System.Drawing.Point(9, 66)
         Me.dgv_MasterEmployeesSchedule.Name = "dgv_MasterEmployeesSchedule"
+        Me.dgv_MasterEmployeesSchedule.ReadOnly = True
         Me.dgv_MasterEmployeesSchedule.Size = New System.Drawing.Size(760, 325)
         Me.dgv_MasterEmployeesSchedule.TabIndex = 21
         Me.dgv_MasterEmployeesSchedule.TabStop = False

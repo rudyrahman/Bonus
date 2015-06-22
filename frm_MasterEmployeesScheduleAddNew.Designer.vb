@@ -88,7 +88,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(780, 358)
+        Me.Panel1.Size = New System.Drawing.Size(804, 358)
         Me.Panel1.TabIndex = 0
         '
         'txt2
@@ -163,7 +163,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'btn_Cancel
         '
-        Me.btn_Cancel.Location = New System.Drawing.Point(659, 320)
+        Me.btn_Cancel.Location = New System.Drawing.Point(690, 320)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(103, 27)
         Me.btn_Cancel.TabIndex = 18
@@ -172,7 +172,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         'btn_AddNew
         '
-        Me.btn_AddNew.Location = New System.Drawing.Point(550, 320)
+        Me.btn_AddNew.Location = New System.Drawing.Point(577, 320)
         Me.btn_AddNew.Name = "btn_AddNew"
         Me.btn_AddNew.Size = New System.Drawing.Size(103, 27)
         Me.btn_AddNew.TabIndex = 17
@@ -257,7 +257,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.cbo_subsection.FormattingEnabled = True
         Me.cbo_subsection.Location = New System.Drawing.Point(90, 42)
         Me.cbo_subsection.Name = "cbo_subsection"
-        Me.cbo_subsection.Size = New System.Drawing.Size(672, 21)
+        Me.cbo_subsection.Size = New System.Drawing.Size(703, 21)
         Me.cbo_subsection.TabIndex = 7
         '
         'Label4
@@ -302,7 +302,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.cbo_section.FormattingEnabled = True
         Me.cbo_section.Location = New System.Drawing.Point(577, 9)
         Me.cbo_section.Name = "cbo_section"
-        Me.cbo_section.Size = New System.Drawing.Size(185, 21)
+        Me.cbo_section.Size = New System.Drawing.Size(216, 21)
         Me.cbo_section.TabIndex = 2
         '
         'cbo_departemen
@@ -329,7 +329,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(778, 356)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(802, 356)
         Me.ShapeContainer1.TabIndex = 24
         Me.ShapeContainer1.TabStop = False
         '
@@ -337,7 +337,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.LineShape1.Name = "LineShape1"
         Me.LineShape1.X1 = 2
-        Me.LineShape1.X2 = 778
+        Me.LineShape1.X2 = 800
         Me.LineShape1.Y1 = 309
         Me.LineShape1.Y2 = 309
         '
@@ -355,7 +355,7 @@ Partial Class frm_MasterEmployeesScheduleAddNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 362)
+        Me.ClientSize = New System.Drawing.Size(808, 362)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frm_MasterEmployeesScheduleAddNew"

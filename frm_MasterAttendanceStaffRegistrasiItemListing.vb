@@ -31,6 +31,11 @@ Public Class frm_MasterAttendanceStaffRegistrasiItemListing
     End Sub
 
     Private Sub frm_MasterAttendanceStaffRegistrasiItemListing_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If chk_Maximize.Checked = True Then
+            Me.WindowState = FormWindowState.Maximized
+        Else
+            Me.WindowState = FormWindowState.Normal
+        End If
         cn.Close()
     End Sub
     Private Sub frm_MasterAttendanceStaffClassItemListing_Load(sender As Object, e As EventArgs) Handles MyBase.Load

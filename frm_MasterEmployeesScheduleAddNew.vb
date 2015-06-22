@@ -80,6 +80,10 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
                 txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.SelectedIndex = 0
+                dmn_FinishTime.SelectedIndex = 0
+                dmn_BreakoutTime.SelectedIndex = 0
+                dmn_BreakinTime.SelectedIndex = 0
                 dmn_StartTime.Enabled = False
                 dmn_BreakinTime.Enabled = False
                 dmn_BreakoutTime.Enabled = False
@@ -156,6 +160,10 @@ Public Class frm_MasterEmployeesScheduleAddNew
             txt.Text = "0" & Space(1) & "Min"
             txt1.Text = "0" & Space(1) & "Min"
             txt2.Text = "0" & Space(1) & "Min"
+            dmn_StartTime.SelectedIndex = 0
+            dmn_FinishTime.SelectedIndex = 0
+            dmn_BreakoutTime.SelectedIndex = 0
+            dmn_BreakinTime.SelectedIndex = 0
             dmn_StartTime.Enabled = False
             dmn_BreakinTime.Enabled = False
             dmn_BreakoutTime.Enabled = False
@@ -180,6 +188,10 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
                 txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.SelectedIndex = 0
+                dmn_FinishTime.SelectedIndex = 0
+                dmn_BreakoutTime.SelectedIndex = 0
+                dmn_BreakinTime.SelectedIndex = 0
                 dmn_StartTime.Enabled = False
                 dmn_BreakinTime.Enabled = False
                 dmn_BreakoutTime.Enabled = False
@@ -205,6 +217,10 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
                 txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.SelectedIndex = 0
+                dmn_FinishTime.SelectedIndex = 0
+                dmn_BreakoutTime.SelectedIndex = 0
+                dmn_BreakinTime.SelectedIndex = 0
                 dmn_StartTime.Enabled = False
                 dmn_BreakinTime.Enabled = False
                 dmn_BreakoutTime.Enabled = False
@@ -371,6 +387,10 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
                 txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.SelectedIndex = 0
+                dmn_FinishTime.SelectedIndex = 0
+                dmn_BreakoutTime.SelectedIndex = 0
+                dmn_BreakinTime.SelectedIndex = 0
                 dmn_StartTime.Enabled = False
                 dmn_BreakinTime.Enabled = False
                 dmn_BreakoutTime.Enabled = False
@@ -396,6 +416,10 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 txt.Text = "0" & Space(1) & "Min"
                 txt1.Text = "0" & Space(1) & "Min"
                 txt2.Text = "0" & Space(1) & "Min"
+                dmn_StartTime.SelectedIndex = 0
+                dmn_FinishTime.SelectedIndex = 0
+                dmn_BreakoutTime.SelectedIndex = 0
+                dmn_BreakinTime.SelectedIndex = 0
                 dmn_StartTime.Enabled = False
                 dmn_BreakinTime.Enabled = False
                 dmn_BreakoutTime.Enabled = False
