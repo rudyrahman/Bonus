@@ -53,6 +53,7 @@ Partial Class frm_ItemListing
         Me.chk_Maximize.Name = "chk_Maximize"
         Me.chk_Maximize.Size = New System.Drawing.Size(146, 17)
         Me.chk_Maximize.TabIndex = 7
+        Me.chk_Maximize.TabStop = False
         Me.chk_Maximize.Text = "Always maximize this form"
         Me.chk_Maximize.UseVisualStyleBackColor = True
         '
@@ -61,7 +62,7 @@ Partial Class frm_ItemListing
         Me.btn_Choose.Location = New System.Drawing.Point(617, 330)
         Me.btn_Choose.Name = "btn_Choose"
         Me.btn_Choose.Size = New System.Drawing.Size(75, 23)
-        Me.btn_Choose.TabIndex = 6
+        Me.btn_Choose.TabIndex = 2
         Me.btn_Choose.Text = "Choose"
         Me.btn_Choose.UseVisualStyleBackColor = True
         '
@@ -74,7 +75,8 @@ Partial Class frm_ItemListing
         Me.dgv_ItemListing.Name = "dgv_ItemListing"
         Me.dgv_ItemListing.ReadOnly = True
         Me.dgv_ItemListing.Size = New System.Drawing.Size(682, 230)
-        Me.dgv_ItemListing.TabIndex = 5
+        Me.dgv_ItemListing.StandardTab = True
+        Me.dgv_ItemListing.TabIndex = 1
         '
         'grb_Search
         '
@@ -93,12 +95,14 @@ Partial Class frm_ItemListing
         Me.btn_Search.Name = "btn_Search"
         Me.btn_Search.Size = New System.Drawing.Size(75, 23)
         Me.btn_Search.TabIndex = 1
+        Me.btn_Search.TabStop = False
         Me.btn_Search.Text = "Search"
         Me.btn_Search.UseVisualStyleBackColor = True
         '
         'txt_CariData
         '
         Me.txt_CariData.Location = New System.Drawing.Point(7, 18)
+        Me.txt_CariData.MaxLength = 14
         Me.txt_CariData.Name = "txt_CariData"
         Me.txt_CariData.Size = New System.Drawing.Size(280, 20)
         Me.txt_CariData.TabIndex = 0

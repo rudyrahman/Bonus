@@ -183,11 +183,7 @@ Public Class frm_ItemListing
         Me.Close()
     End Sub
 
-    Private Sub pnl_Form_Paint(sender As Object, e As PaintEventArgs) Handles pnl_Form.Paint
-
-    End Sub
-
     Private Sub chk_Maximize_CheckedChanged(sender As Object, e As EventArgs) Handles chk_Maximize.CheckedChanged
-      
+
     End Sub
 End Class

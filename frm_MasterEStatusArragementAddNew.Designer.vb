@@ -119,6 +119,7 @@ Partial Class frm_MasterEStatusArragementAddNew
         'txt_code
         '
         Me.txt_code.Location = New System.Drawing.Point(76, 6)
+        Me.txt_code.MaxLength = 14
         Me.txt_code.Name = "txt_code"
         Me.txt_code.Size = New System.Drawing.Size(322, 20)
         Me.txt_code.TabIndex = 7

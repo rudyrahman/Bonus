@@ -25,13 +25,13 @@ Public Class frm_MasterEStatusArragementAddNew
 
             With dgv_StatusArragementAddNew
                 .ColumnCount = 7
-                .Columns(0).Name = "#1"
-                .Columns(1).Name = "#2"
-                .Columns(2).Name = "#3"
-                .Columns(3).Name = "#4"
-                .Columns(4).Name = "#5"
-                .Columns(5).Name = "#6"
-                .Columns(6).Name = "#7"
+                .Columns(0).Name = "Day of 1"
+                .Columns(1).Name = "Day of 2"
+                .Columns(2).Name = "Day of 3"
+                .Columns(3).Name = "Day of 4"
+                .Columns(4).Name = "Day of 5"
+                .Columns(5).Name = "Day of 6"
+                .Columns(6).Name = "Day of 7"
             End With
 
             'For i As Integer = 0 To 6
@@ -143,6 +143,10 @@ Public Class frm_MasterEStatusArragementAddNew
         dgv_StatusArragementAddNew.Enabled = False
     End Sub
 
+    Private Sub cbo_Workgroup_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbo_Workgroup.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
     Private Sub cbo_Workgroup_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Workgroup.MouseClick
         Try
             If txt_code.Text = "" Then
@@ -176,6 +180,10 @@ Public Class frm_MasterEStatusArragementAddNew
 
     End Sub
 
+    Private Sub cbo_division_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbo_division.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
     Private Sub cbo_division_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_division.MouseClick
         If txt_code.Text = "" Then
             cbo_division.Items.Clear()
@@ -207,6 +215,10 @@ Public Class frm_MasterEStatusArragementAddNew
 
     End Sub
 
+    Private Sub cbo_Department_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbo_Department.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
     Private Sub cbo_Department_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Department.MouseClick
         If cbo_division.Text = "" Then
             cbo_Department.Items.Clear()
@@ -235,6 +247,10 @@ Public Class frm_MasterEStatusArragementAddNew
 
     Private Sub cbo_Department_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Department.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub cbo_Section_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbo_Section.KeyPress
+        e.KeyChar = Chr(0)
     End Sub
 
     Private Sub cbo_Section_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Section.MouseClick
@@ -275,13 +291,13 @@ Public Class frm_MasterEStatusArragementAddNew
 
             With dgv_StatusArragementAddNew
                 .ColumnCount = 7
-                .Columns(0).Name = "#1"
-                .Columns(1).Name = "#2"
-                .Columns(2).Name = "#3"
-                .Columns(3).Name = "#4"
-                .Columns(4).Name = "#5"
-                .Columns(5).Name = "#6"
-                .Columns(6).Name = "#7"
+                .Columns(0).Name = "Day of 1"
+                .Columns(1).Name = "Day of 2"
+                .Columns(2).Name = "Day of 3"
+                .Columns(3).Name = "Day of 4"
+                .Columns(4).Name = "Day of 5"
+                .Columns(5).Name = "Day of 6"
+                .Columns(6).Name = "Day of 7"
             End With
             With dgv_StatusArragementAddNew
                 Dim row As String() = {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
@@ -390,7 +406,7 @@ Public Class frm_MasterEStatusArragementAddNew
 
         For i As Integer = 0 To 6
             Dim cmb As New DataGridViewComboBoxColumn()
-            cmb.HeaderText = "#" & (i + 1).ToString
+            cmb.HeaderText = "Day of " & (i + 1).ToString
             cmb.Name = "cmb" & (i + 1).ToString
             cmb.MaxDropDownItems = 7
             cmb.Items.Add("")
@@ -401,6 +417,10 @@ Public Class frm_MasterEStatusArragementAddNew
             dgv_StatusArragementAddNew.Columns.Add(cmb)
         Next
 
+    End Sub
+
+    Private Sub cbo_Subsection_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbo_Subsection.KeyPress
+        e.KeyChar = Chr(0)
     End Sub
 
     Private Sub cbo_Subsection_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Subsection.MouseClick
