@@ -104,10 +104,10 @@ Public Class frm_MasterEStatusArragementAddNew
             If (rs.EOF = False) And (rs.BOF = False) Then
                 txt_Name.Text = rs(0).Value.ToString
                 cbo_Workgroup.Text = rs(1).Value.ToString
-                cbo_division.Text = rs(2).Value & " | " & rs(3).Value.ToString
-                cbo_Department.Text = rs(4).Value & " | " & rs(5).Value.ToString
-                cbo_Section.Text = rs(6).Value & " | " & rs(7).Value.ToString
-                cbo_Subsection.Text = rs(8).Value & " | " & rs(9).Value.ToString
+                cbo_division.Text = rs(2).Value & " , " & rs(3).Value.ToString
+                cbo_Department.Text = rs(4).Value & " , " & rs(5).Value.ToString
+                cbo_Section.Text = rs(6).Value & " , " & rs(7).Value.ToString
+                cbo_Subsection.Text = rs(8).Value & " , " & rs(9).Value.ToString
                 rdo_CustomTimeTable.Checked = True
                 dgv_StatusArragementAddNew.Enabled = True
                 rdo_CustomTimeTable.Enabled = True
@@ -179,12 +179,15 @@ Public Class frm_MasterEStatusArragementAddNew
     Private Sub cbo_division_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_division.MouseClick
         If txt_code.Text = "" Then
             cbo_division.Items.Clear()
+        End If
+        If cbo_Workgroup.Text = "" Then
+            cbo_division.Items.Clear()
         Else
             rs = cn.Execute("SELECT [division_code],[division_description] FROM [AN_SUMATRA].[dbo].[TM_tb_devision] ORDER BY [division_code] ASC")
             If rs.EOF = False Then
                 cbo_division.Items.Clear()
                 While Not rs.EOF
-                    cbo_division.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_division.Items.Add(rs(0).Value & " , " & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
@@ -214,7 +217,7 @@ Public Class frm_MasterEStatusArragementAddNew
             If rs.EOF = False Then
                 cbo_Department.Items.Clear()
                 While Not rs.EOF
-                    cbo_Department.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_Department.Items.Add(rs(0).Value & " , " & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
@@ -238,12 +241,15 @@ Public Class frm_MasterEStatusArragementAddNew
         If cbo_division.Text = "" And cbo_Department.Text = "" Then
             cbo_Section.Items.Clear()
             cbo_Subsection.Items.Clear()
+        End If
+        If cbo_Department.Text = "" Then
+            cbo_Section.Items.Clear()
         Else
             rs = cn.Execute("SELECT [section_code],[section_description] FROM [AN_SUMATRA].[dbo].[TM_tb_section] where [section_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_Department.Text, 8) & "%' ORDER BY [section_code] ASC")
             If rs.EOF = False Then
                 cbo_Section.Items.Clear()
                 While Not rs.EOF
-                    cbo_Section.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_Section.Items.Add(rs(0).Value & " , " & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
@@ -303,7 +309,7 @@ Public Class frm_MasterEStatusArragementAddNew
     Private Sub dgv_StatusArragementAddNew_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgv_StatusArragementAddNew.CellMouseClick
 
         Try
-            
+
             'Dim c As String
             'For a As Integer = 0 To hari.Length - 1
             'For b As Integer = 0 To hari.Length - 1
@@ -400,12 +406,15 @@ Public Class frm_MasterEStatusArragementAddNew
     Private Sub cbo_Subsection_MouseClick(sender As Object, e As MouseEventArgs) Handles cbo_Subsection.MouseClick
         If cbo_division.Text = "" And cbo_Department.Text = "" And cbo_Section.Text = "" Then
             cbo_Subsection.Items.Clear()
+        End If
+        If cbo_Section.Text = "" Then
+            cbo_Subsection.Items.Clear()
         Else
             rs = cn.Execute("SELECT [subsection_code],[subsection_description] FROM [AN_SUMATRA].[dbo].[TM_tb_subsection] where [subsection_code] like '%" & Microsoft.VisualBasic.Strings.Left(cbo_Section.Text, 10) & "%' ORDER BY [subsection_code] ASC")
             If rs.EOF = False Then
                 cbo_Subsection.Items.Clear()
                 While Not rs.EOF
-                    cbo_Subsection.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_Subsection.Items.Add(rs(0).Value & " , " & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
