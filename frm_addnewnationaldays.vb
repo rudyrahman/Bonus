@@ -98,7 +98,7 @@ Public Class frm_addnewnationaldays
             txt_dateto.Text = ""
             txt_datefrom.Text = ""
             While Not rs.EOF
-                cbo_yearpriode.Items.Add(rs(0).Value.ToString & " | " & rs(1).Value.ToString)
+                cbo_yearpriode.Items.Add(rs(0).Value.ToString & Space(2) & rs(1).Value.ToString)
                 rs.MoveNext()
             End While
         End If
@@ -119,7 +119,7 @@ Private Sub cbo_yearpriode_SelectedIndexChanged(sender As Object, e As EventArgs
         Try
             For i As Integer = 0 To DGV.Rows.Count - 2
                 Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_NationalDays]([Year_Code],[Year_Description],[Date_Event],[Event_Description],[Create_By],[Create_Time],[Validate_By],[System_Id]) values "
-                sqlInsert = sqlInsert & " ('" & Microsoft.VisualBasic.Strings.Left(cbo_yearpriode.Text, 4) & "','" & Microsoft.VisualBasic.Strings.Mid(cbo_yearpriode.Text, 8, 15) & "','" & DGV.Rows(i).Cells(0).Value & "','" & DGV.Rows(i).Cells(1).Value & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & txt_validation.Text & "','" & CurrentAccountId & "')"
+                sqlInsert = sqlInsert & " ('" & Microsoft.VisualBasic.Strings.Left(cbo_yearpriode.Text, 4) & "','" & Microsoft.VisualBasic.Strings.Mid(cbo_yearpriode.Text, 7, 15) & "','" & DGV.Rows(i).Cells(0).Value & "','" & DGV.Rows(i).Cells(1).Value & "','" & CurrentAccountName & "'," & "GETDATE()" & " " & ",'" & txt_validation.Text & "','" & CurrentAccountId & "')"
                 cn.Execute(sqlInsert)
                 Me.Close()
             Next

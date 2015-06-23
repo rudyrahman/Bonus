@@ -169,7 +169,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
             dmn_BreakoutTime.Enabled = False
             dmn_FinishTime.Enabled = False
             While Not rs.EOF
-                cbo_devision.Items.Add(rs(0).Value.ToString & " | " & rs(1).Value.ToString)
+                cbo_devision.Items.Add(rs(0).Value.ToString & Space(2) & rs(1).Value.ToString)
                 rs.MoveNext()
             End While
         End If
@@ -197,7 +197,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 dmn_BreakoutTime.Enabled = False
                 dmn_FinishTime.Enabled = False
                 While Not rs.EOF
-                    cbo_departemen.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_departemen.Items.Add(rs(0).Value & Space(2) & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
@@ -226,7 +226,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 dmn_BreakoutTime.Enabled = False
                 dmn_FinishTime.Enabled = False
                 While Not rs.EOF
-                    cbo_day.Items.Add(rs(0).Value.ToString & Space(2) & "|" & Space(2) & rs(1).Value.ToString)
+                    cbo_day.Items.Add(rs(0).Value.ToString & Space(2) & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
@@ -349,15 +349,15 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 If MessageBox.Show("Apakah Anda yakin akan menyimpan data?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                     Dim sqlInsert As String = "INSERT INTO [AN_SUMATRA].[dbo].[TM_EmployeesSchedule] ([Division_Code],[Division_Description],[Department_Code],[Department_Description],[Section_Code],[Section_Description],[Sub_Section_Code],[Sub_Section_Description],[Day_Name_Code],[Day_Name_Description],[Shift],[Start],[Finish],[Break_Out],[Break_In],[Create_By],[Craete_Time],[System_id]) VALUES "
                     sqlInsert = sqlInsert & " ('" & Microsoft.VisualBasic.Strings.Left(cbo_devision.Text, 3) & "'" & _
-                         ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_devision.Text, 7, 20) & "'" & _
-                         ",'" & Microsoft.VisualBasic.Strings.Left(cbo_departemen.Text, 7) & "'" & _
-                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_departemen.Text, 7, 25) & "'" & _
-                          ",'" & Microsoft.VisualBasic.Strings.Left(cbo_section.Text, 9) & "'" & _
-                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_section.Text, 7, 25) & "'" & _
-                          ",'" & Microsoft.VisualBasic.Strings.Left(cbo_subsection.Text, 11) & "'" & _
-                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_subsection.Text, 7, 25) & "'" & _
+                         ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_devision.Text, 6, 20) & "'" & _
+                         ",'" & Microsoft.VisualBasic.Strings.Left(cbo_departemen.Text, 9) & "'" & _
+                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_departemen.Text, 11, 25) & "'" & _
+                          ",'" & Microsoft.VisualBasic.Strings.Left(cbo_section.Text, 11) & "'" & _
+                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_section.Text, 13, 25) & "'" & _
+                          ",'" & Microsoft.VisualBasic.Strings.Left(cbo_subsection.Text, 13) & "'" & _
+                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_subsection.Text, 15, 25) & "'" & _
                           ",'" & Microsoft.VisualBasic.Strings.Left(cbo_day.Text, 1) & "'" & _
-                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_day.Text, 5, 10) & "'" & _
+                          ",'" & Microsoft.VisualBasic.Strings.Mid(cbo_day.Text, 4, 10) & "'" & _
                            ",'" & cbo_shift.Text.ToString & "'" & _
                           ",'" & dmn_StartTime.Text.ToString & "'" & _
                            ",'" & dmn_FinishTime.Text.ToString & "'" & _
@@ -396,7 +396,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 dmn_BreakoutTime.Enabled = False
                 dmn_FinishTime.Enabled = False
                 While Not rs.EOF
-                    cbo_section.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_section.Items.Add(rs(0).Value & Space(2) & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
@@ -425,7 +425,7 @@ Public Class frm_MasterEmployeesScheduleAddNew
                 dmn_BreakoutTime.Enabled = False
                 dmn_FinishTime.Enabled = False
                 While Not rs.EOF
-                    cbo_subsection.Items.Add(rs(0).Value & " | " & rs(1).Value.ToString)
+                    cbo_subsection.Items.Add(rs(0).Value & Space(2) & rs(1).Value.ToString)
                     rs.MoveNext()
                 End While
             End If
