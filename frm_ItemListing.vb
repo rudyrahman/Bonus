@@ -60,8 +60,8 @@ Public Class frm_ItemListing
     End Sub
     Sub tampilgrid()
         dgv_ItemListing.Columns(0).Width = 100
-        dgv_ItemListing.Columns(1).Width = 100
-        dgv_ItemListing.Columns(2).Width = 150
+        dgv_ItemListing.Columns(1).Width = 120
+        dgv_ItemListing.Columns(2).Width = 80
         dgv_ItemListing.RowTemplate.Height = 17
         dgv_ItemListing.RowsDefaultCellStyle.BackColor = Color.Lavender
         dgv_ItemListing.AlternatingRowsDefaultCellStyle.BackColor = Color.White

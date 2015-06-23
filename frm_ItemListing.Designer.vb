@@ -107,6 +107,7 @@ Partial Class frm_ItemListing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(706, 367)
         Me.Controls.Add(Me.pnl_Form)
         Me.Name = "frm_ItemListing"

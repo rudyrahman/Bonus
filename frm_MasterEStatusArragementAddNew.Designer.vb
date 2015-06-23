@@ -223,6 +223,7 @@ Partial Class frm_MasterEStatusArragementAddNew
         '
         'dgv_StatusArragementAddNew
         '
+        Me.dgv_StatusArragementAddNew.AllowUserToAddRows = False
         Me.dgv_StatusArragementAddNew.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_StatusArragementAddNew.Location = New System.Drawing.Point(8, 252)
         Me.dgv_StatusArragementAddNew.Name = "dgv_StatusArragementAddNew"
@@ -231,19 +232,25 @@ Partial Class frm_MasterEStatusArragementAddNew
         '
         'DataGridViewTextBoxColumn1
         '
+        Me.DataGridViewTextBoxColumn1.Frozen = True
         Me.DataGridViewTextBoxColumn1.HeaderText = "#Day of Week"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn1.Visible = False
         '
         'DataGridViewTextBoxColumn2
         '
+        Me.DataGridViewTextBoxColumn2.Frozen = True
         Me.DataGridViewTextBoxColumn2.HeaderText = "#1"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Visible = False
         '
         'DataGridViewTextBoxColumn3
         '
+        Me.DataGridViewTextBoxColumn3.Frozen = True
         Me.DataGridViewTextBoxColumn3.HeaderText = "#2"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
         'DataGridViewTextBoxColumn4
         '
@@ -274,6 +281,7 @@ Partial Class frm_MasterEStatusArragementAddNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(859, 389)
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_AddNew)
